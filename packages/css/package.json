@@ -1,0 +1,15 @@
+{
+  "name": "@umich-lib/css",
+  "version": "0.0.1",
+  "files": [
+    "lib/"
+  ],
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  },
+  "scripts": {
+    "start": "gulp"
+  }
+}
