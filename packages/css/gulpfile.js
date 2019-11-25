@@ -1,12 +1,19 @@
-const { src, dest, parallel } = require("gulp");
+const gulp = require("gulp");
 const sass = require("gulp-sass");
 
 sass.compiler = require("node-sass");
 
-function css() {
-  return src("src/build.scss")
+function styles() {
+  return gulp
+    .src("src/build.scss")
     .pipe(sass())
-    .pipe(dest("dist/"));
+    .pipe(gulp.dest("dist/"));
 }
 
-exports.default = parallel(css);
+function watch() {
+  gulp.watch("src/**/*", styles);
+}
+
+const build = gulp.parallel(watch);
+
+exports.default = build;
