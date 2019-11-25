@@ -4,9 +4,9 @@ const sass = require("gulp-sass");
 sass.compiler = require("node-sass");
 
 function css() {
-  return src("src/*.scss")
+  return src("src/build.scss")
     .pipe(sass())
-    .pipe(dest("dist"));
+    .pipe(dest("dist/"));
 }
 
 exports.default = parallel(css);
