@@ -2,13 +2,12 @@ import { Component, h } from "@stencil/core";
 
 @Component({
   tag: "m-chat",
-  styleUrl: "m-chat.css",
-  shadow: true
+  styleUrl: "m-chat.css"
 })
 export class Chat {
   getSVG() {
     return (
-      <svg viewBox="0 0 282.682 130.146">
+      <svg viewBox="0 0 282.682 130.146" class="m-chat__svg">
         <path
           fill="#FFCF01"
           d="M179.486,29.948c-41.058-21.774-107.634-21.774-148.689,0 c-41.062,21.773-41.062,57.076,0,78.851c3.595,1.905,7.393,3.639,11.354,5.209c-5.937,9.262-14.562,16.14-14.562,16.14 s18.048-0.609,32.208-10.465c39.087,9.902,87.309,6.283,119.689-10.884C220.548,87.023,220.548,51.721,179.486,29.948z"
@@ -31,15 +30,16 @@ export class Chat {
 
   render() {
     return (
-      <details>
-        <summary>
+      <details class="m-chat__details">
+        <summary class="m-chat__summary">
           {this.getSVG()}
-          <span class="label">Ask a Librarian</span>
-          <span class="open-icon">[open]</span>
-          <span class="close-icon">[close]</span>
+          <span class="m-chat__label">Ask a Librarian</span>
+          <span class="m-chat__open-icon">[open]</span>
+          <span class="m-chat__close-icon">[close]</span>
         </summary>
-        <div class="window">
+        <div class="m-chat__window">
           <iframe
+            class="m-chat__iframe"
             title="Ask a Librarian"
             src="https://libraryh3lp.com/chat/umlibraryaskalibrarian@chat.libraryh3lp.com?skin=27279"
           />
