@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700");
+
 * {
   box-sizing: border-box;
 }
@@ -10,6 +12,50 @@ html {
 *:focus {
   outline: $color-focus;
   outline-offset: 0;
+}
+
+p {
+  color: $color-primary-neutral-400;
+}
+
+$color-negative: $color-secondary-orange-100;
+$color-warning: $color-primary-maize-100;
+$color-success: $color-primary-teal-100;
+
+$states: (
+  error: $color-negative,
+  warning: $color-warning,
+  success: $color-success
+);
+
+.error {
+  color: map-get($states, error);
+}
+
+.warning {
+  color: map-get($states, warning);
+}
+
+.success {
+  color: map-get($states, success);
+}
+
+$links: (
+  default: $color-primary-teal-400,
+  subtle: $color-primary-neutral-400,
+  light: #fff
+);
+
+a {
+  color: map-get($links, default);
+}
+
+a.subtle {
+  color: map-get($links, subtle);
+}
+
+a.light {
+  color: map-get($links, light);
 }
 
 .visually-hidden {
