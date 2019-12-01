@@ -77,7 +77,7 @@ You should see:
 ### Tokens join the pipeline
 The `tokens.scss` file is fed into the gulp build for `build.scss`.
 
-If you gulp build is running and watching, it will automatically update after your run theo.
+If the gulp build is running and watching, it will automatically update after you run theo.
 
 ## Sass build
 
