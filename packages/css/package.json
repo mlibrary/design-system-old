@@ -7,9 +7,14 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.0",
+    "prettier": "1.19.1",
+    "theo": "^8.1.4"
   },
   "scripts": {
-    "start": "gulp"
-  }
+    "start": "gulp",
+    "format:check": "prettier --check 'src/*.scss' ",
+    "format:write": "prettier --write 'src/*.scss' "
+  },
+  "dependencies": {}
 }

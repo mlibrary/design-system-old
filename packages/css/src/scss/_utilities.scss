@@ -1,0 +1,137 @@
+/* Color Utilities */
+
+$primary-color-map: (
+primary-blue-100: $color-primary-blue-100,
+primary-blue-200: $color-primary-blue-200,
+primary-blue-300: $color-primary-blue-300,
+primary-blue-400: $color-primary-blue-400,
+primary-blue-500: $color-primary-blue-500,
+primary-maize-100: $color-primary-maize-100,
+primary-maize-200: $color-primary-maize-200,
+primary-maize-300: $color-primary-maize-300,
+primary-maize-400: $color-primary-maize-400,
+primary-maize-500: $color-primary-maize-500,
+primary-neutral-100: $color-primary-neutral-100,
+primary-neutral-200: $color-primary-neutral-200,
+primary-neutral-300: $color-primary-neutral-300,
+primary-neutral-400: $color-primary-neutral-400,
+primary-neutral-500: $color-primary-neutral-500,
+primary-teal-100: $color-primary-teal-100,
+primary-teal-200: $color-primary-teal-200,
+primary-teal-300: $color-primary-teal-300, 
+primary-teal-400: $color-primary-teal-400,
+primary-teal-500: $color-primary-teal-500
+);
+
+@mixin color-utilities($attribute: "color", $prefix: "-") {
+  @each $name, $hex in $primary-color-map {
+    &-#{$name} {
+      color: $hex;
+    }
+  }
+}
+
+.m-color {
+  @include color-utilities();
+}
+
+.m-fill {
+  @include color-utilities(fill);
+}
+/* Layers Utilities */ 
+
+.z-space-small {
+box-shadow: $z-space-small;
+}
+
+.z-space-medium {
+box-shadow: $z-space-medium;
+} 
+
+/* Spacing Utilities */
+
+$spacing-map: (
+  xxx-small: $space-xxx-small,
+  xx-small: $space-xx-small,
+  x-small: $space-x-small,
+  small: $space-small,
+  medium: $space-medium,
+  large: $space-large,
+  x-large: $space-x-large,
+  xx-large: $space-xx-large,
+  xxx-large: $space-xxx-large,
+  xxxx-large: $space-xxxx-large,
+  xxxxx-large: $space-xxxxx-large
+);
+
+@mixin spacing-utility($attribute: "margin", $prefix: "-") {
+  @each $name, $value in $spacing-map {
+    &#{$prefix}#{$name} {
+      #{$attribute}: $value !important;
+    }
+  }
+
+  $newattribute: $attribute + "-bottom";
+  @each $name, $value in $spacing-map {
+    &-bottom#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+  $newattribute: $attribute + "-top";
+  @each $name, $value in $spacing-map {
+    &-top#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+
+  $newattribute: $attribute + "-left";
+  @each $name, $value in $spacing-map {
+    &-left#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+
+  $newattribute: $attribute + "-right";
+  @each $name, $value in $spacing-map {
+    &-right#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+}
+
+.m-margin {
+  @include spacing-utility();
+}
+
+.m-padding {
+  @include spacing-utility(padding);
+}
+
+@mixin spacing-utility-axis(
+  $attribute: "margin-left",
+  $attribute2: "margin-right",
+  $prefix: "-"
+) {
+  @each $name, $value in $spacing-map {
+    &#{$prefix}#{$name} {
+      #{$attribute}: $value !important;
+      #{$attribute2}: $value !important;
+    }
+  }
+}
+
+.m-x-axis {
+  @include spacing-utility-axis();
+}
+
+.p-x-axis {
+  @include spacing-utility-axis(padding-left, padding-right);
+}
+
+.m-y-axis {
+  @include spacing-utility-axis(margin-top, margin-bottom);
+}
+
+.p-y-axis {
+  @include spacing-utility-axis(padding-top, padding-bottom);
+}
