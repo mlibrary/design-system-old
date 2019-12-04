@@ -2,7 +2,7 @@ import { Config } from "@stencil/core";
 
 export const config: Config = {
   namespace: "components",
-  globalStyle: "./node_modules/@umich-lib/css/dist/build.css",
+  globalStyle: "./node_modules/@umich-lib/css/dist/umich-lib.css",
   outputTargets: [
     {
       type: "dist",
