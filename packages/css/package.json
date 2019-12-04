@@ -13,7 +13,6 @@
   },
   "scripts": {
     "start": "gulp",
-    "theo": "theo src/tokens.json --transform web --format scss,custom-properties.css,raw.json --dest src/",
     "format:check": "prettier --check 'src/*.scss' ",
     "format:write": "prettier --write 'src/*.scss' "
   },
