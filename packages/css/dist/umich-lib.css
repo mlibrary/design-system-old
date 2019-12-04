@@ -1,4 +1,66 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700");
+:root {
+  --color-primary-blue-100: rgb(247, 248, 249);
+  --color-primary-blue-200: rgb(178, 190, 201);
+  --color-primary-blue-300: rgb(76, 103, 129);
+  --color-primary-blue-400: rgb(0, 39, 76);
+  --color-primary-blue-500: rgb(0, 19, 36);
+  --color-primary-maize-100: rgb(255, 249, 230);
+  --color-primary-maize-200: rgb(255, 234, 155);
+  --color-primary-maize-300: rgb(255, 218, 80);
+  --color-primary-maize-400: rgb(255, 203, 5);
+  --color-primary-maize-500: rgb(234, 186, 2);
+  --color-primary-neutral-100: rgb(229, 233, 237);
+  --color-primary-neutral-200: rgb(138, 150, 161);
+  --color-primary-neutral-300: rgb(99, 115, 129);
+  --color-primary-neutral-400: rgb(33, 43, 54);
+  --color-primary-neutral-500: rgb(6, 8, 10);
+  --color-primary-teal-100: rgb(233, 242, 245);
+  --color-primary-teal-200: rgb(167, 205, 219);
+  --color-primary-teal-300: rgb(101, 168, 191);
+  --color-primary-teal-400: rgb(29, 116, 145);
+  --color-primary-teal-500: rgb(16, 102, 132);
+  --color-secondary-orange-100: rgb(255, 241, 235);
+  --color-secondary-orange-200: rgb(255, 184, 153);
+  --color-secondary-orange-300: rgb(255, 138, 88);
+  --color-secondary-orange-400: rgb(242, 95, 31);
+  --color-secondary-orange-500: rgb(199, 78, 26);
+  --color-secondary-pink-100: rgb(252, 235, 235);
+  --color-secondary-pink-200: rgb(242, 157, 157);
+  --color-secondary-pink-300: rgb(236, 105, 105);
+  --color-secondary-pink-400: rgb(217, 56, 56);
+  --color-secondary-pink-500: rgb(191, 50, 50);
+  --color-secondary-indigo-100: rgb(238, 241, 249);
+  --color-secondary-indigo-200: rgb(170, 185, 227);
+  --color-secondary-indigo-300: rgb(124, 147, 212);
+  --color-secondary-indigo-400: rgb(80, 111, 197);
+  --color-secondary-indigo-500: rgb(39, 67, 145);
+  --color-secondary-green-100: rgb(234, 248, 238);
+  --color-secondary-green-200: rgb(150, 219, 170);
+  --color-secondary-green-300: rgb(87, 188, 117);
+  --color-secondary-green-400: rgb(32, 168, 72);
+  --color-secondary-green-500: rgb(25, 133, 57);
+  --color-focus: rgb(0, 39, 76);
+  --font-base-family: 'Muli', sans-serif;
+  --font-second-family: 'Crimson Text', serif;
+  --font-base-size: 16px;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --space-xxx-small: 2px;
+  --space-xx-small: 4px;
+  --space-x-small: 8px;
+  --space-small: 12px;
+  --space-medium: 16px;
+  --space-large: 24px;
+  --space-x-large: 32px;
+  --space-xx-large: 40px;
+  --space-xxx-large: 48px;
+  --space-xxxx-large: 64px;
+  --space-xxxxx-large: 96px;
+  --z-space-small: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+  --z-space-medium: rgba(0, 0, 0, 0.2) 0px 2px 16px 0px; }
+
 * {
   box-sizing: border-box; }
 

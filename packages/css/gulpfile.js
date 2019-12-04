@@ -5,7 +5,7 @@ const theo = require("gulp-theo");
 
 sass.compiler = require("node-sass");
 
-task("scss:build-css-dist", function() {
+task("css:build-dist", function() {
   return src("src/scss/main.scss")
     .pipe(sass())
     .pipe(rename("umich-lib.css"))
@@ -15,7 +15,7 @@ task("scss:build-css-dist", function() {
 const scssWatcher = watch(["src/scss/*.scss"]);
 
 scssWatcher.on("change", function() {
-  task("scss:build-css-dist");
+  task("css:build-dist");
 });
 
 task("tokens:scss", function() {
@@ -38,14 +38,14 @@ task("tokens:custom-properties", function() {
         format: { type: "custom-properties.css" }
       })
     )
-    .pipe(rename("umich-lib.custom-properties.css"))
-    .pipe(dest("dist/"));
+    .pipe(rename("_custom-properties.scss"))
+    .pipe(dest("src/scss"));
 });
 
 const build = series(
   task("tokens:scss"),
   task("tokens:custom-properties"),
-  task("scss:build-css-dist")
+  task("css:build-dist")
 );
 
 exports.default = build;
