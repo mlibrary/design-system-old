@@ -13,7 +13,7 @@
   border-top: solid 2px var(--color-primary-maize-400);
   box-shadow: var(--z-space-medium);
   width: 20rem;
-  max-width: 100%;
+  max-width: 90vw;
   color: var(--color-primary-neutral-400);
 }
 
@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 2px 2px 0 0;
   margin-bottom: 4px;
   padding-bottom: calc(var(--space-xx-small) - 2px);
 }
@@ -70,5 +70,6 @@
 }
 
 .m-chat__window {
-  height: 22rem;
+  height: 24rem;
+  max-height: 90vh;
 }
