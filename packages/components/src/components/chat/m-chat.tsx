@@ -34,8 +34,24 @@ export class Chat {
         <summary class="m-chat__summary">
           {this.getSVG()}
           <span class="m-chat__label">Ask a Librarian</span>
-          <span class="m-chat__open-icon">[open]</span>
-          <span class="m-chat__close-icon">[close]</span>
+          <div aria-hidden="true" class="m-chat__icon-container">
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              class="m-chat__open-icon"
+            >
+              <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+            </svg>
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              class="m-chat__close-icon"
+            >
+              <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+            </svg>
+          </div>
         </summary>
         <div class="m-chat__window">
           <iframe
