@@ -10,7 +10,7 @@
     "node-sass": "^4.13.0",
     "gulp-rename": "^1.4.0",
     "prettier": "1.19.1",
-    "theo": "^8.1.4"
+    "theo": "^8.1.4",
   },
   "scripts": {
     "start": "gulp",
