@@ -8,8 +8,9 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.13.0",
+    "gulp-rename": "^1.4.0",
     "prettier": "1.19.1",
-    "theo": "^8.1.4"
+    "theo": "^8.1.4",
   },
   "scripts": {
     "start": "gulp",
