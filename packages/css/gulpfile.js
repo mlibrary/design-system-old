@@ -53,18 +53,10 @@ task("tokens:custom-properties", function() {
     .pipe(dest("src/scss"));
 });
 
-task("build", function(cb) {
-  series(
-    task("tokens:scss"),
-    task("tokens:custom-properties"),
-    task("css:build-dist")
-  );
-
-  cb();
-});
-
-function build() {
-  task("build");
-}
+const build = series(
+  task("tokens:scss"),
+  task("tokens:custom-properties"),
+  task("css:build-dist")
+);
 
 exports.default = build;
