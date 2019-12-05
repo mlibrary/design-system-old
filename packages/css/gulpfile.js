@@ -1,4 +1,4 @@
-const { src, dest, series, watch, task } = require("gulp");
+const { src, dest, series, watch, task, parallel } = require("gulp");
 const sass = require("gulp-sass");
 const rename = require("gulp-rename");
 const theo = require("gulp-theo");
@@ -12,11 +12,13 @@ task("css:build-dist", function() {
     .pipe(dest("dist/"));
 });
 
+/*
 const scssWatcher = watch(["src/scss/*.scss"]);
 
 scssWatcher.on("change", function() {
   task("css:build-dist");
 });
+*/
 
 task("tokens:scss", function() {
   return src("src/tokens.json")
@@ -30,12 +32,14 @@ task("tokens:scss", function() {
     .pipe(dest("src/scss/"));
 });
 
+/*
 const tokenWatcher = watch("src/tokens.json");
 
 tokenWatcher.on("change", function() {
   task("tokens:scss");
   task("tokens:custom-properties");
 });
+*/
 
 task("tokens:custom-properties", function() {
   return src("src/tokens.json")
@@ -49,10 +53,18 @@ task("tokens:custom-properties", function() {
     .pipe(dest("src/scss"));
 });
 
-const build = series(
-  task("tokens:scss"),
-  task("tokens:custom-properties"),
-  task("css:build-dist")
-);
+task("build", function(cb) {
+  series(
+    task("tokens:scss"),
+    task("tokens:custom-properties"),
+    task("css:build-dist")
+  );
+
+  cb();
+});
+
+function build() {
+  task("build");
+}
 
 exports.default = build;

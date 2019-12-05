@@ -6,8 +6,10 @@
     "lerna": "^3.19.0"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "start:packages": "lerna run start --stream --parallel",
-    "start": "npm run bootstrap && npm run start:packages"
+    "lerna:bootstrap": "lerna bootstrap",
+    "packages:start": "lerna run start --stream --parallel",
+    "packages:build": "lerna run build --stream",
+    "start": "npm run lerna:bootstrap && npm run packages:start",
+    "build": "npm run lerna:bootstrap && npm run packages:build"
   }
 }
