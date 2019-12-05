@@ -4,7 +4,7 @@
   "scripts": {
     "copy:components": "ncp node_modules/@umich-lib/components/ src/SPECIFY_YOUR_PATH",
     "storybook:start": "start-storybook -s ./node_modules/@umich-lib",
-    "storybook:build": "build-storybook -s ./node_modules/@umich-lib",
+    "storybook:build": "build-storybook -s ./node_modules/@umich-lib --quiet",
     "start": "npm run storybook:start",
     "build": "npm run storybook:build"
   },
