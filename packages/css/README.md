@@ -4,21 +4,16 @@ Design tokens are the design glossary for our Design System. Design tokens allow
 
 We use [Theo](https://github.com/salesforce-ux/theo) to transform and format our design tokens.
 
-## Quick Start Development
-Please make sure you have Node.js installed on your machine.
+## Quick start development
 
-`git clone https://github.com/mlibrary/design-system.git`  
-`cd design-system`  
-`cd packages/css`  
-`npm install`
+If you haven't already, from the root, run:
 
-Start the Gulp watch and build  
-`npm run start`
-
-To format the design tokens  
-`npm run theo`
+`npm start` to start the Gulp build and watch
 
 ## Adding new design tokens
+
+All changes and updates for the framework begin with the Design Tokens. To avoid conflicts, make all changes in the main tokens file.
+
 Design token values are held in `src/tokens.json`. We use the following format:
 
 ```
@@ -58,44 +53,29 @@ See supported [Theo categories](https://github.com/salesforce-ux/theo#supported-
 
 ### Transform the tokens
 
-`--transform web` translates Hex values to RGB for the web. Remove from the package.json `theo` script if you don't want this.
+Theo translates Hex values to RGB for the web. This has been added to the `gulpfile.js`. 
 
 ### Format the tokens
 
-The `tokens.json` file formats to `tokens.scss`, `tokens.custom-properties.css`, `tokens.raw.json` by running the following command in the `css` directory:
-
-`npm run theo`
-
-You should see:
-
-```
-✏️  scss tokens created at "src/tokens.scss"
-✏️  custom-properties.css tokens created at "src/tokens.custom-properties.css"
-✏️  raw.json tokens created at "src/tokens.raw.json"
-```
+The `tokens.json` file formats to `scss/_tokens.scss` and `scss/_custom-properties.scss`.
 
 ### Tokens join the pipeline
-The `tokens.scss` file is fed into the gulp build for `build.scss`.
-
-If the gulp build is running and watching, it will automatically update after you run theo.
-
-## Sass build
-
-The `tokens.scss` is imported into `build.scss`
+The `_tokens.scss` and `_custom-properties.scss` files are fed into the gulp build for `scss/main.scss`, along with some base styling and utilities.
 
 ```
-/src  
+/scss  
  - _base.scss
+ - _custom-properties.scss
+ - _tokens.scss
  - _utilities.scss
- - build.scss
-
+ - main.scss
  ```
 
-The Gulp build distributes this to `build.css` in the `dist` folder. Make sure this folder exists.
+The Gulp build distributes this to `umich-lib.css` in the `dist` folder.
 
 ```
 /dist  
- - build.css
+ - umich-lib.css
 ```
 
 ## Publish
