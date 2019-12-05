@@ -33,7 +33,8 @@ task("tokens:scss", function() {
 const tokenWatcher = watch("src/tokens.json");
 
 tokenWatcher.on("change", function() {
-  task("tokens:scss"), task("tokens:custom-properties");
+  task("tokens:scss");
+  task("tokens:custom-properties");
 });
 
 task("tokens:custom-properties", function() {

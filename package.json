@@ -7,6 +7,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "start": "npm run bootstrap && lerna run start --stream --parallel"
+    "start:packages": "lerna run start --stream --parallel",
+    "start": "npm run bootstrap && npm run start:packages"
   }
 }
