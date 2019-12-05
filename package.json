@@ -3,13 +3,14 @@
   "private": true,
   "devDependencies": {
     "@types/node": "^12.12.11",
-    "gulp-rename": "^1.4.0",
-    "gulp-theo": "^2.0.0",
     "lerna": "^3.19.0",
     "theo": "^8.1.4"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "start": "npm run bootstrap && lerna run start --stream --parallel"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
   }
 }
