@@ -30,6 +30,12 @@ task("tokens:scss", function() {
     .pipe(dest("src/scss/"));
 });
 
+const tokenWatcher = watch("src/tokens.json");
+
+tokenWatcher.on("change", function() {
+  task("tokens:scss"), task("tokens:custom-properties");
+});
+
 task("tokens:custom-properties", function() {
   return src("src/tokens.json")
     .pipe(

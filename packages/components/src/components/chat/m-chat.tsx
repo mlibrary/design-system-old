@@ -1,4 +1,4 @@
-import { Component, State, Listen, h } from "@stencil/core";
+import { Component, State, h } from "@stencil/core";
 import cn from "classnames";
 
 function ChatIcon() {
