@@ -76,6 +76,10 @@
   padding: 0 var(--space-small);
 }
 
+.m-chat__button:hover .m-chat__label {
+  text-decoration: underline;
+}
+
 .m-chat__window {
   background: var(--color-neutral-100);
   max-height: 90vh;
