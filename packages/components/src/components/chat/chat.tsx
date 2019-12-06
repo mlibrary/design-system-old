@@ -47,7 +47,7 @@ export class Chat {
           <ChatIcon />
           <span class="m-chat__label">Ask a Librarian</span>
           <div aria-hidden="true" class="m-chat__icons">
-            {this.open ? (
+            {!this.open ? (
               <svg
                 width="24px"
                 height="24px"
