@@ -1,30 +1,50 @@
 /* Color Utilities */
 
-$primary-color-map: (
-primary-blue-100: $color-primary-blue-100,
-primary-blue-200: $color-primary-blue-200,
-primary-blue-300: $color-primary-blue-300,
-primary-blue-400: $color-primary-blue-400,
-primary-blue-500: $color-primary-blue-500,
-primary-maize-100: $color-primary-maize-100,
-primary-maize-200: $color-primary-maize-200,
-primary-maize-300: $color-primary-maize-300,
-primary-maize-400: $color-primary-maize-400,
-primary-maize-500: $color-primary-maize-500,
-primary-neutral-100: $color-primary-neutral-100,
-primary-neutral-200: $color-primary-neutral-200,
-primary-neutral-300: $color-primary-neutral-300,
-primary-neutral-400: $color-primary-neutral-400,
-primary-neutral-500: $color-primary-neutral-500,
-primary-teal-100: $color-primary-teal-100,
-primary-teal-200: $color-primary-teal-200,
-primary-teal-300: $color-primary-teal-300, 
-primary-teal-400: $color-primary-teal-400,
-primary-teal-500: $color-primary-teal-500
+$color-map: (
+blue-100: $color-blue-100,
+blue-200: $color-blue-200,
+blue-300: $color-blue-300,
+blue-400: $color-blue-400,
+blue-500: $color-blue-500,
+maize-100: $color-maize-100,
+maize-200: $color-maize-200,
+maize-300: $color-maize-300,
+maize-400: $color-maize-400,
+maize-500: $color-maize-500,
+neutral-100: $color-neutral-100,
+neutral-200: $color-neutral-200,
+neutral-300: $color-neutral-300,
+neutral-400: $color-neutral-400,
+neutral-500: $color-neutral-500,
+teal-100: $color-teal-100,
+teal-200: $color-teal-200,
+teal-300: $color-teal-300, 
+teal-400: $color-teal-400,
+teal-500: $color-teal-500,
+color-orange-100: $color-orange-100,
+color-orange-200: $color-orange-200,
+color-orange-300: $color-orange-300,
+color-orange-400: $color-orange-400,
+color-orange-500: $color-orange-500,
+color-pink-100: $color-pink-100,
+color-pink-200: $color-pink-200,
+color-pink-300: $color-pink-300, 
+color-pink-400: $color-pink-400,
+color-pink-500: $color-pink-500, 
+color-indigo-100: $color-indigo-100,
+color-indigo-200:$color-indigo-200, 
+color-indigo-300:$color-indigo-300,
+color-indigo-400:$color-indigo-400, 
+color-indigo-500: $color-indigo-500,
+color-green-100: $color-green-100, 
+color-green-200: $color-green-200,
+color-green-300: $color-green-300, 
+color-green-400: $color-green-400, 
+color-green-500: $color-green-500
 );
 
 @mixin color-utilities($attribute: "color", $prefix: "-") {
-  @each $name, $hex in $primary-color-map {
+  @each $name, $hex in $color-map {
     &-#{$name} {
       color: $hex;
     }
