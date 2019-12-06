@@ -1,21 +1,7 @@
+@import "custom-properties";
+
 :host {
-  --highlight-color: rgb(255, 203, 5);
-  --text-color: rgb(33, 43, 54);
-  --font-base-family: "Muli", sans-serif;
-  --font-base-size: 16px;
-  --space-xxx-small: 2px;
-  --space-xx-small: 4px;
-  --space-x-small: 8px;
-  --space-small: 12px;
-  --space-medium: 16px;
-  --space-large: 24px;
-  --space-x-large: 32px;
-  --space-xx-large: 40px;
-  --space-xxx-large: 48px;
-  --space-xxxx-large: 64px;
-  --space-xxxxx-large: 96px;
-  --z-space-small: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
-  --z-space-medium: rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;
+  @include custom-properties;
 }
 
 .m-chat {
@@ -23,7 +9,7 @@
   right: 4vw;
   bottom: 0;
   border-radius: 2px 2px 0 0;
-  border-top: solid 2px var(--highlight-color);
+  border-top: solid 2px var(--color-primary-maize-400);
   box-shadow: var(--z-space-medium);
   width: calc(var(--space-medium) * 14);
   transition: width 0.25s;

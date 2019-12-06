@@ -18,7 +18,7 @@ function ChatIcon() {
 
 @Component({
   tag: "m-chat",
-  styleUrl: "chat.css",
+  styleUrl: "chat.scss",
   shadow: true
 })
 export class Chat {
