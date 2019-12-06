@@ -9,7 +9,7 @@
   right: 4vw;
   bottom: 0;
   border-radius: 2px 2px 0 0;
-  border-top: solid 2px var(--color-primary-maize-400);
+  border-top: solid 2px var(--color-maize-400);
   box-shadow: var(--z-space-medium);
   width: calc(var(--space-medium) * 14);
   transition: width 0.25s;
@@ -59,7 +59,7 @@
 
 .m-chat__button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary-maize-400), 0 0 0 3px var(--text-color);
+  box-shadow: 0 0 0 2px var(--color-maize-400), 0 0 0 3px var(--text-color);
 }
 
 .m-chat__iframe {
