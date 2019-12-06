@@ -24,10 +24,7 @@ Design token values are held in `src/tokens.json`. We use the following format:
       "name": "prop-name",
       "category": "prop-category",
       "value": "prop-value",
-      "type": "prop-type",
-      "title": "prop-title",
-      "description": "prop-description",
-      "status": "prop-status",
+      "type": "prop-type"
     }
   ]
 }
@@ -38,14 +35,11 @@ Example:
 
 ```
   {
-      "theme": "m-blue",
-      "name": "color-primary-maize-100",
+      "theme": "maize",
+      "name": "color-maize-100",
       "category": "color",
       "value": "#FFF9E6",
-      "type": "color",
-      "title": "Maize-100",
-      "description": "This is maize-100. Primarily used as a background color, as in the case of the warning alert.",
-      "status": "ready"
+      "type": "color"
     }
 ```
 
