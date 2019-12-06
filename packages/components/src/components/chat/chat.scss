@@ -77,13 +77,15 @@
 }
 
 .m-chat__window {
+  background: var(--color-neutral-100);
   max-height: 90vh;
-
   height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: height 0.25s;
+  transition: height 0.25s, opacity 0.25s;
 }
 
 .m-chat--open .m-chat__window {
+  opacity: 1;
   height: calc(var(--space-medium) * 24);
 }
