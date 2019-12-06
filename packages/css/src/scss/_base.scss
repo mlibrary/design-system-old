@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700");
+@import "custom-properties";
+
+:root {
+  @include custom-properties;
+}
 
 $color-negative: $color-orange-100;
 $color-warning: $color-maize-100;
