@@ -61,20 +61,6 @@
   --z-space-small: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   --z-space-medium: rgba(0, 0, 0, 0.2) 0px 2px 16px 0px; }
 
-* {
-  box-sizing: border-box; }
-
-html {
-  font-family: "Muli", sans-serif;
-  font-size: 16px; }
-
-*:focus {
-  outline: #00274c;
-  outline-offset: 0; }
-
-p {
-  color: #212b36; }
-
 .error {
   color: #fff1eb; }
 
@@ -83,15 +69,6 @@ p {
 
 .success {
   color: #e9f2f5; }
-
-a {
-  color: #1d7491; }
-
-a.subtle {
-  color: #212b36; }
-
-a.light {
-  color: #fff; }
 
 .visually-hidden {
   /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
