@@ -1,6 +1,6 @@
 :host {
-  --color-primary-maize-400: rgb(255, 203, 5);
-  --color-primary-neutral-400: rgb(33, 43, 54);
+  --highlight-color: rgb(255, 203, 5);
+  --text-color: rgb(33, 43, 54);
   --font-base-family: "Muli", sans-serif;
   --font-base-size: 16px;
   --space-xxx-small: 2px;
@@ -23,7 +23,7 @@
   right: 4vw;
   bottom: 0;
   border-radius: 2px 2px 0 0;
-  border-top: solid 2px var(--color-primary-maize-400);
+  border-top: solid 2px var(--highlight-color);
   box-shadow: var(--z-space-medium);
   width: calc(var(--space-medium) * 14);
   transition: width 0.25s;
@@ -45,7 +45,7 @@
   background: none;
   outline: 0;
   font-size: var(--font-base-size);
-  color: var(--color-primary-neutral-400);
+  color: var(--text-color);
   text-align: left;
 
   /*
@@ -73,8 +73,7 @@
 
 .m-chat__button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary-maize-400),
-    0 0 0 3px var(--color-primary-neutral-400);
+  box-shadow: 0 0 0 2px var(--highlight-color), 0 0 0 3px var(--text-color);
 }
 
 .m-chat__iframe {
