@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "copy:components": "ncp node_modules/@umich-lib/components/ src/SPECIFY_YOUR_PATH",
-    "storybook:start": "start-storybook -s ./node_modules/@umich-lib/components/dist --quiet",
-    "storybook:build": "build-storybook -s ./node_modules/@umich-lib/components/dist --quiet",
+    "storybook:start": "start-storybook -s ./node_modules/@umich-lib/components/dist/umich-lib,./node_modules/@umich-lib/css/dist --quiet",
+    "storybook:build": "build-storybook -s ./node_modules/@umich-lib/components/dist/umich-lib,./node_modules/@umich-lib/css/dist --quiet",
     "start": "npm run storybook:start",
     "build": "npm run storybook:build"
   },
