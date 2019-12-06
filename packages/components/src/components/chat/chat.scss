@@ -2,6 +2,7 @@
 
 :host {
   @include custom-properties;
+  --chat-width: calc(var(--space-medium) * 20);
 }
 
 .m-chat {
@@ -20,7 +21,7 @@
 }
 
 .m-chat.m-chat--open {
-  width: calc(var(--space-medium) * 20);
+  width: var(--chat-width);
 }
 
 .m-chat__button {
@@ -64,7 +65,8 @@
 }
 
 .m-chat__iframe {
-  width: 100%;
+  width: var(--chat-width);
+  max-width: 100%;
   height: 100%;
   border: none;
 }
