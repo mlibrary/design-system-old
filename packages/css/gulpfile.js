@@ -1,7 +1,19 @@
 const { src, dest, series, watch, task, parallel } = require("gulp");
 const sass = require("gulp-sass");
 const rename = require("gulp-rename");
-const theo = require("gulp-theo");
+const gulpTheo = require("gulp-theo");
+const theo = require("theo");
+
+theo.registerFormat(
+  "scss-custom-properties-mixin",
+  `
+@mixin custom-properties {
+  {{#each props as |prop|}}
+  --{{stem prop.name}}: {{{prop.value}}};
+  {{/each}}
+}
+`
+);
 
 sass.compiler = require("node-sass");
 
@@ -23,7 +35,7 @@ scssWatcher.on("change", function() {
 task("tokens:scss", function() {
   return src("src/tokens.json")
     .pipe(
-      theo({
+      gulpTheo({
         transform: { type: "web" },
         format: { type: "scss" }
       })
@@ -44,13 +56,15 @@ tokenWatcher.on("change", function() {
 task("tokens:custom-properties", function() {
   return src("src/tokens.json")
     .pipe(
-      theo({
+      gulpTheo({
         transform: { type: "web" },
-        format: { type: "custom-properties.css" }
+        format: { type: "scss-custom-properties-mixin" }
       })
     )
     .pipe(rename("_custom-properties.scss"))
-    .pipe(dest("src/scss"));
+    .pipe(dest("src/scss"))
+    .pipe(rename("custom-properties.scss"))
+    .pipe(dest("dist"));
 });
 
 const build = series(

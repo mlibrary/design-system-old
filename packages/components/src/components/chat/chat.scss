@@ -1,21 +1,8 @@
+@import "custom-properties";
+
 :host {
-  --color-primary-maize-400: rgb(255, 203, 5);
-  --color-primary-neutral-400: rgb(33, 43, 54);
-  --font-base-family: "Muli", sans-serif;
-  --font-base-size: 16px;
-  --space-xxx-small: 2px;
-  --space-xx-small: 4px;
-  --space-x-small: 8px;
-  --space-small: 12px;
-  --space-medium: 16px;
-  --space-large: 24px;
-  --space-x-large: 32px;
-  --space-xx-large: 40px;
-  --space-xxx-large: 48px;
-  --space-xxxx-large: 64px;
-  --space-xxxxx-large: 96px;
-  --z-space-small: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
-  --z-space-medium: rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;
+  @include custom-properties;
+  --chat-width: calc(var(--space-medium) * 20);
 }
 
 .m-chat {
@@ -23,7 +10,7 @@
   right: 4vw;
   bottom: 0;
   border-radius: 2px 2px 0 0;
-  border-top: solid 2px var(--color-primary-maize-400);
+  border-top: solid 2px var(--color-maize-400);
   box-shadow: var(--z-space-medium);
   width: calc(var(--space-medium) * 14);
   transition: width 0.25s;
@@ -34,7 +21,7 @@
 }
 
 .m-chat.m-chat--open {
-  width: calc(var(--space-medium) * 20);
+  width: var(--chat-width);
 }
 
 .m-chat__button {
@@ -45,20 +32,20 @@
   background: none;
   outline: 0;
   font-size: var(--font-base-size);
-  color: var(--color-primary-neutral-400);
+  color: var(--color-neutral-400);
   text-align: left;
 
   /*
     Rest of styles.
   */
-  height: 44px; /* less bottom margin */
+  height: 39px; /* less bottom margin */
   width: 100%;
   padding: 0 var(--space-medium);
   display: flex;
   align-items: center;
   cursor: pointer;
   border-radius: 2px 2px 0 0;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .m-chat__svg {
@@ -73,14 +60,20 @@
 
 .m-chat__button:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary-maize-400),
-    0 0 0 3px var(--color-primary-neutral-400);
+  box-shadow: 0 0 0 2px var(--color-maize-400),
+    0 0 0 3px var(--color-neutral-400);
 }
 
 .m-chat__iframe {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .m-chat__iframe {
+    width: var(--chat-width);
+  }
 }
 
 .m-chat__label {
@@ -90,14 +83,20 @@
   padding: 0 var(--space-small);
 }
 
-.m-chat__window {
-  max-height: 90vh;
+.m-chat__button:hover .m-chat__label {
+  text-decoration: underline;
+}
 
+.m-chat__window {
+  background: var(--color-neutral-100);
+  max-height: 90vh;
   height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: height 0.25s;
+  transition: height 0.25s, opacity 0.25s;
 }
 
 .m-chat--open .m-chat__window {
+  opacity: 1;
   height: calc(var(--space-medium) * 24);
 }
