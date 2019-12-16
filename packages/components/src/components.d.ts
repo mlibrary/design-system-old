@@ -11,6 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface MChat {}
+  interface MUniversalHeader {}
 }
 
 declare global {
@@ -21,16 +22,25 @@ declare global {
     prototype: HTMLMChatElement;
     new (): HTMLMChatElement;
   };
+
+  interface HTMLMUniversalHeaderElement extends Components.MUniversalHeader, HTMLStencilElement {}
+  var HTMLMUniversalHeaderElement: {
+    prototype: HTMLMUniversalHeaderElement;
+    new (): HTMLMUniversalHeaderElement;
+  };
   interface HTMLElementTagNameMap {
     'm-chat': HTMLMChatElement;
+    'm-universal-header': HTMLMUniversalHeaderElement;
   }
 }
 
 declare namespace LocalJSX {
   interface MChat {}
+  interface MUniversalHeader {}
 
   interface IntrinsicElements {
     'm-chat': MChat;
+    'm-universal-header': MUniversalHeader;
   }
 }
 
@@ -41,6 +51,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'm-chat': LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
+      'm-universal-header': LocalJSX.MUniversalHeader & JSXBase.HTMLAttributes<HTMLMUniversalHeaderElement>;
     }
   }
 }

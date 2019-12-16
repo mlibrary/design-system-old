@@ -1,0 +1,79 @@
+@import "custom-properties";
+
+.m-uh {
+  @include custom-properties;
+
+  background: var(--color-blue-100);
+  border-bottom: solid 1px var(--color-neutral-100);
+  font-family: var(--font-base-family);
+}
+
+.m-uh__content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.m-uh__button-container {
+  display: inline-block;
+  position: relative;
+}
+
+.m-uh__button {
+  /*
+    <button> reset
+  */
+  border: none;
+  background: none;
+  outline: 0;
+  font-size: var(--font-base-size);
+  color: var(--color-neutral-400);
+  text-align: left;
+
+  /*
+    Styles
+  */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.m-uh__button,
+.m-uh__link {
+  text-transform: uppercase;
+  padding: var(--space-x-small) 0;
+  color: var(--color-neutral-300);
+}
+
+.m-uh__button-label {
+  padding-right: var(--space-xx-small);
+}
+
+.m-uh__link {
+  text-decoration: none;
+}
+
+.m-uh__icons {
+  line-height: 0;
+}
+
+.m-uh__open-icon,
+.m-uh__close-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: var(--color-neutral-300);
+}
+
+.m-uh__dropdown {
+  position: absolute;
+  right: 0;
+  width: 862px;
+  max-width: calc(-5rem + 100vw);
+
+  box-shadow: var(--z-space-medium);
+  padding: var(--space-x-large);
+  background: white;
+}
