@@ -1,0 +1,235 @@
+/* Font-stack */
+
+$font-stack-map: (
+  page-heading-3xl: (
+    font-family: var(--font-second-family),
+    font-size: var(--xxx-large),
+    font-weight: var(--regular),
+    font-style: normal,
+    line-height: var(--line-height-heading)
+  ),
+  page-heading-2xl: (
+    font-family: var(--font-second-family),
+    font-weight: var(--regular),
+    font-size: var(--xx-large),
+    font-style: normal,
+    line-height: var(--line-height-heading)
+  ),
+  subheading-xl: (
+    font-family: var(--font-base-family),
+    font-size: var(--x-large),
+    font-weight: var(--bold),
+    font-style: normal,
+    line-height: var(--line-height-heading)
+  ),
+  subheading-l: (
+    font-family: var(--font-base-family),
+    font-size: var(--large),
+    font-weight: var(--semibold),
+    font-style: normal,
+    line-height: var(--line-height-heading)
+  ),
+  subheading-m: (
+    font-family: var(--font-base-family),
+    font-size: var(--medium),
+    font-weight: var(--semibold),
+    font-style: normal,
+    line-height: var(--line-height-heading)
+  ),
+  card-titles-s: (
+    font-family: var(--font-base-family),
+    font-size: var(--small),
+    font-weight: var(--semibold),
+    font-style: normal,
+    line-height: var(--line-height-text)
+  ),
+  text-xs: (
+    font-family: var(--font-base-family),
+    font-size: var(--x-small),
+    font-weight: var(--regular),
+    font-style: normal,
+    line-height: var(--line-height-text)
+  ),
+  text-2xs: (
+    font-family: var(--font-base-family),
+    font-size: var(--xx-small),
+    font-weight: var(--regular),
+    font-style: normal,
+    line-height: var(--line-height-text)
+  ),
+  details-3xs: (
+    font-family: var(--font-base-family),
+    font-size: var(--xxx-small),
+    font-weight: var(--bold),
+    font-style: normal,
+    text-transform: uppercase,
+    letter-spacing: 1.25px,
+    line-height: var(--line-height-text)
+  )
+);
+
+@mixin font-modifiers() {
+  @each $font-group, $ruleset in $font-stack-map {
+    &-#{$font-group} {
+      font-family: map-get($ruleset, font-family);
+      font-weight: map-get($ruleset, font-weight);
+      font-size: map-get($ruleset, font-size);
+      font-style: map-get($ruleset, font-style);
+      text-transform: map-get($ruleset, text-transform);
+      letter-spacing: map-get($ruleset, letter-spacing);
+      line-height: map-get($ruleset, line-height);
+    }
+  }
+}
+
+.m {
+  @include font-modifiers;
+}
+
+/* Color */
+$color-map: (
+  blue-100: $color-blue-100,
+  blue-200: $color-blue-200,
+  blue-300: $color-blue-300,
+  blue-400: $color-blue-400,
+  blue-500: $color-blue-500,
+  maize-100: $color-maize-100,
+  maize-200: $color-maize-200,
+  maize-300: $color-maize-300,
+  maize-400: $color-maize-400,
+  maize-500: $color-maize-500,
+  neutral-100: $color-neutral-100,
+  neutral-200: $color-neutral-200,
+  neutral-300: $color-neutral-300,
+  neutral-400: $color-neutral-400,
+  neutral-500: $color-neutral-500,
+  teal-100: $color-teal-100,
+  teal-200: $color-teal-200,
+  teal-300: $color-teal-300,
+  teal-400: $color-teal-400,
+  teal-500: $color-teal-500,
+  color-orange-100: $color-orange-100,
+  color-orange-200: $color-orange-200,
+  color-orange-300: $color-orange-300,
+  color-orange-400: $color-orange-400,
+  color-orange-500: $color-orange-500,
+  color-pink-100: $color-pink-100,
+  color-pink-200: $color-pink-200,
+  color-pink-300: $color-pink-300,
+  color-pink-400: $color-pink-400,
+  color-pink-500: $color-pink-500,
+  color-indigo-100: $color-indigo-100,
+  color-indigo-200: $color-indigo-200,
+  color-indigo-300: $color-indigo-300,
+  color-indigo-400: $color-indigo-400,
+  color-indigo-500: $color-indigo-500,
+  color-green-100: $color-green-100,
+  color-green-200: $color-green-200,
+  color-green-300: $color-green-300,
+  color-green-400: $color-green-400,
+  color-green-500: $color-green-500
+);
+
+@mixin color-utilities($attribute: "color", $prefix: "-") {
+  @each $name, $hex in $color-map {
+    &-#{$name} {
+      color: $hex;
+    }
+  }
+}
+
+.m-color {
+  @include color-utilities();
+}
+
+.m-fill {
+  @include color-utilities(fill);
+}
+
+/* Spacing */
+
+$spacing-map: (
+  xxx-small: $space-xxx-small,
+  xx-small: $space-xx-small,
+  x-small: $space-x-small,
+  small: $space-small,
+  medium: $space-medium,
+  large: $space-large,
+  x-large: $space-x-large,
+  xx-large: $space-xx-large,
+  xxx-large: $space-xxx-large,
+  xxxx-large: $space-xxxx-large,
+  xxxxx-large: $space-xxxxx-large
+);
+
+@mixin spacing-utility($attribute: "margin", $prefix: "-") {
+  @each $name, $value in $spacing-map {
+    &#{$prefix}#{$name} {
+      #{$attribute}: $value !important;
+    }
+  }
+
+  $newattribute: $attribute + "-bottom";
+  @each $name, $value in $spacing-map {
+    &-bottom#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+  $newattribute: $attribute + "-top";
+  @each $name, $value in $spacing-map {
+    &-top#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+
+  $newattribute: $attribute + "-left";
+  @each $name, $value in $spacing-map {
+    &-left#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+
+  $newattribute: $attribute + "-right";
+  @each $name, $value in $spacing-map {
+    &-right#{$prefix}#{$name} {
+      #{$newattribute}: $value !important;
+    }
+  }
+}
+
+.m-margin {
+  @include spacing-utility();
+}
+
+.m-padding {
+  @include spacing-utility(padding);
+}
+
+@mixin spacing-utility-axis(
+  $attribute: "margin-left",
+  $attribute2: "margin-right",
+  $prefix: "-"
+) {
+  @each $name, $value in $spacing-map {
+    &#{$prefix}#{$name} {
+      #{$attribute}: $value !important;
+      #{$attribute2}: $value !important;
+    }
+  }
+}
+
+.m-x-axis {
+  @include spacing-utility-axis();
+}
+
+.p-x-axis {
+  @include spacing-utility-axis(padding-left, padding-right);
+}
+
+.m-y-axis {
+  @include spacing-utility-axis(margin-top, margin-bottom);
+}
+
+.p-y-axis {
+  @include spacing-utility-axis(padding-top, padding-bottom);
+}
