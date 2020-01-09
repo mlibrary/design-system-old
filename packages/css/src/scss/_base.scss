@@ -5,26 +5,46 @@
   @include custom-properties;
 }
 
-$color-negative: $color-orange-100;
-$color-warning: $color-maize-100;
-$color-success: $color-teal-100;
+* {
+  box-sizing: border-box;
+}
 
-$states: (
-  error: $color-negative,
-  warning: $color-warning,
-  success: $color-success
-);
+html {
+  font-size: var(--type-base-size);
+  line-height: var(--line-height-text);
+}
+
+body {
+  font-size: 1rem;
+  color: var(--color-neutral-400);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--space-x-small);
+}
+
+a {
+  color: var(--color-teal-400);
+  box-shadow: inset 0 -1px var(--color-teal-400);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  box-shadow: inset 0 -2px var(--color-teal-400);
+}
 
 .error {
-  color: map-get($states, error);
+  color: var(--color-orange-100);
 }
 
 .warning {
-  color: map-get($states, warning);
+  color: var(--color-maize-100);
 }
 
 .success {
-  color: map-get($states, success);
+  color: var(--color-teal-100);
 }
 
 .visually-hidden {
