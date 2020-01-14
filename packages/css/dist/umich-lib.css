@@ -46,18 +46,19 @@
   --bold: 700;
   --regular: 400;
   --semibold: 600;
-  --line-height-text: 1.5;
+  --line-height-default: 1.5;
   --line-height-heading: 1.25;
-  --type-base-size: 16px;
-  --xxx-large: 3.5rem;
-  --xx-large: 2.25rem;
-  --x-large: 2rem;
-  --large: 1.75rem;
-  --medium: 1.5rem;
-  --small: 1.125rem;
-  --x-small: 1.125rem;
-  --xx-small: 1rem;
-  --xxx-small: 0.875rem;
+  --line-height-page-heading: 1.125;
+  --text-base-size: 16px;
+  --text-xxx-large: 3.5rem;
+  --text-xx-large: 2.25rem;
+  --text-x-large: 2rem;
+  --text-large: 1.75rem;
+  --text-medium: 1.5rem;
+  --text-small: 1.125rem;
+  --text-x-small: 1.125rem;
+  --text-xx-small: 1rem;
+  --text-xxx-small: 0.875rem;
   --space-xxx-small: 2px;
   --space-xx-small: 4px;
   --space-x-small: 8px;
@@ -76,8 +77,8 @@
   box-sizing: border-box; }
 
 html {
-  font-size: var(--type-base-size);
-  line-height: var(--line-height-text); }
+  font-size: var(--text-base-size);
+  line-height: var(--line-height-default); }
 
 body {
   font-size: 1rem;
@@ -117,31 +118,31 @@ a:hover {
 
 /* Font-size */
 .xxx-small {
-  font-size: var(--xxx-small); }
+  font-size: var(--text-xxx-small); }
 
 .xx-small {
-  font-size: var(--xx-small); }
+  font-size: var(--text-xx-small); }
 
 .x-small {
-  font-size: var(--x-small); }
+  font-size: var(--text-x-small); }
 
 .small {
-  font-size: var(--small); }
+  font-size: var(--text-small); }
 
 .medium {
-  font-size: var(--medium); }
+  font-size: var(--text-medium); }
 
 .large {
-  font-size: var(--large); }
+  font-size: var(--text-large); }
 
 .x-large {
-  font-size: var(--x-large); }
+  font-size: var(--text-x-large); }
 
 .xx-large {
-  font-size: var(--xx-large); }
+  font-size: var(--text-xx-large); }
 
 .xxx-large {
-  font-size: var(--xxx-large); }
+  font-size: var(--text-xxx-large); }
 
 /* Display */
 .flex {
@@ -174,70 +175,70 @@ a:hover {
   font-weight: var(--semibold); }
 
 /* Font-stack */
-.m-page-heading-3xl {
+.m-page-heading-xxx-large {
   font-family: var(--font-second-family);
   font-weight: var(--regular);
-  font-size: var(--xxx-large);
+  font-size: var(--text-xxx-large);
   font-style: normal;
-  line-height: var(--line-height-heading); }
+  line-height: var(--line-height-page-heading); }
 
-.m-page-heading-2xl {
+.m-page-heading-xx-large {
   font-family: var(--font-second-family);
   font-weight: var(--regular);
-  font-size: var(--xx-large);
+  font-size: var(--text-xx-large);
   font-style: normal;
-  line-height: var(--line-height-heading); }
+  line-height: var(--line-height-page-heading); }
 
-.m-subheading-xl {
+.m-subheading-x-large {
   font-family: var(--font-base-family);
   font-weight: var(--bold);
-  font-size: var(--x-large);
+  font-size: var(--text-x-large);
   font-style: normal;
   line-height: var(--line-height-heading); }
 
-.m-subheading-l {
+.m-subheading-large {
   font-family: var(--font-base-family);
   font-weight: var(--semibold);
-  font-size: var(--large);
+  font-size: var(--text-large);
   font-style: normal;
   line-height: var(--line-height-heading); }
 
-.m-subheading-m {
+.m-subheading-medium {
   font-family: var(--font-base-family);
   font-weight: var(--semibold);
-  font-size: var(--medium);
+  font-size: var(--text-medium);
   font-style: normal;
   line-height: var(--line-height-heading); }
 
-.m-card-titles-s {
+.m-card-titles-small {
   font-family: var(--font-base-family);
   font-weight: var(--semibold);
-  font-size: var(--small);
+  font-size: var(--text-small);
   font-style: normal;
-  line-height: var(--line-height-text); }
+  line-height: var(--lline-height-default); }
 
-.m-text-xs {
+.m-text-x-small {
   font-family: var(--font-base-family);
   font-weight: var(--regular);
-  font-size: var(--x-small);
+  font-size: var(--text-x-small);
   font-style: normal;
-  line-height: var(--line-height-text); }
+  line-height: var(--line-height-default); }
 
-.m-text-2xs {
+.m-text-xx-small {
   font-family: var(--font-base-family);
   font-weight: var(--regular);
-  font-size: var(--xx-small);
+  font-size: var(--text-xx-small);
   font-style: normal;
-  line-height: var(--line-height-text); }
+  line-height: var(--line-height-default); }
 
-.m-details-3xs {
+.m-details-xxx-small {
   font-family: var(--font-base-family);
   font-weight: var(--bold);
-  font-size: var(--xxx-small);
+  font-size: var(--text-xxx-small);
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 1.25px;
-  line-height: var(--line-height-text); }
+  line-height: var(--line-height-default); }
 
 /* Color */
 .m-color-blue-100 {
