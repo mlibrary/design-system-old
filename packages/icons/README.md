@@ -7,7 +7,7 @@ This package includes University of Michigan Library icons and related tools.
 The recommended way to use Duet Icons is through our npm package. To install, simply run:
 
 ```
-npm isntall @umich-lib/icons
+npm install @umich-lib/icons
 ```
 
 The API can then be used as follows
