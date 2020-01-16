@@ -1,0 +1,8 @@
+{
+  "name": "@umich-lib/components",
+  "version": "0.0.1",
+  "files": [
+    "assets/"
+  ],
+  "license": "MIT"
+}
