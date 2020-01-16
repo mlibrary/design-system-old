@@ -1,70 +1,70 @@
 /* Font-stack */
 
 $font-stack-map: (
-  page-heading-3xl: (
+  page-heading-xxx-large: (
     font-family: var(--font-second-family),
-    font-size: var(--xxx-large),
+    font-size: var(--text-xxx-large),
     font-weight: var(--regular),
     font-style: normal,
-    line-height: var(--line-height-heading)
+    line-height: var(--line-height-page-heading)
   ),
-  page-heading-2xl: (
+  page-heading-xx-large: (
     font-family: var(--font-second-family),
     font-weight: var(--regular),
-    font-size: var(--xx-large),
+    font-size: var(--text-xx-large),
     font-style: normal,
-    line-height: var(--line-height-heading)
+    line-height: var(--line-height-page-heading)
   ),
-  subheading-xl: (
+  subheading-x-large: (
     font-family: var(--font-base-family),
-    font-size: var(--x-large),
+    font-size: var(--text-x-large),
     font-weight: var(--bold),
     font-style: normal,
     line-height: var(--line-height-heading)
   ),
-  subheading-l: (
+  subheading-large: (
     font-family: var(--font-base-family),
-    font-size: var(--large),
+    font-size: var(--text-large),
     font-weight: var(--semibold),
     font-style: normal,
     line-height: var(--line-height-heading)
   ),
-  subheading-m: (
+  subheading-medium: (
     font-family: var(--font-base-family),
-    font-size: var(--medium),
+    font-size: var(--text-medium),
     font-weight: var(--semibold),
     font-style: normal,
     line-height: var(--line-height-heading)
   ),
-  card-titles-s: (
+  card-titles-small: (
     font-family: var(--font-base-family),
-    font-size: var(--small),
+    font-size: var(--text-small),
     font-weight: var(--semibold),
     font-style: normal,
-    line-height: var(--line-height-text)
+    line-height: var(--lline-height-default)
   ),
-  text-xs: (
+  text-x-small: (
     font-family: var(--font-base-family),
-    font-size: var(--x-small),
+    font-size: var(--text-x-small),
     font-weight: var(--regular),
     font-style: normal,
-    line-height: var(--line-height-text)
+    line-height: var(--line-height-default)
   ),
-  text-2xs: (
+  text-xx-small: (
     font-family: var(--font-base-family),
-    font-size: var(--xx-small),
+    font-size: var(--text-xx-small),
     font-weight: var(--regular),
     font-style: normal,
-    line-height: var(--line-height-text)
+    line-height: var(--line-height-default)
   ),
-  details-3xs: (
+  details-xxx-small: (
     font-family: var(--font-base-family),
-    font-size: var(--xxx-small),
+    font-size: var(--text-xxx-small),
     font-weight: var(--bold),
     font-style: normal,
     text-transform: uppercase,
     letter-spacing: 1.25px,
-    line-height: var(--line-height-text)
+    line-height: var(--line-height-default)
   )
 );
 
