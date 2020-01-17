@@ -38,7 +38,7 @@ export class UniversalHeader {
                 )}
               </div>
             </button>
-            {!this.open && <div class="m-uh__dropdown">List of sites</div>}
+            {this.open && <div class="m-uh__dropdown">List of sites</div>}
           </div>
         </div>
       </header>
