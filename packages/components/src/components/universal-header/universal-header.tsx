@@ -1,5 +1,4 @@
 import { Component, State, h } from "@stencil/core";
-import cn from "classnames";
 
 @Component({
   tag: "m-universal-header",
@@ -33,23 +32,9 @@ export class UniversalHeader {
               <span class="m-uh__button-label">Explore</span>
               <div aria-hidden="true" class="m-uh__icons">
                 {!this.open ? (
-                  <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    class="m-uh__open-icon"
-                  >
-                    <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
-                  </svg>
+                  <m-icon name="expand-more"></m-icon>
                 ) : (
-                  <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    class="m-uh__close-icon"
-                  >
-                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-                  </svg>
+                  <m-icon name="expand-less"></m-icon>
                 )}
               </div>
             </button>

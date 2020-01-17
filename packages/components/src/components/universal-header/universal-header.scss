@@ -59,12 +59,10 @@
   line-height: 0;
 }
 
-.m-uh__open-icon,
-.m-uh__close-icon {
+.m-uh__icons [data-m-icon-svg] {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  fill: var(--color-neutral-300);
 }
 
 .m-uh__dropdown {

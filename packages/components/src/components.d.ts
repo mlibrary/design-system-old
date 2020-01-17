@@ -5,16 +5,21 @@
  * It contains typing information for all components that exist in this project.
  */
 
-import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+
 
 export namespace Components {
   interface MChat {}
   interface MIcon {
-    name: string;
+    'name': string;
   }
+  interface MUniversalHeader {}
 }
 
 declare global {
+
+
   interface HTMLMChatElement extends Components.MChat, HTMLStencilElement {}
   var HTMLMChatElement: {
     prototype: HTMLMChatElement;
@@ -26,31 +31,44 @@ declare global {
     prototype: HTMLMIconElement;
     new (): HTMLMIconElement;
   };
+
+  interface HTMLMUniversalHeaderElement extends Components.MUniversalHeader, HTMLStencilElement {}
+  var HTMLMUniversalHeaderElement: {
+    prototype: HTMLMUniversalHeaderElement;
+    new (): HTMLMUniversalHeaderElement;
+  };
   interface HTMLElementTagNameMap {
-    "m-chat": HTMLMChatElement;
-    "m-icon": HTMLMIconElement;
+    'm-chat': HTMLMChatElement;
+    'm-icon': HTMLMIconElement;
+    'm-universal-header': HTMLMUniversalHeaderElement;
   }
 }
 
 declare namespace LocalJSX {
   interface MChat {}
   interface MIcon {
-    name?: string;
+    'name'?: string;
   }
+  interface MUniversalHeader {}
 
   interface IntrinsicElements {
-    "m-chat": MChat;
-    "m-icon": MIcon;
+    'm-chat': MChat;
+    'm-icon': MIcon;
+    'm-universal-header': MUniversalHeader;
   }
 }
 
 export { LocalJSX as JSX };
 
+
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      "m-chat": LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
-      "m-icon": LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
+      'm-chat': LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
+      'm-icon': LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
+      'm-universal-header': LocalJSX.MUniversalHeader & JSXBase.HTMLAttributes<HTMLMUniversalHeaderElement>;
     }
   }
 }
+
+
