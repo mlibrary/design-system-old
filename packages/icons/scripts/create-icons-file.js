@@ -14,7 +14,10 @@ fs.readdir(directoryPath, function(error, files) {
   }
 
   const icons = files.reduce((acc, fileName) => {
-    const name = fileName.replace(".svg", "").replace("_", "-");
+    const name = fileName
+      .replace(".svg", "")
+      .split("_")
+      .join("-");
     const filePath = path.join(directoryPath, fileName);
     const file = fs.readFileSync(filePath, "utf8");
 
