@@ -2,7 +2,9 @@
   "name": "@umich-lib/icons",
   "version": "0.0.1",
   "files": [
-    "svgs/"
+    "svgs/",
+    "dist/"
   ],
+  "main": "dist/icons.js",
   "license": "MIT"
 }
