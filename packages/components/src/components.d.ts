@@ -11,7 +11,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface MChat {}
-  interface MIcon {}
+  interface MIcon {
+    'name': string;
+  }
 }
 
 declare global {
@@ -36,7 +38,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface MChat {}
-  interface MIcon {}
+  interface MIcon {
+    'name'?: string;
+  }
 
   interface IntrinsicElements {
     'm-chat': MChat;

@@ -1,3 +1,19 @@
-export default { title: "Icons" };
+import icons from "@umich-lib/icons";
 
-export const Search = () => `<m-icon name="search"></m-icon>`;
+export default { title: "Icon" };
+
+export function allIcons() {
+  const iconElements = Object.keys(icons).map(iconName => {
+    return `
+      <li>
+        <m-icon name="${iconName}"></m-icon> ${iconName}
+      </li>
+    `;
+  });
+
+  return `
+    <ul>
+      ${iconElements.join("\r\n")}
+    </ul>
+  `;
+}
