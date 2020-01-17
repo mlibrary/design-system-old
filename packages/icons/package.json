@@ -1,0 +1,14 @@
+{
+  "name": "@umich-lib/icons",
+  "version": "0.0.1",
+  "main": "dist/icons.js",
+  "files": [
+    "svgs",
+    "dist"
+  ],
+  "scripts": {
+    "start": "npm run build",
+    "build": "node scripts/create-icons-file.js"
+  },
+  "license": "MIT"
+}
