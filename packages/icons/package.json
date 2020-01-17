@@ -2,7 +2,7 @@
   "name": "@umich-lib/icons",
   "version": "0.0.1",
   "files": [
-    "assets/"
+    "svgs/"
   ],
   "license": "MIT"
 }
