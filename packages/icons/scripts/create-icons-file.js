@@ -1,11 +1,12 @@
 /*
-  This is to build the `icons.js` main file that will have
+  This is to create the `icons.js` main file that will have
   all icons available for importing.
 */
 
 const fs = require("fs");
 const path = require("path");
 const directoryPath = path.join(__dirname, "../svgs/");
+const distPath = path.join(__dirname, "../dist/icons.js");
 
 fs.readdir(directoryPath, function(error, files) {
   if (error) {
@@ -13,18 +14,23 @@ fs.readdir(directoryPath, function(error, files) {
   }
 
   const icons = files.reduce((acc, fileName) => {
+    const name = fileName.replace(".svg", "").replace("_", "-");
     const filePath = path.join(directoryPath, fileName);
     const file = fs.readFileSync(filePath, "utf8");
 
+    // Build the large JavaScript file that contains
+    // all the icons.
     return {
       ...acc,
-      [fileName]: {
-        name: fileName,
+      [name]: {
+        name,
         svg: file
       }
     };
   }, {});
 
-  const iconsFile = `module.exports=${JSON.stringify(icons)};`;
-  fs.writeFileSync(`../dist/icons.js`, iconsFile);
+  const iconsFile = `const icons=${JSON.stringify(
+    icons
+  )};export default icons;`;
+  fs.writeFileSync(distPath, iconsFile, "utf8");
 });
