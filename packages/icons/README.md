@@ -1,10 +1,10 @@
 # University of Michigan Library Icons
 
-This package includes University of Michigan Library icons and related tools.
+This package includes U-M Library Icons and related tools.
 
 ## Usage
 
-The recommended way to use Duet Icons is through our npm package. To install, simply run:
+The recommended way to use U-M Library Icons is through our npm package. To install, simply run:
 
 ```
 npm install @umich-lib/icons

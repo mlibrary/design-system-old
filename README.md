@@ -1,16 +1,21 @@
-# Design System
+# U-M Library Design System
 
-This is the work-in-progress repository for advancements on the Design System.
+The University of Michigan Library Design System is a collection of reusable components and tools, guided by clear standards, that can be assembled together to build digital products and experiences.
 
-See [Components](https://github.com/mlibrary/design-system/tree/master/packages/components).
+## Structure
 
-See [CSS](https://github.com/mlibrary/design-system/tree/master/packages/css).
+U-M Library Design System is divided into five front-end packages and Sketch Toolkit (TBD) that designers use. These tools can be used together or separately depending on your team's needs. Provided packages include:
 
+- Design Tokens
+- Components
+- CSS Framework
+- Icons
+- Fonts
 
 ## Development Quick Start
 
-`clone https://github.com/mlibrary/design-system.git`  
+`clone https://github.com/mlibrary/design-system.git`
 
-`npm install`  
+`npm install`
 
 `npm run start`
