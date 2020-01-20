@@ -1,5 +1,4 @@
 import { Component, State, h } from "@stencil/core";
-import cn from "classnames";
 
 @Component({
   tag: "m-universal-header",
@@ -12,9 +11,21 @@ export class UniversalHeader {
   }
 
   @State() open: boolean;
+  @State() content;
 
   toggle() {
     this.open = !this.open;
+  }
+
+  componentWillLoad() {
+    return fetch("https://cms.lib.umich.edu/api/universalheader")
+      .then(response => response.json())
+      .then(data => {
+        this.content = {
+          primary: data.filter(item => item.level === "1"),
+          secondary: data.filter(item => item.level === "2")
+        };
+      });
   }
 
   render() {
@@ -32,28 +43,35 @@ export class UniversalHeader {
             >
               <span class="m-uh__button-label">Explore</span>
               <div aria-hidden="true" class="m-uh__icons">
-                {!this.open ? (
-                  <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    class="m-uh__open-icon"
-                  >
-                    <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
-                  </svg>
+                {this.open ? (
+                  <m-icon name="expand-less"></m-icon>
                 ) : (
-                  <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    class="m-uh__close-icon"
-                  >
-                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-                  </svg>
+                  <m-icon name="expand-more"></m-icon>
                 )}
               </div>
             </button>
-            {!this.open && <div class="m-uh__dropdown">List of sites</div>}
+            {this.open && (
+              <div class="m-uh__dropdown">
+                <p class="m-uh__heading">
+                  Explore what the library has to offer.
+                </p>
+                <ul class="m-uh__list-primary">
+                  {this.content.primary.map(item => (
+                    <li>
+                      <a href={item.link}>{item.title}</a>
+                      <p>{item.description}</p>
+                    </li>
+                  ))}
+                </ul>
+                <ul class="m-uh__list-secondary">
+                  {this.content.secondary.map(item => (
+                    <li>
+                      <a href={item.link}>{item.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </header>
