@@ -3,8 +3,7 @@ import icons from "@umich-lib/icons";
 import { sendMessage } from "@umich-lib/utils";
 
 @Component({
-  tag: "m-icon",
-  styleUrl: "icon.scss"
+  tag: "m-icon"
 })
 export class Icon {
   @Prop() name: string;
