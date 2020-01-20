@@ -1,4 +1,4 @@
-# my-component
+# m-chat
 
 
 

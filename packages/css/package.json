@@ -16,7 +16,7 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp",
-    "format:check": "prettier --check 'src/*.scss' ",
-    "format:write": "prettier --write 'src/*.scss' "
+    "format:check": "prettier --check 'src/scss/*.scss' ",
+    "format:write": "prettier --write 'src/scss/*.scss' "
   }
 }

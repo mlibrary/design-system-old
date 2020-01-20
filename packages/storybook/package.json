@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@umich-lib/components": "^0.0.1",
-    "@umich-lib/css": "^0.0.1"
+    "@umich-lib/css": "^0.0.1",
+    "@umich-lib/icons": "^0.0.1"
   }
 }
