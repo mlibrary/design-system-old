@@ -1,4 +1,4 @@
-import { Component, State, h } from "@stencil/core";
+import { Component, State, h, Listen } from "@stencil/core";
 
 @Component({
   tag: "m-universal-header",
@@ -13,11 +13,10 @@ export class UniversalHeader {
   @State() open: boolean;
   @State() content;
 
-  toggle() {
-    this.open = !this.open;
-  }
-
   componentWillLoad() {
+    window.addEventListener("mousedown", this.handleClick);
+    window.addEventListener("keydown", this.handleKeydown);
+
     return fetch("https://cms.lib.umich.edu/api/universalheader")
       .then(response => response.json())
       .then(data => {
@@ -28,7 +27,29 @@ export class UniversalHeader {
       });
   }
 
+  componentWillUnload() {
+    window.removeEventListener("mousedown", this.handleClick);
+    window.removeEventListener("keydown", this.handleKeydown);
+  }
+
+  handleClick(e) {
+    console.log("handleClick", e);
+  }
+
+  handleKeydown(e) {
+    // ESC key
+    if (e.keyCode === 27) {
+      this.open = false;
+    }
+  }
+
+  toggle() {
+    this.open = !this.open;
+  }
+
   render() {
+    console.log("render", this.open);
+
     return (
       <header class="m-uh">
         <div class="m-uh__content">
