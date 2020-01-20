@@ -39,6 +39,7 @@ export class UniversalHeader {
   handleKeydown(e) {
     // ESC key
     if (e.keyCode === 27) {
+      console.log("ESC", e);
       this.open = false;
     }
   }
