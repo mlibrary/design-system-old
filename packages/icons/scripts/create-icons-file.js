@@ -5,20 +5,17 @@
 
 const fs = require("fs");
 const path = require("path");
-const directoryPath = path.join(__dirname, "../svgs/");
-const distPath = path.join(__dirname, "../dist/icons.js");
+const svgsPath = path.join(__dirname, "../svgs/");
+const distPath = path.join(__dirname, "../icons.js");
 
-fs.readdir(directoryPath, function(error, files) {
+fs.readdir(svgsPath, function(error, files) {
   if (error) {
     return console.log("Unable to read directory");
   }
 
   const icons = files.reduce((acc, fileName) => {
-    const name = fileName
-      .replace(".svg", "")
-      .split("_")
-      .join("-");
-    const filePath = path.join(directoryPath, fileName);
+    const name = fileName.replace(".svg", "");
+    const filePath = path.join(svgsPath, fileName);
     const file = fs.readFileSync(filePath, "utf8");
 
     // Build the large JavaScript file that contains
