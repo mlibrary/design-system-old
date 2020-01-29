@@ -1,5 +1,6 @@
 {
   "name": "@umich-lib/storybook",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "copy:components": "ncp node_modules/@umich-lib/components/ src/SPECIFY_YOUR_PATH",
@@ -14,8 +15,8 @@
     "babel-loader": "^8.0.6"
   },
   "dependencies": {
-    "@umich-lib/components": "^0.0.1",
-    "@umich-lib/css": "^0.0.1",
-    "@umich-lib/icons": "^0.0.1"
+    "@umich-lib/components": "^0.0.0",
+    "@umich-lib/css": "^0.0.0",
+    "@umich-lib/icons": "^0.0.0"
   }
 }

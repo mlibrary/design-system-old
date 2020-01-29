@@ -1,8 +1,11 @@
 {
   "name": "@umich-lib/utils",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "main": "src/index.js",
   "files": [
     "src"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

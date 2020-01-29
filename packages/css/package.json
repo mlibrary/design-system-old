@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/css",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "files": [
     "lib/"
   ],
@@ -18,5 +18,8 @@
     "build": "gulp",
     "format:check": "prettier --check 'src/scss/*.scss' ",
     "format:write": "prettier --write 'src/scss/*.scss' "
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
