@@ -14,7 +14,7 @@
     "packages:start": "lerna run start --stream --parallel",
     "packages:build": "lerna run build --stream",
     "start": "npm-run-all -s lerna:bootstrap -p packages:start storybook:start",
-    "build": "npm run lerna:bootstrap && npm run packages:build && storybook:start",
+    "build": "npm-run-all -s lerna:bootstrap packages:build storybook:build",
     "storybook:start": "start-storybook -s ./packages/components/dist/umich-lib,./packages/css/dist",
     "storybook:build": "build-storybook -s ./packages/components/dist/umich-lib,./packages/css/dist --quiet"
   }
