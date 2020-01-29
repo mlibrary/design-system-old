@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/icons",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "main": "icons.js",
   "files": [
     "svgs",
