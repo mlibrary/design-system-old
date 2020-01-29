@@ -2,8 +2,8 @@
   "name": "umich-lib-design-system",
   "private": true,
   "devDependencies": {
-    "@types/node": "^12.12.11",
-    "lerna": "^3.19.0"
+    "@types/node": "^13.5.0",
+    "lerna": "^3.20.2"
   },
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
