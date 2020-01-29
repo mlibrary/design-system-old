@@ -1,4 +1,4 @@
-import { Component, State, h, Listen } from "@stencil/core";
+import { Component, State, h, Listen, Element } from "@stencil/core";
 
 @Component({
   tag: "m-universal-header",
@@ -8,6 +8,7 @@ import { Component, State, h, Listen } from "@stencil/core";
 export class UniversalHeader {
   @State() open = false;
   @State() content;
+  @Element() el: HTMLElement;
 
   componentWillLoad() {
     return fetch("https://cms.lib.umich.edu/api/universalheader")
@@ -20,15 +21,27 @@ export class UniversalHeader {
       });
   }
 
-  handleClick(e) {
-    console.log("handleClick", e);
+  @Listen("click", { target: "window" })
+  closeOnOutsideElementClick(e) {
+    if (this.open) {
+      const dropdownEl = this.el.shadowRoot.querySelector(".m-uh__dropdown");
+      const clickInside = dropdownEl.contains(e.target);
+
+      console.log("dropdownEl", dropdownEl);
+      console.log("clickInside", clickInside);
+
+      /*
+      if (!dropdownEl.contains(e.target)) {
+        this.open = false;
+      }
+      */
+    }
   }
 
   @Listen("keydown", { target: "window" })
-  handleKeydown(e) {
+  closeOnESC(e) {
     // ESC key
     if (e.keyCode === 27) {
-      console.log("ESC", e);
       this.open = false;
     }
   }
@@ -38,8 +51,6 @@ export class UniversalHeader {
   }
 
   render() {
-    console.log("render", this.open);
-
     return (
       <header class="m-uh">
         <div class="m-uh__content">
