@@ -1,4 +1,4 @@
-import icons from "@umich-lib/icons";
+import icons from "../../packages/icons/icons";
 
 export default { title: "Icon" };
 
