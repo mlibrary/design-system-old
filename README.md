@@ -8,6 +8,7 @@ U-M Library Design System is divided into front-end packages. These tools can be
 
 - Components
 - CSS
+- Icons
 
 ## Getting started
 
@@ -37,6 +38,40 @@ If you’re working on a simple HTML page, you can start using the CSS immediate
 
 ```
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/@umich-lib/css@latest/dist/umich-lib.css" media="screen" />
+```
+
+### Icons
+
+Icons are used to provide additional meaning or in places where text label doesn’t fit. They communicate messages at a glance and draw attention to important information.
+
+The recommended way to use Duet Icons is through our npm package. To install, simply run:
+
+```
+npm install @umich-lib/icons
+```
+
+The API can then be used as follows:
+
+```
+import icons from "@umich-lib/icons"
+console.log(icons["people"]);
+
+/*{
+  title: 'action-edit',
+  svg: '<svg role="img" viewBox="0 0 24 24" ...'
+}*/
+```
+
+Icons can also be served from a CDN such as Unpkg. To use the @umich-lib/icons npm package:
+
+```
+<img height="16" width="16" src="https://unpkg.com/@umich-lib/icons@latest/svgs/[ICON NAME].svg" />
+```
+
+Where [ICON NAME] is replaced by the icon name, for example:
+
+```
+<img height="16" width="16" src="https://unpkg.com/@umich-lib/icons@latest/svgs/people.svg" />
 ```
 
 ## Repo Development
