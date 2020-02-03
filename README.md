@@ -44,7 +44,7 @@ If you’re working on a simple HTML page, you can start using the CSS immediate
 
 Icons are used to provide additional meaning or in places where text label doesn’t fit. They communicate messages at a glance and draw attention to important information.
 
-The recommended way to use Duet Icons is through our npm package. To install, simply run:
+The recommended way to use Icons is through our npm package. To install, simply run:
 
 ```
 npm install @umich-lib/icons
