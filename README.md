@@ -74,7 +74,7 @@ Where [ICON NAME] is replaced by the icon name, for example:
 <img height="16" width="16" src="https://unpkg.com/@umich-lib/icons@latest/svgs/people.svg" />
 ```
 
-## Contribute
+## Contribute to repo
 
 Clone the repo, install dependencies, and then `npm start` the systems.
 
