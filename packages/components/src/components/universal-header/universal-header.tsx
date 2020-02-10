@@ -6,17 +6,12 @@ import { Component, State, h, Listen } from "@stencil/core";
   shadow: true
 })
 export class UniversalHeader {
-  constructor() {
-    this.open = false;
-  }
-
-  @State() open: boolean;
+  @State() open = false;
   @State() content;
 
-  componentWillLoad() {
-    window.addEventListener("mousedown", this.handleClick);
-    window.addEventListener("keydown", this.handleKeydown);
+  dropdown!: HTMLElement;
 
+  componentWillLoad() {
     return fetch("https://cms.lib.umich.edu/api/universalheader")
       .then(response => response.json())
       .then(data => {
@@ -27,20 +22,22 @@ export class UniversalHeader {
       });
   }
 
-  componentWillUnload() {
-    window.removeEventListener("mousedown", this.handleClick);
-    window.removeEventListener("keydown", this.handleKeydown);
-  }
-
-  handleClick(e) {
-    console.log("handleClick", e);
-  }
-
+  @Listen("keydown", { target: "window" })
   handleKeydown(e) {
-    // ESC key
-    if (e.keyCode === 27) {
-      console.log("ESC", e);
+    if (e.key === "Escape") {
       this.open = false;
+    }
+  }
+
+  @Listen("click", { target: "window" })
+  handleMouseDown(e) {
+    // Close on click outside of open dropdown, except the explore button.
+    if (this.dropdown) {
+      // This only works when not using the shadow dom.
+      // But how could we make this work with shadow dom enabled?
+      if (!this.dropdown.contains(e.target)) {
+        this.open = false;
+      }
     }
   }
 
@@ -49,8 +46,6 @@ export class UniversalHeader {
   }
 
   render() {
-    console.log("render", this.open);
-
     return (
       <header class="m-uh">
         <div class="m-uh__content">
@@ -73,22 +68,29 @@ export class UniversalHeader {
               </div>
             </button>
             {this.open && (
-              <div class="m-uh__dropdown">
+              <div
+                class="m-uh__dropdown"
+                ref={el => (this.dropdown = el as HTMLElement)}
+              >
                 <p class="m-uh__heading">
                   Explore what the library has to offer.
                 </p>
                 <ul class="m-uh__list-primary">
                   {this.content.primary.map(item => (
                     <li>
-                      <a href={item.link}>{item.title}</a>
-                      <p>{item.description}</p>
+                      <a href={item.link} class="m-uh__item-link">
+                        <span class="m-uh__item-title">{item.title}</span>
+                        <span class="m-uh__item-desc">{item.description}</span>
+                      </a>
                     </li>
                   ))}
                 </ul>
                 <ul class="m-uh__list-secondary">
                   {this.content.secondary.map(item => (
                     <li>
-                      <a href={item.link}>{item.title}</a>
+                      <a href={item.link} class="m-uh__item-link">
+                        <span class="m-uh__item-title">{item.title}</span>
+                      </a>
                     </li>
                   ))}
                 </ul>
