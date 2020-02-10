@@ -2,14 +2,21 @@
   "name": "umich-lib-design-system",
   "private": true,
   "devDependencies": {
-    "@types/node": "^12.12.11",
-    "lerna": "^3.19.0"
+    "@babel/core": "^7.7.4",
+    "@storybook/html": "^5.2.8",
+    "@types/node": "^13.5.0",
+    "babel-loader": "^8.0.6",
+    "lerna": "^3.20.2",
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
+    "lerna:publish": "lerna publish",
     "packages:start": "lerna run start --stream --parallel",
     "packages:build": "lerna run build --stream",
-    "start": "npm run lerna:bootstrap && npm run packages:start",
-    "build": "npm run lerna:bootstrap && npm run packages:build"
+    "start": "npm-run-all -s lerna:bootstrap -p packages:start storybook:start",
+    "build": "npm-run-all -s lerna:bootstrap packages:build storybook:build",
+    "storybook:start": "start-storybook -s ./packages/components/dist/umich-lib,./packages/css/dist",
+    "storybook:build": "build-storybook -s ./packages/components/dist/umich-lib,./packages/css/dist --quiet"
   }
 }

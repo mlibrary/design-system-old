@@ -39,8 +39,8 @@ fs.readdir(sourcePath, function(error, files) {
     const filePath = path.join(sourcePath, fileName);
     const file = fs.readFileSync(filePath, "utf8");
     const processedFile = file.replace(
-      `xmlns="http://www.w3.org/2000/svg" width="24" height="24"`,
-      `role="presentation" width="16" height="16" fill="currentColor" data-m-icon-svg=""`
+      `width="24" height="24"`,
+      `role="presentation" width="16" height="16" fill="currentColor"`
     );
 
     const distName = fileName

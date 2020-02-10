@@ -1,15 +1,15 @@
 {
   "name": "@umich-lib/css",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.1",
   "files": [
-    "lib/"
+    "dist/"
   ],
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0",
     "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "gulp-theo": "^2.0.0",
+    "node-sass": "^4.13.0",
     "prettier": "1.19.1",
     "theo": "^8.1.4"
   },
@@ -18,5 +18,8 @@
     "build": "gulp",
     "format:check": "prettier --check 'src/scss/*.scss' ",
     "format:write": "prettier --write 'src/scss/*.scss' "
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
