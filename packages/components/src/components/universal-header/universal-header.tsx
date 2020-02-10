@@ -1,4 +1,4 @@
-import { Component, State, h, Listen } from "@stencil/core";
+import { Component, State, h, Listen, Element } from "@stencil/core";
 
 @Component({
   tag: "m-universal-header",
@@ -8,6 +8,7 @@ import { Component, State, h, Listen } from "@stencil/core";
 export class UniversalHeader {
   @State() open = false;
   @State() content;
+  @Element() el: HTMLElement;
 
   dropdown!: HTMLElement;
 
