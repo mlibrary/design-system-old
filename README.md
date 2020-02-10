@@ -74,10 +74,14 @@ Where [ICON NAME] is replaced by the icon name, for example:
 <img height="16" width="16" src="https://unpkg.com/@umich-lib/icons@latest/svgs/people.svg" />
 ```
 
-## Repo Development
+## Contribute
+
+Clone the repo, install dependencies, and then `npm start` the systems.
 
 ```
 clone https://github.com/mlibrary/design-system.git
 npm install
-npm run start
+npm start
 ```
+
+A Stencil.js page and Storybook should open up in your browser after starting.
