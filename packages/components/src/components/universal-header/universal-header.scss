@@ -52,6 +52,7 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: var(--bold);
+  font-family: var(--font-base-family);
 
   &:hover {
     .m-uh__button-label {
@@ -62,7 +63,6 @@
 }
 
 .m-uh__button-label {
-  font-weight: 600;
   padding-right: var(--space-xx-small);
 }
 
