@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/components",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@umich-lib/css": "^0.0.1-alpha.1",
-    "@umich-lib/icons": "^0.0.1-alpha.2",
+    "@umich-lib/icons": "^0.0.1-alpha.3",
     "@umich-lib/utils": "^0.0.1-alpha.0",
     "classnames": "^2.2.6"
   },
