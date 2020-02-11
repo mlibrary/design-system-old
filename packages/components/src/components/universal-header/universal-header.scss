@@ -80,6 +80,24 @@
   &:hover {
     text-decoration: underline;
   }
+
+  @media screen and (min-width: 721px) {
+    display: block;
+  }
+}
+
+.m-uh__link-text {
+  display: block;
+  @media screen and (max-width: 620px) {
+    display: none;
+  }
+}
+
+.m-uh__link-text--small {
+  display: none;
+  @media screen and (max-width: 620px) {
+    display: block;
+  }
 }
 
 .m-uh__icons {

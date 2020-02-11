@@ -47,7 +47,10 @@ export class UniversalHeader {
       <header class="m-uh">
         <div class="m-uh__content">
           <a class="m-uh__link" href="https://www.lib.umich.edu/">
-            University of Michigan Library
+            <span class="m-uh__link-text">University of Michigan Library</span>
+            <span class="m-uh__link-text--small">
+              <abbr title="University of Michigan">U-M</abbr> Library
+            </span>
           </a>
           <div class="m-uh__button-container">
             <button
