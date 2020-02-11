@@ -217,3 +217,15 @@
     color: var(--color-neutral-300);
   }
 }
+
+.m-uh__dropdown-error {
+  padding: 0 var(--space-medium);
+
+  strong {
+    font-weight: var(--bold);
+  }
+
+  a {
+    color: var(--color-teal-400);
+  }
+}
