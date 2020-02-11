@@ -18,14 +18,20 @@ U-M Library Design System makes it easy to implement and use its components acro
 
 If you’re working on a simple HTML page, you can start using the components immediately by adding these script tags to the `<head>`:
 
-```
-<script type="module" src="https://unpkg.com/@umich-lib/components/dist/umich-lib/umich-lib.esm.js"></script>
-<script nomodule src="https://unpkg.com/@umich-lib/components/dist/umich-lib/umich-lib.js"></script>
+```html
+<script
+  type="module"
+  src="https://unpkg.com/@umich-lib/components/dist/umich-lib/umich-lib.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/@umich-lib/components/dist/umich-lib/umich-lib.js"
+></script>
 ```
 
 Once included, components can be used in your markup like any other regular HTML elements:
 
-```
+```html
 <m-universal-header></m-universal-header>
 <m-icon name="search"></m-icon>
 <m-chat></m-chat>
@@ -37,8 +43,13 @@ Get started with the Design System’s CSS that includes a wide range of shortha
 
 If you’re working on a simple HTML page, you can start using the CSS immediately by adding these script tags to the `<head>`:
 
-```
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/@umich-lib/css@latest/dist/umich-lib.css" media="screen" />
+```html
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://unpkg.com/@umich-lib/css@latest/dist/umich-lib.css"
+  media="screen"
+/>
 ```
 
 ### Icons
@@ -53,8 +64,8 @@ npm install @umich-lib/icons
 
 The API can then be used as follows:
 
-```
-import icons from "@umich-lib/icons"
+```js
+import icons from "@umich-lib/icons";
 console.log(icons["people"]);
 
 /*{
@@ -65,19 +76,27 @@ console.log(icons["people"]);
 
 Icons can also be served from a CDN such as Unpkg. To use the @umich-lib/icons npm package:
 
-```
-<img height="16" width="16" src="https://unpkg.com/@umich-lib/icons@latest/svgs/[ICON NAME].svg" />
+```html
+<img
+  height="16"
+  width="16"
+  src="https://unpkg.com/@umich-lib/icons@latest/svgs/[ICON NAME].svg"
+/>
 ```
 
 Where [ICON NAME] is replaced by the icon name, for example:
 
-```
-<img height="16" width="16" src="https://unpkg.com/@umich-lib/icons@latest/svgs/people.svg" />
+```html
+<img
+  height="16"
+  width="16"
+  src="https://unpkg.com/@umich-lib/icons@latest/svgs/people.svg"
+/>
 ```
 
 ## Basic Template
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
