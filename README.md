@@ -75,6 +75,49 @@ Where [ICON NAME] is replaced by the icon name, for example:
 <img height="16" width="16" src="https://unpkg.com/@umich-lib/icons@latest/svgs/people.svg" />
 ```
 
+## Basic Template
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic Template | U-M Library Design System</title>
+
+    <script
+      type="module"
+      src="https://unpkg.com/@umich-lib/components@latest/dist/umich-lib/umich-lib.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@umich-lib/components@latest/dist/umich-lib/umich-lib.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@umich-lib/css@latest/dist/umich-lib.css"
+      media="screen"
+    />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-base-family);
+        font-size: var(--default-base-size);
+      }
+    </style>
+  </head>
+  <body>
+    <m-universal-header></m-universal-header>
+    <m-chat></m-chat>
+  </body>
+</html>
+```
+
 ## Contribute to repo
 
 Clone the repo, install dependencies, and then `npm start` the systems.
