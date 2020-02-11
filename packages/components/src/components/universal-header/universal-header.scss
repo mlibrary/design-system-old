@@ -45,6 +45,7 @@
 
 .m-uh__button,
 .m-uh__link {
+  margin: 0;
   text-transform: uppercase;
   padding: var(--space-x-small) 0;
   color: var(--color-neutral-300);
@@ -52,6 +53,7 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: var(--bold);
+  font-family: var(--font-base-family);
 
   &:hover {
     .m-uh__button-label {
@@ -62,7 +64,6 @@
 }
 
 .m-uh__button-label {
-  font-weight: 600;
   padding-right: var(--space-xx-small);
 }
 
