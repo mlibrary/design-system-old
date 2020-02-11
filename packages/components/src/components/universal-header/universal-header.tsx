@@ -30,15 +30,14 @@ export class UniversalHeader {
     }
   }
 
-  @Listen("click", { target: "window" })
-  handleMouseDown(e) {
-    // Close on click outside of open dropdown, except the explore button.
-    if (this.dropdown) {
-      // This only works when not using the shadow dom.
-      // But how could we make this work with shadow dom enabled?
-      if (!this.dropdown.contains(e.target)) {
-        this.open = false;
-      }
+  @Listen("click", { target: "document" })
+  handleClick(e) {
+    // must exists (be open)
+    if (
+      this.dropdown &&
+      !(e.target.shadowRoot && e.target.shadowRoot.contains(this.dropdown))
+    ) {
+      this.open = false;
     }
   }
 
