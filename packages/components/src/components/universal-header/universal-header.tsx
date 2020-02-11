@@ -32,11 +32,8 @@ export class UniversalHeader {
 
   @Listen("click", { target: "document" })
   handleClick(e) {
-    // must exists (be open)
-    if (
-      this.dropdown &&
-      !(e.target.shadowRoot && e.target.shadowRoot.contains(this.dropdown))
-    ) {
+    // Close on click outside of dropdown.
+    if (this.dropdown && !this.dropdown.contains(e.composedPath()[0])) {
       this.open = false;
     }
   }
