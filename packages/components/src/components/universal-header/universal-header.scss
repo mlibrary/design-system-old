@@ -8,6 +8,10 @@
   line-height: var(--line-height-default);
   font-size: 16px;
 
+  * {
+    box-sizing: border-box;
+  }
+
   *:focus {
     outline: 0;
     box-shadow: 0 0 0 2px var(--color-maize-400),
@@ -79,6 +83,7 @@
 
   &:hover {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
   }
 
   @media screen and (min-width: 721px) {
