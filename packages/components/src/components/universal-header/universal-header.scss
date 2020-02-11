@@ -9,7 +9,7 @@
   font-size: 16px;
 
   *:focus {
-    outline: none;
+    outline: 0;
     box-shadow: 0 0 0 2px var(--color-maize-400),
       0 0 0 3px var(--color-neutral-400);
     border-radius: 2px !important;
@@ -35,7 +35,6 @@
   */
   border: none;
   background: none;
-  outline: 0;
   font-size: var(--font-base-size);
   color: var(--color-neutral-400);
   text-align: left;
