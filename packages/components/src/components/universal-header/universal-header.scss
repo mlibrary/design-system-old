@@ -90,7 +90,7 @@
   background: white;
   border-radius: 2px;
 
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 721px) {
     display: grid;
     grid-template: "heading heading" "primary secondary" / 1fr 280px;
     padding: var(--space-medium);
@@ -129,7 +129,7 @@
 
 .m-uh__list-primary {
   grid-area: primary;
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 721px) {
     border-right: solid 1px var(--color-neutral-100);
     margin-right: var(--space-medium);
     padding-right: var(--space-medium);
@@ -180,7 +180,7 @@
 .m-uh__item-desc {
   display: none;
 
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 721px) {
     display: block;
     font-weight: 400;
     color: var(--color-neutral-300);
