@@ -14,7 +14,7 @@ export class UniversalHeader {
   dropdown!: HTMLElement;
 
   componentWillLoad() {
-    return fetch("https://cms.lib.umich.edu/api/universalheader")
+    fetch("https://cms.lib.umich.edu/api/universalheader")
       .then(response => response.json())
       .then(data => {
         this.content = {
@@ -25,6 +25,12 @@ export class UniversalHeader {
       .catch(() => {
         this.error = true;
       });
+  }
+
+  @Listen("focusout", { target: this.el })
+  close() {
+    // Close when focus leaves universal header.
+    this.open = false;
   }
 
   @Listen("keydown", { target: "window" })
