@@ -1,3 +1,5 @@
+> ⚠️ **This repo is in active development**. Its purpose is to explore how we can distribute the Design System using standardized web platform APIs and Web Components. Looking for the [React distribution](https://github.com/mlibrary/umich-lib-ui/)? 
+
 # U-M Library Design System
 
 The University of Michigan Library Design System is a collection of reusable components and tools, guided by clear standards, that can be assembled together to build digital products and experiences.
@@ -113,20 +115,10 @@ Where [ICON NAME] is replaced by the icon name, for example:
       nomodule
       src="https://unpkg.com/@umich-lib/components@latest/dist/umich-lib/umich-lib.js"
     ></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://unpkg.com/@umich-lib/css@latest/dist/umich-lib.css"
-      media="screen"
-    />
 
     <style>
-      html,
       body {
         margin: 0;
-        padding: 0;
-        font-family: var(--font-base-family);
-        font-size: var(--default-base-size);
       }
     </style>
   </head>
