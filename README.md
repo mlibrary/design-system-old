@@ -137,6 +137,8 @@ Where [ICON NAME] is replaced by the icon name, for example:
 </html>
 ```
 
+[![Edit @umich-lib/components and @umich-lib/css with unpkg](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/umich-libcomponents-and-umich-libcss-with-unpkg-468rj?fontsize=14&hidenavigation=1&theme=dark)
+
 ## Contribute to repo
 
 Clone the repo, install dependencies, and then `npm start` the systems.
