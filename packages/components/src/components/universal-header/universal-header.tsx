@@ -27,6 +27,12 @@ export class UniversalHeader {
       });
   }
 
+  @Listen("focusout", { target: this.el })
+  close() {
+    // Close when focus leaves universal header.
+    this.open = false;
+  }
+
   @Listen("keydown", { target: "window" })
   handleKeydown(e) {
     if (e.key === "Escape") {
