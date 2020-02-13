@@ -11,7 +11,8 @@
   "unpkg": "dist/components/components.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "hydrate/"
   ],
   "scripts": {
     "build": "stencil build --docs",
