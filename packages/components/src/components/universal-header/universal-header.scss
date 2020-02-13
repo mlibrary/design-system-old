@@ -111,20 +111,20 @@
 
 .m-uh__dropdown {
   position: absolute;
-  right: 0;
-  width: 320px;
-  max-width: calc(100vw - (var(--space-medium) * 2));
-  margin-left: var(--space-x-large);
+  right: calc(-1 * var(--space-medium));
+  width: 280px;
   box-shadow: var(--z-space-medium);
+  max-width: calc(100vw - (var(--space-medium) * 4));
   background: white;
   border-radius: 2px;
+  z-index: 2;
 
   @media screen and (min-width: 721px) {
     display: grid;
     grid-template: "heading heading" "primary secondary" / 1fr 280px;
     padding: var(--space-medium);
     width: 862px;
-    max-width: calc(100vw - (var(--space-medium) * 4));
+    right: 0;
   }
 }
 
