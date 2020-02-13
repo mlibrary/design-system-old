@@ -25,7 +25,11 @@
   justify-content: space-between;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 var(--space-medium);
+
+  @media screen and (min-width: 721px) {
+    padding: 0 var(--space-xx-large);
+  }
 }
 
 .m-uh__button-container {
@@ -114,7 +118,7 @@
   right: calc(-1 * var(--space-medium));
   width: 280px;
   box-shadow: var(--z-space-medium);
-  max-width: calc(100vw - (var(--space-medium) * 4));
+  max-width: calc(100vw - (var(--space-xx-large) * 2));
   background: white;
   border-radius: 2px;
   z-index: 2;
