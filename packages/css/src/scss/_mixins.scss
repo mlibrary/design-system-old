@@ -142,10 +142,6 @@ $color-map: (
   @include color-utilities();
 }
 
-.m-fill {
-  @include color-utilities(fill);
-}
-
 /* Spacing */
 
 $spacing-map: (
