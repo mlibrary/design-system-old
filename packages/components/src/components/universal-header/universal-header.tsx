@@ -13,7 +13,7 @@ export class UniversalHeader {
 
   dropdown!: HTMLElement;
 
-  componentWillLoad() {
+  componentDidLoad() {
     fetch("https://cms.lib.umich.edu/api/universalheader")
       .then(response => response.json())
       .then(data => {
