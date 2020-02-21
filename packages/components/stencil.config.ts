@@ -7,7 +7,7 @@ export const config: Config = {
   globalStyle: "./node_modules/@umich-lib/css/dist/umich-lib.css",
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: "@umich-lib/react",
+      componentCorePackage: "@umich-lib/components",
       proxiesFile: "../react/src/components.ts"
     }),
     {

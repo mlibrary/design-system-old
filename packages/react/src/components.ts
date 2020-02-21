@@ -3,9 +3,9 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import { JSX } from '@umich-lib/react';
+import { JSX } from '@umich-lib/components';
 
-import { defineCustomElements, applyPolyfills } from '@umich-lib/react/loader';
+import { defineCustomElements, applyPolyfills } from '@umich-lib/components/loader';
 
 applyPolyfills().then(() => defineCustomElements());
 export const MChat = /*@__PURE__*/createReactComponent<JSX.MChat, HTMLMChatElement>('m-chat');
