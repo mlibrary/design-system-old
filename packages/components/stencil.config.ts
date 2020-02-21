@@ -8,7 +8,7 @@ export const config: Config = {
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: "@umich-lib/components",
-      proxiesFile: "../react/src/components.ts"
+      proxiesFile: "../react/dist/components.ts"
     }),
     {
       type: "dist",
