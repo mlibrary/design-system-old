@@ -20,6 +20,9 @@ export const config: Config = {
     {
       type: "www",
       serviceWorker: null // disable service workers
+    },
+    {
+      type: "dist-hydrate-script" // Server Side Rendering: https://stenciljs.com/docs/hydrate-app#how-to-use-the-hydrate-app
     }
   ],
   plugins: [

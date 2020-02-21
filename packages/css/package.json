@@ -1,8 +1,8 @@
 {
   "name": "@umich-lib/css",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "files": [
-    "lib/"
+    "dist/"
   ],
   "devDependencies": {
     "gulp": "^4.0.2",

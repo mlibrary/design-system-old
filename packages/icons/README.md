@@ -28,15 +28,13 @@ import icons from "@umich-lib/icons"
 Icons can also be served from a CDN such as JSDelivr or Unpkg, but this should be only used for prototyping purposes. To use the @umich-lib/icons npm package and specify a version in the URL like the following:
 
 ```
-<img height="24" width="24" src="https://cdn.jsdelivr.net/npm/@umich-lib/icons/lib/assets/[ICON NAME].svg" />
-<img height="24" width="24" src="https://unpkg.com/@umich-lib/icons/lib/assets/[ICON NAME].svg" />
+<img height="24" width="24" src="https://unpkg.com/@umich-lib/icons/svgs/[ICON NAME].svg" />
 ```
 
 Where [ICON NAME] is replaced by the icon name, for example:
 
 ```
-<img height="24" width="24" src="https://cdn.jsdelivr.net/npm/@umich-lib/icons/lib/assets/search.svg" />
-<img height="24" width="24" src="https://unpkg.com/@umich-lib/icons/lib/assets/search.svg" />
+<img height="24" width="24" src="https://unpkg.com/@umich-lib/icons/svgs/search.svg" />
 ```
 
 See [University of Michigan Library Design System documentation](https://design-system.lib.umich.edu/iconography).

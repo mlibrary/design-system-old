@@ -14,6 +14,7 @@ export namespace Components {
   interface MIcon {
     'name': string;
   }
+  interface MUniversalHeader {}
 }
 
 declare global {
@@ -30,9 +31,16 @@ declare global {
     prototype: HTMLMIconElement;
     new (): HTMLMIconElement;
   };
+
+  interface HTMLMUniversalHeaderElement extends Components.MUniversalHeader, HTMLStencilElement {}
+  var HTMLMUniversalHeaderElement: {
+    prototype: HTMLMUniversalHeaderElement;
+    new (): HTMLMUniversalHeaderElement;
+  };
   interface HTMLElementTagNameMap {
     'm-chat': HTMLMChatElement;
     'm-icon': HTMLMIconElement;
+    'm-universal-header': HTMLMUniversalHeaderElement;
   }
 }
 
@@ -41,10 +49,12 @@ declare namespace LocalJSX {
   interface MIcon {
     'name'?: string;
   }
+  interface MUniversalHeader {}
 
   interface IntrinsicElements {
     'm-chat': MChat;
     'm-icon': MIcon;
+    'm-universal-header': MUniversalHeader;
   }
 }
 
@@ -56,6 +66,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'm-chat': LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
       'm-icon': LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
+      'm-universal-header': LocalJSX.MUniversalHeader & JSXBase.HTMLAttributes<HTMLMUniversalHeaderElement>;
     }
   }
 }
