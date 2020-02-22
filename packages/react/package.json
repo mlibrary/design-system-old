@@ -9,9 +9,7 @@
     "tsc": "tsc -p .",
     "rollup": "rollup -c"
   },
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/components.ts",
   "files": [
     "dist"
   ],
@@ -28,7 +26,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@umich-lib/components": "^0.0.1-alpha.0"
+    "@umich-lib/components": "^0.0.1-alpha.6"
   },
   "peerDependencies": {
     "react": "^16.12.0",
