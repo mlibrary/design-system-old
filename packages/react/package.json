@@ -9,7 +9,9 @@
     "tsc": "tsc -p .",
     "rollup": "rollup -c"
   },
-  "types": "./dist/components.ts",
+  "main": "./dist/components.js",
+  "module": "./dist/components.js",
+  "types": "./dist/components.d.ts",
   "files": [
     "dist"
   ],
