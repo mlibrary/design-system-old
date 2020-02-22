@@ -13,7 +13,7 @@
     "lerna:bootstrap": "lerna bootstrap --hoist",
     "lerna:publish": "lerna publish",
     "packages:start": "lerna run start --stream --parallel",
-    "packages:build": "lerna run build --stream",
+    "packages:build": "lerna run build --stream --ignore @umich-lib/react && lerna run build --stream --scope @umich-lib/react",
     "start": "npm-run-all -s lerna:bootstrap -p packages:start storybook:start",
     "build": "npm-run-all -s lerna:bootstrap packages:build storybook:build",
     "storybook:start": "start-storybook -s ./packages/components/dist/umich-lib,./packages/css/dist",
