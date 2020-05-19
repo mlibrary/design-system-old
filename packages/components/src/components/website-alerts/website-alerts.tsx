@@ -32,9 +32,9 @@ export class WebsiteAlerts {
           this.status = "no-alerts";
         }
       })
-      .catch(() => {
+      .catch(e => {
         this.status = "error";
-        console.warn("Unable to fetch U-M Library Website Alerts.");
+        console.warn("Unable to fetch U-M Library Website Alerts.", e);
       });
   }
 
