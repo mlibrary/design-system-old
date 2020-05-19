@@ -15,6 +15,7 @@ export namespace Components {
     'name': string;
   }
   interface MUniversalHeader {}
+  interface MWebsiteAlerts {}
 }
 
 declare global {
@@ -37,10 +38,17 @@ declare global {
     prototype: HTMLMUniversalHeaderElement;
     new (): HTMLMUniversalHeaderElement;
   };
+
+  interface HTMLMWebsiteAlertsElement extends Components.MWebsiteAlerts, HTMLStencilElement {}
+  var HTMLMWebsiteAlertsElement: {
+    prototype: HTMLMWebsiteAlertsElement;
+    new (): HTMLMWebsiteAlertsElement;
+  };
   interface HTMLElementTagNameMap {
     'm-chat': HTMLMChatElement;
     'm-icon': HTMLMIconElement;
     'm-universal-header': HTMLMUniversalHeaderElement;
+    'm-website-alerts': HTMLMWebsiteAlertsElement;
   }
 }
 
@@ -50,11 +58,13 @@ declare namespace LocalJSX {
     'name'?: string;
   }
   interface MUniversalHeader {}
+  interface MWebsiteAlerts {}
 
   interface IntrinsicElements {
     'm-chat': MChat;
     'm-icon': MIcon;
     'm-universal-header': MUniversalHeader;
+    'm-website-alerts': MWebsiteAlerts;
   }
 }
 
@@ -67,6 +77,7 @@ declare module "@stencil/core" {
       'm-chat': LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
       'm-icon': LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
       'm-universal-header': LocalJSX.MUniversalHeader & JSXBase.HTMLAttributes<HTMLMUniversalHeaderElement>;
+      'm-website-alerts': LocalJSX.MWebsiteAlerts & JSXBase.HTMLAttributes<HTMLMWebsiteAlertsElement>;
     }
   }
 }
