@@ -1,4 +1,4 @@
-import { Component, State, h, Listen, Element } from "@stencil/core";
+import { Component, State, Prop, h, Listen, Element } from "@stencil/core";
 
 @Component({
   tag: "m-universal-header",
@@ -93,7 +93,7 @@ export class UniversalHeader {
   }
 
   render() {
-    return (
+    return [
       <header class="m-uh">
         <div class="m-uh__content">
           <a class="m-uh__link" href="https://www.lib.umich.edu/">
@@ -127,7 +127,8 @@ export class UniversalHeader {
             )}
           </div>
         </div>
-      </header>
-    );
+      </header>,
+      <m-website-alerts />
+    ];
   }
 }
