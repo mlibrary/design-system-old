@@ -17,11 +17,13 @@
 ### Used by
 
  - [m-universal-header](../universal-header)
+ - [m-website-alerts](../website-alerts)
 
 ### Graph
 ```mermaid
 graph TD;
   m-universal-header --> m-icon
+  m-website-alerts --> m-icon
   style m-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

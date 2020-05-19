@@ -1,4 +1,4 @@
-# m-universal-header
+# m-website-alerts
 
 
 
@@ -7,18 +7,20 @@
 
 ## Dependencies
 
+### Used by
+
+ - [m-universal-header](../universal-header)
+
 ### Depends on
 
 - [m-icon](../icon)
-- [m-website-alerts](../website-alerts)
 
 ### Graph
 ```mermaid
 graph TD;
-  m-universal-header --> m-icon
-  m-universal-header --> m-website-alerts
   m-website-alerts --> m-icon
-  style m-universal-header fill:#f9f,stroke:#333,stroke-width:4px
+  m-universal-header --> m-website-alerts
+  style m-website-alerts fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
