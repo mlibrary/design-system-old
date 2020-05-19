@@ -1,4 +1,4 @@
-import { Component, State, Prop, h, Listen, Element } from "@stencil/core";
+import { Component, State, h, Listen, Element } from "@stencil/core";
 
 @Component({
   tag: "m-universal-header",
