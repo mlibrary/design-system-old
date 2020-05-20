@@ -10,32 +10,38 @@ export class WebsiteAlerts {
   @State() alerts;
 
   componentWillLoad() {
-    this.status = "loading";
-    fetch("https://staff.lib.umich.edu/api/alerts")
-      .then(response => response.json())
-      .then(result => {
-        const hostname = window.location.hostname;
-        const alertsThatTargetHost = result.reduce((memo, alert) => {
-          const domains = alert.domains.split(", ");
+    const domain = document.domain;
 
-          if (domains.includes(hostname)) {
-            memo = memo.concat(alert);
+    if (domain.includes("umich.edu")) {
+      this.status = "loading";
+
+      fetch("https://staff.lib.umich.edu/api/alerts")
+        .then(response => response.json())
+        .then(result => {
+          const alertsThatTargetHost = result.reduce((memo, alert) => {
+            const domains = alert.domains.split(", ");
+
+            if (domains.includes(domain)) {
+              memo = memo.concat(alert);
+            }
+
+            return memo;
+          }, []);
+
+          if (alertsThatTargetHost.length > 0) {
+            this.alerts = alertsThatTargetHost;
+            this.status = "success";
+          } else {
+            this.status = "no-alerts";
           }
-
-          return memo;
-        }, []);
-
-        if (alertsThatTargetHost.length > 0) {
-          this.alerts = alertsThatTargetHost;
-          this.status = "success";
-        } else {
-          this.status = "no-alerts";
-        }
-      })
-      .catch(e => {
-        this.status = "error";
-        console.warn("Unable to fetch U-M Library Website Alerts.", e);
-      });
+        })
+        .catch(e => {
+          this.status = "error";
+          console.warn("Unable to fetch U-M Library Website Alerts.", e);
+        });
+    } else {
+      this.status = "invalid-domain";
+    }
   }
 
   render() {
