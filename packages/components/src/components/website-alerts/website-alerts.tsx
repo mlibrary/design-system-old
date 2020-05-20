@@ -12,7 +12,7 @@ export class WebsiteAlerts {
   componentWillLoad() {
     const domain = document.domain;
 
-    if (domain.includes("lib.umich.edu")) {
+    if (domain.includes("umich.edu")) {
       this.status = "loading";
 
       fetch("https://staff.lib.umich.edu/api/alerts")
