@@ -67,11 +67,11 @@ Once included, components can be used in your markup like any other regular HTML
     />
     <script
       type="module"
-      src="https://unpkg.com/@umich-lib/components@latest/dist/umich-lib/umich-lib.esm.js"
+      src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.esm.js"
     ></script>
     <script
       nomodule
-      src="https://unpkg.com/@umich-lib/components@latest/dist/umich-lib/umich-lib.js"
+      src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js"
     ></script>
 
     <style>
