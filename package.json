@@ -12,6 +12,7 @@
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
     "lerna:publish": "lerna publish",
+    "lerna:publish-force": "lerna publish --force-publish",
     "packages:start": "lerna run start --stream --parallel",
     "packages:build": "lerna run build --stream",
     "start": "npm-run-all -s lerna:bootstrap -p packages:start storybook:start",
