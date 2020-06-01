@@ -17,7 +17,7 @@ U-M Library Design System is divided into front-end packages. These tools can be
 
 ### Fonts
 
-Include the Crimson Text and Muli font links in your `<head>`.
+Include the Google Fonts link tag to the `<head>`.
 
 ```html
 <link
