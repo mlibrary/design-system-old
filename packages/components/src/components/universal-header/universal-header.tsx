@@ -1,5 +1,8 @@
 import { Component, State, h, Listen, Element } from "@stencil/core";
 
+/**
+ * @description The UniversalHeader provides a quick and organized way for users to access other U-M Library websites. It should be added to every U-M Library website.
+ */
 @Component({
   tag: "m-universal-header",
   styleUrl: "universal-header.scss",

@@ -1,0 +1,14 @@
+{
+  "name": "@umich-lib/docs",
+  "version": "1.0.0",
+  "description": "Documentation website for the U-M Library Design System.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-navigation": "^0.1.5",
+    "@umich-lib/components": "^1.0.0"
+  }
+}
