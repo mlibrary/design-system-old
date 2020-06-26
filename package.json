@@ -5,9 +5,7 @@
     "@babel/core": "^7.7.4",
     "@storybook/html": "^5.2.8",
     "@types/node": "^13.5.0",
-    "@umich-lib/components": "^1.0.0",
     "babel-loader": "^8.0.6",
-    "eleventy-plugin-nesting-toc": "^1.2.0",
     "lerna": "^3.20.2",
     "npm-run-all": "^4.1.5"
   },
