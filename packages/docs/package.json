@@ -4,7 +4,8 @@
   "description": "Documentation website for the U-M Library Design System.",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
