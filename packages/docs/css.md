@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
-title: Components
+title: CSS
 eleventyNavigation:
-  key: Components
-  order: 2
+  key: CSS
+  order: 1
 ---

@@ -3,4 +3,24 @@
     list-style: none;
     padding: 0;
   }
+
+  li:not(:last-child) {
+    border-bottom: solid 1px var(--color-neutral-100);
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-neutral-400);
+    padding: var(--space-small) 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: var(--color-teal-400);
+      font-weight: var(--semibold);
+    }
+  }
 }

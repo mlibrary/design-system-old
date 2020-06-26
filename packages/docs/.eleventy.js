@@ -17,7 +17,7 @@ module.exports = function(eleventyConfig) {
 
   // Config options: https://www.npmjs.com/package/eleventy-plugin-nesting-toc#options
   eleventyConfig.addPlugin(pluginTOC, {
-    wrapperClass: "table-of-contents",
+    wrapper: "div",
   });
 
   // Tell the MD processor to add IDs and links to headings.

@@ -1,3 +1,5 @@
 <nav class="site-navigation site-layout__left">
-  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+    activeAnchorClass: "active"
+  }) | safe }}
 </nav>

@@ -9,6 +9,10 @@ A basic way to track what needs to be done and keep it close to source code.
 
 ## TODO
 
+### Build / Lerna
+
+- [ ] BUILD-1: Setup start/build script to avoid a race condition. @umich-lib/components must build before @umich-lib/docs, for example, otherwise it will error. The present workaround is to build at least once then start.
+
 ### components
 
 - [ ] COMP-1: Figure out a component documentation strategy and then configure @umich-lib/components docs-json output ([auto-generated JSON documentation](https://stenciljs.com/docs/docs-json)). Then distribute that JSON, so that it can be consumed, by @umich-lib/docs for example.

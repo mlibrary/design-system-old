@@ -27,7 +27,7 @@ pre[class*="language-"],
 }
 
 pre[class*="language-"] {
-  border-radius: 4px;
+  border-radius: var(--radius-default);
   border: 1px solid var(--color-blue-100);
   overflow: auto;
   position: relative;
@@ -61,7 +61,7 @@ pre .line-highlight {
 }
 
 .token.comment {
-  color: #5c6370;
+  color: var(--color-blue-200);
   font-style: italic;
 }
 
@@ -81,7 +81,7 @@ pre .line-highlight {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #6f705e;
+  color: var(--color-blue-200);
 }
 
 .token.boolean,
@@ -152,7 +152,7 @@ code.language-markup .token.tag,
 
 code.language-markup .token.attr-name,
 .token.attr-name {
-  color: var(--color-green-100);
+  color: var(--color-green-300);
 }
 
 code.language-markup .token.attr-value,

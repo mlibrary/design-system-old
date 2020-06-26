@@ -3,7 +3,7 @@ layout: layout.njk
 title: Support
 eleventyNavigation:
   key: Support
-  order: 2
+  order: 3
 ---
 
 The Design System team provides support for users of the system. See below for different use cases and additional instructions on how to reach us.
