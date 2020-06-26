@@ -17,7 +17,7 @@ pre[class*="language-"] {
   word-wrap: normal;
   font-size: 14px;
   line-height: 20px;
-  color: #e4e4e4;
+  color: var(--color-blue-100);
   text-shadow: none;
 }
 
@@ -28,7 +28,7 @@ pre[class*="language-"],
 
 pre[class*="language-"] {
   border-radius: 4px;
-  border: 1px solid #e1e1e8;
+  border: 1px solid var(--color-blue-100);
   overflow: auto;
   position: relative;
 }
@@ -66,12 +66,12 @@ pre .line-highlight {
 }
 
 .token.function {
-  color: #61aeee;
+  color: var(--color-teal-300);
 }
 
 .token.class-name,
 .token.builtin {
-  color: #e6c07b;
+  color: var(--color-maize-400);
 }
 
 .token.namespace {
@@ -86,35 +86,35 @@ pre .line-highlight {
 
 .token.boolean,
 .token.number {
-  color: #a77afe;
+  color: var(--color-indigo-200);
 }
 
 .token.string {
-  color: #98c379;
+  color: var(--color-green-300);
 }
 
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #e6d06c;
+  color: var(--color-maize-400);
 }
 
 .token.selector,
 .token.inserted {
-  color: #a6e22d;
+  color: var(--color-green-300);
 }
 
 .token.atrule,
 .token.keyword,
 .token.important,
 .token.deleted {
-  color: #c678dd;
+  color: var(--color-indigo-200);
 }
 
 .token.regex,
 .token.statement {
-  color: #76d9e6;
+  color: var(--color-teal-200);
 }
 
 .token.placeholder,
@@ -130,7 +130,7 @@ pre .line-highlight {
 
 .token.operator,
 .token.punctuation {
-  color: #bebec5;
+  color: var(--color-neutral-100);
 }
 
 .token.entity {
@@ -142,29 +142,29 @@ pre .line-highlight {
 }
 
 code.language-markup {
-  color: #f9f9f9;
+  color: var(--color-neutral-100);
 }
 
 code.language-markup .token.tag,
 .token.tag {
-  color: #da5686;
+  color: var(--color-pink-300);
 }
 
 code.language-markup .token.attr-name,
 .token.attr-name {
-  color: #98c379;
+  color: var(--color-green-100);
 }
 
 code.language-markup .token.attr-value,
 .token.attr-value {
-  color: #e6d06c;
+  color: var(--color-maize-300);
 }
 
 code.language-markup .token.style,
 code.language-markup .token.script {
-  color: #76d9e6;
+  color: var(--color-teal-200);
 }
 
 code.language-markup .token.script .token.keyword {
-  color: #76d9e6;
+  color: var(--color-teal-200);
 }
