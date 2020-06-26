@@ -46,8 +46,7 @@ If you’re working on a simple HTML page, you can start using the components im
 Once included, components can be used in your markup like any other regular HTML elements:
 
 ```html
-<m-universal-header></m-universal-header>
-<m-chat></m-chat>
+<m-universal-header></m-universal-header> <m-chat></m-chat>
 ```
 
 ## Basic Template
@@ -99,4 +98,4 @@ npm install
 npm start
 ```
 
-A Stencil.js page and Storybook should open up in your browser after starting.
+A Stencil.js page, Storybook, and `@umich-lib/docs` should open up in your browser after starting.

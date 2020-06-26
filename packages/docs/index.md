@@ -1,8 +1,6 @@
 ---
 layout: layout.njk
-title: U-M Library Design System
-eleventyNavigation:
-  key: Home
+title: Introduction
 ---
 
 The Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
@@ -54,7 +52,7 @@ Once included, components can be used in your markup like any other regular HTML
     <title>Basic Template | University of Michigan Library</title>
 
     <link
-      href="https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700"
+      href="https://unpkg.com/@umich-lib/css/dist/umich-lib.css"
       rel="stylesheet"
     />
     <script
@@ -65,15 +63,12 @@ Once included, components can be used in your markup like any other regular HTML
       nomodule
       src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js"
     ></script>
-
-    <style>
-      body {
-        margin: 0;
-      }
-    </style>
   </head>
   <body>
     <m-universal-header></m-universal-header>
+
+    <!-- your website content -->
+
     <m-chat></m-chat>
   </body>
 </html>

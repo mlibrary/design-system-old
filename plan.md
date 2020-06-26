@@ -14,6 +14,10 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] COMP-1: Figure out a component documentation strategy and then configure @umich-lib/components docs-json output ([auto-generated JSON documentation](https://stenciljs.com/docs/docs-json)). Then distribute that JSON, so that it can be consumed, by @umich-lib/docs for example.
 - [ ] COMP-2: Consider if Storybook should live within the @umich-lib/components package and not at the root.
 
+### css
+
+- [ ] CSS-1: Setup Gulp watch on `npm start` so that development doesn't required a re-start.
+
 ### docs
 
 - [ ] DOCS-1: Import @umich-lib/components doc JSON.

@@ -1,0 +1,27 @@
+.site-header {
+  margin: var(--space-medium) 0;
+  padding-bottom: var(--space-xx-large);
+}
+
+.site-header__site-home-link {
+  display: "flex";
+  align-items: center;
+  line-height: 0; /* prevent height wonkyness on logo SVG */
+  color: var(--color-neutral-300);
+  text-decoration: none;
+
+  svg {
+    height: 34px;
+    max-width: 100%;
+  }
+}
+
+.site-header__site-name {
+  font-size: var(--text-medium);
+
+  &::before {
+    display: "inline-block";
+    content: "/";
+    margin: 0 var(--space-medium);
+  }
+}

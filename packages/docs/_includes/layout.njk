@@ -15,6 +15,7 @@ description: Documentation for the U-M Library Design System.
       href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
       rel="stylesheet"
 />
+    <link href="https://unpkg.com/browse/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <script
       type="module"
       src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.esm.js"
@@ -25,17 +26,21 @@ description: Documentation for the U-M Library Design System.
     ></script>
   </head>
   <body>
+    <m-universal-header></m-universal-header>
+    {% include 'site-header.njk' %}
+    <main class="layout">
 
-    <nav>
-      <m-universal-header></m-universal-header>
+      {% include 'site-navigation.njk' %}
+      <aside class="site-layout__right">
+        {% include 'table-of-contents.njk' %}
+      </aside>
 
-      {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
-    </nav>
-    <main class="container">
-
-      <h1>{{ title }}</h1>
-
-      {{ content | safe }}
+      <article class="site-layout__center">
+        <h1>{{ title }}</h1>
+        {{ content | safe }}
+      </article>
     </main>
+
+    {% include 'footer.njk' %}
   </body>
 </html>

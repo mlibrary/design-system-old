@@ -7,3 +7,24 @@ Stencil is a compiler for building fast web apps using Web Components.
 Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool. Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
 
 Stencil components are just Web Components, so they work in any major framework or with no framework at all.
+
+# Authoring a Component
+
+## Documentation
+
+Above each component, include `@description` and `@status`. This metadata will be used to distribute [JSON formated documentation](https://stenciljs.com/docs/docs-json) about the component that will be consumed in packages, such as `@umich-lib/docs`.
+
+```
+/**
+ * @description The UniversalHeader provides a quick and organized way for users to access other U-M Library websites. It should be added to every U-M Library website.
+ * @status ready
+ */
+```
+
+### `@description`
+
+Brief, but descriptive text about the purpose of that component.
+
+### `@status`
+
+Use `ready`, `experimental`, or `deprecated`.
