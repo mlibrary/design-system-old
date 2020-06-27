@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 3
 ---
 
-The Design System team provides support for users of the system. See below for different use cases and additional instructions on how to reach us.
+The **Design System team** provides support for users of the system. See below for different use cases and additional instructions on how to reach us.
 
 ## Slack channels
 

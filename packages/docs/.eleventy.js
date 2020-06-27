@@ -12,7 +12,9 @@ module.exports = function(eleventyConfig) {
 
   // Enable plugins.
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    alwaysWrapLineHighlights: false,
+  });
   eleventyConfig.addPlugin(pluginSass);
 
   // Config options: https://www.npmjs.com/package/eleventy-plugin-nesting-toc#options

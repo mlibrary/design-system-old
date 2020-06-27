@@ -11,7 +11,7 @@ A basic way to track what needs to be done and keep it close to source code.
 
 ### Build / Lerna
 
-- [ ] BUILD-1: Setup start/build script to avoid a race condition. @umich-lib/components must build before @umich-lib/docs, for example, otherwise it will error. The present workaround is to build at least once then start.
+- [ ] BUILD-1: BUG -- Setup start/build script to avoid a race condition. @umich-lib/components must built before @umich-lib/docs, for example, otherwise it will error. The present workaround is to build at least once then start. We may want to build CSS -> Components -> DOCS, but this needs further investigation.
 
 ### components
 
@@ -27,5 +27,7 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] DOCS-1: Import @umich-lib/components doc JSON.
 - [ ] DOCS-2: Generate component pages.
 - [ ] DOCS-3: Create getting started page.
+- [x] DOCS-4: Add code highlighting.
+- [ ] DOCS-5: Add code highlighting per line.
 
 - [ ] DOCS-N: Usability test the docs with an LIT developer.

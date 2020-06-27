@@ -1,5 +1,7 @@
 <nav class="site-navigation site-layout__left">
-  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+  <div class="sticky-top">
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
     activeAnchorClass: "active"
   }) | safe }}
+  </div>
 </nav>

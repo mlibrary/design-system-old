@@ -1,0 +1,20 @@
+.prose {
+  font-size: var(--text-x-small);
+
+  h2 {
+    margin-top: var(--space-xx-large);
+  }
+
+  h3 {
+    margin-bottom: var(--space-x-small);
+  }
+}
+
+.owl > * + * {
+  margin-bottom: var(--space-large);
+}
+
+.sticky-top {
+  position: sticky;
+  top: var(--space-large);
+}

@@ -45,7 +45,7 @@ If you’re working on a simple HTML page, you can start using the components im
 
 Once included, components can be used in your markup like any other regular HTML elements:
 
-```html
+```html 9-4
 <!DOCTYPE html>
 <html lang="en">
   <head>

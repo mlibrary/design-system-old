@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
@@ -24,12 +28,22 @@ body {
 
 h1 {
   font-family: var(--font-second-family);
-  font-size: var(--text-xxx-large);
+  font-size: var(--text-xx-large);
   line-height: var(--line-height-page-heading);
+
+  @media screen and (min-width: 820px) {
+    font-size: var(--text-xxx-large);
+  }
 }
 
-a {
-  color: var(--color-teal-400);
+h2 {
+  font-size: var(--text-large);
+  font-weight: var(--bold);
+}
+
+h3 {
+  font-size: var(--text-medium);
+  font-weight: var(--semibold);
 }
 
 .layout {
@@ -46,35 +60,71 @@ a {
   }
 }
 
+a {
+  color: var(--color-teal-400);
+}
+
 .table-of-contents {
-  position: sticky;
-  top: var(--space-large);
   ol {
     list-style: none;
     padding: 0;
+    margin: 0;
 
     & > li > ol {
       padding-left: var(--space-large);
     }
+
+    a {
+      display: block;
+      padding: var(--space-x-small) 0;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
-  margin-bottom: var(--space-large);
+  margin-bottom: var(--space-x-small);
 }
 
-/* Left 3 columns */
-.site-layout__left {
-  grid-row: 1;
-  grid-column: content-start / span 2;
+@media screen and (min-width: 820px) {
+  .site-layout__left {
+    grid-row: 1;
+    grid-column: content-start / span 2;
+  }
+
+  .site-layout__center {
+    grid-row: 1;
+    grid-column: 5 / span 6;
+  }
+
+  .site-layout__right {
+    grid-row: 1;
+    grid-column: 11 / content-end;
+  }
 }
 
-/* Center 6 columns */
 .site-layout__center {
-  grid-row: 1;
-  grid-column: 4 / span 7;
+  width: 100%;
 }
 
-/* Right 3 columns */
-.site-layout__right {
-  grid-row: 1;
-  grid-column: 11 / content-end;
+.edit-on-github__link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-neutral-400);
+  font-weight: var(--semibold);
+  padding: var(--space-x-small) 0;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    margin-right: var(--space-x-small);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

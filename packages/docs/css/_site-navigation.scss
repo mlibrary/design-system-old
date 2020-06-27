@@ -2,6 +2,7 @@
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 
   li:not(:last-child) {
@@ -14,7 +15,8 @@
     color: var(--color-neutral-400);
     padding: var(--space-small) 0;
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: underline;
     }
 
