@@ -29,5 +29,6 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] DOCS-3: Create introduction / getting started page.
 - [x] DOCS-4: Add code highlighting.
 - [ ] DOCS-5: Add code highlighting per line.
+- [ ] DOCS-6: Figure out a FOUC solution.
 
 - [ ] DOCS-N: Usability test the docs with an LIT developer.
