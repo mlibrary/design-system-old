@@ -36,7 +36,7 @@ pre[class*="language-"] {
 pre[class*="language-"] code {
   white-space: pre;
   display: block;
-  margin: 22px 24px !important;
+  margin: var(--space-medium);
   display: block;
 }
 

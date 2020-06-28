@@ -32,6 +32,7 @@ module.exports = function(eleventyConfig) {
     }).use(markdownItAnchor)
   );
 
+  // Server side rendering for @umich-lib/components.
   eleventyConfig.addTransform("ssr", async (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
       try {

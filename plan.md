@@ -26,7 +26,7 @@ A basic way to track what needs to be done and keep it close to source code.
 
 - [ ] DOCS-1: Import @umich-lib/components doc JSON.
 - [ ] DOCS-2: Generate component pages.
-- [ ] DOCS-3: Create getting started page.
+- [ ] DOCS-3: Create introduction / getting started page.
 - [x] DOCS-4: Add code highlighting.
 - [ ] DOCS-5: Add code highlighting per line.
 

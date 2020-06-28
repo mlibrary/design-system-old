@@ -6,14 +6,14 @@ eleventyNavigation:
   order: 3
 ---
 
-## Setup in plain HTML
+## Usage with plain HTML
 
 ...
 
-## Setup in Gatsby
+## Usage with Gatsby
 
 ...
 
-## Setup in Ruby on Rails
+## Usage with Ruby on Rails
 
 ...
