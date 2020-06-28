@@ -22,8 +22,16 @@ body {
 body {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
+  @media screen and (min-width: 820px) {
+    grid-template-rows: auto auto 1fr auto;
+  }
   grid-template-columns: 100%;
 }
+
+main.layout {
+  align-content: baseline;
+}
+
 /* end */
 
 h1 {
