@@ -22,6 +22,10 @@ A basic way to track what needs to be done and keep it close to source code.
 
 - [ ] CSS-1: Setup Gulp watch on `npm start` so that development doesn't required a re-start.
 
+### icons
+
+- [ ] ICONS-1: Figure out a way to make the icon component only load what it needs. Investigate this and recommend improvements. Related article: https://paulcpederson.com/articles/stencil-icons/
+
 ### docs
 
 - [ ] DOCS-1: Import @umich-lib/components doc JSON.
