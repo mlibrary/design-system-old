@@ -1,7 +1,12 @@
 <nav class="site-navigation site-layout__left">
   <div class="sticky-top">
-    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
-    activeAnchorClass: "active"
-  }) | safe }}
+    {% set navPages = collections.all | eleventyNavigation %}
+    <ul>
+      {%- for entry in navPages %}
+        <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        </li>
+      {%- endfor %}
+    </ul>
   </div>
 </nav>

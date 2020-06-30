@@ -142,3 +142,9 @@ a {
     text-decoration: underline;
   }
 }
+
+.need-help {
+  border-top: solid 1px var(--color-neutral-100);
+  margin-top: var(--space-xxx-large);
+  padding-top: var(--space-large);
+}

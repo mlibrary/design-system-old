@@ -1,10 +1,11 @@
 ---
 layout: layout.njk
-title: Introduction
 eleventyNavigation:
   key: Introduction
   order: 0
 ---
+
+# Introduction
 
 The University of Michigan Library Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
 

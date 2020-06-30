@@ -16,6 +16,11 @@ function ChatIcon() {
   );
 }
 
+/**
+ * @name Chat
+ * @description The Chat component provides access to the Ask a Librarian live chat service.
+ * @status ready
+ */
 @Component({
   tag: "m-chat",
   styleUrl: "chat.scss",

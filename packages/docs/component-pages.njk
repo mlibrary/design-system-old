@@ -1,0 +1,36 @@
+---
+layout: layout.njk
+pagination:
+    data: components
+    alias: component
+    size: 1
+permalink: "components/{{ component.name | slug }}/"
+eleventyNavigation:
+  key: Chat
+  parent: Components
+templateEngineOverride: njk,md
+---
+
+# {{ component.name }}
+
+{{ component.description }}
+
+## Example
+
+```html
+<{{ component.tag }}><{{ component.tag }}/>
+  ```
+
+{% if component.whenToUse %}
+  ## When to use
+  {{ component.whenToUse }}
+  {% endif %}
+
+  {% if component.whenNotToUse %}
+## When not to use
+
+{{ component.whenNotToUse }}
+  {% endif %}
+  ## Integration
+
+For integration, please see [Getting Started documentation](/#getting-started).

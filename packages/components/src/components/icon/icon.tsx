@@ -2,6 +2,12 @@ import { Component, Prop, Host, h } from "@stencil/core";
 import icons from "@umich-lib/icons";
 import { sendMessage } from "@umich-lib/utils";
 
+/**
+ * @name Icon
+ * @description For SVG icons.
+ * @status experimental
+ * @private
+ */
 @Component({
   tag: "m-icon"
 })

@@ -1,8 +1,11 @@
 import { Component, State, h, Listen, Element } from "@stencil/core";
 
 /**
- * @description The UniversalHeader provides a quick and organized way for users to access other U-M Library websites. It should be added to every U-M Library website.
+ * @name Universal Header
+ * @description The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.
  * @status ready
+ * @whenToUse You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.
+ * @whenNotToUse If your website is not being hosted on lib.umich.edu.
  */
 @Component({
   tag: "m-universal-header",
