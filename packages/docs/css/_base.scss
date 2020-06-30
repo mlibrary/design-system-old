@@ -61,7 +61,7 @@ h3 {
     [content-start] repeat(11, 1fr)
     1fr [content-end]
     calc(50vw - 39rem) [site-end];
-  grid-gap: var(--space-large);
+  grid-gap: var(--space-medium);
 
   & > * {
     grid-column: content-start / content-end;

@@ -5,8 +5,24 @@
     margin: 0;
   }
 
-  li:not(:last-child) {
-    border-bottom: solid 1px var(--color-neutral-100);
+  li {
+    display: "inline-block";
+
+    &:not(:last-child) {
+      margin-right: var(--space-small);
+    }
+  }
+
+  border-bottom: solid 1px var(--color-neutral-100);
+
+  @media screen and (min-width: 820px) {
+    li {
+      display: block;
+    }
+
+    li:not(:last-child) {
+      border-bottom: solid 1px var(--color-neutral-100);
+    }
   }
 
   a {
