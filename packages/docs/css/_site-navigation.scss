@@ -25,6 +25,8 @@
     li:not(:last-child) {
       border-bottom: solid 1px var(--color-neutral-100);
     }
+
+    border-bottom: none;
   }
 
   a {

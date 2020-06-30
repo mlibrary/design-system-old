@@ -28,11 +28,12 @@ A basic way to track what needs to be done and keep it close to source code.
 
 ### docs
 
-- [ ] DOCS-1: Import @umich-lib/components doc JSON.
-- [ ] DOCS-2: Generate component pages.
-- [ ] DOCS-3: Create introduction / getting started page.
+- [x] DOCS-1: Import @umich-lib/components doc JSON.
+- [x] DOCS-2: Generate component pages.
+- [x] DOCS-3: Create introduction / getting started page.
 - [x] DOCS-4: Add code highlighting.
 - [ ] DOCS-5: Add code highlighting per line.
 - [ ] DOCS-6: Figure out a FOUC solution.
+- [ ] DOCS-7: Add favicon.
 
 - [ ] DOCS-N: Usability test the docs with an LIT developer.
