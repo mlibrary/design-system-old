@@ -17,20 +17,26 @@ templateEngineOverride: njk,md
 
 ## Example
 
+<div class="example">
+  <div class="example__preview">
+    <{{ component.tag }}></{{ component.tag }}>
+  </div>
+
 ```html
-<{{ component.tag }}><{{ component.tag }}/>
+<{{ component.tag }}></{{ component.tag }}>
   ```
+  </div>
 
 {% if component.whenToUse %}
-  ## When to use
+  ## When to use this component
   {{ component.whenToUse }}
-  {% endif %}
+{% endif %}
 
-  {% if component.whenNotToUse %}
-## When not to use
+{% if component.whenNotToUse %}
+## When not to use this component
 
 {{ component.whenNotToUse }}
-  {% endif %}
-  ## Integration
+{% endif %}
+## Integration
 
 For integration, please see [Getting Started documentation](/#getting-started).
