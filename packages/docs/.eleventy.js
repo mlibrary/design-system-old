@@ -36,7 +36,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("ssr", async (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
       try {
-        const { html } = await stencil.renderToString(content);
+        const { html } = await stencil.renderToString(content, {
+          clientHydrateAnnotations: true,
+          removeScripts: false,
+          removeUnusedStyles: false,
+        });
         return html;
       } catch (error) {
         return error;
