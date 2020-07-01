@@ -33,14 +33,14 @@ module.exports = function(eleventyConfig) {
   );
 
   // Server side rendering for @umich-lib/components.
+
+  /*
+    // This is disabled until the FOUC (DOCS-6 in plan.md) is figured out.
+    
   eleventyConfig.addTransform("ssr", async (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
       try {
-        const { html } = await stencil.renderToString(content, {
-          clientHydrateAnnotations: true,
-          removeScripts: false,
-          removeUnusedStyles: false,
-        });
+        const { html } = await stencil.renderToString(content);
         return html;
       } catch (error) {
         return error;
@@ -48,4 +48,5 @@ module.exports = function(eleventyConfig) {
     }
     return content;
   });
+  */
 };
