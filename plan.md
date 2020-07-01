@@ -35,7 +35,7 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] DOCS-5: Add code highlighting per line.
 - [ ] DOCS-6: Figure out a FOUC solution.
 - [ ] DOCS-7: Add favicon.
-- [ ] DOCS-8: Add CSS package documentation, but likely a lot to consider about to expose. Probably for now custom variables spacings, colors, and utilities. https://piccalil.li/cube-css/
+- [ ] DOCS-8: Add CSS package documentation, but likely a lot to consider about to what expose and maintain. Probably for now custom variables spacings, colors, and utilities. https://piccalil.li/cube-css/
 - [ ] DOCS-9: Add browser compatability and make sure the DS meets our targets.
 
 - [ ] DOCS-N: Usability test the docs with an LIT developer.
