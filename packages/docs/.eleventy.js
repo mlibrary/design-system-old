@@ -32,11 +32,10 @@ module.exports = function(eleventyConfig) {
     }).use(markdownItAnchor)
   );
 
-  // Server side rendering for @umich-lib/components.
+  // Copy everything in static to _site
+  eleventyConfig.addPassthroughCopy("static");
 
-  /*
-    // This is disabled until the FOUC (DOCS-6 in plan.md) is figured out.
-    
+  // Server side rendering for @umich-lib/components.
   eleventyConfig.addTransform("ssr", async (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
       try {
@@ -48,5 +47,4 @@ module.exports = function(eleventyConfig) {
     }
     return content;
   });
-  */
 };
