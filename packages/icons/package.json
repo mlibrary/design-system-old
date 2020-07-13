@@ -7,7 +7,6 @@
     "icons.js"
   ],
   "scripts": {
-    "start": "npm run build",
     "build": "node scripts/process-src-svgs.js && node scripts/create-icons-file.js"
   },
   "license": "MIT",
