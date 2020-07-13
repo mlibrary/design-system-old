@@ -4,12 +4,12 @@
   "description": "Documentation website for the U-M Library Design System.",
   "main": "index.js",
   "scripts": {
-    "prebuild": "npm run components-data && npm run copy:components",
+    "prebuild": "npm run copy:components && npm run components-data",
     "build": "npx @11ty/eleventy",
     "components-data": "node scripts/components-data.js",
     "prestart": "npm run prebuild",
     "start": "npx @11ty/eleventy --serve",
-    "copy:components": "ncp node_modules/@umich-lib/components/dist static/components"
+    "copy:components": "npx mkdirp static/components && ncp node_modules/@umich-lib/components/dist static/components"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
@@ -19,6 +19,7 @@
     "eleventy-plugin-nesting-toc": "^1.2.0",
     "eleventy-plugin-sass": "^1.0.0",
     "markdown-it-anchor": "^5.3.0",
+    "mkdirp": "^1.0.4",
     "ncp": "^2.0.0"
   }
 }
