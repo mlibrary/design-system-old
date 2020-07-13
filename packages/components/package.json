@@ -28,7 +28,6 @@
   "dependencies": {
     "@umich-lib/css": "^1.0.0",
     "@umich-lib/icons": "^1.0.0",
-    "@umich-lib/utils": "^1.0.0",
     "classnames": "^2.2.6"
   },
   "license": "MIT",

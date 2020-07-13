@@ -1,6 +1,5 @@
 import { Component, Prop, Host, h } from "@stencil/core";
 import icons from "@umich-lib/icons";
-import { sendMessage } from "@umich-lib/utils";
 
 /**
  * @name Icon
@@ -18,7 +17,7 @@ export class Icon {
     const icon = icons[this.name];
 
     if (!icon) {
-      sendMessage("Unable to find Icon with name: " + this.name);
+      console.log("Unable to find Icon with name: " + this.name);
       return null;
     }
 
