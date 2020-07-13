@@ -1,0 +1,25 @@
+@import "_reset.scss";
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+}
+
+ul {
+  list-style: disc;
+  margin-left: var(--space-large);
+}
+
+ol {
+  list-style: decimal;
+}
+
+li:not(:last-child) {
+  margin-bottom: var(--space-small);
+}
+
+code,
+pre {
+  font-family: Consolas, Monaco, Courier New, Courier, monospace;
+}
