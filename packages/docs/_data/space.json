@@ -1,0 +1,79 @@
+[
+  {
+    "theme": "maize",
+    "name": "space-xxx-small",
+    "category": "space",
+    "value": "2px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-xx-small",
+    "category": "space",
+    "value": "4px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-x-small",
+    "category": "space",
+    "value": "8px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-small",
+    "category": "space",
+    "value": "12px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-medium",
+    "category": "space",
+    "value": "16px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-large",
+    "category": "space",
+    "value": "24px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-x-large",
+    "category": "space",
+    "value": "32px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-xx-large",
+    "category": "space",
+    "value": "40px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-xxx-large",
+    "category": "space",
+    "value": "48px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-xxxx-large",
+    "category": "space",
+    "value": "64px",
+    "type": "number"
+  },
+  {
+    "theme": "maize",
+    "name": "space-xxxxx-large",
+    "category": "space",
+    "value": "96px",
+    "type": "number"
+  }
+]

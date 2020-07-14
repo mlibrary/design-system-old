@@ -24,41 +24,28 @@ task("css:build-dist", function() {
     .pipe(dest("dist/"));
 });
 
-/*
-const scssWatcher = watch(["src/scss/*.scss"]);
-
-scssWatcher.on("change", function() {
-  task("css:build-dist");
+task("tokens:json", function() {
+  return src("src/tokens.json").pipe(dest("dist/"));
 });
-*/
 
 task("tokens:scss", function() {
   return src("src/tokens.json")
     .pipe(
       gulpTheo({
         transform: { type: "web" },
-        format: { type: "scss" }
+        format: { type: "scss" },
       })
     )
     .pipe(rename("_tokens.scss"))
     .pipe(dest("src/scss/"));
 });
 
-/*
-const tokenWatcher = watch("src/tokens.json");
-
-tokenWatcher.on("change", function() {
-  task("tokens:scss");
-  task("tokens:custom-properties");
-});
-*/
-
 task("tokens:custom-properties", function() {
   return src("src/tokens.json")
     .pipe(
       gulpTheo({
         transform: { type: "web" },
-        format: { type: "scss-custom-properties-mixin" }
+        format: { type: "scss-custom-properties-mixin" },
       })
     )
     .pipe(rename("_custom-properties.scss"))
@@ -68,6 +55,7 @@ task("tokens:custom-properties", function() {
 });
 
 const build = series(
+  task("tokens:json"),
   task("tokens:scss"),
   task("tokens:custom-properties"),
   task("css:build-dist")

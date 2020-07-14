@@ -38,8 +38,7 @@ Example:
       "theme": "maize",
       "name": "color-maize-100",
       "category": "color",
-      "value": "#FFF9E6",
-      "type": "color"
+      "value": "#FFF9E6"
     }
 ```
 
@@ -47,28 +46,29 @@ See supported [Theo categories](https://github.com/salesforce-ux/theo#supported-
 
 ### Transform the tokens
 
-Theo translates Hex values to RGB for the web. This has been added to the `gulpfile.js`. 
+Theo translates Hex values to RGB for the web. This has been added to the `gulpfile.js`.
 
 ### Format the tokens
 
 The `tokens.json` file formats to `scss/_tokens.scss` and `scss/_custom-properties.scss`.
 
 ### Tokens join the pipeline
+
 The `_tokens.scss` and `_custom-properties.scss` files are fed into the gulp build for `scss/main.scss`, along with some base styling and utilities.
 
 ```
-/scss  
+/scss
  - _base.scss
  - _custom-properties.scss
  - _tokens.scss
  - _utilities.scss
  - main.scss
- ```
+```
 
 The Gulp build distributes this to `umich-lib.css` in the `dist` folder.
 
 ```
-/dist  
+/dist
  - umich-lib.css
 ```
 
@@ -76,4 +76,4 @@ The Gulp build distributes this to `umich-lib.css` in the `dist` folder.
 
 TBD  
 -Distribute the min.css and .css via NPM and CDN  
--Distribute the design tokens via NPM  
+-Distribute the design tokens via NPM

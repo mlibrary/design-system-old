@@ -1,0 +1,29 @@
+## Color
+
+Colors are available as CSS custom properties.
+
+{% for c in color %}
+  <div class="example">
+    <div class="example__preview">
+      <div style="background: {{c.value}}; height: var(--space-xxx-large);"></div>
+    </div>
+
+```css
+var(--{{c.name}})
+```
+  </div>
+{% endfor %}
+
+## Space
+
+{% for s in space %}
+  <div class="example">
+    <div class="example__preview">
+      <div style="background: var(--color-neutral-300); height: {{s.value}}; width: {{s.value}};"></div>
+    </div>
+
+```css
+var(--{{s.name}})
+```
+  </div>
+{% endfor %}

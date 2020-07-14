@@ -92,14 +92,11 @@ Once included, components can be used in your markup like any other regular HTML
 
 ## Contribute to repo
 
-Clone the repo, install dependencies, and then `npm start` the systems.
+Clone the repo and `npm start`.
 
 ```
 git clone https://github.com/mlibrary/design-system.git
-
 cd design-system
-
-npm install
 npm start
 ```
 
