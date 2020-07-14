@@ -1,5 +1,7 @@
 .prose {
-  font-size: var(--text-x-small);
+  @media screen and (min-width: 820px) {
+    font-size: var(--text-x-small);
+  }
 
   h2 {
     margin-top: var(--space-xx-large);
