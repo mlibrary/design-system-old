@@ -1,29 +1,39 @@
-## Color
+<h2>Color</h2>
 
-Colors are available as CSS custom properties.
+<p>Colors are available as CSS custom properties.</p>
 
-{% for c in color %}
-  <div class="example">
-    <div class="example__preview">
-      <div style="background: {{c.value}}; height: var(--space-xxx-large);"></div>
-    </div>
+<table>
+  <tr>
+    <th>Preview</th>
+    <th>Token</th>
+  </tr>
+  {% for token in color %}
+    <tr>
+      <td>
+        <div style="background: {{token.value}}; height: var(--space-xxx-large);"></div>
+      </td>
+      <td>
+        <code>var(--{{token.name}})</code>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
 
-```css
-var(--{{c.name}})
-```
-  </div>
-{% endfor %}
+<h2>Space</h2>
 
-## Space
-
-{% for s in space %}
-  <div class="example">
-    <div class="example__preview">
-      <div style="background: var(--color-neutral-300); height: {{s.value}}; width: {{s.value}};"></div>
-    </div>
-
-```css
-var(--{{s.name}})
-```
-  </div>
-{% endfor %}
+<table>
+  <tr>
+    <th>Preview</th>
+    <th>Token</th>
+  </tr>
+  {% for token in space %}
+    <tr>
+      <td>
+        <div style="background: var(--color-neutral-300); height: {{token.value}}; width: {{token.value}};"></div>
+      </td>
+      <td>
+        <code>var(--{{token.name}})</code>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
