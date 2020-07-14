@@ -6,6 +6,7 @@
   <tr>
     <th>Preview</th>
     <th>Token</th>
+    <th>Value</th>
   </tr>
   {% for token in color %}
     <tr>
@@ -14,6 +15,9 @@
       </td>
       <td>
         <code>var(--{{token.name}})</code>
+      </td>
+      <td>
+        <code>{{ token.value }}</code>
       </td>
     </tr>
   {% endfor %}
@@ -25,6 +29,7 @@
   <tr>
     <th>Preview</th>
     <th>Token</th>
+    <th>Value</th>
   </tr>
   {% for token in space %}
     <tr>
@@ -33,6 +38,9 @@
       </td>
       <td>
         <code>var(--{{token.name}})</code>
+      </td>
+      <td>
+        <code>{{ token.value }}</code>
       </td>
     </tr>
   {% endfor %}
