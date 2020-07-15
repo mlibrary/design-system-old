@@ -1,15 +1,13 @@
 ---
 layout: layout.njk
 eleventyNavigation:
-  key: Introduction
+  key: Getting started
   order: 0
 ---
 
-# Introduction
+# Getting started
 
 The University of Michigan Library Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
-
-## Getting started
 
 The Design System is divided into front-end packages. Provided packages include:
 
