@@ -27,7 +27,7 @@ pre[class*="language-"],
 }
 
 pre[class*="language-"] {
-  border-radius: var(--radius-default);
+  border-radius: 4px;
   border: 1px solid var(--color-blue-100);
   overflow: auto;
   position: relative;
