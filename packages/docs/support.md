@@ -11,7 +11,7 @@ The **Design System team** provides support for designers, developers, project m
 
 ## Contact us
 
-- **Slack:** For quick general questions, reach us in the #design-system Slack channel.
+- **Slack:** Ask quick question in our #design-system channel. This is for those with access to U-M Library IT Slack.
 - **Email:** Send us an email at library-design-system-team@umich.edu and we will respond as quickly as possible.
 
 ## Design System team
