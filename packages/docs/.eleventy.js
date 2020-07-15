@@ -50,5 +50,5 @@ module.exports = function(eleventyConfig) {
   });
 
   // https://github.com/mightyplow/eleventy-plugin-cache-buster#readme
-  eleventyConfig.addPlugin(cacheBuster());
+  eleventyConfig.addPlugin(cacheBuster({}));
 };
