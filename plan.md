@@ -35,7 +35,7 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] DOCS-5: Add code highlighting per line.
 - [x] DOCS-6: Figure out a FOUC solution.
 - [ ] DOCS-7: Add favicon.
-- [ ] DOCS-8: Add CSS package documentation, but likely a lot to consider about to what expose and maintain. Probably for now custom variables spacings, colors, and utilities. https://piccalil.li/cube-css/
+- [x] DOCS-8: Add design token related documentation, but likely a lot to consider about to what expose and maintain. Probably for now custom variables spacings, colors, and utilities. https://piccalil.li/cube-css/
 - [ ] DOCS-9: Add browser compatability and make sure the DS meets our targets.
 - [ ] DOCS-10: Add copy command for packages relied on so that they are used locally. This will make development of all the packages possible. Inspired by: https://www.duetds.com/using-components/#usage-with-basic-html
 
