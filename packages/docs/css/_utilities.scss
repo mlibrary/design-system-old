@@ -3,17 +3,18 @@
     font-size: var(--text-x-small);
   }
 
-  h2 {
-    margin-top: var(--space-xx-large);
+  h1 {
+    margin-bottom: var(--space-x-large);
   }
 
+  h2,
   h3 {
-    margin-bottom: var(--space-x-small);
+    margin-top: var(--space-xx-large);
   }
 }
 
 .owl > * + * {
-  margin-bottom: var(--space-large);
+  margin-bottom: var(--space-medium);
 }
 
 .sticky-top {
