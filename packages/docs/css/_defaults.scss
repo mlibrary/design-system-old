@@ -6,6 +6,14 @@ body {
   -moz-osx-font-smoothing: grayscale; /* Firefox */
 }
 
+a {
+  color: var(--color-teal-400);
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
 ul {
   list-style: disc;
   margin-left: var(--space-large);

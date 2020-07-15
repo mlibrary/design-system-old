@@ -32,13 +32,13 @@ description: Documentation for the U-M Library Design System.
       <aside class="site-layout__right">
         <div class="sticky-top">
           {% include 'table-of-contents.njk' %}
-
-          <a href="https://github.com/mlibrary/design-system/tree/docs/packages/docs/{{ page.inputPath }}" class="edit-on-github__link">{% include 'github-svg.njk' %}Submit an edit <span class="visually-hidden">on GitHub</span></a>
         </div>
       </aside>
 
       <article class="site-layout__center owl prose">
         {{ content | safe }}
+
+        <a href="https://github.com/mlibrary/design-system/tree/docs/packages/docs/{{ page.inputPath }}" class="edit-on-github__link">{% include 'github-svg.njk' %}If you found a mistake on this page, would you kindly submit a fix<span class="visually-hidden"> on GitHub</span>?</a>
       </article>
     </main>
 

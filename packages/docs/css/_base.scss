@@ -70,10 +70,6 @@ h3 {
   }
 }
 
-a {
-  color: var(--color-teal-400);
-}
-
 .table-of-contents {
   ol {
     list-style: none;
@@ -131,12 +127,17 @@ a {
 }
 
 .edit-on-github__link {
-  text-decoration: none;
-  display: inline-flex;
+  font-size: 16px;
+  margin-top: var(--space-x-large);
+  background: var(--color-teal-100);
+  display: flex;
   align-items: center;
   color: var(--color-neutral-400);
   font-weight: var(--semibold);
-  padding: var(--space-x-small) 0;
+  padding: var(--space-medium);
+  border-radius: 4px;
+  border-left: solid 4px var(--color-teal-400);
+  text-decoration-color: var(--color-teal-400);
 
   svg {
     width: 24px;
@@ -146,7 +147,7 @@ a {
   }
 
   &:hover {
-    text-decoration: underline;
+    text-decoration-thickness: 2px;
   }
 }
 
