@@ -278,12 +278,5 @@
     "category": "color",
     "value": "#198539",
     "type": "color"
-  },
-  {
-    "theme": "maize",
-    "name": "color-focus",
-    "category": "color",
-    "value": "00274C",
-    "type": "color"
   }
 ]
