@@ -20,7 +20,7 @@ Include the CSS link tag to the `<head>`. This will make design tokens available
 
 ```html
 <link
-  href="https://unpkg.com/@umich-lib/css/dist/umich-lib.css"
+  href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
   rel="stylesheet"
 />
 ```
@@ -32,11 +32,11 @@ You can start using the components immediately by adding these script tags to th
 ```html
 <script
   type="module"
-  src="https://unpkg.com/@umich-lib/components/dist/umich-lib/umich-lib.esm.js"
+  src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.esm.js"
 ></script>
 <script
   nomodule
-  src="https://unpkg.com/@umich-lib/components/dist/umich-lib/umich-lib.js"
+  src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js"
 ></script>
 ```
 
@@ -54,7 +54,7 @@ Once included, components can be used in your markup like any other regular HTML
     <title>Basic Template | University of Michigan Library</title>
 
     <link
-      href="https://unpkg.com/@umich-lib/css/dist/umich-lib.css"
+      href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
       rel="stylesheet"
     />
     <script
