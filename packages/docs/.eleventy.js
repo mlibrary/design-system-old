@@ -49,6 +49,13 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // https://github.com/mightyplow/eleventy-plugin-cache-buster#readme
-  eleventyConfig.addPlugin(cacheBuster({}));
+  /**
+   * eleventy-plugin-cache-buster
+   *
+   * https://github.com/mightyplow/eleventy-plugin-cache-buster#readme
+   *
+   * Adding this plugin caused some issues with building on Netlify.
+   * Turning it off until we can find time to troubleshoot.
+   */
+  // eleventyConfig.addPlugin(cacheBuster({}));
 };
