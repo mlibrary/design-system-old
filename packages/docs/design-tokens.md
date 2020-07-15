@@ -13,3 +13,7 @@ templateEngineOverride: njk
 <p>Design tokens are available to use in your stylesheets by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">custom properties (MDN web docs)</a>.</p>
 
 {% include 'design-tokens.njk' %}
+
+<h2 id="integration">Integration</h2>
+
+<p>For integration, see <a href="/#css">getting started CSS documentation</a> to use design tokens as CSS custom properties.</p>
