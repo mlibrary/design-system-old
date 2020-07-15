@@ -11,14 +11,14 @@ The **Design System team** provides support for designers, developers, project m
 
 ## Contact us
 
-- **Slack:** Ask quick question in our #design-system channel. This is for those with access to U-M Library IT Slack.
+- **Slack:** Ask quick questions in our #design-system channel. This is for those with access to U-M Library IT Slack.
 - **Email:** Send us an email at library-design-system-team@umich.edu and we will respond as quickly as possible.
 
 ## Design System team
 
 The team is responsible for making sure that contributions to the system are of a high quality and meet our needs to build U-M Library websites.
 
-- [Jon Earley](https://preview.lib.umich.edu/users/earleyj), User Interface Design Engineer
+- [Jon Earley](https://preview.lib.umich.edu/users/earleyj) (Design System Lead), User Interface Design Engineer
 - [Bridget Burke](https://preview.lib.umich.edu/users/burkebri), Front-end Developer and Accessibility Specialist
 - [Roger Espinosa](https://preview.lib.umich.edu/users/roger), Application Programmer/Analyst Senior
 - [Ellen Schlegelmilch](https://preview.lib.umich.edu/users/elleande), User Interface User Experience Designer
