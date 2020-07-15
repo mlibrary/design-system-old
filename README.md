@@ -4,7 +4,7 @@
 
 The design system is an open-source platform for web teams to reuse common solutions and learn from one another to help build inclusive and high quality websites.
 
-[View the documentation](umich-lib-docs.netlify.app/)
+[View the documentation](https://umich-lib-docs.netlify.app/)
 
 ## Contribute to repo
 
