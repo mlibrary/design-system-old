@@ -9,7 +9,9 @@ eleventyNavigation:
 
 The University of Michigan Library Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
 
-The Design System is divided into front-end packages. Provided packages include:
+The Design System is divided into versioned front-end packages. This means the [Design System team](/support#design-system-team) can maintain those packages independently from the website that uses them.
+
+Provided packages include:
 
 - CSS
 - Components
