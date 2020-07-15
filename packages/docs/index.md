@@ -11,14 +11,14 @@ The University of Michigan Library Design System aims to provide resources for d
 
 ## Getting started
 
-The Design System is divided into front-end packages. These tools can be used together or separately depending on your team's needs. Provided packages include:
+The Design System is divided into front-end packages. Provided packages include:
 
 - CSS
 - Components
 
 ### CSS
 
-Include the CSS link tag to the `<head>`.
+Include the CSS link tag to the `<head>`. This will make design tokens available as custom properties (aka CSS variables).
 
 ```html
 <link
@@ -29,9 +29,7 @@ Include the CSS link tag to the `<head>`.
 
 ### Components
 
-U-M Library Design System makes it easy to implement and use its components across any framework or no framework at all. We accomplish this by using standardized web platform APIs and Web Components.
-
-If you’re working on a simple HTML page, you can start using the components immediately by adding these script tags to the `<head>`:
+You can start using the components immediately by adding these script tags to the `<head>`:
 
 ```html
 <script
@@ -44,7 +42,9 @@ If you’re working on a simple HTML page, you can start using the components im
 ></script>
 ```
 
-Once included, components can be used in your markup like any other regular HTML elements:
+Browsers that support modules will load the first, while older browsers will load the second, bundled version.
+
+Once included, components can be used in your markup like any other regular HTML elements. Only components that are actually used will be loaded.
 
 ```html 9-4
 <!DOCTYPE html>
@@ -78,20 +78,4 @@ Once included, components can be used in your markup like any other regular HTML
 </html>
 ```
 
-[![Edit @umich-lib/components and @umich-lib/css with unpkg](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/umich-libcomponents-and-umich-libcss-with-unpkg-468rj?fontsize=14&hidenavigation=1&theme=dark)
-
-## Design System Principles
-
-A set of principles underpins all our design decisions and guides us when we need to make hard choices. This criteria is what makes good design at U-M Library and all design patterns are evaluated against it.
-
-### 1. Backed by research
-
-Understanding user needs is central. Our design, development, and content efforts must be based on what real users need — what they need to do, what they need to know, and what challenges they may need to overcome. Decisions will be informed by research and by best practices and standards.
-
-### 2. Simple
-
-Less is more. Our visual style is clean and understated. We help users stay focused by using subtle, unobtrusive graphics, standard controls, and predictable behaviors. We offer users a well thought-out path, rather than overwhelming them with choice.
-
-### 3. Robust
-
-Anyone should be able to understand and use our interfaces. Our sites are intuitive, flexible, and resilient. And when we say 'anyone', we mean it. Our products and visual language should be welcoming and accessible for all users, regardless of their age, gender, or device.
+[Edit this example in CodeSandbox](https://codesandbox.io/s/umich-libcomponents-and-umich-libcss-with-unpkg-468rj?fontsize=14&hidenavigation=1&theme=dark)
