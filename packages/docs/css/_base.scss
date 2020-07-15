@@ -144,6 +144,7 @@ h3 {
     height: 24px;
     fill: currentColor;
     margin-right: var(--space-x-small);
+    flex-shrink: 0;
   }
 
   &:hover {
