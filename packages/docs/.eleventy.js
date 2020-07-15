@@ -5,6 +5,7 @@ const pluginTOC = require("eleventy-plugin-nesting-toc");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const stencil = require("@umich-lib/components/hydrate");
+const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 
 module.exports = function(eleventyConfig) {
   // Copy `css/` to `_site/css/`.
@@ -47,4 +48,7 @@ module.exports = function(eleventyConfig) {
     }
     return content;
   });
+
+  // https://github.com/mightyplow/eleventy-plugin-cache-buster#readme
+  eleventyConfig.addPlugin(cacheBuster());
 };
