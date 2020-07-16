@@ -18,7 +18,7 @@ Provided packages include:
 
 ### CSS
 
-Include the CSS link tag to the `<head>`. This will make design tokens available as custom properties (aka CSS variables).
+Include the CSS link tag to the `<head>`. This will make [design tokens](/design-tokens) available for use as CSS custom properties (aka CSS variables).
 
 ```html
 <link
@@ -29,7 +29,7 @@ Include the CSS link tag to the `<head>`. This will make design tokens available
 
 ### Components
 
-You can start using the components immediately by adding these script tags to the `<head>`:
+You can start using the [components](/components) immediately by adding these script tags to the `<head>`:
 
 ```html
 <script
