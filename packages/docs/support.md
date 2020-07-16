@@ -23,6 +23,10 @@ The team is responsible for making sure that contributions to the system are of 
 - [Roger Espinosa](https://preview.lib.umich.edu/users/roger), Application Programmer/Analyst Senior
 - [Ellen Schlegelmilch](https://preview.lib.umich.edu/users/elleande), User Interface User Experience Designer
 
+## Browser support
+
+We garuntee browser support for the latest two versions for Chrome, Firefox, Safari, Edge, and Opera. Critical bug fixes in earlier versions will be addressed based on their severity and impact.
+
 ## Design System Principles
 
 A set of principles underpins all our design decisions and guides us when we need to make hard choices. This criteria is what makes good design at U-M Library and all design patterns are evaluated against it.
