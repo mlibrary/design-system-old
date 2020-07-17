@@ -12,6 +12,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   // Copy everything in static to _site
   eleventyConfig.addPassthroughCopy("static");
+
+  // To handle the service worker.
   eleventyConfig.addPassthroughCopy("sw.js");
 
   // Enable plugins.

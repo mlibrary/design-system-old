@@ -6,6 +6,7 @@
   <tr>
     <th>Preview</th>
     <th>CSS custom property</th>
+    <th>Value</th>
   </tr>
   {% for token in color %}
     <tr>
@@ -14,6 +15,9 @@
       </td>
       <td>
         <code>var(--{{token.name}})</code>
+      </td>
+      <td>
+        <code>{{token.value}}</code>
       </td>
     </tr>
   {% endfor %}
@@ -27,6 +31,7 @@
   <tr>
     <th>Preview</th>
     <th>CSS custom property</th>
+    <th>Value</th>
   </tr>
   {% for token in space %}
     <tr>
@@ -35,6 +40,9 @@
       </td>
       <td>
         <code>var(--{{token.name}})</code>
+      </td>
+      <td>
+        <code>{{token.value}}</code>
       </td>
     </tr>
   {% endfor %}
