@@ -16,7 +16,7 @@ Provided packages include:
 - CSS
 - Components
 
-### CSS
+## CSS
 
 Include the CSS link tag to the `<head>`. This will make [design tokens](/design-tokens) available for use as CSS custom properties (aka CSS variables).
 
@@ -27,7 +27,7 @@ Include the CSS link tag to the `<head>`. This will make [design tokens](/design
 />
 ```
 
-### Components
+## Components
 
 You can start using the [components](/components) immediately by adding these script tags to the `<head>`:
 
@@ -45,6 +45,8 @@ You can start using the [components](/components) immediately by adding these sc
 Browsers that support modules will load the first, while older browsers will load the second, bundled version.
 
 Once included, components can be used in your markup like any other regular HTML elements. Only components that are actually used will be loaded.
+
+## Example
 
 ```html 9-4
 <!DOCTYPE html>
