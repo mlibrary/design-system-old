@@ -30,6 +30,11 @@ body {
 
 main.layout {
   align-content: baseline;
+
+  margin-top: var(--space-x-small);
+  @media screen and (min-width: 820px) {
+    margin-top: var(--space-xx-large);
+  }
 }
 
 /* end */
