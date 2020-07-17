@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Documentation website for the U-M Library Design System.",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "prebuild": "npm run copy:components && npm run process-data",
     "build": "npx @11ty/eleventy",
