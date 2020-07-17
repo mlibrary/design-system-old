@@ -33,8 +33,9 @@ module.exports = function(eleventyConfig) {
     }).use(markdownItAnchor)
   );
 
-  // Copy everything in static to _site
+  // Copy everything in static and public to _site
   eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("public");
 
   // Server side rendering for @umich-lib/components.
   eleventyConfig.addTransform("ssr", async (content, outputPath) => {
