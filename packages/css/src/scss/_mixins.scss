@@ -6,56 +6,56 @@ $font-stack-map: (
     font-size: var(--text-xxx-large),
     font-weight: var(--regular),
     font-style: normal,
-    line-height: var(--line-height-page-heading)
+    line-height: var(--line-height-page-heading),
   ),
   page-heading-xx-large: (
     font-family: var(--font-second-family),
     font-weight: var(--regular),
     font-size: var(--text-xx-large),
     font-style: normal,
-    line-height: var(--line-height-page-heading)
+    line-height: var(--line-height-page-heading),
   ),
   subheading-x-large: (
     font-family: var(--font-base-family),
     font-size: var(--text-x-large),
     font-weight: var(--bold),
     font-style: normal,
-    line-height: var(--line-height-heading)
+    line-height: var(--line-height-heading),
   ),
   subheading-large: (
     font-family: var(--font-base-family),
     font-size: var(--text-large),
     font-weight: var(--semibold),
     font-style: normal,
-    line-height: var(--line-height-heading)
+    line-height: var(--line-height-heading),
   ),
   subheading-medium: (
     font-family: var(--font-base-family),
     font-size: var(--text-medium),
     font-weight: var(--semibold),
     font-style: normal,
-    line-height: var(--line-height-heading)
+    line-height: var(--line-height-heading),
   ),
   card-titles-small: (
     font-family: var(--font-base-family),
     font-size: var(--text-small),
     font-weight: var(--semibold),
     font-style: normal,
-    line-height: var(--line-height-default)
+    line-height: var(--line-height-default),
   ),
   text-x-small: (
     font-family: var(--font-base-family),
     font-size: var(--text-x-small),
     font-weight: var(--regular),
     font-style: normal,
-    line-height: var(--line-height-default)
+    line-height: var(--line-height-default),
   ),
   text-xx-small: (
     font-family: var(--font-base-family),
     font-size: var(--text-xx-small),
     font-weight: var(--regular),
     font-style: normal,
-    line-height: var(--line-height-default)
+    line-height: var(--line-height-default),
   ),
   details-xxx-small: (
     font-family: var(--font-base-family),
@@ -64,8 +64,8 @@ $font-stack-map: (
     font-style: normal,
     text-transform: uppercase,
     letter-spacing: 1.25px,
-    line-height: var(--line-height-default)
-  )
+    line-height: var(--line-height-default),
+  ),
 );
 
 @mixin font-modifiers() {
@@ -84,60 +84,4 @@ $font-stack-map: (
 
 .m {
   @include font-modifiers;
-}
-
-/* Color */
-$color-map: (
-  blue-100: $color-blue-100,
-  blue-200: $color-blue-200,
-  blue-300: $color-blue-300,
-  blue-400: $color-blue-400,
-  blue-500: $color-blue-500,
-  maize-100: $color-maize-100,
-  maize-200: $color-maize-200,
-  maize-300: $color-maize-300,
-  maize-400: $color-maize-400,
-  maize-500: $color-maize-500,
-  neutral-100: $color-neutral-100,
-  neutral-200: $color-neutral-200,
-  neutral-300: $color-neutral-300,
-  neutral-400: $color-neutral-400,
-  neutral-500: $color-neutral-500,
-  teal-100: $color-teal-100,
-  teal-200: $color-teal-200,
-  teal-300: $color-teal-300,
-  teal-400: $color-teal-400,
-  teal-500: $color-teal-500,
-  orange-100: $color-orange-100,
-  orange-200: $color-orange-200,
-  orange-300: $color-orange-300,
-  orange-400: $color-orange-400,
-  orange-500: $color-orange-500,
-  pink-100: $color-pink-100,
-  pink-200: $color-pink-200,
-  pink-300: $color-pink-300,
-  pink-400: $color-pink-400,
-  pink-500: $color-pink-500,
-  indigo-100: $color-indigo-100,
-  indigo-200: $color-indigo-200,
-  indigo-300: $color-indigo-300,
-  indigo-400: $color-indigo-400,
-  indigo-500: $color-indigo-500,
-  green-100: $color-green-100,
-  green-200: $color-green-200,
-  green-300: $color-green-300,
-  green-400: $color-green-400,
-  green-500: $color-green-500
-);
-
-@mixin color-utilities($attribute: "color", $prefix: "-") {
-  @each $name, $hex in $color-map {
-    &-#{$name} {
-      color: $hex;
-    }
-  }
-}
-
-.m-color {
-  @include color-utilities();
 }
