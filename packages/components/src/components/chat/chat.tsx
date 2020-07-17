@@ -16,6 +16,13 @@ function ChatIcon() {
   );
 }
 
+/**
+ * @name Chat
+ * @description The Chat component provides access to the Ask a Librarian live chat service.
+ * @status ready
+ * @whenToUse Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.
+ * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+ */
 @Component({
   tag: "m-chat",
   styleUrl: "chat.scss",

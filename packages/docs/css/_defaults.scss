@@ -1,0 +1,66 @@
+@import "_reset.scss";
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+}
+
+a {
+  color: var(--color-teal-400);
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+ul {
+  list-style: disc;
+  margin-left: var(--space-large);
+}
+
+ol {
+  list-style: decimal;
+}
+
+li:not(:last-child) {
+  margin-bottom: var(--space-small);
+}
+
+code,
+pre {
+  font-family: Consolas, Monaco, Courier New, Courier, monospace;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  border-bottom: solid 2px var(--color-maize-400);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+th,
+td {
+  padding: var(--space-medium);
+  padding-left: 0;
+  vertical-align: top;
+}
+
+td {
+  border-bottom: solid 1px var(--color-neutral-100);
+}
+
+img {
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Chat",
+    "description": "The Chat component provides access to the Ask a Librarian live chat service.",
+    "status": "ready",
+    "whenToUse": "Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.",
+    "whenNotToUse": "If your website is not being hosted on lib.umich.edu.",
+    "tag": "m-chat"
+  },
+  {
+    "name": "Universal Header",
+    "description": "The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.",
+    "status": "ready",
+    "whenToUse": "You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.",
+    "whenNotToUse": "If your website is not being hosted on lib.umich.edu.",
+    "tag": "m-universal-header"
+  }
+]

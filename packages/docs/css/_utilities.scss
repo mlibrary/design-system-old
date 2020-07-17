@@ -1,0 +1,23 @@
+.prose {
+  @media screen and (min-width: 820px) {
+    font-size: var(--text-x-small);
+  }
+
+  h1 {
+    margin-bottom: var(--space-x-large);
+  }
+
+  h2,
+  h3 {
+    margin-top: var(--space-xx-large);
+  }
+}
+
+.owl > * + * {
+  margin-bottom: var(--space-medium);
+}
+
+.sticky-top {
+  position: sticky;
+  top: var(--space-large);
+}

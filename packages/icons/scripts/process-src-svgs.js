@@ -57,4 +57,6 @@ fs.readdir(sourcePath, function(error, files) {
       }
     });
   });
+
+  return;
 });

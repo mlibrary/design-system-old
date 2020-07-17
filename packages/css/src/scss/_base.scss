@@ -5,133 +5,19 @@
   @include custom-properties;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: var(--text-base-size);
-  line-height: var(--line-height-default);
-}
-
+html,
 body {
-  font-size: 1rem;
-  color: var(--color-neutral-400);
+  margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: var(--space-x-small);
-}
-
-.link {
-  color: var(--color-teal-400);
-  box-shadow: inset 0 -1px var(--color-teal-400);
-  text-decoration: none;
-
-  &:hover {
-    box-shadow: inset 0 -2px var(--color-teal-400);
-  }
-}
-
-.error {
-  color: var(--color-orange-100);
-}
-
-.warning {
-  color: var(--color-maize-100);
-}
-
-.success {
-  color: var(--color-teal-100);
-}
-
+/*
+  Credit: https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*/
 .visually-hidden {
-  /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
   position: absolute !important;
   height: 1px;
   width: 1px;
   overflow: hidden;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
-}
-
-/* Font-size */
-
-.xxx-small {
-  font-size: var(--text-xxx-small);
-}
-
-.xx-small {
-  font-size: var(--text-xx-small);
-}
-
-.x-small {
-  font-size: var(--text-x-small);
-}
-
-.small {
-  font-size: var(--text-small);
-}
-
-.medium {
-  font-size: var(--text-medium);
-}
-
-.large {
-  font-size: var(--text-large);
-}
-
-.x-large {
-  font-size: var(--text-x-large);
-}
-
-.xx-large {
-  font-size: var(--text-xx-large);
-}
-
-.xxx-large {
-  font-size: var(--text-xxx-large);
-}
-
-/* Display */
-
-.flex {
-  display: flex;
-}
-
-.inline-flex {
-  display: inline-flex;
-}
-
-.inline {
-  display: inline;
-}
-
-.grid {
-  display: grid;
-}
-
-/* Layers */
-
-.z-space-small {
-  box-shadow: var(--z-space-small);
-}
-
-.z-space-medium {
-  box-shadow: var(--z-space-medium);
-}
-
-/* Weight */
-
-.bold {
-  font-weight: var(--bold);
-}
-
-.regular {
-  font-weight: var(--regular);
-}
-
-.semi-bold {
-  font-weight: var(--semibold);
 }

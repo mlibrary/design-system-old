@@ -15,8 +15,8 @@
     "hydrate/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
+    "build": "stencil build --docs --docs-json dist/docs.json",
+    "start": "stencil build --dev --watch --serve --docs-json dist/docs.json",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
@@ -28,7 +28,6 @@
   "dependencies": {
     "@umich-lib/css": "^1.0.0",
     "@umich-lib/icons": "^1.0.0",
-    "@umich-lib/utils": "^1.0.0",
     "classnames": "^2.2.6"
   },
   "license": "MIT",

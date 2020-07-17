@@ -1,0 +1,34 @@
+.site-footer__content {
+  background: var(--color-blue-400);
+  color: var(--color-blue-100);
+  padding: var(--space-xxx-large) 0;
+
+  .m-details-xxx-small {
+    color: var(--color-blue-200);
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.site-footer__disclaimer {
+  background: var(--color-blue-500);
+  color: var(--color-blue-200);
+
+  padding: var(--space-medium) 0;
+
+  a {
+    color: var(--color-blue-200);
+  }
+
+  @media screen and (min-width: 820px) {
+    p {
+      display: "inline-block";
+    }
+
+    p + p {
+      margin-left: var(--space-x-large);
+    }
+  }
+}

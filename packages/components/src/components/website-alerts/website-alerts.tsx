@@ -1,5 +1,11 @@
 import { Component, State, h } from "@stencil/core";
 
+/**
+ * @name Website Alerts
+ * @description The Website Alerts provide public messages for end-users to be notified about.
+ * @status ready
+ * @private
+ */
 @Component({
   tag: "m-website-alerts",
   styleUrl: "website-alerts.scss",

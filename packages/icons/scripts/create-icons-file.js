@@ -24,8 +24,8 @@ fs.readdir(svgsPath, function(error, files) {
       ...acc,
       [name]: {
         name,
-        svg: file
-      }
+        svg: file,
+      },
     };
   }, {});
 
@@ -33,4 +33,6 @@ fs.readdir(svgsPath, function(error, files) {
     icons
   )};export default icons;`;
   fs.writeFileSync(distPath, iconsFile, "utf8");
+
+  return;
 });
