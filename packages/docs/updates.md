@@ -16,14 +16,14 @@ We finally have a way to create our own [HTML elements](https://html.spec.whatwg
 
 ### CSS
 
-`v1.0.0`
+`v1.0`
 
 - Added Color and Space design tokens available as CSS custom properties
 - Added Fonts
 
 ### Components
 
-`v1.0.1`
+`v1.0`
 
 - Added Chat component
 - Added Universal Header component
