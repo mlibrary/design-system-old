@@ -10,6 +10,9 @@ const stencil = require("@umich-lib/components/hydrate");
 module.exports = function(eleventyConfig) {
   // Copy `css/` to `_site/css/`.
   eleventyConfig.addPassthroughCopy("css");
+  // Copy everything in static to _site
+  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("sw.js");
 
   // Enable plugins.
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -32,10 +35,6 @@ module.exports = function(eleventyConfig) {
       typographer: true,
     }).use(markdownItAnchor)
   );
-
-  // Copy everything in static and public to _site
-  eleventyConfig.addPassthroughCopy("static");
-  eleventyConfig.addPassthroughCopy("public");
 
   // Server side rendering for @umich-lib/components.
   eleventyConfig.addTransform("ssr", async (content, outputPath) => {
