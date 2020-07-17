@@ -48,6 +48,8 @@ Once included, components can be used in your markup like any other regular HTML
 
 ## Example
 
+Once you’ve added each package shown above, the markup for your HTML page should look about like this:
+
 ```html 9-4
 <!DOCTYPE html>
 <html lang="en">
