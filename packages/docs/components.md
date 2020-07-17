@@ -16,6 +16,6 @@ The Design System makes it easy to implement and use its components across any f
 
 {{ component.description }}
 
-[View <span class="visually-hidden">{{ component.name }}</span> documentation]({{ component.name | slug }})
+[Learn about how and when to use <span class="visually-hidden">{{ component.name }}</span>]({{ component.name | slug }})
 
 {% endfor %}
