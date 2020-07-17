@@ -5,10 +5,11 @@ pagination:
     alias: component
     size: 1
 permalink: "components/{{ component.name | slug }}/"
-eleventyNavigation:
-  key: Component
-  parent: Components
 templateEngineOverride: njk,md
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{ component.name }}"
+    parent: Components
 ---
 
 # {{ component.name }}
