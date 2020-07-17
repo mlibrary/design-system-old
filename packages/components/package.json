@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -26,8 +26,8 @@
     "@stencil/sass": "^1.1.1"
   },
   "dependencies": {
-    "@umich-lib/css": "^1.0.0",
-    "@umich-lib/icons": "^1.0.0",
+    "@umich-lib/css": "^1.0.2",
+    "@umich-lib/icons": "^1.0.2",
     "classnames": "^2.2.6"
   },
   "license": "MIT",
