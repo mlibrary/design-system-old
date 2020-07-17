@@ -10,7 +10,9 @@
   },
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
+    "prelerna:publish": "npm run build",
     "lerna:publish": "lerna publish",
+    "prelerna:publish-force": "npm run build",
     "lerna:publish-force": "lerna publish --force-publish",
     "prestart": "npm run build",
     "start": "lerna run start --stream --parallel",
