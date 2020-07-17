@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Design tokens
   order: 1
 templateEngineOverride: njk
-description: Design tokens are a tech-agnostic way to store low-level values and then use them to create the styles for your website. We use tokens instead of hard coded values to ensure a scalable, consistent, and sustainable system.
+description: Design tokens are a tech-agnostic way to store low-level values and then use them to create the styles for your website. Use tokens instead of hard coded values to ensure a scalable, consistent, and sustainable system.
 ---
 
 <h1>Design tokens</h1>
