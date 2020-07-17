@@ -3,11 +3,12 @@ layout: layout.njk
 eleventyNavigation:
   key: Updates
   order: 5
+description: Read the latest updates from Design System team. We will highlight new features, changes, and progress.
 ---
 
 # Updates
 
-Read the latest updates from Design System team. We will highlight new features, changes, and progress.
+{{ description }}
 
 ## July, 2020
 
