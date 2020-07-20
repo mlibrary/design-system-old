@@ -7,7 +7,7 @@ description: Documentation for the U-M Library Design System.
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ eleventyNavigation.key }} | U-M Library Design System</title>
+    <title>{{ title or eleventyNavigation.key }} | U-M Library Design System</title>
     <meta name="Description" content="{{ description }}">
     <link rel="icon" href="/static/images/favicon-32x32.png" type="image/png">
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}"/>
@@ -28,8 +28,8 @@ description: Documentation for the U-M Library Design System.
     <m-universal-header></m-universal-header>
     {% include 'site-header.njk' %}
     <main class="layout">
-
       {% include 'site-navigation.njk' %}
+
       <aside class="site-layout__right">
         <div class="sticky-top">
           {% include 'table-of-contents.njk' %}
