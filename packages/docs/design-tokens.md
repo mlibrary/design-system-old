@@ -17,7 +17,7 @@ description: Design tokens are a tech-agnostic way to store low-level values and
 
 <h2 id="accessibility">Accessibility</h2>
 
-<p>When using colors, be sure to use them in accessible combinations. Use the <a href="https://webaim.org/resources/contrastchecker/">WebAIM Contrast Checker</a> and  reference <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Understanding Success Criterion 1.4.3: Contrast (Minimum)</a> to make the accessible decisions.</p>
+<p>When using colors, be sure to use them in accessible combinations. Use the <a href="https://webaim.org/resources/contrastchecker/">WebAIM Contrast Checker</a> and  reference <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Understanding Success Criterion 1.4.3: Contrast (Minimum)</a> to make accessible decisions.</p>
 
 <h2 id="integration">Integration</h2>
 
