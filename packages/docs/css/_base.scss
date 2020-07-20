@@ -76,6 +76,10 @@ h3 {
 }
 
 .table-of-contents {
+  h2 {
+    margin-bottom: var(--space-x-small);
+  }
+
   ol {
     list-style: none;
     padding: 0;
