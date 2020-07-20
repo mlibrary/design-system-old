@@ -18,17 +18,19 @@ We finally have a way to create our own [HTML elements](https://html.spec.whatwg
 
 `v1.0`
 
-- Added Color and Space design tokens available as CSS custom properties
+- Added [Color](/design-tokens#color) and [Space](/design-tokens#space) design tokens available as CSS custom properties
 - Added Fonts
 
 ### Components
 
 `v1.0`
 
-- Added Chat component
-- Added Universal Header component
+- Added [Chat component](/components/chat)
+- Added [Universal Header component](/components/universal-header)
 
 ### Docs
+
+`v1.0`
 
 - Redesigned public documentation with [Eleventy](https://www.11ty.dev/)
 
