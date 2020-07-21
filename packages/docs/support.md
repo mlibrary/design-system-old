@@ -26,7 +26,7 @@ The team is responsible for making sure that contributions to the system are of 
 
 ## Browser support
 
-We garuntee browser support for the latest two versions for Chrome, Firefox, Safari, Edge, and Opera. Critical bug fixes in earlier versions will be addressed based on their severity and impact.
+We guarantee browser support for the latest two versions for Chrome, Firefox, Safari, Edge, and Opera. Critical bug fixes in earlier versions will be addressed based on their severity and impact.
 
 ## Design System Principles
 
