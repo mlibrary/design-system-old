@@ -21,7 +21,9 @@ export class WebsiteAlerts {
     if (domain.includes("umich.edu")) {
       this.status = "loading";
 
-      fetch("https://staff.lib.umich.edu/api/alerts", { cache: "reload" })
+      fetch("https://staff.lib.umich.edu/api/alerts?now=" + Date.now(), {
+        cache: "reload"
+      })
         .then(response => response.json())
         .then(result => {
           const alertsThatTargetHost = result.reduce((memo, alert) => {
