@@ -19,10 +19,10 @@ The **Design System team** provides support for designers, developers, project m
 
 The team is responsible for making sure that contributions to the system are of a high quality and meet our needs to build U-M Library websites.
 
-- [Jon Earley](https://preview.lib.umich.edu/users/earleyj) (Design System Lead), User Interface Design Engineer
-- [Bridget Burke](https://preview.lib.umich.edu/users/burkebri), Front-end Developer and Accessibility Specialist
-- [Roger Espinosa](https://preview.lib.umich.edu/users/roger), Application Programmer/Analyst Senior
-- [Ellen Schlegelmilch](https://preview.lib.umich.edu/users/elleande), User Interface User Experience Designer
+- [Jon Earley](https://www.lib.umich.edu/users/earleyj) (Design System Lead), User Interface Design Engineer
+- [Bridget Burke](https://www.lib.umich.edu/users/burkebri), Front-end Developer and Accessibility Specialist
+- [Roger Espinosa](https://www.lib.umich.edu/users/roger), Application Programmer/Analyst Senior
+- [Ellen Schlegelmilch](https://www.lib.umich.edu/users/elleande), User Interface User Experience Designer
 
 ## Browser support
 

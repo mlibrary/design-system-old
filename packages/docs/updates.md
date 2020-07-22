@@ -36,5 +36,5 @@ We finally have a way to create our own [HTML elements](https://html.spec.whatwg
 
 ### Highlights
 
-- The redesigned [Library website](https://preview.lib.umich.edu/) launched July 21 with the Universal Header and Chat components
+- The redesigned [Library website](https://www.lib.umich.edu/) launched July 21 with the Universal Header and Chat components
 - [Library Search](https://search.lib.umich.edu/) updated with the Universal Header and Chat components
