@@ -16,7 +16,7 @@ We finally have a way to create our own [HTML elements](https://html.spec.whatwg
 
 ### News
 
-The redesigned [Library website](https://www.lib.umich.edu/) was launched and is built with the Design System 🤩. Also, [Library Search](https://search.lib.umich.edu/) and [MGet It](https://mgetit.lib.umich.edu/) have been updated to use the Universal Header and Chat components.
+The redesigned [library website](https://www.lib.umich.edu/) was launched and is built with the Design System 🤩. Also, [Library Search](https://search.lib.umich.edu/) and [MGet It](https://mgetit.lib.umich.edu/) have been updated to use the Universal Header and Chat components.
 
 ### Package changes
 
