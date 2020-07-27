@@ -19,3 +19,5 @@ npm start
 Once started, a development environment of local packages for `@umich-lib/docs` is available at http://localhost:8080/ and `@umich-lib/components` at http://localhost:3333/.
 
 Rerun `npm start` for changes between packages to appear. Such as a change to a `@umich-lib/css` appearing in `@umich-lib/docs`.
+
+Each package has a CONTRIBUTING.md file for further details specific to that package.
