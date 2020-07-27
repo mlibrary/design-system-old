@@ -10,10 +10,6 @@ A basic way to track what needs to be done and keep it close to source code.
 
 ## TODO
 
-### React / umich-lib-ui
-
-- [ ] REACT-1: Figure out how to archive and move away from the public documentation around the React components.
-
 ### Build / Lerna
 
 - [ ] BUILD-1: Review the publishing process and make sure we publish in a way that makes sense. Consider how to author alphas or "non-prod" version for testing? Document this so contributors know how to release changes.
