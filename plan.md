@@ -16,7 +16,7 @@ A basic way to track what needs to be done and keep it close to source code.
 
 ### Build / Lerna
 
-- [ ] BUILD-1: Review publishing process and make sure we publish in a way that makes sense. Consider how to author alphas or "non-prod" version for testing? Document this so contributors know how to release changes.
+- [ ] BUILD-1: Review the publishing process and make sure we publish in a way that makes sense. Consider how to author alphas or "non-prod" version for testing? Document this so contributors know how to release changes.
 - [ ] BUILD-2: Come up with a testing strategy. How do we test builds to know they're ready for production?
 
 ### Components
@@ -41,7 +41,8 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] DOCS-3: Improve the footer. Consider adding links to GitHub repo and Slack channel? What else?
 - [ ] DOCS-4: At the end of every month, post monthly updates from /updates to Slack #design-system. Fancy bonus points, make a Slack bot to post the latest month in the 11ty collection of updates. BAM.
 - [ ] DOCS-5: Make a 100, 100, 100, ... lighthouse SCORE, ftw.
-- [ ] DOCS-6: MAXIMIZE THE SEO. Add an image or something.
+- [ ] DOCS-6: MAXIMIZE THE SEO. Add an image or something for fancy link sharing preview generation in places like Slack, for example.
+- [ ] DOCS-7: Consider cache busting.
 
 ### Developer engagment
 
