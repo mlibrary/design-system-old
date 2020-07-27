@@ -10,7 +10,7 @@ description: Read the latest updates from the Design System team. We will highli
 
 {{ description }}
 
-## July, 2020
+## July 2020
 
 We finally have a way to create our own [HTML elements](https://html.spec.whatwg.org/multipage/custom-elements.html) and use them in any framework we want. This update is our investment in that web standard and our first public release.
 
