@@ -81,6 +81,11 @@ h3 {
   font-weight: var(--semibold);
 }
 
+h4 {
+  font-size: var(--text-small);
+  font-weight: var(--bold);
+}
+
 .layout {
   display: grid;
   grid-template-columns:
