@@ -39,6 +39,7 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] DOCS-5: Make a 100, 100, 100, ... lighthouse SCORE, ftw.
 - [ ] DOCS-6: MAXIMIZE THE SEO. Add an image or something for fancy link sharing preview generation in places like Slack, for example.
 - [ ] DOCS-7: Consider cache busting.
+- [ ] DOCS-8: Add REPL as a sandbox tool.
 
 ### Developer engagment
 
