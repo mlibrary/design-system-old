@@ -15,23 +15,21 @@ import cn from "classnames";
 })
 export class Chat {
   @State() open = false;
-  @State() online = false;
+  /**
+   * Default to online since the Ask a Librarian
+   * iframe will have a fallback offline message.
+   *
+   * This state will be an enhancement to the
+   * out-of-box offline message.
+   */
+  @State() online = true;
 
   toggle() {
     this.open = !this.open;
   }
 
   componentWillLoad() {
-    fetch(
-      "https://us.libraryh3lp.com/presence/jid/umlibraryaskalibrarian/chat.libraryh3lp.com/js"
-    )
-      .then(response => response.json())
-      .then(result => {
-        console.log("Is Chat online?", result);
-      })
-      .catch(e => {
-        console.warn("Unable to check Chat status.", e);
-      });
+    this.online = window["chatOnline"] === true;
   }
 
   render() {
