@@ -28,7 +28,7 @@ export class Chat {
     this.open = !this.open;
   }
 
-  componentWillLoad() {
+  isOnline() {
     fetch(
       "https://libraryh3lp-com.proxy.lib.umich.edu/presence/jid/umlibraryaskalibrarian/chat.libraryh3lp.com/text"
     )
@@ -39,6 +39,12 @@ export class Chat {
       .catch(e => {
         console.warn("Unable to check Chat online status.", e);
       });
+  }
+
+  componentWillLoad() {
+    this.isOnline();
+
+    setInterval(this.isOnline, 60000);
   }
 
   render() {
