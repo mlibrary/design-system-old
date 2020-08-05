@@ -29,7 +29,16 @@ export class Chat {
   }
 
   componentWillLoad() {
-    this.online = window["chatOnline"] === true;
+    fetch(
+      "https://libraryh3lp-com.proxy.lib.umich.edu/presence/jid/umlibraryaskalibrarian/chat.libraryh3lp.com/text"
+    )
+      .then(response => response.text())
+      .then(result => {
+        this.online = result !== "available";
+      })
+      .catch(e => {
+        console.warn("Unable to check Chat online status.", e);
+      });
   }
 
   render() {
