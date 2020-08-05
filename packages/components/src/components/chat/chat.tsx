@@ -34,7 +34,7 @@ export class Chat {
     )
       .then(response => response.text())
       .then(result => {
-        this.online = result !== "available";
+        this.online = result === "available";
       })
       .catch(e => {
         console.warn("Unable to check Chat online status.", e);
