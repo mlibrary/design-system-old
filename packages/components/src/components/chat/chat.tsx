@@ -95,7 +95,7 @@ export class Chat {
               <p class="m-chat__offline-msg">
                 We're <strong>offline</strong> right now, but you can{" "}
                 <a href="https://www.lib.umich.edu/ask-librarian">
-                  view our hours and more ways to ask
+                  view our hours and more ways to get in touch
                 </a>
                 .
               </p>
