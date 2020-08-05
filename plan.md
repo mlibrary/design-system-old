@@ -20,6 +20,7 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] COMP-1: Consider if Storybook should live within the @umich-lib/components package and not at the root.
 - [ ] COMP-2: Chat -- Reach out to stakeholders about when to use the Chat component. Probably someone from Ask a Librarian staff.
 - [ ] COMP-3: Universal Header -- Reach out to Heidi and folks about when to use component content.
+- [ ] COMP-4: Bug/Improvement: Fix chat component small screen Ask a Librarian CSS skin; It can sometimes get all wonky. Also, the "chat offline" message has too low of contrast. Can this be improved? 
 
 ### CSS
 
@@ -39,7 +40,7 @@ A basic way to track what needs to be done and keep it close to source code.
 - [ ] DOCS-5: Make a 100, 100, 100, ... lighthouse SCORE, ftw.
 - [ ] DOCS-6: MAXIMIZE THE SEO. Add an image or something for fancy link sharing preview generation in places like Slack, for example.
 - [ ] DOCS-7: Consider cache busting.
-- [ ] DOCS-8: Add REPL as a sandbox tool.
+- [ ] DOCS-8: Add REPL as a sandbox tool. Consider https://github.com/sveltejs/svelte-repl#readme
 
 ### Developer engagment
 
