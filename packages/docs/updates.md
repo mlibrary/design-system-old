@@ -10,31 +10,37 @@ description: Read the latest updates from the Design System team. We will highli
 
 {{ description }}
 
+## August 2020
+
+### Components
+
+- Added an [offline message to the Chat component](/components/chat).
+
+### Docs
+
+- Added [an accessibility statement to our support page](/support/#accessibility).
+
 ## July 2020
 
 We finally have a way to create our own [HTML elements](https://html.spec.whatwg.org/multipage/custom-elements.html) and use them in any framework we want. This update is our investment in that web standard and our first public release.
 
-### News
+The redesigned [library website](https://www.lib.umich.edu/) was launched and is built with the Design System 🤩. Also, [Library Search](https://search.lib.umich.edu/) and [MGet It](https://mgetit.lib.umich.edu/) have been updated to use the Universal Header and Chat.
 
-The redesigned [library website](https://www.lib.umich.edu/) was launched and is built with the Design System 🤩. Also, [Library Search](https://search.lib.umich.edu/) and [MGet It](https://mgetit.lib.umich.edu/) have been updated to use the Universal Header and Chat components.
-
-### Package changes
-
-#### CSS
+### CSS
 
 `v1.0`
 
 - Added [Color](/design-tokens#color) and [Space](/design-tokens#space) design tokens available as CSS custom properties
 - Added Fonts
 
-#### Components
+### Components
 
 `v1.0`
 
 - Added [Chat component](/components/chat)
 - Added [Universal Header component](/components/universal-header)
 
-#### Docs
+### Docs
 
 `v1.0`
 
