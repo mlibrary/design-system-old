@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
