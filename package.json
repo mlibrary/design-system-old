@@ -2,11 +2,7 @@
   "name": "umich-lib-design-system",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@storybook/html": "^5.2.8",
-    "@types/node": "^13.5.0",
-    "babel-loader": "^8.0.6",
-    "lerna": "^3.20.2"
+    "lerna": "^3.22.1"
   },
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
@@ -16,7 +12,7 @@
     "lerna:publish-force": "lerna publish --force-publish",
     "prestart": "npm run build",
     "start": "lerna run start --stream --parallel",
-    "prebuild": "npm run lerna:bootstrap && lerna run build --scope @umich-lib/css --scope @umich-lib/components --scope @umich-lib/icons",
+    "prebuild": "npm run lerna:bootstrap && lerna run build --scope @umich-lib/css --scope @umich-lib/icons --scope @umich-lib/components",
     "build": "lerna run build --ignore @umich-lib/css --ignore @umich-lib/components --ignore @umich-lib/icons"
   }
 }

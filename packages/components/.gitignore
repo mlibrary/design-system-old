@@ -25,3 +25,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+
+# This is just copied SVGs from @umich-lib/css
+src/components/icon/svgs/

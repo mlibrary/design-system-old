@@ -1,5 +1,6 @@
 import { Config } from "@stencil/core";
 import { sass } from "@stencil/sass";
+import copy from "rollup-plugin-copy";
 
 export const config: Config = {
   namespace: "umich-lib",
@@ -23,6 +24,23 @@ export const config: Config = {
   plugins: [
     sass({
       includePaths: ["./node_modules/@umich-lib/css/dist"]
+    }),
+    copy({
+      targets: [
+        /*
+          This is used to copy @umich-lib/css svgs to
+          the <m-icon> component as local assets.
+
+          For reference:
+          - https://stenciljs.com/docs/custom-elements#making-assets-available
+          - https://stenciljs.com/docs/local-assets#local-assets
+        
+        {
+          src: path.resolve(__dirname, "node_modules/@umich-lib/icons/svgs"),
+          dest: path.resolve(__dirname, "src/components/icon")
+        }
+        */
+      ]
     })
   ]
 };
