@@ -1,0 +1,377 @@
+---
+props:
+  - theme: maize
+    name: color-blue-100
+    category: color
+    value: "#F7F8F9"
+    type: color
+  - theme: maize
+    name: color-blue-200
+    category: color
+    value: "#B2BEC9"
+    type: color
+  - theme: maize
+    name: color-blue-300
+    category: color
+    value: "#4C6781"
+    type: color
+  - theme: maize
+    name: color-blue-400
+    category: color
+    value: "#00274C"
+    type: color
+  - theme: maize
+    name: color-blue-500
+    category: color
+    value: "#001324"
+    type: color
+  - theme: maize
+    name: color-maize-100
+    category: color
+    value: "#FFF9E6"
+    type: color
+  - theme: maize
+    name: color-maize-200
+    category: color
+    value: "#FFEA9B"
+    type: color
+  - theme: maize
+    name: color-maize-300
+    category: color
+    value: "#FFDA50"
+    type: color
+  - theme: maize
+    name: color-maize-400
+    category: color
+    value: "#FFCB05"
+    type: color
+  - theme: maize
+    name: color-maize-500
+    category: color
+    value: "#EABA02"
+    type: color
+  - theme: maize
+    name: color-neutral-100
+    category: color
+    value: "#E5E9ED"
+    type: color
+  - theme: maize
+    name: color-neutral-200
+    category: color
+    value: "#8A96A1"
+    type: color
+  - theme: maize
+    name: color-neutral-300
+    category: color
+    value: "#637381"
+    type: color
+  - theme: maize
+    name: color-neutral-400
+    category: color
+    value: "#212B36"
+    type: color
+  - theme: maize
+    name: color-neutral-500
+    category: color
+    value: "#06080A"
+    type: color
+  - theme: maize
+    name: color-teal-100
+    category: color
+    value: "#E9F2F5"
+    type: color
+  - theme: maize
+    name: color-teal-200
+    category: color
+    value: "#A7CDDB"
+    type: color
+  - theme: maize
+    name: color-teal-300
+    category: color
+    value: "#65A8BF"
+    type: color
+  - theme: maize
+    name: color-teal-400
+    category: color
+    value: "#1D7491"
+    type: color
+  - theme: maize
+    name: color-teal-500
+    category: color
+    value: "#106684"
+    type: color
+  - theme: maize
+    name: color-orange-100
+    category: color
+    value: "#FFF1EB"
+    type: color
+  - theme: maize
+    name: color-orange-200
+    category: color
+    value: "#FFB899"
+    type: color
+  - theme: maize
+    name: color-orange-300
+    category: color
+    value: "#FF8A58"
+    type: color
+  - theme: maize
+    name: color-orange-400
+    category: color
+    value: "#F25F1F"
+    type: color
+  - theme: maize
+    name: color-orange-500
+    category: color
+    value: "#C74E1A"
+    type: color
+  - theme: maize
+    name: color-pink-100
+    category: color
+    value: "#FCEBEB"
+    type: color
+  - theme: maize
+    name: color-pink-200
+    category: color
+    value: "#F29D9D"
+    type: color
+  - theme: maize
+    name: color-pink-300
+    category: color
+    value: "#EC6969"
+    type: color
+  - theme: maize
+    name: color-pink-400
+    category: color
+    value: "#D93838"
+    type: color
+  - theme: maize
+    name: color-pink-500
+    category: color
+    value: "#BF3232"
+    type: color
+  - theme: maize
+    name: color-indigo-100
+    category: color
+    value: "#EEF1F9"
+    type: color
+  - theme: maize
+    name: color-indigo-200
+    category: color
+    value: "#AAB9E3"
+    type: color
+  - theme: maize
+    name: color-indigo-300
+    category: color
+    value: "#7C93D4"
+    type: color
+  - theme: maize
+    name: color-indigo-400
+    category: color
+    value: "#506FC5"
+    type: color
+  - theme: maize
+    name: color-indigo-500
+    category: color
+    value: "#274391"
+    type: color
+  - theme: maize
+    name: color-green-100
+    category: color
+    value: "#EAF8EE"
+    type: color
+  - theme: maize
+    name: color-green-200
+    category: color
+    value: "#96DBAA"
+    type: color
+  - theme: maize
+    name: color-green-300
+    category: color
+    value: "#57BC75"
+    type: color
+  - theme: maize
+    name: color-green-400
+    category: color
+    value: "#20A848"
+    type: color
+  - theme: maize
+    name: color-green-500
+    category: color
+    value: "#198539"
+    type: color
+  - theme: maize
+    name: font-base-family
+    category: typography
+    value: "'Muli', sans-serif"
+    type: font
+  - theme: maize
+    name: font-second-family
+    category: typography
+    value: "'Crimson Text', serif"
+    type: font
+  - theme: maize
+    name: bold
+    category: typography
+    value: "700"
+    type: font
+  - theme: maize
+    name: regular
+    category: typography
+    value: "400"
+    type: font
+  - theme: maize
+    name: semibold
+    category: typography
+    value: "600"
+    type: font
+  - theme: maize
+    name: line-height-default
+    category: typography
+    value: "1.5"
+    type: number
+  - theme: maize
+    name: line-height-heading
+    category: typography
+    value: "1.25"
+    type: number
+  - theme: maize
+    name: line-height-page-heading
+    category: typography
+    value: "1.125"
+    type: number
+  - theme: maize
+    name: text-base-size
+    category: typography
+    value: 16px
+    type: number
+  - theme: maize
+    name: text-xxx-large
+    category: typography
+    value: 3.5rem
+    type: number
+  - theme: maize
+    name: text-xx-large
+    category: typography
+    value: 2.25rem
+    type: number
+  - theme: maize
+    name: text-x-large
+    category: typography
+    value: 2rem
+    type: number
+  - theme: maize
+    name: text-large
+    category: typography
+    value: 1.75rem
+    type: number
+  - theme: maize
+    name: text-medium
+    category: typography
+    value: 1.5rem
+    type: number
+  - theme: maize
+    name: text-small
+    category: typography
+    value: 1.125rem
+    type: number
+  - theme: maize
+    name: text-x-small
+    category: typography
+    value: 1.125rem
+    type: number
+  - theme: maize
+    name: text-xx-small
+    category: typography
+    value: 1rem
+    type: number
+  - theme: maize
+    name: text-xxx-small
+    category: typography
+    value: 0.875rem
+    type: number
+  - theme: maize
+    name: space-xxx-small
+    category: space
+    value: 2px
+    type: number
+  - theme: maize
+    name: space-xx-small
+    category: space
+    value: 4px
+    type: number
+  - theme: maize
+    name: space-x-small
+    category: space
+    value: 8px
+    type: number
+  - theme: maize
+    name: space-small
+    category: space
+    value: 12px
+    type: number
+  - theme: maize
+    name: space-medium
+    category: space
+    value: 16px
+    type: number
+  - theme: maize
+    name: space-large
+    category: space
+    value: 24px
+    type: number
+  - theme: maize
+    name: space-x-large
+    category: space
+    value: 32px
+    type: number
+  - theme: maize
+    name: space-xx-large
+    category: space
+    value: 40px
+    type: number
+  - theme: maize
+    name: space-xxx-large
+    category: space
+    value: 48px
+    type: number
+  - theme: maize
+    name: space-xxxx-large
+    category: space
+    value: 64px
+    type: number
+  - theme: maize
+    name: space-xxxxx-large
+    category: space
+    value: 96px
+    type: number
+  - theme: maize
+    name: z-space-small
+    category: layers
+    value: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px
+    type: number
+  - theme: maize
+    name: z-space-medium
+    category: layers
+    value: rgba(0, 0, 0, 0.2) 0px 2px 16px 0px
+    type: number
+  - theme: maize
+    name: opacity-75
+    type: number
+    category: opacity
+    value: "0.75"
+  - theme: maize
+    name: opacity-50
+    type: number
+    category: opacity
+    value: "0.50"
+  - theme: maize
+    name: opacity-30
+    type: number
+    category: opacity
+    value: "0.30"
+  - theme: maize
+    name: radius-default
+    type: number
+    category: border-radius
+    value: 4px

@@ -1,0 +1,19 @@
+{
+  "name": "@umich-lib/tokens",
+  "version": "1.0.0",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "chokidar-cli": "^2.1.0",
+    "theo": "^8.1.5"
+  },
+  "scripts": {
+    "build": "node theo.js",
+    "build:watch": "chokidar \"tokens.yml\" -c \"npm run build\"",
+    "start": "npm run build:watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
