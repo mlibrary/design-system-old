@@ -4,22 +4,15 @@
   "files": [
     "dist/"
   ],
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-theo": "^2.0.0",
-    "node-sass": "^4.13.0",
-    "prettier": "1.19.1",
-    "theo": "^8.1.4"
-  },
   "scripts": {
-    "start": "gulp",
-    "build": "gulp",
-    "format:check": "prettier --check 'src/scss/*.scss' ",
-    "format:write": "prettier --write 'src/scss/*.scss' "
+    "build": "npx tailwindcss build src/styles.css -o dist/umich-lib.css",
+    "start": "npm run build"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.7.3",
+    "@umich-lib/tokens": "^1.0.0"
   }
 }
