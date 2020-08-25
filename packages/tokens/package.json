@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "node theo.js",
-    "build:watch": "chokidar \"tokens.yml\" -c \"npm run build\"",
+    "build:watch": "chokidar \"tokens.yml\" \"theo.js\" -c \"npm run build\"",
     "start": "npm run build:watch"
   },
   "publishConfig": {
