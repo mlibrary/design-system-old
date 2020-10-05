@@ -11,7 +11,11 @@ import { Component, h } from "@stencil/core";
 export class Logo {
   render() {
     return (
-      <svg viewBox="0 0 199 30" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        viewBox="0 0 199 30"
+        xmlns="http://www.w3.org/2000/svg"
+        height="34px"
+      >
         <g fill="none" fill-rule="evenodd">
           <g fill-rule="nonzero">
             <polyline
