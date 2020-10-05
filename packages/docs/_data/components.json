@@ -8,11 +8,25 @@
     "tag": "m-chat"
   },
   {
+    "name": "Logo",
+    "description": "The University of Michigan Library logo.",
+    "status": "experimental",
+    "tag": "m-logo"
+  },
+  {
     "name": "Universal Header",
     "description": "The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.",
     "status": "ready",
     "whenToUse": "You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.",
     "whenNotToUse": "If your website is not being hosted on lib.umich.edu.",
     "tag": "m-universal-header"
+  },
+  {
+    "name": "Website Header",
+    "description": "The Website Header displays our logo and shows users what U-M Library website that they are using.",
+    "status": "experimental",
+    "whenToUse": "If your website is hosted on lib.umich.edu.",
+    "whenNotToUse": "If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.",
+    "tag": "m-website-header"
   }
 ]

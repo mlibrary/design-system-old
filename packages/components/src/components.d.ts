@@ -11,9 +11,15 @@ export namespace Components {
     interface MIcon {
         "name": string;
     }
+    interface MLogo {
+    }
     interface MUniversalHeader {
     }
     interface MWebsiteAlerts {
+    }
+    interface MWebsiteHeader {
+        "name": string;
+        "to": string;
     }
 }
 declare global {
@@ -29,6 +35,12 @@ declare global {
         prototype: HTMLMIconElement;
         new (): HTMLMIconElement;
     };
+    interface HTMLMLogoElement extends Components.MLogo, HTMLStencilElement {
+    }
+    var HTMLMLogoElement: {
+        prototype: HTMLMLogoElement;
+        new (): HTMLMLogoElement;
+    };
     interface HTMLMUniversalHeaderElement extends Components.MUniversalHeader, HTMLStencilElement {
     }
     var HTMLMUniversalHeaderElement: {
@@ -41,11 +53,19 @@ declare global {
         prototype: HTMLMWebsiteAlertsElement;
         new (): HTMLMWebsiteAlertsElement;
     };
+    interface HTMLMWebsiteHeaderElement extends Components.MWebsiteHeader, HTMLStencilElement {
+    }
+    var HTMLMWebsiteHeaderElement: {
+        prototype: HTMLMWebsiteHeaderElement;
+        new (): HTMLMWebsiteHeaderElement;
+    };
     interface HTMLElementTagNameMap {
         "m-chat": HTMLMChatElement;
         "m-icon": HTMLMIconElement;
+        "m-logo": HTMLMLogoElement;
         "m-universal-header": HTMLMUniversalHeaderElement;
         "m-website-alerts": HTMLMWebsiteAlertsElement;
+        "m-website-header": HTMLMWebsiteHeaderElement;
     }
 }
 declare namespace LocalJSX {
@@ -54,15 +74,23 @@ declare namespace LocalJSX {
     interface MIcon {
         "name"?: string;
     }
+    interface MLogo {
+    }
     interface MUniversalHeader {
     }
     interface MWebsiteAlerts {
     }
+    interface MWebsiteHeader {
+        "name"?: string;
+        "to"?: string;
+    }
     interface IntrinsicElements {
         "m-chat": MChat;
         "m-icon": MIcon;
+        "m-logo": MLogo;
         "m-universal-header": MUniversalHeader;
         "m-website-alerts": MWebsiteAlerts;
+        "m-website-header": MWebsiteHeader;
     }
 }
 export { LocalJSX as JSX };
@@ -71,8 +99,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "m-chat": LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
             "m-icon": LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
+            "m-logo": LocalJSX.MLogo & JSXBase.HTMLAttributes<HTMLMLogoElement>;
             "m-universal-header": LocalJSX.MUniversalHeader & JSXBase.HTMLAttributes<HTMLMUniversalHeaderElement>;
             "m-website-alerts": LocalJSX.MWebsiteAlerts & JSXBase.HTMLAttributes<HTMLMWebsiteAlertsElement>;
+            "m-website-header": LocalJSX.MWebsiteHeader & JSXBase.HTMLAttributes<HTMLMWebsiteHeaderElement>;
         }
     }
 }
