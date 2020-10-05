@@ -21,7 +21,7 @@ export namespace Components {
         /**
           * The user-friendly name of the U-M Library website that uses this Header.
          */
-        "name": any;
+        "name": string;
         /**
           * The URL linked to when you click the website name.
          */
@@ -90,7 +90,7 @@ declare namespace LocalJSX {
         /**
           * The user-friendly name of the U-M Library website that uses this Header.
          */
-        "name"?: any;
+        "name"?: string;
         /**
           * The URL linked to when you click the website name.
          */

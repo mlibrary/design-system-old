@@ -16,7 +16,7 @@ export class WebsiteHeader {
   /**
    * The user-friendly name of the U-M Library website that uses this Header.
    */
-  @Prop({ reflect: true }) name;
+  @Prop({ reflect: true }) name: string;
 
   /**
    * The URL linked to when you click the website name.

@@ -7,7 +7,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const stencil = require("@umich-lib/components/hydrate");
 //const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Copy `css/` to `_site/css/`.
   eleventyConfig.addPassthroughCopy("css");
   // Copy everything in static to _site

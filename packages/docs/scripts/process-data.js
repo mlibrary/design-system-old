@@ -24,9 +24,12 @@ function processDocs() {
         return Object.assign(acc, { [tag.name]: tag.text });
       }, {});
 
+      const props = component.props.length > 0 ? component.props : null;
+
       memo = memo.concat({
         ...tags,
         tag: component.tag,
+        props,
       });
     }
 
