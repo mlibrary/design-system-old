@@ -32,9 +32,9 @@ eleventyComputed:
 {% if component.props %}
 ## Properties
 
-| Property | Description | Type |
+| Attribute | Description | Type |
 | --- | ---| --- | --- |
-{% for prop in component.props %} | `{{ prop.name }}` | {{ prop.docs }} | `{{ prop.type }}` |
+{% for prop in component.props %} | `{{ prop.attr }}` | {{ prop.docs }} | `{{ prop.type }}` |
 {% endfor %}
 {% endif %}
 
