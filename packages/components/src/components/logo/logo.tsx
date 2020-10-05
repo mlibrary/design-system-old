@@ -15,6 +15,7 @@ export class Logo {
         viewBox="0 0 199 30"
         xmlns="http://www.w3.org/2000/svg"
         height="34px"
+        width="224px"
       >
         <g fill="none" fill-rule="evenodd">
           <g fill-rule="nonzero">
