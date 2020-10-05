@@ -75,6 +75,7 @@ Once you’ve added each package shown above, the markup for your HTML page shou
   </head>
   <body>
     <m-universal-header></m-universal-header>
+    <m-website-header name="Basic Template"></m-website-header>
 
     <!-- your website content -->
 
