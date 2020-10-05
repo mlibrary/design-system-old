@@ -8,12 +8,6 @@
     "tag": "m-chat"
   },
   {
-    "name": "Logo",
-    "description": "The University of Michigan Library logo.",
-    "status": "experimental",
-    "tag": "m-logo"
-  },
-  {
     "name": "Universal Header",
     "description": "The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.",
     "status": "ready",

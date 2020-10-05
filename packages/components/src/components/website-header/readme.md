@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default          |
-| -------- | --------- | ----------- | -------- | ---------------- |
-| `name`   | `name`    |             | `string` | `"Website name"` |
-| `to`     | `to`      |             | `string` | `"/"`            |
+| Property | Attribute | Description                                                              | Type     | Default     |
+| -------- | --------- | ------------------------------------------------------------------------ | -------- | ----------- |
+| `name`   | `name`    | The user-friendly name of the U-M Library website that uses this Header. | `any`    | `undefined` |
+| `to`     | `to`      | The URL linked to when you click the website name.                       | `string` | `"/"`       |
 
 
 ## Dependencies

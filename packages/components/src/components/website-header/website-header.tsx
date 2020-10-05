@@ -13,7 +13,14 @@ import { Component, Prop, h } from "@stencil/core";
   shadow: true
 })
 export class WebsiteHeader {
-  @Prop({ reflect: true }) name: string = "Website name";
+  /**
+   * The user-friendly name of the U-M Library website that uses this Header.
+   */
+  @Prop({ reflect: true }) name;
+
+  /**
+   * The URL linked to when you click the website name.
+   */
   @Prop({ reflect: true }) to: string = "/";
 
   render() {
@@ -23,7 +30,9 @@ export class WebsiteHeader {
           <a href={this.to} class="website-header__website-home-link">
             <m-logo></m-logo>
 
-            <span class="website-header__website-name">{this.name}</span>
+            {this.name && (
+              <span class="website-header__website-name">{this.name}</span>
+            )}
           </a>
         </div>
       </header>

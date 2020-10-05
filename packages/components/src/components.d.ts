@@ -18,7 +18,13 @@ export namespace Components {
     interface MWebsiteAlerts {
     }
     interface MWebsiteHeader {
-        "name": string;
+        /**
+          * The user-friendly name of the U-M Library website that uses this Header.
+         */
+        "name": any;
+        /**
+          * The URL linked to when you click the website name.
+         */
         "to": string;
     }
 }
@@ -81,7 +87,13 @@ declare namespace LocalJSX {
     interface MWebsiteAlerts {
     }
     interface MWebsiteHeader {
-        "name"?: string;
+        /**
+          * The user-friendly name of the U-M Library website that uses this Header.
+         */
+        "name"?: any;
+        /**
+          * The URL linked to when you click the website name.
+         */
         "to"?: string;
     }
     interface IntrinsicElements {
