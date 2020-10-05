@@ -5,14 +5,16 @@
     "dist/"
   ],
   "scripts": {
-    "build": "npx tailwindcss build src/styles.css -o dist/umich-lib.css",
+    "build": "postcss src/styles.css -o dist/umich-lib.css",
     "start": "npm run build"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "tailwindcss": "^1.7.3",
-    "@umich-lib/tokens": "^1.0.0"
+    "@umich-lib/tokens": "^1.0.0",
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.7.3"
   }
 }

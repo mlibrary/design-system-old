@@ -1,5 +1,4 @@
 import { Config } from "@stencil/core";
-import { sass } from "@stencil/sass";
 
 export const config: Config = {
   namespace: "umich-lib",
@@ -7,22 +6,17 @@ export const config: Config = {
   outputTargets: [
     {
       type: "dist",
-      esmLoaderPath: "../loader"
+      esmLoaderPath: "../loader",
     },
     {
-      type: "docs-readme"
+      type: "docs-readme",
     },
     {
       type: "www",
-      serviceWorker: null // disable service workers
+      serviceWorker: null, // disable service workers
     },
     {
-      type: "dist-hydrate-script" // Server Side Rendering: https://stenciljs.com/docs/hydrate-app#how-to-use-the-hydrate-app
-    }
+      type: "dist-hydrate-script", // Server Side Rendering: https://stenciljs.com/docs/hydrate-app#how-to-use-the-hydrate-app
+    },
   ],
-  plugins: [
-    sass({
-      includePaths: ["./node_modules/@umich-lib/css/dist"]
-    })
-  ]
 };

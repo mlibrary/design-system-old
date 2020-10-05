@@ -5,9 +5,8 @@ const pluginTOC = require("eleventy-plugin-nesting-toc");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const stencil = require("@umich-lib/components/hydrate");
-//const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Copy `css/` to `_site/css/`.
   eleventyConfig.addPassthroughCopy("css");
   // Copy everything in static to _site
@@ -50,14 +49,4 @@ module.exports = function(eleventyConfig) {
     }
     return content;
   });
-
-  /**
-   * eleventy-plugin-cache-buster
-   *
-   * https://github.com/mightyplow/eleventy-plugin-cache-buster#readme
-   *
-   * Adding this plugin caused some issues with building on Netlify.
-   * Turning it off until we can find time to troubleshoot.
-   */
-  // eleventyConfig.addPlugin(cacheBuster({}));
 };

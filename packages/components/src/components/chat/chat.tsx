@@ -10,8 +10,8 @@ import cn from "classnames";
  */
 @Component({
   tag: "m-chat",
-  styleUrl: "chat.scss",
-  shadow: true
+  styleUrl: "chat.css",
+  shadow: true,
 })
 export class Chat {
   @State() open = false;
@@ -32,11 +32,11 @@ export class Chat {
     fetch(
       "https://libraryh3lp-com.proxy.lib.umich.edu/presence/jid/umlibraryaskalibrarian/chat.libraryh3lp.com/text"
     )
-      .then(response => response.text())
-      .then(result => {
+      .then((response) => response.text())
+      .then((result) => {
         this.online = result === "available";
       })
-      .catch(e => {
+      .catch((e) => {
         console.warn("Unable to check Chat online status.", e);
       });
   }
@@ -50,8 +50,8 @@ export class Chat {
   render() {
     return (
       <div
-        class={cn("m-chat", {
-          "m-chat--open": this.open
+        class={cn("fixed right-1 bottom-0", {
+          "m-chat--open": this.open,
         })}
       >
         <button
