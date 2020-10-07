@@ -3,9 +3,10 @@ import { Component, Prop, h } from "@stencil/core";
 /**
  * @name Website Header
  * @description The Website Header displays our logo and shows users what U-M Library website that they are using.
- * @status experimental
+ * @status production
  * @whenToUse If your website is hosted on lib.umich.edu.
  * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
+ * @slot Children
  */
 @Component({
   tag: "m-website-header",
@@ -25,7 +26,7 @@ export class WebsiteHeader {
 
   render() {
     return (
-      <header class="website-header layout">
+      <header class="website-header">
         <div class="website-header__inner-container">
           <a href={this.to} class="website-header__website-home-link">
             <m-logo></m-logo>
@@ -34,6 +35,8 @@ export class WebsiteHeader {
               <span class="website-header__website-name">{this.name}</span>
             )}
           </a>
+
+          <slot />
         </div>
       </header>
     );
