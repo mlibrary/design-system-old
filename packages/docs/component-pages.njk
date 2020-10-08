@@ -21,11 +21,11 @@ eleventyComputed:
 
 <div class="example">
   <div class="example__preview">
-    <{{ component.tag }}></{{ component.tag }}>
+    {{ component.example | safe }}
   </div>
 
 ```html
-<{{ component.tag }}></{{ component.tag }}>
+{{ component.example | safe }}
   ```
   </div>
 

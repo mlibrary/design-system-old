@@ -6,7 +6,8 @@
     "whenToUse": "Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.",
     "whenNotToUse": "If your website is not being hosted on lib.umich.edu.",
     "tag": "m-chat",
-    "props": null
+    "props": null,
+    "example": "<m-chat></m-chat>"
   },
   {
     "name": "Universal Header",
@@ -15,7 +16,8 @@
     "whenToUse": "You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.",
     "whenNotToUse": "If your website is not being hosted on lib.umich.edu.",
     "tag": "m-universal-header",
-    "props": null
+    "props": null,
+    "example": "<m-universal-header></m-universal-header>"
   },
   {
     "name": "Website Header",
@@ -24,6 +26,7 @@
     "whenToUse": "If your website is hosted on lib.umich.edu.",
     "whenNotToUse": "If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.",
     "slot": "Children",
+    "example": "<m-website-header name=\"Example\"></m-website-header>",
     "tag": "m-website-header",
     "props": [
       {

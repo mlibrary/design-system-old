@@ -25,11 +25,15 @@ function processDocs() {
       }, {});
 
       const props = component.props.length > 0 ? component.props : null;
+      const example = tags.example
+        ? tags.example
+        : `<${component.tag}></${component.tag}>`;
 
       memo = memo.concat({
         ...tags,
         tag: component.tag,
         props,
+        example,
       });
     }
 
