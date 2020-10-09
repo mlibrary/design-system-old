@@ -7,7 +7,10 @@ import { Component, Prop, h } from "@stencil/core";
  * @whenToUse If your website is hosted on lib.umich.edu.
  * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
  * @slot Children
- * @example <m-website-header name="Example"><a href="/">Log in</a></m-website-header>
+ * @example
+ * <m-website-header name="Example">
+ *   <a href="/">Log in</a>
+ * </m-website-header>
  */
 @Component({
   tag: "m-website-header",
