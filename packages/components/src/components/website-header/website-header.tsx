@@ -11,6 +11,8 @@ import { Component, Prop, h } from "@stencil/core";
  * <m-website-header name="Example">
  *   <a href="/">Log in</a>
  * </m-website-header>
+ * @usedBy
+ * - [Design System](https://design-system.lib.umich.edu/)
  */
 @Component({
   tag: "m-website-header",

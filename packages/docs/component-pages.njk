@@ -45,9 +45,13 @@ eleventyComputed:
 
 {% if component.whenNotToUse %}
 ## When not to use this component
-
 {{ component.whenNotToUse }}
 {% endif %}
-## Integration
 
+{% if component.usedBy %}
+## Used by
+{{ component.usedBy }}
+{% endif %}
+
+## Integration
 For integration, please see [getting started](/#getting-started) documentation.

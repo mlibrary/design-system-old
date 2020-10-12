@@ -13,6 +13,7 @@ description: Read the latest updates from the Design System team. We will highli
 ## October 2020
 
 - Added a [Website Header component](/components/website-header).
+- Added a "Used by" heading
 
 ## August 2020
 

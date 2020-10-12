@@ -7,6 +7,10 @@ import cn from "classnames";
  * @status ready
  * @whenToUse Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.
  * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+ * @usedBy
+ * - [Library Website](https://www.lib.umich.edu/)
+ * - [Library Search](https://search.lib.umich.edu/)
+ * - [MGet It](https://mgetit.lib.umich.edu/)
  */
 @Component({
   tag: "m-chat",

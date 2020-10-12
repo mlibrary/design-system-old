@@ -6,6 +6,12 @@ import { Component, State, h, Listen, Element } from "@stencil/core";
  * @status ready
  * @whenToUse You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.
  * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+ * @usedBy
+ * - [Library Website](https://www.lib.umich.edu/)
+ * - [Library Search](https://search.lib.umich.edu/)
+ * - [MGet It](https://mgetit.lib.umich.edu/)
+ * - [Design System](https://design-system.lib.umich.edu/)
+ * - [Michigan Publishing](https://www.publishing.umich.edu/)
  */
 @Component({
   tag: "m-universal-header",
