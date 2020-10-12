@@ -5,6 +5,7 @@
   font-family: var(--font-base-family);
   line-height: var(--line-height-default);
   font-size: 16px;
+  background: white;
 
   * {
     box-sizing: border-box;
@@ -14,10 +15,13 @@
 }
 
 .website-header {
+  background: white;
+}
+
+.website-header__container {
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--space-medium);
-  background: white;
 
   @media screen and (min-width: 721px) {
     padding: var(--space-medium) var(--space-xx-large);

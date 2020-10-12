@@ -33,16 +33,18 @@ export class WebsiteHeader {
   render() {
     return (
       <header class="website-header">
-        <div class="website-header__inner-container">
-          <a href={this.to} class="website-header__website-home-link">
-            <m-logo></m-logo>
+        <div class="website-header__container">
+          <div class="website-header__inner-container">
+            <a href={this.to} class="website-header__website-home-link">
+              <m-logo></m-logo>
 
-            {this.name && (
-              <span class="website-header__website-name">{this.name}</span>
-            )}
-          </a>
+              {this.name && (
+                <span class="website-header__website-name">{this.name}</span>
+              )}
+            </a>
 
-          <slot />
+            <slot />
+          </div>
         </div>
       </header>
     );
