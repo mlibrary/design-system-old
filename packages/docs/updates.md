@@ -26,7 +26,7 @@ We finally have a way to create our own [HTML elements](https://html.spec.whatwg
 
 The redesigned [library website](https://www.lib.umich.edu/) was launched and is built with the Design System 🤩. Also, [Library Search](https://search.lib.umich.edu/) and [MGet It](https://mgetit.lib.umich.edu/) have been updated to use the Universal Header and Chat.
 
-- Added [Color](/design-tokens#color) and [Space](/design-tokens#space) design tokens available as CSS custom properties
-- Added a [Chat component](/components/chat)
-- Added a [Universal Header component](/components/universal-header)
-- Redesigned public documentation with [Eleventy](https://www.11ty.dev/)
+- Added [Color](/design-tokens#color) and [Space](/design-tokens#space) design tokens available as CSS custom properties.
+- Added a [Chat component](/components/chat).
+- Added a [Universal Header component](/components/universal-header).
+- Redesigned public documentation with [Eleventy](https://www.11ty.dev/).
