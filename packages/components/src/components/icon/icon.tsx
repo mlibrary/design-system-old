@@ -4,7 +4,7 @@ import icons from "@umich-lib/icons";
 /**
  * @name Icon
  * @description For SVG icons.
- * @status experimental
+ * @status internal
  * @private
  */
 @Component({

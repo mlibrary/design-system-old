@@ -3,10 +3,9 @@ layout: layout.njk
 eleventyNavigation:
   key: Support
   order: 4
+title: Support
 description: The Design System team provides support for designers, developers, project managers, or anyone who is using the system.
 ---
-
-# Support
 
 The **Design System team** provides support for designers, developers, project managers, or anyone who is using the system. See below for various ways to reach us.
 
@@ -24,7 +23,15 @@ The team is responsible for making sure that contributions to the system are of 
 - [Roger Espinosa](https://www.lib.umich.edu/users/roger), Application Programmer/Analyst Senior
 - [Ellen Schlegelmilch](https://www.lib.umich.edu/users/elleande), User Interface User Experience Designer
 
-## Design System Principles
+## Contribution criteria
+
+The Design System team considers the following when evaluating contributions.
+
+**Useful** - There is evidence that it would be useful for many (at least 3) websites, web teams, or services.
+
+**Unique** - It has value and doesn't replicate something that already exists in the Design System. If it’s intended to replace an existing contribution, then there is evidence to show that it’s better.
+
+## Design System principles
 
 A set of principles underpins all our design decisions and guides us when we need to make hard choices. This criteria is what makes good design at U-M Library and all design patterns are evaluated against it.
 

@@ -24,9 +24,17 @@ function processDocs() {
         return Object.assign(acc, { [tag.name]: tag.text });
       }, {});
 
+      const props = component.props.length > 0 ? component.props : null;
+      const example = tags.example
+        ? tags.example
+        : `<${component.tag}></${component.tag}>`;
+
       memo = memo.concat({
         ...tags,
         tag: component.tag,
+        props,
+        example,
+        isExperimental: tags.status === "experimental",
       });
     }
 

@@ -10,6 +10,8 @@
 
   * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale; /* Firefox */
   }
 
   *:focus {

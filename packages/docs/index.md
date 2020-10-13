@@ -3,10 +3,9 @@ layout: layout.njk
 eleventyNavigation:
   key: Getting started
   order: 0
+title: Getting started
 description: The University of Michigan Library Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
 ---
-
-# Getting started
 
 {{ description }}
 
@@ -75,6 +74,7 @@ Once you’ve added each package shown above, the markup for your HTML page shou
   </head>
   <body>
     <m-universal-header></m-universal-header>
+    <m-website-header name="Basic Template"></m-website-header>
 
     <!-- your website content -->
 
