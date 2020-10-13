@@ -37,6 +37,13 @@ description: Documentation for the U-M Library Design System.
       </aside>
 
       <article class="site-layout__center owl prose">
+
+        <h1>{{ title }}
+          {% if isExperimental %}
+            <span class="badge badge--warning">Experimental</span>
+          {% endif %}
+        </h1>
+
         {% include 'table-of-contents-small.njk' %}
 
         {{ content | safe }}

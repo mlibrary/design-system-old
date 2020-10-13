@@ -3,16 +3,15 @@ layout: layout.njk
 eleventyNavigation:
   key: Updates
   order: 5
+title: Updates
 description: Read the latest updates from the Design System team. We will highlight new features, changes, and progress.
 ---
-
-# Updates
 
 {{ description }}
 
 ## October 2020
 
-- Added a [Website Header component](/components/website-header).
+- Added an <span class="badge badge--warning">Experimental</span> [Website Header component](/components/website-header). Feedback is encouraged on this component as we continue to develop it for production use.
 - Added a ["Used by" section to component pages](/components/universal-header/#used-by) to highlight what components are being used and where.
 
 ## August 2020

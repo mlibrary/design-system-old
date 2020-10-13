@@ -34,6 +34,7 @@ function processDocs() {
         tag: component.tag,
         props,
         example,
+        isExperimental: tags.status === "experimental",
       });
     }
 

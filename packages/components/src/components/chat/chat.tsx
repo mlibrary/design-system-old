@@ -4,7 +4,7 @@ import cn from "classnames";
 /**
  * @name Chat
  * @description The Chat component provides access to the Ask a Librarian live chat service.
- * @status ready
+ * @status production
  * @whenToUse Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.
  * @whenNotToUse If your website is not being hosted on lib.umich.edu.
  * @usedBy

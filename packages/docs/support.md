@@ -3,10 +3,9 @@ layout: layout.njk
 eleventyNavigation:
   key: Support
   order: 4
+title: Support
 description: The Design System team provides support for designers, developers, project managers, or anyone who is using the system.
 ---
-
-# Support
 
 The **Design System team** provides support for designers, developers, project managers, or anyone who is using the system. See below for various ways to reach us.
 

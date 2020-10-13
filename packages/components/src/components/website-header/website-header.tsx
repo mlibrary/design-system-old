@@ -3,7 +3,7 @@ import { Component, Prop, h } from "@stencil/core";
 /**
  * @name Website Header
  * @description The Website Header displays our logo and shows users what U-M Library website that they are using.
- * @status production
+ * @status experimental
  * @whenToUse If your website is hosted on lib.umich.edu.
  * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
  * @slot Children

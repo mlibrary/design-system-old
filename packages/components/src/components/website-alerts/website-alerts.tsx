@@ -3,7 +3,7 @@ import { Component, State, h } from "@stencil/core";
 /**
  * @name Website Alerts
  * @description The Website Alerts provide public messages for end-users to be notified about.
- * @status ready
+ * @status internal
  * @private
  */
 @Component({

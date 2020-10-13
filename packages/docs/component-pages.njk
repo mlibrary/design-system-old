@@ -7,13 +7,13 @@ pagination:
 permalink: "components/{{ component.name | slug }}/"
 templateEngineOverride: njk,md
 eleventyComputed:
+  title: "{{ component.name }}"
+  isExperimental: "{{ component.isExperimental }}"
   eleventyNavigation:
     key: "{{ component.name }} | Components"
     parent: Components
   description: "{{ component.description }}"
 ---
-
-# {{ component.name }}
 
 {{ component.description }}
 

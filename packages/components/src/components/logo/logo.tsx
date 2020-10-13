@@ -3,7 +3,7 @@ import { Component, h } from "@stencil/core";
 /**
  * @name Logo
  * @description The University of Michigan Library logo.
- * @status experimental
+ * @status internal
  * @private
  */
 @Component({

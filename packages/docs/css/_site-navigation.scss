@@ -11,8 +11,10 @@
     display: "inline-block";
     margin-bottom: 0;
 
-    &:not(:last-child) {
-      margin-right: var(--space-small);
+    @media screen and (max-width: 919px) {
+      &:not(:last-child) {
+        margin-right: var(--space-small);
+      }
     }
   }
 
