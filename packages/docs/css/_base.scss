@@ -51,9 +51,12 @@ body {
 main.layout {
   align-content: baseline;
 
-  margin-top: var(--space-x-small);
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 920px) {
     margin-top: var(--space-xx-large);
+  }
+
+  @media screen and (min-width: 721px) {
+    padding: 0 var(--space-large);
   }
 }
 
@@ -61,13 +64,8 @@ main.layout {
 
 h1 {
   font-family: var(--font-second-family);
-  font-size: var(--text-xx-large);
+  font-size: var(--text-xxx-large);
   line-height: var(--line-height-page-heading);
-
-  @media screen and (min-width: 820px) {
-    font-size: var(--text-xxx-large);
-  }
-
   margin-bottom: var(--space-large);
 }
 
@@ -132,11 +130,27 @@ h4 {
   margin-bottom: var(--space-x-small);
 }
 
+.table-of-contents--small details {
+  @media screen and (min-width: 920px) {
+    display: none;
+  }
+
+  h2 {
+    margin-top: 0;
+    display: inline;
+  }
+
+  ol {
+    list-style: none;
+    margin: var(--space-x-small) 0;
+  }
+}
+
 .site-layout__right {
   display: none;
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 920px) {
   .site-layout__left {
     grid-row: 1;
     grid-column: content-start / span 2;
