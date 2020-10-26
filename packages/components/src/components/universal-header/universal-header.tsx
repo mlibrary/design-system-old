@@ -12,6 +12,15 @@ import { Component, State, h, Listen, Element } from "@stencil/core";
  * - [MGet It](https://mgetit.lib.umich.edu/)
  * - [Design System](https://design-system.lib.umich.edu/)
  * - [Michigan Publishing](https://www.publishing.umich.edu/)
+ * @research
+ * During Fall 2020 usability testing:
+ * - 89% of participants noticed the Universal Header without being prompted.
+ * - The label "Explore" matched most expectations and all participants had a positive reaction to the content in the dropdown menu.
+ * - The header also helped participants recognize they were on a U-M Library website.
+ * 
+ * [View the research plan (Google Doc)](https://docs.google.com/document/d/1a5NkZEPaNUck3oHngV3cNFNgZ5BVGicCjRVKuDn2YJk/edit?usp=sharing)
+ * 
+ * [View the research findings (Google Slides)](https://docs.google.com/presentation/d/1G4iga9axTpl9xboJ-ydcbN8ZrDh6A3fo18T-HM7ItvM/edit?usp=sharing)
  */
 @Component({
   tag: "m-universal-header",
