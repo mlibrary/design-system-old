@@ -11,8 +11,9 @@ description: Read the latest updates from the Design System team. We will highli
 
 ## October 2020
 
-- Added an <span class="badge badge--warning">Experimental</span> [Website Header component](/components/website-header). Feedback is encouraged on this component as we continue to develop it for production use.
+- Added [Universal Header component research findings](/components/universal-header/#research) in allignment with our principle of Design System contributions being [backed by research](/support/#1.-backed-by-research).
 - Added a ["Used by" section to component pages](/components/universal-header/#used-by) to highlight what components are being used and where.
+- Added an <span class="badge badge--warning">Experimental</span> [Website Header component](/components/website-header). Feedback is encouraged on this component as we continue to develop it for production use.
 
 ## August 2020
 
