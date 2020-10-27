@@ -13,6 +13,7 @@ https://design-system.lib.umich.edu
 ```
 git clone https://github.com/mlibrary/design-system.git
 cd design-system
+npm install
 npm start
 ```
 

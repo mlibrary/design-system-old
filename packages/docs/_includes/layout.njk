@@ -26,7 +26,7 @@ description: Documentation for the U-M Library Design System.
   </head>
   <body>
     <m-universal-header></m-universal-header>
-    {% include 'site-header.njk' %}
+    <m-website-header name="Design System"></m-website-header>
     <main class="layout">
       {% include 'site-navigation.njk' %}
 
@@ -37,6 +37,11 @@ description: Documentation for the U-M Library Design System.
       </aside>
 
       <article class="site-layout__center owl prose">
+
+        <h1>{{ title }}</h1>
+
+        {% include 'table-of-contents-small.njk' %}
+
         {{ content | safe }}
 
         <a href="https://github.com/mlibrary/design-system/tree/master/packages/docs/{{ page.inputPath }}" class="edit-on-github__link">{% include 'github-svg.njk' %}If you found a mistake on this page, would you kindly submit a fix<span class="visually-hidden"> on GitHub</span>?</a>

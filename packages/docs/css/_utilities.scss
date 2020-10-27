@@ -22,3 +22,22 @@
   position: sticky;
   top: var(--space-large);
 }
+
+.badge {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 4px;
+  font-family: var(--font-base-family);
+  padding: var(--space-xxx-small) var(--space-x-small);
+  background: var(--color-neutral-100);
+  border: solid 1px var(--color-neutral-300);
+  vertical-align: super;
+  line-height: var(--line-height-default);
+}
+
+.badge--warning {
+  background: var(--color-orange-100);
+  border-color: var(--color-orange-300);
+  color: var(--color-orange-500);
+}

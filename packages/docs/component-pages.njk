@@ -7,13 +7,17 @@ pagination:
 permalink: "components/{{ component.name | slug }}/"
 templateEngineOverride: njk,md
 eleventyComputed:
+  title: "{{ component.name }}"
+  isExperimental: {{ component.isExperimental }}
   eleventyNavigation:
     key: "{{ component.name }} | Components"
     parent: Components
   description: "{{ component.description }}"
 ---
 
-# {{ component.name }}
+{% if component.isExperimental %}
+  <span class="badge badge--warning">Experimental</span>
+{% endif %}
 
 {{ component.description }}
 
@@ -21,24 +25,42 @@ eleventyComputed:
 
 <div class="example">
   <div class="example__preview">
-    <{{ component.tag }}></{{ component.tag }}>
+    {{ component.example | safe }}
   </div>
 
 ```html
-<{{ component.tag }}></{{ component.tag }}>
+{{ component.example | safe }}
   ```
   </div>
 
+{% if component.props %}
+## Properties
+
+| Attribute | Type | Default | Description |
+| --- | ---| --- | --- |
+{% for prop in component.props %} | `{{ prop.attr }}` | `{{ prop.type }}` | {{ prop.default }} |  {{ prop.docs }} |
+{% endfor %}
+{% endif %}
+
 {% if component.whenToUse %}
-  ## When to use this component
-  {{ component.whenToUse }}
+## When to use this component
+{{ component.whenToUse }}
 {% endif %}
 
 {% if component.whenNotToUse %}
 ## When not to use this component
-
 {{ component.whenNotToUse }}
 {% endif %}
-## Integration
 
+{% if component.usedBy %}
+## Used by
+{{ component.usedBy }}
+{% endif %}
+
+{% if component.research %}
+## Research
+{{ component.research }}
+{% endif %}
+
+## Integration
 For integration, please see [getting started](/#getting-started) documentation.
