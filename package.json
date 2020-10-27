@@ -12,7 +12,7 @@
     "lerna:publish-force": "lerna publish --force-publish",
     "prestart": "npm run build",
     "start": "lerna run start --stream --parallel",
-    "prebuild": "npm run lerna:bootstrap && lerna run build --scope @umich-lib/css --scope @umich-lib/components --scope @umich-lib/icons",
+    "prebuild": "npm run lerna:bootstrap && lerna run build --scope @umich-lib/tokens --scope @umich-lib/css --scope @umich-lib/components --scope @umich-lib/icons",
     "build": "lerna run build --ignore @umich-lib/css --ignore @umich-lib/components --ignore @umich-lib/icons"
   }
 }
