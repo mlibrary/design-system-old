@@ -8,11 +8,25 @@ cleanDist();
 
 fs.writeFileSync(distPath + "/" + tokensFile, fs.readFileSync(tokensFile));
 
+theo.registerFormat(
+  "scss-custom-properties-mixin",
+  `@mixin custom-properties {
+  {{#each props as |prop|}}
+  --{{stem prop.name}}: {{{prop.value}}};
+  {{/each}}
+}`
+);
+
 // Create formats
-createTokensFormat("custom-properties.css", "css");
-//createTokensFormat("scss", "scss");
-//createTokensFormat("common.js", "js");
-//createTokensFormat("json", "json");
+createTokensFormat({
+  formatType: "custom-properties.css",
+  extension: "css",
+});
+createTokensFormat({
+  formatType: "scss-custom-properties-mixin",
+  fileName: "custom-properties",
+  extension: "scss",
+});
 
 /**
  * Create a token format.
@@ -22,7 +36,7 @@ createTokensFormat("custom-properties.css", "css");
  * 1. Theo formatType
  * 2. File extension
  */
-function createTokensFormat(formatType, extension) {
+function createTokensFormat({ formatType, fileName = "tokens", extension }) {
   theo
     .convert({
       transform: {
@@ -34,7 +48,7 @@ function createTokensFormat(formatType, extension) {
       },
     })
     .then((content) => {
-      const fileDest = distPath + "/tokens." + extension;
+      const fileDest = `${distPath}/${fileName}.${extension}`;
 
       try {
         fs.writeFileSync(fileDest, content);

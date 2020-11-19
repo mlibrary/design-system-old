@@ -14,5 +14,8 @@
     "start": "lerna run start --stream --parallel",
     "prebuild": "npm run lerna:bootstrap && lerna run build --scope @umich-lib/tokens --scope @umich-lib/css --scope @umich-lib/components --scope @umich-lib/icons",
     "build": "lerna run build --ignore @umich-lib/css --ignore @umich-lib/components --ignore @umich-lib/icons"
+  },
+  "dependencies": {
+    "react-intersection-observer": "^8.30.3"
   }
 }

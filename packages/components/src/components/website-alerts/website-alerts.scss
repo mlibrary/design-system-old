@@ -1,4 +1,8 @@
+@import "custom-properties";
+
 .m-alerts {
+  @include custom-properties;
+
   font-family: var(--font-base-family);
   line-height: var(--line-height-default);
   color: var(--color-neutral-400);

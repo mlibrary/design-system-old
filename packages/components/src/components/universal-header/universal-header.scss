@@ -1,4 +1,8 @@
+@import "custom-properties";
+
 .m-uh {
+  @include custom-properties;
+
   background: var(--color-blue-100);
   font-family: var(--font-base-family);
   line-height: var(--line-height-default);
