@@ -5,7 +5,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "postcss styles.css -o dist/umich-lib.css -w",
+    "build": "postcss styles.css -o dist/umich-lib.css",
     "start": "npm run build"
   },
   "publishConfig": {
