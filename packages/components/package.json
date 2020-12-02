@@ -1,8 +1,8 @@
 {
   "name": "@umich-lib/components",
   "version": "1.0.5",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
@@ -22,8 +22,8 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil/core": "^1.8.1",
-    "@stencil/sass": "v1.4.0"
+    "@stencil/core": "^2.3.0",
+    "@stencil/sass": "v1.4.1"
   },
   "dependencies": {
     "@umich-lib/icons": "^1.0.2",

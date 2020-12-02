@@ -6,16 +6,10 @@
   },
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
-    "prelerna:publish": "npm run build",
     "lerna:publish": "lerna publish",
     "prelerna:publish-force": "npm run build",
     "lerna:publish-force": "lerna publish --force-publish",
-    "prestart": "npm run build",
-    "start": "lerna run start --stream --parallel",
-    "prebuild": "npm run lerna:bootstrap && lerna run build --scope @umich-lib/tokens --scope @umich-lib/css --scope @umich-lib/components --scope @umich-lib/icons",
-    "build": "lerna run build --ignore @umich-lib/css --ignore @umich-lib/components --ignore @umich-lib/icons"
-  },
-  "dependencies": {
-    "react-intersection-observer": "^8.30.3"
+    "build": "lerna run build --stream --parallel --scope @umich-lib/tokens --scope @umich-lib/css --scope @umich-lib/components --scope @umich-lib/icons && lerna run build --ignore @umich-lib/css --ignore @umich-lib/components --ignore @umich-lib/icons",
+    "start": "lerna run start --stream --parallel"
   }
 }

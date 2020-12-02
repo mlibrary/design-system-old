@@ -23,10 +23,10 @@ export const config: Config = {
   plugins: [
     sass({
       /*
-        Access to tokens.scss mixin, eg:
+        Access to custom-properties.scss mixin, eg:
 
         // component-name.scss
-        @import 'tokens';
+        @import 'custom-properties';
 
         :host {
           @include custom-properties;
