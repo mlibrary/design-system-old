@@ -3,7 +3,6 @@ import { sass } from "@stencil/sass";
 
 export const config: Config = {
   namespace: "umich-lib",
-  globalStyle: "./node_modules/@umich-lib/css/dist/umich-lib.css",
   outputTargets: [
     {
       type: "dist",
