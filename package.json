@@ -9,7 +9,7 @@
     "lerna:publish": "lerna publish",
     "prelerna:publish-force": "npm run build",
     "lerna:publish-force": "lerna publish --force-publish",
-    "build": "lerna run build --stream --parallel --scope @umich-lib/tokens --scope @umich-lib/css --scope @umich-lib/components --scope @umich-lib/icons && lerna run build --ignore @umich-lib/css --ignore @umich-lib/components --ignore @umich-lib/icons",
+    "build": "lerna run build --include-dependencies --stream",
     "start": "lerna run start --stream --parallel"
   }
 }
