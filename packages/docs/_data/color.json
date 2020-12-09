@@ -248,8 +248,8 @@
     "value": "#FF8A58",
     "type": "color",
     "meta": {
-      "palette": "300",
-      "level": "orange"
+      "palette": "orange",
+      "level": "300"
     }
   },
   {
@@ -414,7 +414,7 @@
     "type": "color",
     "meta": {
       "palette": "green",
-      "level": "200"
+      "level": "300"
     }
   },
   {
@@ -435,7 +435,7 @@
     "value": "#198539",
     "type": "color",
     "meta": {
-      "palette": "500",
+      "palette": "green",
       "level": "500"
     }
   }

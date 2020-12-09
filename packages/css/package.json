@@ -5,7 +5,9 @@
     "dist/"
   ],
   "scripts": {
-    "build": "postcss styles.css -o dist/umich-lib.css",
+    "build:tailwind-theme-dist": "node tailwind-theme-dist.js",
+    "build:css": "postcss styles.css -o dist/umich-lib.css",
+    "build": "npm run build:tailwind-theme-dist && npm run build:css",
     "start": "npm run build"
   },
   "publishConfig": {
@@ -14,6 +16,7 @@
   "devDependencies": {
     "@umich-lib/tokens": "^1.0.0",
     "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
     "postcss": "^7.0.35",
     "postcss-cli": "^7.1.2",
     "postcss-import": "^12.0.1",
