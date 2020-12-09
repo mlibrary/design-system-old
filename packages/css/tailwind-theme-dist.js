@@ -8,6 +8,19 @@ fs.writeFile(
     if (err) {
       return console.log(err);
     }
-    console.log("The tailwind Maize theme was saved!");
+    console.log(
+      "The tailwind Maize theme `tailwind-theme-maize.json` file was saved!"
+    );
   }
 );
+
+const JSfileContent = `module.exports = ${JSON.stringify(maize, null, 2)};`;
+
+fs.writeFile("./dist/tailwind-theme-maize.js", JSfileContent, function (err) {
+  if (err) {
+    return console.log(err);
+  }
+  console.log(
+    "The tailwind Maize theme `tailwind-theme-maize.js` file was saved!"
+  );
+});
