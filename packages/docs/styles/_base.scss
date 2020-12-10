@@ -97,6 +97,13 @@ h4 {
 .table-of-contents {
   h2 {
     margin-bottom: var(--space-x-small);
+    font-family: var(--font-base-family);
+    font-weight: var(--bold);
+    font-size: var(--text-xxx-small);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    line-height: var(--line-height-default);
   }
 
   ol {
