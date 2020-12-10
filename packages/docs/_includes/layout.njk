@@ -5,25 +5,21 @@ description: Documentation for the U-M Library Design System.
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ title or eleventyNavigation.key }} | U-M Library Design System</title>
     <meta name="Description" content="{{ description }}"/>
     <link rel="icon" href="/static/images/favicon-32x32.png" type="image/png"/>
     <link
       href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
-      rel="stylesheet"
-/>
+      rel="stylesheet"/>
     <link rel="stylesheet" href="{{ '/styles/global.css' | url }}"/>
-
     <script
       type="module"
-      src="{{ '/static/components/umich-lib/umich-lib.esm.js' | url }}"
-/>
+      src="{{ '/static/components/umich-lib/umich-lib.esm.js' | url }}"></script>
     <script
       nomodule
-      src="{{ '/static/components/umich-lib/umich-lib.js' | url }}"
-/>
+      src="{{ '/static/components/umich-lib/umich-lib.js' | url }}"></script>
   </head>
   <body>
     <m-universal-header></m-universal-header>
