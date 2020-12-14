@@ -43,8 +43,8 @@ const spacing = tokens.props
   }, {});
 
 const fontFamily = {
-  sans: ["var(--font-base-family)"],
-  serif: ["var(--font-second-family)"],
+  sans: "var(--font-base-family)",
+  serif: "var(--font-second-family)",
 };
 
 const borderRadius = "var(--radius-default)";
