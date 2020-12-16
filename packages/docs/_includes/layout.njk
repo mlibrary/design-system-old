@@ -10,9 +10,13 @@ description: Documentation for the U-M Library Design System.
     <title>{{ title or eleventyNavigation.key }} | U-M Library Design System</title>
     <meta name="Description" content="{{ description }}"/>
     <link rel="icon" href="/static/images/favicon-32x32.png" type="image/png"/>
+    <!-- Production umich-lib styles -->
     <link
       href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
       rel="stylesheet"/>
+
+    <!-- Development umich-lib styles -->
+    <!-- <link rel="stylesheet" href="{{ '/css/umich-lib.css' | url }}"/> -->
     <link rel="stylesheet" href="{{ '/styles/global.css' | url }}"/>
     <script
       type="module"

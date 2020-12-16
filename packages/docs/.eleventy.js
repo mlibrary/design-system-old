@@ -7,11 +7,9 @@ const markdownItAnchor = require("markdown-it-anchor");
 const stencil = require("@umich-lib/components/hydrate");
 
 module.exports = function (eleventyConfig) {
-  // Copy `css/` to `_site/css/`.
-  // TODO: [ ] - Make it so this actually copies so that we can see the doc site
-  //             with in development CSS distributions and not production.
-  //             Thoughts: maybe the '@' is causing issues? Escape it?
-  //eleventyConfig.addPassthroughCopy("node_modules/@umich-lib/css/dist/", "css");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/@umich-lib/css/dist/umich-lib.css": "css/umich-lib.css",
+  });
 
   // Copy everything in static to _site
   eleventyConfig.addPassthroughCopy("static");
