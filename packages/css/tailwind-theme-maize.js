@@ -4,6 +4,9 @@ const tokens = require("@umich-lib/tokens/dist/tokens.json");
   Transform token colors into a shape
   that can be passed to Tailwind color config.
 
+  Full default tailwind config for reference:
+  https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js#L108-L118
+
   eg:
   {
     'blue': {
@@ -36,7 +39,7 @@ const fontFamily = {
   serif: "var(--font-second-family)",
 };
 
-const borderRadius = "var(--radius-default)";
+const borderRadius = { DEFAULT: "var(--radius-default)" };
 
 const tailwindThemeMaize = {
   colors,
