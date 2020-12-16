@@ -5,11 +5,14 @@ const pluginTOC = require("eleventy-plugin-nesting-toc");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const stencil = require("@umich-lib/components/hydrate");
-//const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 
 module.exports = function (eleventyConfig) {
   // Copy `css/` to `_site/css/`.
-  eleventyConfig.addPassthroughCopy("css");
+  // TODO: [ ] - Make it so this actually copies so that we can see the doc site
+  //             with in development CSS distributions and not production.
+  //             Thoughts: maybe the '@' is causing issues? Escape it?
+  //eleventyConfig.addPassthroughCopy("node_modules/@umich-lib/css/dist/", "css");
+
   // Copy everything in static to _site
   eleventyConfig.addPassthroughCopy("static");
 
@@ -50,14 +53,4 @@ module.exports = function (eleventyConfig) {
     }
     return content;
   });
-
-  /**
-   * eleventy-plugin-cache-buster
-   *
-   * https://github.com/mightyplow/eleventy-plugin-cache-buster#readme
-   *
-   * Adding this plugin caused some issues with building on Netlify.
-   * Turning it off until we can find time to troubleshoot.
-   */
-  // eleventyConfig.addPlugin(cacheBuster({}));
 };

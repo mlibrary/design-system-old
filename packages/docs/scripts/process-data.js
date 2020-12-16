@@ -56,7 +56,7 @@ processDocs();
  */
 
 function processTokens() {
-  const tokens = require("@umich-lib/css/dist/tokens.json");
+  const tokens = require("@umich-lib/tokens/dist/tokens.json");
   const color = tokens.props.filter((prop) => prop.category === "color");
 
   fs.writeFile(

@@ -1,4 +1,4 @@
-import { Component, State, h, Listen, Element } from "@stencil/core";
+import { Component, State, h, Listen } from "@stencil/core";
 
 /**
  * @name Universal Header
@@ -31,7 +31,6 @@ export class UniversalHeader {
   @State() open = false;
   @State() error = false;
   @State() content;
-  @Element() el: HTMLElement;
 
   dropdown!: HTMLElement;
 
@@ -49,7 +48,7 @@ export class UniversalHeader {
       });
   }
 
-  @Listen("focusout", { target: this.el })
+  @Listen("focusout")
   close() {
     // Close when focus leaves universal header.
     this.open = false;

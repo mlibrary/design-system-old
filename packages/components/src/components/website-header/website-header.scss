@@ -2,6 +2,7 @@
 
 :host {
   @include custom-properties;
+
   font-family: var(--font-base-family);
   line-height: var(--line-height-default);
   font-size: 16px;
