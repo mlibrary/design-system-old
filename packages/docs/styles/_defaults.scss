@@ -8,6 +8,7 @@ body {
 
 a {
   color: var(--color-teal-400);
+  text-decoration: underline;
 
   &:hover {
     text-decoration-thickness: 2px;
