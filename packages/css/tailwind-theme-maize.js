@@ -31,17 +31,6 @@ const colors = tokens.props
     };
   }, {});
 
-const spacing = tokens.props
-  .filter((token) => token.category === "space")
-  .reduce((acc, token) => {
-    const { level } = token.meta;
-
-    return {
-      ...acc,
-      [level]: `var(--${token.name})`,
-    };
-  }, {});
-
 const fontFamily = {
   sans: "var(--font-base-family)",
   serif: "var(--font-second-family)",
@@ -51,7 +40,6 @@ const borderRadius = "var(--radius-default)";
 
 const tailwindThemeMaize = {
   colors,
-  spacing,
   fontFamily,
   borderRadius,
 };
