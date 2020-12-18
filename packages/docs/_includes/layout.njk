@@ -9,7 +9,11 @@ description: Documentation for the U-M Library Design System.
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ title or eleventyNavigation.key }} | U-M Library Design System</title>
     <meta name="description" content="{{ description }}"/>
-    <meta name="twitter:image" property="og:image" content="{{ site.cloudinary_url }}/image/upload/c_fill,g_faces,h_400,w_1200/l_text:Crimson%20Text_100_center:{{ title or eleventyNavigation.key }},co_rgb:334354,c_fit,w_600/ds_splash.png"/>
+
+    <!-- Social sharing meta -->
+    <meta property="og:title" valu="{{ title or eleventyNavigation.key }}"/>
+    <meta property="og:description" valu="{{ description }}"/>
+    <meta name="twitter:image" property="og:image" content="{{ site.cloudinary_url }}/image/upload/c_fill,g_faces,h_630,w_1200/l_text:Crimson%20Text_100_center:{{ title or eleventyNavigation.key }},co_rgb:334354,c_fit,w_600/ds_splash.png"/>
     <meta name="twitter:image:alt" property="og:image:alt" content="{{ title }}"/>
 
     <link rel="icon" href="/static/images/favicon-32x32.png" type="image/png"/>
