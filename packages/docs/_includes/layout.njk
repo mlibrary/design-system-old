@@ -7,14 +7,16 @@ description: Documentation for the U-M Library Design System.
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{{ title or eleventyNavigation.key }} | U-M Library Design System</title>
+    <title>{{ title or eleventyNavigation.key }} | Design System | University of Michigan Library</title>
     <meta name="description" content="{{ description }}"/>
 
     <!-- Social sharing meta -->
     <meta property="og:title" valu="{{ title or eleventyNavigation.key }}"/>
     <meta property="og:description" valu="{{ description }}"/>
-    <meta name="twitter:image" property="og:image" content="{{ site.cloudinary_url }}/image/upload/c_fill,g_faces,h_630,w_1200/l_text:Crimson%20Text_100_center:{{ title or eleventyNavigation.key }},co_rgb:334354,c_fit,w_600/ds_splash.png"/>
+    <meta name="twitter:image" property="og:image" content="{{ site.cloudinary_url }}/image/upload/c_fill,g_faces,h_630,w_1200/l_text:Crimson%20Text_160_center:{{ title or eleventyNavigation.key }},co_rgb:334354,c_fit/ds_splash.png"/>
     <meta name="twitter:image:alt" property="og:image:alt" content="{{ title }}"/>
+    <meta property="og:site_name" content="Design System | University of Michigan Library">
+    <meta property="og:url" content="https://design-system.lib.umich.edu{{ page.url }}">
 
     <link rel="icon" href="/static/images/favicon-32x32.png" type="image/png"/>
     <!-- Production umich-lib styles -->
