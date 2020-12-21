@@ -83,4 +83,4 @@ Once you’ve added each package shown above, the markup for your HTML page shou
 </html>
 ```
 
-<a href="https://codepen.io/team/ulibdd/pen/xxELybM" class="bg-blue-100 text-teal-400 px-4 py-3 mt-3 rounded cursor-pointer font-bold hover:shadow-outline text-base no-underline">Edit on codepen</a>
+<a href="https://codepen.io/team/ulibdd/pen/xxELybM" class="bg-blue-100 text-teal-400 px-4 py-3 mt-3 rounded cursor-pointer font-bold hover:shadow-outline text-base no-underline">Edit on CodePen</a>
