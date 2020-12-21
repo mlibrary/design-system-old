@@ -94,6 +94,7 @@ h4 {
   }
 }
 
+.table-of-contents--small,
 .table-of-contents {
   h2 {
     margin-bottom: var(--space-x-small);
@@ -105,7 +106,9 @@ h4 {
     letter-spacing: 1.25px;
     line-height: var(--line-height-default);
   }
+}
 
+.table-of-contents {
   ol {
     list-style: none;
     padding: 0;
