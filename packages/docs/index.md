@@ -50,14 +50,14 @@ Once included, components can be used in your markup like any other regular HTML
 
 Once you’ve added each package shown above, the markup for your HTML page should look about like this:
 
-```html 9-4
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Basic Template | University of Michigan Library</title>
+    <title>Basic Template — University of Michigan Library</title>
 
     <link
       href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
@@ -83,4 +83,4 @@ Once you’ve added each package shown above, the markup for your HTML page shou
 </html>
 ```
 
-[Edit this example in CodeSandbox](https://codesandbox.io/s/umich-libcomponents-and-umich-libcss-with-unpkg-468rj?fontsize=14&hidenavigation=1&theme=dark)
+<a href="https://codepen.io/team/ulibdd/pen/xxELybM" class="bg-blue-100 text-teal-400 px-4 py-3 mt-3 rounded cursor-pointer font-bold hover:shadow-outline text-base no-underline">Edit on codepen</a>
