@@ -37,15 +37,15 @@ eleventyComputed:
     type="hidden"
     name="data"
     value='{
-      "title": "{{ component.name }} | Design System | University of Michigan Library",
-      "html": "{{ component.example | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n') }}",
+      "title": "{{ component.name }} — Design System — University of Michigan Library",
+      "html": "{{ site.codepen_html_comment | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n')}} {{ component.example | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n') }}",
       "css_external": "https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css",
       "js_external": "https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js",
       "layout": "left",
       "editors": "100"
     }'
 />
-    <input type="submit" value="Edit in CodePen" 
+    <input type="submit" value="Edit on CodePen" 
     class="bg-blue-100 text-teal-400 px-4 py-3 mt-3 rounded cursor-pointer font-bold hover:shadow-outline text-base"/>
   </form>
 </div>
