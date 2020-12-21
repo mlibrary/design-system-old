@@ -3,6 +3,7 @@ import { sass } from "@stencil/sass";
 
 export const config: Config = {
   namespace: "umich-lib",
+  buildEs5: true,
   outputTargets: [
     {
       type: "dist",
