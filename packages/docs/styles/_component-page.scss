@@ -1,13 +1,16 @@
 .example {
   pre {
     margin-top: 0;
-    border-radius: 0 0 4px 4px;
+    border: none;
   }
+  border-radius: var(--radius-default);
+  border: solid 1px var(--color-neutral-100);
 }
 
 .example__preview {
-  border: solid 1px var(--color-neutral-100);
-  border-radius: 4px 4px 0 0;
-  padding: var(--space-small);
-  border-bottom: none;
+  border-bottom: solid 1px var(--color-neutral-100);
+  border-radius: var(--radius-default);
+  padding: var(--space-medium);
+  border-radius: var(--radius-default) var(--radius-default) 0 0;
+  background: white;
 }
