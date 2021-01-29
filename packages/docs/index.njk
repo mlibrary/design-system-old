@@ -1,0 +1,32 @@
+---
+layout: base.njk
+eleventyNavigation:
+  key: Welcome
+  order: 0
+title: Getting started
+description: The University of Michigan Library Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
+---
+
+<main class="layout">
+  <h1 class="home-heading">Design and build our websites for everyone.</h1>
+
+  <div class="hero"></div>
+
+  {% set navPages = collections.all | eleventyNavigation %}
+  <ul class="home-cards">
+    {%- for entry in navPages %}
+      <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+        <h2>
+          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        </h2>
+      </li>
+    {%- endfor %}
+  </ul>
+
+  <section class="layout updates">
+    <div>
+      <h2>Read the latest updates</h2>
+    </div>
+  </section>
+
+</main>
