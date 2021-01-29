@@ -8,7 +8,7 @@ description: The University of Michigan Library Design System aims to provide re
 ---
 
 <main class="layout">
-  <h1 class="home-heading">Design and build our websites for everyone.</h1>
+  <h1 class="home-heading">We design and build our websites for everyone.</h1>
 
   <div class="hero"></div>
 
@@ -19,13 +19,28 @@ description: The University of Michigan Library Design System aims to provide re
         <h2>
           <a href="{{ entry.url | url }}">{{ entry.title }}</a>
         </h2>
+
+        <p>[Some blurb, these are all cards, like on www.lib locations.]</p>
       </li>
     {%- endfor %}
   </ul>
 
   <section class="layout updates">
     <div>
-      <h2>Read the latest updates</h2>
+      <h2>Featured</h2>
+
+      <p>[Cards of important components, styles, tokens, content or UX guides, whatever.]</p>
+    </div>
+  </section>
+
+  <section class="layout guides">
+    <div>
+      <h2>Guides</h2>
+
+      <li>What is the Design System?</li>
+      <li>Getting started</li>
+      <li>Frequently asked questions</li>
+
     </div>
   </section>
 
