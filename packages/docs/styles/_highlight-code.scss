@@ -15,8 +15,8 @@ pre[class*="language-"] {
   hyphens: none;
   white-space: normal;
   word-wrap: normal;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--color-neutral-400);
   text-shadow: none;
 }
@@ -33,10 +33,10 @@ pre[class*="language-"] {
   position: relative;
 }
 
-pre[class*="language-"] code {
+code[class*="language-"] {
   white-space: pre;
   display: block;
-  margin: var(--space-medium);
+  padding: var(--space-large);
   display: block;
 }
 
@@ -50,6 +50,31 @@ pre[class*="language-"] code {
 /* Line highlight plugin */
 pre[class*="language-"] {
   position: relative;
+}
+
+code[class="language-html"] {
+  padding-top: var(--space-xxxx-large);
+
+  &:before {
+    content: "HTML";
+    position: absolute;
+    top: var(--space-medium);
+    left: var(--space-large);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-maize-400);
+    color: var(--color-neutral-400);
+
+    font-weight: var(--bold);
+    font-size: var(--text-xxx-small);
+    font-family: var(--font-base-family);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    line-height: var(--line-height-default);
+  }
 }
 
 pre .line-highlight {
@@ -148,6 +173,10 @@ code.language-markup {
 code.language-markup .token.tag,
 .token.tag {
   color: var(--color-teal-500);
+}
+
+.token.string {
+  font-weight: 600;
 }
 
 code.language-markup .token.attr-name,

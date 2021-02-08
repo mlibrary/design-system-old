@@ -162,9 +162,9 @@ h4 {
     grid-column: content-start / span 2;
   }
 
-  .site-layout__center {
+  .site-layout__content {
     grid-row: 1;
-    grid-column: 4 / span 7;
+    grid-column: 4 / span 10;
     padding-left: var(--space-xxx-large);
     padding-right: var(--space-large);
   }
@@ -176,7 +176,7 @@ h4 {
   }
 }
 
-.site-layout__center {
+.site-layout__content {
   width: 100%;
 }
 

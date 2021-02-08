@@ -41,17 +41,8 @@ description: Documentation for the U-M Library Design System.
     <main class="layout">
       {% include 'site-navigation.njk' %}
 
-      <aside class="site-layout__right">
-        <div class="sticky-top">
-          {% include 'table-of-contents.njk' %}
-        </div>
-      </aside>
-
-      <article class="site-layout__center owl prose">
-
+      <article class="site-layout__content owl prose">
         <h1>{{ title }}</h1>
-
-        {% include 'table-of-contents-small.njk' %}
 
         {{ content | safe }}
 
@@ -67,5 +58,29 @@ description: Documentation for the U-M Library Design System.
 
   <script>
     anchors.add();
+
+    function InitCopyTextFeature() {
+      const haveAccessToUsersClipboard = navigator.clipboard;
+
+      if (haveAccessToUsersClipboard) {
+        const copyTextButtons = document.querySelectorAll('[data-copy-text]');
+        const pageHasCopyTextFeature = copyTextButtons.length > 0;
+
+        if (pageHasCopyTextFeature) {
+          copyTextButtons.forEach(function handleButton(btn) {
+            btn.removeAttribute('disabled'); // JS enabled now!
+            btn.addEventListener('click', function (event) {
+              const text = btn.getAttribute('data-copy-text');
+
+              // TODO: copy text logic.
+              // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard
+              console.log('TODO: Copy text to clipboard')
+            });
+          })
+        }
+      }
+    }
+
+    InitCopyTextFeature()
   </script>
 </html>
