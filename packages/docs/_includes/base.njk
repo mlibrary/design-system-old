@@ -1,0 +1,52 @@
+---
+description: Documentation for the U-M Library Design System.
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ title or eleventyNavigation.key }} — Design System — University of Michigan Library</title>
+    <meta name="description" content="{{ description }}"/>
+
+    <!-- Social sharing meta -->
+    <meta property="og:url" name="twitter:url" content="https://design-system.lib.umich.edu{{ page.url }}">
+    <meta property="og:title" name="twitter:title"  content="{{ title or eleventyNavigation.key }} | Design System | University of Michigan Library"/>
+    <meta property="og:description" name="twitter:description"  content="{{ description }}"/>
+    <meta property="og:image" name="twitter:image"  content="{{ site.cloudinary_url }}/image/upload/c_fill,g_faces,h_630,w_1200/l_text:Crimson%20Text_160_center:{{ title or eleventyNavigation.key }},co_rgb:334354,c_fit/ds_share_bg.png"/>
+    <meta property="og:image:alt" name="twitter:image:alt"  content="{{ title }}"/>
+    <meta property="og:site_name" content="Design System | University of Michigan Library">
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    <link rel="icon" href="/static/images/favicon-32x32.png" type="image/png"/>
+    <!-- Production umich-lib styles -->
+    <link
+      href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
+      rel="stylesheet"/>
+
+    <!-- Development umich-lib styles -->
+    <!-- <link rel="stylesheet" href="{{ '/css/umich-lib.css' | url }}"/> -->
+    <link rel="stylesheet" href="{{ '/styles/global.css' | url }}"/>
+    <script
+      type="module"
+      src="{{ '/static/components/umich-lib/umich-lib.esm.js' | url }}"></script>
+    <script
+      nomodule
+      src="{{ '/static/components/umich-lib/umich-lib.js' | url }}"></script>
+  </head>
+  <body>
+    <m-universal-header></m-universal-header>
+    <m-website-header name="Design System"></m-website-header>
+
+    {{ content | safe }}
+
+    {% include 'footer.njk' %}
+    <script src="https://unpkg.com/anchor-js/anchor.min.js"></script>
+    <script src="/sw.js"></script>
+  </body>
+
+  <script>
+    anchors.add();
+  </script>
+</html>

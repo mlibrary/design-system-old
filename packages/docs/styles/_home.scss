@@ -1,0 +1,39 @@
+.home-heading {
+  max-width: 38rem;
+  text-align: center;
+  margin-bottom: var(--space-xx-large);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: url("/static/images/aerial-campus-view.jpg");
+
+  height: 24rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.updates {
+  grid-column: site-start/site-end;
+  background: var(--color-maize-400);
+  padding: var(--space-xxx-large) 0;
+}
+
+.home-cards {
+  padding: var(--space-xxx-large) 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem 1rem;
+
+  li {
+    list-style: none;
+  }
+}
