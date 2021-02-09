@@ -1,0 +1,36 @@
+.button {
+  display: inline-block;
+  padding: var(--space-small) var(--space-medium);
+  background: var(--color-blue-100);
+  color: var(--color-teal-400);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  font-family: var(--font-base-family);
+  border-radius: var(--radius-default);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:not([disabled]) {
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 2px white, 0 0 0 3px var(--color-neutral-400);
+    }
+  }
+}
+
+.button--loud {
+  background: var(--color-teal-400);
+  color: white;
+}
+
+.button[disabled] {
+  opacity: 50%;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
