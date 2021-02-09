@@ -13,7 +13,7 @@ description: The University of Michigan Library Design System aims to provide re
   <div class="hero"></div>
 
   <section>
-    <h2>Components</h2>
+    <h2>Show our brand and build trust</h2>
     <ul class="cards">
       {% for component in components %}
         {% include 'component-card.njk' %}
@@ -21,23 +21,43 @@ description: The University of Michigan Library Design System aims to provide re
     </ul>
   </section>
 
-  <section>
-    <h2>Design Tokens</h2>
-  </section>
+  <h2>More to offer</h2>
 
-  <section>
-    <h2>Guides</h2>
+  <div class="cards">
+    <section class="card">
+      <div class="text">
+        <h3>
+          <a href="/design-tokens">Design tokens</a>
+        </h3>
+        <p>Use them to create the styles for your website. Use tokens instead of hard coded values to ensure a scalable, consistent, and sustainable system.</p>
+      </div>
+      <div class="img">
+        <img src="/static/images/splash.png" alt="">
+      </div>
+    </section>
 
-    <p>What is the Design System?</p>
-    <p>Getting started</p>
-    <p>How to make accessible page layouts</p>
-    <p>Frequently asked questions</p>
-  </section>
+    <section class="card">
+      <div class="text">
+        <h3>
+          <a href="/design-tokens">Support</a>
+        </h3>
+        <p>The Design System team provides support for designers, developers, project managers, or anyone who is using the system.</p>
+      </div>
+      <div class="img">
+        <img src="/static/images/splash.png" alt="">
+      </div>
+    </section>
 
-  <section>
-    <h2>Integration</h2>
-
-    <p>Maybe this should just be at the bottom of every page?</p>
-    <p>[copy this stylesheet and script and you're good to go</p>
-  </section>
+    <section class="card">
+      <div class="text">
+        <h3>
+          <a href="/support">Updates</a>
+        </h3>
+        <p>Read the latest updates and new additions to the Design System. We will highlight new features, changes, and progress.</p>
+      </div>
+      <div class="img">
+        <img src="/static/images/splash.png" alt="">
+      </div>
+    </section>
+  </div>
 </main>
