@@ -6,6 +6,16 @@
   margin-right: auto;
 }
 
+.home {
+  & > section {
+    margin: var(--space-xx-large) 0;
+
+    & > h2 {
+      margin-bottom: var(--space-large);
+    }
+  }
+}
+
 .hero {
   background-position: center;
   background-repeat: no-repeat;

@@ -1,0 +1,13 @@
+<li class="card">
+  <div class="text">
+    <h3>
+      <a href="/components/{{ component.name | slug }}">{{ component.name }}</a>
+      {% if component.isExperimental %}
+        <span class="badge badge--warning">Experimental</span>{% endif %}
+    </h3>
+    <p>{{ component.description }}</p>
+  </div>
+  <div class="img">
+    <img src="/static/images/components/{{ component.name | slug }}.png" alt="">
+  </div>
+</li>

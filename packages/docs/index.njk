@@ -1,47 +1,43 @@
 ---
 layout: base.njk
 eleventyNavigation:
-  key: Welcome
+  key: Home
   order: 0
 title: Getting started
 description: The University of Michigan Library Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
 ---
 
-<main class="layout">
+<main class="layout home">
   <h1 class="home-heading">We design and build our websites for everyone.</h1>
 
   <div class="hero"></div>
 
-  {% set navPages = collections.all | eleventyNavigation %}
-  <ul class="home-cards">
-    {%- for entry in navPages %}
-      <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-        <h2>
-          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-        </h2>
-
-        <p>[Some blurb, these are all cards, like on www.lib locations.]</p>
-      </li>
-    {%- endfor %}
-  </ul>
-
-  <section class="layout updates">
-    <div>
-      <h2>Featured</h2>
-
-      <p>[Cards of important components, styles, tokens, content or UX guides, whatever.]</p>
-    </div>
+  <section>
+    <h2>Components</h2>
+    <ul class="cards">
+      {% for component in components %}
+        {% include 'component-card.njk' %}
+      {% endfor %}
+    </ul>
   </section>
 
-  <section class="layout guides">
-    <div>
-      <h2>Guides</h2>
-
-      <li>What is the Design System?</li>
-      <li>Getting started</li>
-      <li>Frequently asked questions</li>
-
-    </div>
+  <section>
+    <h2>Design Tokens</h2>
   </section>
 
+  <section>
+    <h2>Guides</h2>
+
+    <p>What is the Design System?</p>
+    <p>Getting started</p>
+    <p>How to make accessible page layouts</p>
+    <p>Frequently asked questions</p>
+  </section>
+
+  <section>
+    <h2>Integration</h2>
+
+    <p>Maybe this should just be at the bottom of every page?</p>
+    <p>[copy this stylesheet and script and you're good to go</p>
+  </section>
 </main>

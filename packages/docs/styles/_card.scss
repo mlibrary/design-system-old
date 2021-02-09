@@ -1,0 +1,53 @@
+.cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem 1rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.img {
+  margin-bottom: var(--space-xx-small);
+}
+
+.card a:focus {
+  text-decoration: underline;
+}
+
+.card .text {
+  order: 1;
+
+  h3 a {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-neutral-400);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color-teal-400);
+  }
+}
+
+.card:focus-within {
+  box-shadow: 0 0 0 0.25rem;
+}
+
+.card:focus-within a:focus {
+  text-decoration: none;
+}
