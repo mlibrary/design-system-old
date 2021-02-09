@@ -220,3 +220,14 @@ h4 {
 ::-moz-selection {
   background: var(--color-maize-200); /* Gecko Browsers */
 }
+
+.integration {
+  margin: var(--space-x-large) 0;
+
+  border-top: solid 2px var(--color-maize-400);
+  padding-top: var(--space-large);
+
+  p {
+    max-width: 60ch;
+  }
+}
