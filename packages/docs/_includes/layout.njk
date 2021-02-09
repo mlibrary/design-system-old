@@ -63,18 +63,48 @@ description: Documentation for the U-M Library Design System.
       const haveAccessToUsersClipboard = navigator.clipboard;
 
       if (haveAccessToUsersClipboard) {
-        const copyTextButtons = document.querySelectorAll('[data-copy-text]');
+        const copyTextButtons = document.querySelectorAll('[data-copy-code]');
         const pageHasCopyTextFeature = copyTextButtons.length > 0;
 
         if (pageHasCopyTextFeature) {
           copyTextButtons.forEach(function handleButton(btn) {
-            btn.removeAttribute('disabled'); // JS enabled now!
-            btn.addEventListener('click', function (event) {
-              const text = btn.getAttribute('data-copy-text');
+            // Enable this feature.
+            btn.removeAttribute('disabled');
 
-              // TODO: copy text logic.
-              // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard
-              console.log('TODO: Copy text to clipboard')
+            // The HTML is saved as stringified JSON on the
+            // button itself under [data-html].
+            const HTML = JSON
+              .parse(btn.getAttribute("data-html"))
+              .html;
+
+            btn.addEventListener('click', function (event) {
+              try {
+                const neutralMsg = "Copy HTML";
+                const successMsg = "Copied HTML to clipboard";
+
+                navigator
+                  .clipboard
+                  .writeText(HTML)
+                  .then(function () {
+                    // Make this an alert, so that it
+                    // announces the status to the user.
+                    btn.setAttribute('role', 'alert');
+                    btn.innerText = successMsg;
+
+                    setTimeout(function () {
+                      // Remove alert, we don't need to
+                      // let them know the button returned
+                      // to it's original state.
+                      btn.removeAttribute('role');
+                      btn.innerText = neutralMsg;
+                    }, 3000)
+                  })
+
+              } catch (err) {
+                btn.addAttribute('disabled');
+                btn.innerText = "Unable to copy."
+                console.error('Failed to copy to clipboard!', err)
+              }
             });
           })
         }
