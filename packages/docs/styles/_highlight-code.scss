@@ -189,6 +189,10 @@ code.language-markup .token.attr-value,
   color: var(--color-blue-300);
 }
 
+span.token.attr-value {
+  color: var(--color-blue-400);
+}
+
 code.language-markup .token.style,
 code.language-markup .token.script {
   color: var(--color-teal-400);
