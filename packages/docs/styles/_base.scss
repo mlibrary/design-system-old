@@ -183,15 +183,12 @@ h4 {
 .edit-on-github__link {
   font-size: 16px;
   margin-top: var(--space-x-large);
-  background: var(--color-teal-100);
+
   display: flex;
   align-items: center;
   color: var(--color-neutral-400);
   font-weight: var(--semibold);
-  padding: var(--space-medium);
-  border-radius: 4px;
-  border-left: solid 4px var(--color-teal-400);
-  text-decoration-color: var(--color-teal-400);
+  padding: var(--space-medium) 0;
 
   svg {
     width: 24px;
