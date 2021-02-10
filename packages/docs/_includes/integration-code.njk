@@ -1,0 +1,19 @@
+{% set html = '<link href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css" rel="stylesheet"/>
+<script type="module" src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.esm.js"></script>
+<script nomodule src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js"></script>' %}
+
+{% highlight "html" %}
+<link href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css" rel="stylesheet"/>
+<script type="module" src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.esm.js"></script>
+<script nomodule src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js"></script>
+{% endhighlight %}
+
+<div>
+  <button class="button button--loud" disabled data-copy-code data-html='{
+      "html": "{{ html | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n') }}"
+    }'>Copy HTML</button>
+</div>
+
+<p>
+ Use this design system across any framework or no framework at all. We accomplish this by using standardized web platform APIs. We love HTML, CSS, and JavaScript.
+</p>

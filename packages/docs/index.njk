@@ -1,0 +1,24 @@
+---
+layout: base.njk
+eleventyNavigation:
+  key: Home
+  order: 0
+title: Getting started
+description: The University of Michigan Library Design System aims to provide resources for designers and developers to build high quality and inclusive U-M Library websites that work well for everyone.
+---
+
+<main class="layout home">
+  <h1 class="home-heading">We design our websites for everyone.</h1>
+
+  <div class="hero"></div>
+
+  <section>
+    <h2 id="components">Components</h2>
+
+    <ul class="cards">
+      {% for component in components %}
+        {% include 'component-card.njk' %}
+      {% endfor %}
+    </ul>
+  </section>
+</main>

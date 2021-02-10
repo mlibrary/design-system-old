@@ -9,9 +9,16 @@ description: Read the latest updates from the Design System team. We will highli
 
 {{ description }}
 
+## February 2021
+
+<img src="/static/images/redesigned-landing-page.png" alt="" />
+
+- Redesigned the landing page to highlight what is available to use.
+- Getting started information has been reduced to a section of content just obove the footer on every page, for ease of access and use.
+
 ## December 2020
 
-- Added "Edit in codepen" option near code examples to support a design system prototyping code playground.
+- Added "Edit in CodePen" option near code examples to support a design system prototyping code playground.
 - Added [tailwindcss](https://tailwindcss.com/) to our [stylesheet](/#css). Feedback is welcomed as we consider tailwind as a common styling solution.
 
 ## October 2020
@@ -29,7 +36,7 @@ description: Read the latest updates from the Design System team. We will highli
 
 We finally have a way to create our own [HTML elements](https://html.spec.whatwg.org/multipage/custom-elements.html) and use them in any framework we want. This update is our investment in that web standard and our first public release.
 
-The redesigned [library website](https://www.lib.umich.edu/) was launched and is built with the Design System 🤩. Also, [Library Search](https://search.lib.umich.edu/) and [MGet It](https://mgetit.lib.umich.edu/) have been updated to use the Universal Header and Chat.
+The redesigned [library website](https://www.lib.umich.edu/) was launched and is built with the Design System 🤩. Also, [Library Search](https://search.lib.umich.edu/) has been updated to use the Universal Header and Chat.
 
 - Added [Color](/design-tokens#color) and [Space](/design-tokens#space) design tokens available as CSS custom properties.
 - Added a [Chat component](/components/chat).

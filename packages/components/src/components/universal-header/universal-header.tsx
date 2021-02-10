@@ -9,7 +9,6 @@ import { Component, State, h, Listen } from "@stencil/core";
  * @usedBy
  * - [Library Website](https://www.lib.umich.edu/)
  * - [Library Search](https://search.lib.umich.edu/)
- * - [MGet It](https://mgetit.lib.umich.edu/)
  * - [Design System](https://design-system.lib.umich.edu/)
  * - [Michigan Publishing](https://www.publishing.umich.edu/)
  * @research

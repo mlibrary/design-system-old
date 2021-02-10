@@ -1,13 +1,46 @@
 .example {
+  margin-top: var(--space-large);
+
   pre {
     margin-top: 0;
-    border-radius: 0 0 4px 4px;
+    border: none;
+  }
+  border-radius: var(--radius-default);
+  border: solid 1px var(--color-neutral-100);
+
+  h3 {
+    margin: 0;
+    padding: var(--space-large);
+    padding-top: var(--space-medium);
+    padding-bottom: 0;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color-maize-400);
+    color: var(--color-neutral-400);
+
+    font-weight: var(--bold);
+    font-size: var(--text-xxx-small);
+    font-family: var(--font-base-family);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    line-height: var(--line-height-default);
   }
 }
 
 .example__preview {
-  border: solid 1px var(--color-neutral-100);
-  border-radius: 4px 4px 0 0;
-  padding: var(--space-small);
-  border-bottom: none;
+  border-bottom: solid 1px var(--color-neutral-100);
+  padding: var(--space-large);
+  border-radius: var(--radius-default) var(--radius-default) 0 0;
+  background: white;
+}
+
+.example__actions {
+  display: flex;
+
+  & > *:not(:last-child) {
+    margin-right: var(--space-medium);
+  }
 }

@@ -10,7 +10,6 @@ import cn from "classnames";
  * @usedBy
  * - [Library Website](https://www.lib.umich.edu/)
  * - [Library Search](https://search.lib.umich.edu/)
- * - [MGet It](https://mgetit.lib.umich.edu/)
  */
 @Component({
   tag: "m-chat",

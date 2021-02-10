@@ -4,14 +4,13 @@ pagination:
     data: components
     alias: component
     size: 1
-permalink: "components/{{ component.name | slug }}/"
+permalink: "{{ component.name | slug }}/"
 templateEngineOverride: njk,md
 eleventyComputed:
   title: "{{ component.name }}"
   isExperimental: {{ component.isExperimental }}
   eleventyNavigation:
-    key: "{{ component.name }} | Components"
-    parent: Components
+    key: "{{ component.name }}"
   description: "{{ component.description }}"
 ---
 
@@ -21,34 +20,7 @@ eleventyComputed:
 
 {{ component.description }}
 
-## Example
-
-<div class="example">
-  <div class="example__preview">
-    {{ component.example | safe }}
-  </div>
-
-```html
-{{ component.example | safe }}
-  ```
-
-<form action="https://codepen.io/pen/define" method="POST" target="_blank">
-    <input
-    type="hidden"
-    name="data"
-    value='{
-      "title": "{{ component.name }} — Design System — University of Michigan Library",
-      "html": "{{ site.codepen_html_comment | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n')}} {{ component.example | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n') }}",
-      "css_external": "https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css",
-      "js_external": "https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.js",
-      "layout": "left",
-      "editors": "100"
-    }'
-/>
-    <input type="submit" value="Edit in codepen" 
-    class="bg-blue-100 text-teal-400 px-4 py-3 mt-3 rounded cursor-pointer font-bold hover:shadow-outline text-base"/>
-  </form>
-</div>
+{% include 'component-code.njk' %}
 
 {% if component.props %}
 ## Properties
@@ -78,6 +50,3 @@ eleventyComputed:
 ## Research
 {{ component.research }}
 {% endif %}
-
-## Integration
-For integration, please see [getting started](/#getting-started) documentation.

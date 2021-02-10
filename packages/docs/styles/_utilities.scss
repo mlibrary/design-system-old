@@ -12,6 +12,12 @@
   h4 {
     margin-top: var(--space-xx-large);
   }
+
+  // Text content that shouldn't be too long.
+  & > p,
+  & > ul > li {
+    max-width: 60ch;
+  }
 }
 
 .owl > * + * {
