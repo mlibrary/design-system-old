@@ -9,6 +9,13 @@ description: Read the latest updates from the Design System team. We will highli
 
 {{ description }}
 
+## February 2021
+
+<img src="/static/images/redesigned-landing-page.png" alt="" />
+
+- Redesigned the landing page to highlight what is available to use.
+- Getting started information has been reduced to a section of content just obove the footer on every page, for ease of access and use.
+
 ## December 2020
 
 - Added "Edit in CodePen" option near code examples to support a design system prototyping code playground.
