@@ -155,7 +155,7 @@ pre .line-highlight {
 
 .token.operator,
 .token.punctuation {
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-200);
 }
 
 .token.entity {
@@ -172,7 +172,7 @@ code.language-markup {
 
 code.language-markup .token.tag,
 .token.tag {
-  color: var(--color-teal-500);
+  color: var(--color-neutral-500);
 }
 
 .token.string {
@@ -186,7 +186,7 @@ code.language-markup .token.attr-name,
 
 code.language-markup .token.attr-value,
 .token.attr-value {
-  color: var(--color-blue-400);
+  color: var(--color-blue-300);
 }
 
 code.language-markup .token.style,
