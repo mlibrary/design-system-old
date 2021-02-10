@@ -47,5 +47,9 @@
       color: var(--color-teal-400);
       font-weight: var(--semibold);
     }
+
+    &[aria-current="page"] {
+      font-weight: 700;
+    }
   }
 }
