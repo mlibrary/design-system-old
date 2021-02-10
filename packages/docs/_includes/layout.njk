@@ -1,116 +1,18 @@
 ---
-description: Documentation for the U-M Library Design System.
+layout: base.njk
 ---
+<main class="layout">
+  {% include 'site-navigation.njk' %}
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{{ title or eleventyNavigation.key }} — Design System — University of Michigan Library</title>
-    <meta name="description" content="{{ description }}"/>
+  <article class="site-layout__content owl prose">
+    <h1>{{ title }}</h1>
 
-    <!-- Social sharing meta -->
-    <meta property="og:url" name="twitter:url" content="https://design-system.lib.umich.edu{{ page.url }}">
-    <meta property="og:title" name="twitter:title"  content="{{ title or eleventyNavigation.key }} | Design System | University of Michigan Library"/>
-    <meta property="og:description" name="twitter:description"  content="{{ description }}"/>
-    <meta property="og:image" name="twitter:image"  content="{{ site.cloudinary_url }}/image/upload/c_fill,g_faces,h_630,w_1200/l_text:Crimson%20Text_160_center:{{ title or eleventyNavigation.key }},co_rgb:334354,c_fit/ds_share_bg.png"/>
-    <meta property="og:image:alt" name="twitter:image:alt"  content="{{ title }}"/>
-    <meta property="og:site_name" content="Design System | University of Michigan Library">
-    <meta name="twitter:card" content="summary_large_image"/>
+    {{ content | safe }}
 
-    <link rel="icon" href="/static/images/favicon-32x32.png" type="image/png"/>
-    <!-- Production umich-lib styles -->
-    <link
-      href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css"
-      rel="stylesheet"/>
-
-    <!-- Development umich-lib styles -->
-    <!-- <link rel="stylesheet" href="{{ '/css/umich-lib.css' | url }}"/> -->
-    <link rel="stylesheet" href="{{ '/styles/global.css' | url }}"/>
-    <script
-      type="module"
-      src="{{ '/static/components/umich-lib/umich-lib.esm.js' | url }}"></script>
-    <script
-      nomodule
-      src="{{ '/static/components/umich-lib/umich-lib.js' | url }}"></script>
-  </head>
-  <body>
-    <m-universal-header></m-universal-header>
-    <m-website-header name="Design System"></m-website-header>
-    <main class="layout">
-      {% include 'site-navigation.njk' %}
-
-      <article class="site-layout__content owl prose">
-        <h1>{{ title }}</h1>
-
-        {{ content | safe }}
-
-        <a href="https://github.com/mlibrary/design-system/tree/master/packages/docs/{{ page.inputPath }}" class="edit-on-github__link">{% include 'github-svg.njk' %}
-          <span>If you found a mistake on this page, would you kindly submit a fix<span class="visually-hidden"> on GitHub</span>?</span></a>
-      </article>
-    </main>
-
-    {% include 'footer.njk' %}
-    <script src="https://unpkg.com/anchor-js/anchor.min.js"></script>
-    <script src="/sw.js"></script>
-  </body>
-
-  <script>
-    anchors.add('h2');
-
-    function InitCopyTextFeature() {
-      const haveAccessToUsersClipboard = navigator.clipboard;
-
-      if (haveAccessToUsersClipboard) {
-        const copyTextButtons = document.querySelectorAll('[data-copy-code]');
-        const pageHasCopyTextFeature = copyTextButtons.length > 0;
-
-        if (pageHasCopyTextFeature) {
-          copyTextButtons.forEach(function handleButton(btn) {
-            // Enable this feature.
-            btn.removeAttribute('disabled');
-
-            // The HTML is saved as stringified JSON on the
-            // button itself under [data-html].
-            const HTML = JSON
-              .parse(btn.getAttribute("data-html"))
-              .html;
-
-            btn.addEventListener('click', function (event) {
-              try {
-                const neutralMsg = "Copy HTML";
-                const successMsg = "Copied HTML to clipboard";
-
-                navigator
-                  .clipboard
-                  .writeText(HTML)
-                  .then(function () {
-                    // Make this an alert, so that it
-                    // announces the status to the user.
-                    btn.setAttribute('role', 'alert');
-                    btn.innerText = successMsg;
-
-                    setTimeout(function () {
-                      // Remove alert, we don't need to
-                      // let them know the button returned
-                      // to it's original state.
-                      btn.removeAttribute('role');
-                      btn.innerText = neutralMsg;
-                    }, 3000)
-                  })
-
-              } catch (err) {
-                btn.addAttribute('disabled');
-                btn.innerText = "Unable to copy."
-                console.error('Failed to copy to clipboard!', err)
-              }
-            });
-          })
-        }
-      }
-    }
-
-    InitCopyTextFeature()
-  </script>
-</html>
+    <a href="https://github.com/mlibrary/design-system/tree/master/packages/docs/{{ page.inputPath }}" class="edit-on-github__link">{% include 'github-svg.njk' %}
+      <span>If you found a mistake on this page, would you kindly submit a fix<span class="visually-hidden"> on GitHub</span>?</span></a>
+  </article>
+</main>
+<script>
+  anchors.add('h2');
+</script>

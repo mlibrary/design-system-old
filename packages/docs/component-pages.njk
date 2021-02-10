@@ -4,14 +4,13 @@ pagination:
     data: components
     alias: component
     size: 1
-permalink: "components/{{ component.name | slug }}/"
+permalink: "{{ component.name | slug }}/"
 templateEngineOverride: njk,md
 eleventyComputed:
   title: "{{ component.name }}"
   isExperimental: {{ component.isExperimental }}
   eleventyNavigation:
-    key: "{{ component.name }} | Components"
-    parent: Components
+    key: "{{ component.name }}"
   description: "{{ component.description }}"
 ---
 

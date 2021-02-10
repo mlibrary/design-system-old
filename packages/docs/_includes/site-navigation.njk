@@ -1,12 +1,23 @@
 <nav class="site-navigation site-layout__left">
   <div class="sticky-top">
-    {% set navPages = collections.all | eleventyNavigation %}
     <ul>
-      {%- for entry in navPages %}
-        <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      {% for component in components %}
+        <li>
+          <a href="/{{ component.name | slug }}">{{ component.name }}</a>
         </li>
-      {%- endfor %}
+      {% endfor %}
+      <li>
+        <a href="/design-tokens">Design Tokens</a>
+      </li>
+      <li>
+        <a href="/support">Support</a>
+      </li>
+      <li>
+        <a href="/updates">Updates</a>
+      </li>
     </ul>
   </div>
 </nav>

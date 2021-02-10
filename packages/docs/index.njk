@@ -13,51 +13,12 @@ description: The University of Michigan Library Design System aims to provide re
   <div class="hero"></div>
 
   <section>
-    <h2>Show our brand and build trust</h2>
+    <h2>Components</h2>
+
     <ul class="cards">
       {% for component in components %}
         {% include 'component-card.njk' %}
       {% endfor %}
     </ul>
   </section>
-
-  <h2>More to offer</h2>
-
-  <div class="cards">
-    <section class="card">
-      <div class="text">
-        <h3>
-          <a href="/design-tokens">Design tokens</a>
-        </h3>
-        <p>Use them to create the styles for your website. Use tokens instead of hard coded values to ensure a scalable, consistent, and sustainable system.</p>
-      </div>
-      <div class="img">
-        <img src="/static/images/splash.png" alt="">
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="text">
-        <h3>
-          <a href="/support">Support</a>
-        </h3>
-        <p>The Design System team provides support for designers, developers, project managers, or anyone who is using the system.</p>
-      </div>
-      <div class="img">
-        <img src="/static/images/splash.png" alt="">
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="text">
-        <h3>
-          <a href="/updates">Updates</a>
-        </h3>
-        <p>Read the latest updates and new additions to the Design System. We will highlight new features, changes, and progress.</p>
-      </div>
-      <div class="img">
-        <img src="/static/images/splash.png" alt="">
-      </div>
-    </section>
-  </div>
 </main>

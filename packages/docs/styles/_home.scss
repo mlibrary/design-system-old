@@ -11,7 +11,12 @@
     margin: var(--space-xx-large) 0;
 
     & > h2 {
-      margin-bottom: var(--space-large);
+      margin-bottom: var(--space-medium);
+    }
+
+    & > p {
+      margin-bottom: var(--space-x-large);
+      max-width: 75ch;
     }
   }
 }
