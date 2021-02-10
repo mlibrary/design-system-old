@@ -1,5 +1,18 @@
-.site-footer__content {
+.site-footer {
   background: var(--color-blue-400);
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.site-footer__content {
   color: var(--color-blue-100);
   padding: var(--space-xxx-large) 0;
 
@@ -14,6 +27,10 @@
   h2 {
     margin-bottom: var(--space-medium);
   }
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem 1rem;
 }
 
 .site-footer__disclaimer {
