@@ -1,14 +1,14 @@
 .home-heading {
-  max-width: 38rem;
+  max-width: 46rem;
   text-align: center;
-  margin-bottom: var(--space-xx-large);
+  margin-bottom: var(--space-large);
   margin-left: auto;
   margin-right: auto;
 }
 
 .home {
   & > section {
-    margin: var(--space-xx-large) 0;
+    margin: var(--space-large) 0;
 
     & > h2 {
       margin-bottom: var(--space-medium);
@@ -27,7 +27,7 @@
   background-size: cover;
   background: url("/static/images/aerial-campus-view.jpg");
 
-  height: 24rem;
+  height: 21rem;
 
   display: flex;
   align-items: center;
