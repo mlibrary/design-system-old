@@ -2,6 +2,12 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
+  text-align: center;
+
+  @media only screen and (max-width: 860px) {
+    margin-top: var(--space-large);
+    font-size: var(--space-xx-large);
+  }
 }
 
 .home-lede {
