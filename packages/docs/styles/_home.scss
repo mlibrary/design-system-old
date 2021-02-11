@@ -1,7 +1,16 @@
 .home-heading {
-  margin-bottom: var(--space-large);
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
+}
+
+.home-lede {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-large);
+  font-size: 1.25rem;
+  max-width: 39rem;
+  text-align: center;
 }
 
 .home {
@@ -19,17 +28,7 @@
   }
 }
 
-.hero {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background: url("/static/images/aerial-campus-view.jpg");
-
-  height: 21rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.home-image {
   border-radius: 4px;
 }
 
