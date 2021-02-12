@@ -60,9 +60,13 @@ main.layout {
 
 h1 {
   font-family: var(--font-second-family);
-  font-size: var(--text-xxx-large);
+  font-size: var(--text-xx-large);
   line-height: var(--line-height-page-heading);
   margin-bottom: var(--space-large);
+
+  @media screen and (min-width: 720px) {
+    font-size: var(--text-xxx-large);
+  }
 }
 
 h2 {
@@ -184,7 +188,7 @@ h4 {
   font-size: 16px;
   margin-top: var(--space-x-large);
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   color: var(--color-neutral-400);
   font-weight: var(--semibold);
@@ -227,4 +231,10 @@ h4 {
   p {
     max-width: 75ch;
   }
+}
+
+.not-found-image {
+  margin-top: var(--space-x-large);
+  width: 32rem;
+  max-width: 100%;
 }
