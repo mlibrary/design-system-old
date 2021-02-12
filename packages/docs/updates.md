@@ -17,7 +17,6 @@ description: Read the latest updates from the Design System team. We will highli
 ## December 2020
 
 - Added "Edit in CodePen" option near code examples to support a design system prototyping code playground.
-- Added [tailwindcss](https://tailwindcss.com/) to our stylesheet. Feedback is welcomed as we consider tailwind as a common styling solution.
 
 ## October 2020
 

@@ -4,9 +4,3 @@
 /* U-M Library (local) CSS Partials */
 @import "fonts";
 @import "a11y";
-
-/* Tailwind CSS */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "tailwindcss/screens";
