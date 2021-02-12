@@ -13,7 +13,7 @@ The **Design System team** provides support for designers, developers, project m
 
 ## Design System team
 
-The team is responsible for making sure that contributions to the system are of a high quality and meet our needs to build U-M Library websites.
+The cross-functional team is responsible for making sure that contributions to the system are of a high quality and meet our needs to build U-M Library websites.
 
 - [Emily Buckler](https://www.lib.umich.edu/users/bucklere), Web Content Creator
 - [Bridget Burke](https://www.lib.umich.edu/users/burkebri), Front-end Developer and Accessibility Specialist
