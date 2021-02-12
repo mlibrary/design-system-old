@@ -36,7 +36,7 @@
     display: block;
     text-decoration: none;
     color: var(--color-neutral-400);
-    padding: var(--space-medium) 0;
+    padding: var(--space-small) 0;
 
     &:hover,
     &:focus {
@@ -50,6 +50,10 @@
 
     &[aria-current="page"] {
       font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: var(--color-teal-400);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 1px;
     }
   }
 }
