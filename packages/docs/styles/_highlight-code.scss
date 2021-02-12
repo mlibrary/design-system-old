@@ -36,7 +36,7 @@ pre[class*="language-"] {
 code[class*="language-"] {
   white-space: pre;
   display: block;
-  padding: var(--space-large);
+  padding: var(--example-margin);
   display: block;
 }
 
@@ -59,7 +59,7 @@ code[class="language-html"] {
     content: "HTML";
     position: absolute;
     top: var(--space-medium);
-    left: var(--space-large);
+    left: var(--example-margin);
     text-decoration: underline;
     text-decoration-style: wavy;
     text-decoration-thickness: 2px;

@@ -1,16 +1,22 @@
 .example {
   margin-top: var(--space-large);
+  border-radius: var(--radius-default);
+  border: solid 1px var(--color-neutral-100);
+
+  @media only screen and (max-width: 600px) {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
 
   pre {
     margin-top: 0;
     border: none;
   }
-  border-radius: var(--radius-default);
-  border: solid 1px var(--color-neutral-100);
 
   h3 {
     margin: 0;
-    padding: var(--space-large);
+    padding: var(--example-margin);
     padding-top: var(--space-medium);
     padding-bottom: 0;
     text-decoration: underline;
@@ -32,7 +38,7 @@
 
 .example__preview {
   border-bottom: solid 1px var(--color-neutral-100);
-  padding: var(--space-large);
+  padding: var(--example-margin);
   border-radius: var(--radius-default) var(--radius-default) 0 0;
   background: white;
 }
