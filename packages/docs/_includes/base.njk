@@ -46,59 +46,68 @@ description: Documentation for the U-M Library Design System.
     <script src="https://unpkg.com/anchor-js/anchor.min.js"></script>
     <script src="/sw.js"></script>
     <script>
-      function InitCopyTextFeature() {
-        const haveAccessToUsersClipboard = navigator.clipboard;
+      (function () {
+        const copiers = document.querySelectorAll('[data-copy-code]');
+        const neutralMsg = "Copy HTML";
+        const successMsg = 'Copied <span aria-hidden="true">🖨️</span> !';
 
-        if (haveAccessToUsersClipboard) {
-          const copyTextButtons = document.querySelectorAll('[data-copy-code]');
-          const pageHasCopyTextFeature = copyTextButtons.length > 0;
-
-          if (pageHasCopyTextFeature) {
-            copyTextButtons.forEach(function handleButton(btn) {
-              // Enable this feature.
-              btn.removeAttribute('disabled');
-
-              // The HTML is saved as stringified JSON on the
-              // button itself under [data-html].
-              const HTML = JSON
-                .parse(btn.getAttribute("data-html"))
-                .html;
-
-              btn.addEventListener('click', function (event) {
-                try {
-                  const neutralMsg = "Copy HTML";
-                  const successMsg = 'Copied <span aria-hidden="true">🖨️</span> !';
-
-                  navigator
-                    .clipboard
-                    .writeText(HTML)
-                    .then(function () {
-                      // Make this an alert, so that it
-                      // announces the status to the user.
-                      btn.setAttribute('role', 'alert');
-                      btn.innerHTML = successMsg;
-
-                      setTimeout(function () {
-                        // Remove alert, we don't need to
-                        // let them know the button returned
-                        // to it's original state.
-                        btn.removeAttribute('role');
-                        btn.innerText = neutralMsg;
-                      }, 3000)
-                    })
-
-                } catch (err) {
-                  btn.setAttribute('disabled', true);
-                  btn.innerText = "Copier is broken"
-                  console.error('Failed to copy to clipboard!', err)
-                }
-              });
-            })
-          }
+        function powerUp() {
+          copiers.forEach(copyTimeNow);
         }
-      }
 
-      InitCopyTextFeature()
+        function copierYouThereHello() {
+          return !!navigator.clipboard
+        }
+
+        function success(btn) {
+          // Make this an alert, so that it
+          // announces the status to the user.
+          btn.setAttribute('role', 'alert');
+          btn.innerHTML = successMsg;
+
+          setTimeout(function () {
+            // Remove alert, we don't need to
+            // let them know the button returned
+            // to it's original state.
+            btn.removeAttribute('role');
+            btn.innerText = neutralMsg;
+          }, 3000)
+        }
+
+        function failure(btn, err) {
+          btn.setAttribute('disabled', true);
+          btn.innerText = "Copier is broken"
+          console.error('Failed to copy to clipboard!', err)
+        }
+
+        function copyTimeNow(btn) {
+          if (!copierYouThereHello()) 
+            return
+
+            // Enable this feature.
+          btn.removeAttribute('disabled');
+
+          // The HTML is saved as stringified JSON on the
+          // button itself under [data-html].
+          const HTML = JSON
+            .parse(btn.getAttribute("data-html"))
+            .html;
+
+          btn.addEventListener('click', function (event) {
+            try {
+              navigator
+                .clipboard
+                .writeText(HTML)
+                .then(success(btn))
+
+            } catch (err) {
+              failure(btn, err)
+            }
+          });
+        }
+
+        powerUp();
+      }());
     </script>
   </body>
 </html>
