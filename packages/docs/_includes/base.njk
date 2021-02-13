@@ -51,15 +51,15 @@ description: Documentation for the U-M Library Design System.
         const neutralMsg = "Copy HTML";
         const successMsg = 'Copied <span aria-hidden="true">🖨️</span> !';
 
-        function powerUp() {
-          copiers.forEach(copyTimeNow);
+        function powerUpCopiers() {
+          copiers.forEach(makeCopiesPlease);
         }
 
-        function copierYouThereHello() {
+        function canWeCopyWithThisBrowser() {
           return !!navigator.clipboard
         }
 
-        function success(btn) {
+        function copierSucceeded(btn) {
           // Make this an alert, so that it
           // announces the status to the user.
           btn.setAttribute('role', 'alert');
@@ -74,14 +74,15 @@ description: Documentation for the U-M Library Design System.
           }, 3000)
         }
 
-        function failure(btn, err) {
+        function copierFailed(btn, err) {
           btn.setAttribute('disabled', true);
           btn.innerText = "Copier is broken"
           console.error('Failed to copy to clipboard!', err)
         }
 
-        function copyTimeNow(btn) {
-          if (!copierYouThereHello()) 
+        function makeCopy(btn) {
+          // we don't own a copier, shoot!
+          if (!canWeCopyWithThisBrowser()) 
             return
 
             // Enable this feature.
@@ -98,15 +99,15 @@ description: Documentation for the U-M Library Design System.
               navigator
                 .clipboard
                 .writeText(HTML)
-                .then(success(btn))
+                .then(copierSucceeded(btn))
 
             } catch (err) {
-              failure(btn, err)
+              copierFailed(btn, err)
             }
           });
         }
 
-        powerUp();
+        powerUpCopiers();
       }());
     </script>
   </body>
