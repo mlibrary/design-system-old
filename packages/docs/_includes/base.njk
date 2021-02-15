@@ -43,71 +43,130 @@ description: Documentation for the U-M Library Design System.
 
     {% include 'footer.njk' %}
 
+    <button class="button button--loud" data-copier="{
+      &quot;html&quot;: &quot;<m-universal-header></m-universal-header>&quot;
+    }">Copy HTML</button>
     <script src="https://unpkg.com/anchor-js/anchor.min.js"></script>
     <script src="/sw.js"></script>
     <script>
+      /**
+      * # Copier
+      *
+      * Use a <button> and data attribute to
+      * enable Copy to Clipboard feature.
+      *
+      * Options:
+      *
+      * name           value
+      * [data-text]    JSON.stringify({ text: "copy me" })
+      *
+      *
+      * Example:
+      *
+      * <button
+      *   disabled
+      *   data-copier="{&quot;text&quot;: &quot;<m-chat></m-chat>&quot;}"
+      *  >Copy</button>
+      */
       (function () {
-        const copiers = document.querySelectorAll('[data-copy-code]');
         const neutralMsg = "Copy HTML";
         const successMsg = 'Copied <span aria-hidden="true">🖨️</span> !';
+        const copierAttr = 'data-copier'
+        const copierElementSelector = `button[${copierAttr}]`
 
-        function powerUpCopiers() {
-          copiers.forEach(makeCopiesPlease);
+        function setupCopiers() {
+          document
+            .querySelectorAll(copierElementSelector)
+            .forEach(setupCopier);
         }
 
-        function canWeCopyWithThisBrowser() {
+        function setupCopier(btn) {
+          console.log('btn', btn)
+
+          // we don't own a copier, shoot!
+          if (!canBrowserCopy()) 
+            return
+
+          createCopier(btn);
+        }
+
+        function canBrowserCopy() {
+          // Does this browser support the clipboard API?
           return !!navigator.clipboard
         }
 
-        function copierSucceeded(btn) {
+        function createCopier(btn) {
+          // Setup copyRequest listener.
+          btn.addEventListener('click', function (event) {
+            requestCopy(btn, event);
+          });
+
+          enableCopier(btn)
+        }
+
+        function enableCopier(btn) {
+          // If the user can't copy, then leave
+          // the `disabled` attr on that button.
+          btn.removeAttribute('disabled');
+        }
+
+        function disableCopier(btn) {
+          btn.setAttribute('disabled', true);
+        }
+
+        function requestCopy(btn, event) {
+          try {
+            // The text is saved as stringified JSON on the
+            // button itself.
+            const text = JSON
+              .parse(btn.getAttribute(copierAttr))
+              .text;
+
+            if (!text) {
+              const error = "The copier has no text to copy.";
+              console.warn(error, btn, event)
+              throw error
+            }
+
+            navigator
+              .clipboard
+              .writeText(text)
+              .then(copySucceded(btn))
+          } catch (err) {
+            copyFailed(btn, err)
+          }
+        }
+
+        function notificationOfSuccess(btn) {
           // Make this an alert, so that it
           // announces the status to the user.
           btn.setAttribute('role', 'alert');
           btn.innerHTML = successMsg;
 
+          // Remove role.
           setTimeout(function () {
-            // Remove alert, we don't need to
-            // let them know the button returned
-            // to it's original state.
             btn.removeAttribute('role');
+          }, 1000)
+        }
+
+        function copierReset(btn) {
+          setTimeout(function () {
             btn.innerText = neutralMsg;
           }, 3000)
         }
 
-        function copierFailed(btn, err) {
+        function copySucceded(btn) {
+          notificationOfSuccess(btn)
+          copierReset(btn)
+        }
+
+        function copyFailed(btn, err) {
           btn.setAttribute('disabled', true);
-          btn.innerText = "Copier is broken"
+          btn.innerText = "Copier out of order"
           console.error('Failed to copy to clipboard!', err)
         }
 
-        function makeCopy(btn) {
-          // we don't own a copier, shoot!
-          if (!canWeCopyWithThisBrowser()) 
-            return
-
-            // Enable this feature.
-          btn.removeAttribute('disabled');
-
-          // The HTML is saved as stringified JSON on the
-          // button itself under [data-html].
-          const HTML = JSON
-            .parse(btn.getAttribute("data-html"))
-            .html;
-
-          btn.addEventListener('click', function (event) {
-            try {
-              navigator
-                .clipboard
-                .writeText(HTML)
-                .then(copierSucceeded(btn))
-
-            } catch (err) {
-              copierFailed(btn, err)
-            }
-          });
-        }
-
-        powerUpCopiers();
+        setupCopiers()
       }());
     </script>
   </body>
