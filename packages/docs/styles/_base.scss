@@ -40,6 +40,7 @@ body {
   height: 100%;
   color: var(--color-neutral-400);
   font-family: var(--font-base-family);
+  font-size: 16px;
 }
 
 /* Keep footer at bottom CSS */
@@ -229,4 +230,8 @@ h4 {
   margin-top: var(--space-x-large);
   width: 32rem;
   max-width: 100%;
+}
+
+code {
+  font-size: 1rem;
 }
