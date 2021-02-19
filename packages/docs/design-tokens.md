@@ -9,8 +9,29 @@ description: Design tokens are a tech-agnostic way to store low-level values and
 
 <p>Design tokens are available to use in your stylesheets by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">custom properties (MDN web docs)</a>.</p>
 
-{% include 'design-tokens.njk' %}
+{% include 'color-palettes.njk' %}
 
-<h2 id="accessibility">Accessibility</h2>
+<h2 id="space">Space</h2>
 
-<p>When using colors, be sure to use them in accessible combinations. Use the <a href="https://webaim.org/resources/contrastchecker/">WebAIM Contrast Checker</a> and  reference <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Understanding Success Criterion 1.4.3: Contrast (Minimum)</a> to make accessible decisions.</p>
+<p>Use the spacing tokens to create a visual balance that makes your website easier to scan. These space tokens should be used for all padding, margin and position coordinates.</p>
+
+<table>
+  <tr>
+    <th>Preview</th>
+    <th>CSS custom property</th>
+    <th>Value</th>
+  </tr>
+  {% for token in space %}
+    <tr>
+      <td>
+        <div style="background: var(--color-neutral-300); height: {{token.value}}; width: {{token.value}}; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);"></div>
+      </td>
+      <td>
+        <code>var(--{{token.name}})</code>
+      </td>
+      <td>
+        <code>{{token.value}}</code>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
