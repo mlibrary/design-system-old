@@ -114,13 +114,13 @@ description: Documentation for the U-M Library Design System.
             navigator
               .clipboard
               .writeText(text)
-              .then(handleSuccessfulCopy(btn))
+              .then(handleCopySuccess(btn))
           } catch (err) {
             copyFailed(btn, err)
           }
         }
 
-        function handleSuccessfulCopy(btn) {
+        function handleCopySuccess(btn) {
           /*
            * Set role="alert" on the copier so that on success
            * the label is announced to users.
