@@ -72,14 +72,14 @@ description: Documentation for the U-M Library Design System.
         function setupCopiers() {
           document
             .querySelectorAll(copierElementSelector)
-            .forEach(createCopier(btn));
+            .forEach(setupCopier);
         }
 
         function setupCopier(btn) {
           if (canBrowserCopy()) {
-            disableCopier(btn)
-          } else {
             createCopier(btn)
+          } else {
+            disableCopier(btn)
           }
         }
 
@@ -88,6 +88,11 @@ description: Documentation for the U-M Library Design System.
         }
 
         function createCopier(btn) {
+          if (!canBrowserCopy()) {
+            disableCopier(btn)
+            return // Nevermind
+          }
+
           btn.addEventListener('click', function (event) {
             requestCopy(btn, event);
           });
