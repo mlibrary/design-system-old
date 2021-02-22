@@ -53,7 +53,7 @@ description: Documentation for the U-M Library Design System.
       * enable copy to clipboard browser feature.
       *
       * attr name        value (JSON stringified)
-      * [data-copier]    eg, JSON.stringify({ text: "copy me" })
+      * [data-copier]    eg, JSON.stringify({ text: "<p>Hello, people!</p>" })
       *
       * Example:
       *
@@ -63,36 +63,23 @@ description: Documentation for the U-M Library Design System.
       *  >Copy HTML</button>
       */
       (function () {
-        const copierAttr = 'data-copier'
-        const copierElementSelector = `button[${copierAttr}]`
+        const copierAttr = "data-copier"
+        const copiers = document.querySelectorAll(`button[${copierAttr}]`)
         const copierLabel = "Copy HTML";
         const copierSuccessLabel = 'Copied <span aria-hidden="true">🖨️</span> !';
         const copierFailureLabel = "Copier out of order"
 
-        function setupCopiers() {
-          document
-            .querySelectorAll(copierElementSelector)
-            .forEach(setupCopier);
+        function init() {
+          copiers.forEach(function (btn) {
+            if (canBrowserCopy()) {
+              enableCopier(btn)
+            } else {
+              disableCopier(btn)
+            }
+          });
         }
 
-        function setupCopier(btn) {
-          if (canBrowserCopy()) {
-            createCopier(btn)
-          } else {
-            disableCopier(btn)
-          }
-        }
-
-        function canBrowserCopy() {
-          return !!navigator.clipboard
-        }
-
-        function createCopier(btn) {
-          if (!canBrowserCopy()) {
-            disableCopier(btn)
-            return // Nevermind
-          }
-
+        function enableCopier(btn) {
           btn.addEventListener('click', function (event) {
             requestCopy(btn, event);
           });
@@ -147,7 +134,11 @@ description: Documentation for the U-M Library Design System.
           console.error('Failed to copy to clipboard!', err)
         }
 
-        setupCopiers()
+        function canBrowserCopy() {
+          return !!navigator.clipboard
+        }
+
+        init();
       }());
     </script>
   </body>
