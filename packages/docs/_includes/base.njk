@@ -47,61 +47,51 @@ description: Documentation for the U-M Library Design System.
     <script src="/sw.js"></script>
     <script>
       /**
-      * # Copier
+      * Copier
       *
       * Use a <button> and data attribute to
-      * enable Copy to Clipboard feature.
+      * enable copy to clipboard browser feature.
       *
-      * Options:
-      *
-      * name           value
-      * [data-text]    JSON.stringify({ text: "copy me" })
-      *
+      * attr name        value (JSON stringified)
+      * [data-copier]    eg, JSON.stringify({ text: "copy me" })
       *
       * Example:
       *
       * <button
       *   disabled
-      *   data-copier="{&quot;text&quot;: &quot;<m-chat></m-chat>&quot;}"
-      *  >Copy</button>
+      *   data-copier="{&quot;text&quot;: &quot;<p>Hello, people!</p>&quot;}"
+      *  >Copy HTML</button>
       */
       (function () {
-        const neutralMsg = "Copy HTML";
-        const successMsg = 'Copied <span aria-hidden="true">🖨️</span> !';
         const copierAttr = 'data-copier'
         const copierElementSelector = `button[${copierAttr}]`
+        const copierLabel = "Copy HTML";
+        const copierSuccessLabel = 'Copied <span aria-hidden="true">🖨️</span> !';
+        const copierFailureLabel = "Copier out of order"
 
         function setupCopiers() {
           document
             .querySelectorAll(copierElementSelector)
-            .forEach(setupCopier);
+            .forEach(createCopier(btn));
         }
 
         function setupCopier(btn) {
-          // we don't own a copier, shoot!
-          if (!canBrowserCopy()) 
-            return
-
-          createCopier(btn);
+          if (canBrowserCopy()) {
+            disableCopier(btn)
+          } else {
+            createCopier(btn)
+          }
         }
 
         function canBrowserCopy() {
-          // Does this browser support the clipboard API?
           return !!navigator.clipboard
         }
 
         function createCopier(btn) {
-          // Setup copyRequest listener.
           btn.addEventListener('click', function (event) {
             requestCopy(btn, event);
           });
 
-          enableCopier(btn)
-        }
-
-        function enableCopier(btn) {
-          // If the user can't copy, then leave
-          // the `disabled` attr on that button.
           btn.removeAttribute('disabled');
         }
 
@@ -111,8 +101,6 @@ description: Documentation for the U-M Library Design System.
 
         function requestCopy(btn, event) {
           try {
-            // The text is saved as stringified JSON on the
-            // button itself.
             const text = JSON
               .parse(btn.getAttribute(copierAttr))
               .text;
@@ -126,38 +114,31 @@ description: Documentation for the U-M Library Design System.
             navigator
               .clipboard
               .writeText(text)
-              .then(copySucceded(btn))
+              .then(handleSuccessfulCopy(btn))
           } catch (err) {
             copyFailed(btn, err)
           }
         }
 
-        function notificationOfSuccess(btn) {
-          // Make this an alert, so that it
-          // announces the status to the user.
+        function handleSuccessfulCopy(btn) {
+          /*
+           * Set role="alert" on the copier so that on success
+           * the label is announced to users.
+           *
+           * Docs: https://www.w3.org/TR/wai-aria-practices-1.1/#alert
+          **/
           btn.setAttribute('role', 'alert');
-          btn.innerHTML = successMsg;
+          btn.innerHTML = copierSuccessLabel;
 
-          // Remove role.
           setTimeout(function () {
             btn.removeAttribute('role');
-          }, 1000)
-        }
-
-        function copierReset(btn) {
-          setTimeout(function () {
-            btn.innerText = neutralMsg;
+            btn.innerText = copierLabel;
           }, 3000)
         }
 
-        function copySucceded(btn) {
-          notificationOfSuccess(btn)
-          copierReset(btn)
-        }
-
-        function copyFailed(btn, err) {
+        function handleCopyFailure(btn, err) {
           btn.setAttribute('disabled', true);
-          btn.innerText = "Copier out of order"
+          btn.innerText = copierFailureLabel
           console.error('Failed to copy to clipboard!', err)
         }
 
