@@ -30,7 +30,11 @@ Build the packages:
 npm run build
 ```
 
-Start development:
+Start development with either:
+
+```
+npm run develop
+```
 
 ```
 npm start
