@@ -9,8 +9,8 @@
 {% endhighlight %}
 
 <div>
-  <button class="button button--loud" disabled data-copy-code data-html='{
-      "html": "{{ html | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n') }}"
+  <button class="button button--loud" disabled data-copier='{
+      "text": "{{ html | safe | replace('"', '\\"') | replace('\'', '&#39;') | replace('\n', '\\n') }}"
     }'>Copy HTML</button>
 </div>
 
