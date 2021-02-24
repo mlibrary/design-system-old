@@ -29,4 +29,4 @@ jobs:
       - name: Publish
         run: npm run lerna:publish-dev
         env:
-          NPM_TOKEN: ${{ secrets.NPM_SECRET }}
+          NPM_SECRET: ${{ secrets.NPM_SECRET }}
