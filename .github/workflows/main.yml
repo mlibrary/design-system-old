@@ -4,11 +4,11 @@ name: CI
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events but only for the dev branch
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,11 +22,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Runs a single command using the runners shell
-      - name: web
-        run: echo WEB DEV DEPLOYMENT TIME!
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+
+      - name: Install dependencies & Lerna bootstrap
+        run: npm run lerna:bootstrap
+      
+      - name: Build Design System
+        run: npm run build
         
-      - name: CSS4EVA
+      - name: Deploy DEV CSS
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           build_dir: packages/css/dist
