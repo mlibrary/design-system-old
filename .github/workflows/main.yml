@@ -28,9 +28,6 @@ jobs:
         run: git status
       - name: Publish to npm registry
         run: |
-          echo "@umich-lib:registry=http://registry.npmjs.org/" > .npmrc
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           npm run lerna:publish-dev
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
