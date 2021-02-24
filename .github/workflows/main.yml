@@ -20,12 +20,12 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - name: Git status
         run: git status
-      - name: Install
-        run: npm install
       - name: Bootstrap
         run: npm run lerna:bootstrap
       - name: Build
         run: npm run build
+      - name: Install
+        run: npm install
       - name: Publish
         run: npm run lerna:publish-dev
         env:
