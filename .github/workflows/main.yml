@@ -1,8 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Development CSS deploy
-
-# Controls when the action will run.
 on:
   push:
     branches: [dev]
@@ -13,15 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.5
-      - name: Install dependencies
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: "https://npm.pkg.github.com"
+      - name: Install
         run: npm install
       - name: Lerna bootstrap
-        run: npm run lerna:bootstrap
-      - name: Build Design System
+        run: npm lerna:bootstrap
+      - name: Build
         run: npm run build
-      - name: Deploy DEV CSS
+      - name: Deploy dev CSS
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           build_dir: packages/css/dist
