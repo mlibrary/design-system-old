@@ -1,4 +1,4 @@
-name: Development CSS deploy
+name: Publish packages
 on:
   push:
     branches: [dev]
@@ -6,7 +6,7 @@ on:
     branches: [dev]
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +26,8 @@ jobs:
         run: npm run build
       - name: Git status
         run: git status
+      - name: NPM user
+        run: npm whoami
       - name: Publish
         run: npm run lerna:publish-dev
         env:
