@@ -6,7 +6,7 @@ on:
     branches: [dev]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
       - name: Install
         run: npm install
       - name: Lerna bootstrap
-        run: npm lerna:bootstrap
+        run: npm run lerna:bootstrap
       - name: Build
         run: npm run build
       - name: Deploy dev CSS
