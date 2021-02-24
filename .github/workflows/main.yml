@@ -26,7 +26,14 @@ jobs:
         run: npm run build
       - name: Git status
         run: git status
+      - name: Authenticate with npm registry
+        run: |
+          yarn logout
+          echo "@umich-lib:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish
         run: npm run lerna:publish-dev
-        env:
-          NPM_SECRET: ${{ secrets.NPM_SECRET }}
