@@ -26,9 +26,7 @@ jobs:
         run: npm run build
       - name: Git status
         run: git status
-      - name: NPM user
-        run: npm whoami
       - name: Publish
         run: npm run lerna:publish-dev
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
+          NPM_TOKEN: ${{ secrets.NPM_SECRET }}
