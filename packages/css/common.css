@@ -1,0 +1,193 @@
+/*
+ * Variables
+ *
+ * All the CSS values that can be changed based
+ * on developer configuration or via media query.
+ */
+
+:root {
+  --viewport-margin: var(--space-medium);
+  --page-heading-size: var(--space-x-large);
+  --card-min-width: 320px;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --viewport-margin: var(--space-xx-large);
+    --page-heading-size: var(--space-xx-large);
+  }
+}
+
+/*
+ * Resets
+ */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Variables
+ *
+ * All the CSS values that can be changed based
+ * on developer configuration or via media query.
+ */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: var(--color-neutral-400);
+  font-family: var(--font-base-family);
+  line-height: 1.5;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/*
+ * Anchors/Links
+ *
+ * How about we just make links all have an underline?
+ * I mean, if you're going to use a link and not
+ * underline it, you better know your context and
+ * have a good reason to do so.
+ */
+
+a {
+  color: var(--color-teal-400);
+  text-decoration: underline;
+
+  &:visited {
+    color: var(--color-indigo-500);
+  }
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/*
+ * Headings
+ *
+ * The most used headings I imagine
+ * are a page title (h1) and section
+ * headings (h2) plus the subtle heading
+ * that that typography is in the
+ * universal header. 
+ *
+ * Concerns/Thoughts
+ * - Rules for naming CSS classes?
+ * - Restrictions?
+ */
+
+h1,
+.page-heading {
+  font-size: var(--page-heading-size);
+  font-family: var(--font-second-family);
+  line-height: var(--line-height-page-heading);
+}
+
+h2,
+.section-heading {
+  font-size: var(--text-large);
+  font-weight: var(--bold);
+}
+
+.subtle-heading {
+  color: var(--color-neutral-300);
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: var(--bold);
+  font-family: var(--font-base-family);
+}
+
+/*
+ * Viewport Margins
+ *
+ * Handles the need for page content to be centered
+ * in the visible view port window and manage the
+ * ammount of margin between the site and the edge
+ * of the screen's viewport.
+ */
+
+.viewport-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--viewport-margin);
+  padding-right: var(--viewport-margin);
+}
+
+/*
+ * Buttons
+ * We need some buttons. 
+ */
+
+.button {
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: var(--space-small) var(--space-large);
+  background: var(--color-blue-100);
+  color: var(--color-teal-400);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  font-family: var(--font-base-family);
+  border-radius: var(--radius-default);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:not([disabled]) {
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 2px white, 0 0 0 3px var(--color-neutral-400);
+    }
+  }
+}
+
+.button--loud {
+  background: var(--color-teal-400);
+  color: white;
+}
+
+/*
+ * List
+ */
+
+li {
+  margin-bottom: var(--space-small);
+}
+
+/*
+ * Record
+ */
+
+dl.record {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  column-gap: 0;
+  width: 50vw;
+
+  & dt {
+    font-weight: var(--bold);
+  }
+
+  & dt,
+  & dd {
+    border-bottom: 1px solid var(--color-neutral-100);
+    margin: 0;
+    padding: var(--space-small) 0;
+  }
+}
