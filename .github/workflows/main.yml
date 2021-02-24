@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: 14.8.0
           registry-url: "https://npm.pkg.github.com"
+      - name: Git status
+        run: git status
       - name: Install
         run: npm install
       - name: Bootstrap
