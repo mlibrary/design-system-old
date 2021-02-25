@@ -24,6 +24,10 @@
   COLOR TOKENS
 */
 
+#color-orange-400 {
+  color: var(--color-neutral-500);
+}
+
 #color-blue-300,
 #color-blue-400,
 #color-blue-500,
@@ -33,7 +37,9 @@
 #color-teal-400,
 #color-teal-500,
 #color-orange-500,
+#color-pink-400,
 #color-pink-500,
+#color-indigo-400,
 #color-indigo-500,
 #color-green-500 {
   color: white;
