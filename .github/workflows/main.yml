@@ -20,6 +20,8 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - name: Install
         run: npm install
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Bootstrap
         run: npm run lerna:bootstrap
       - name: Build
@@ -29,5 +31,3 @@ jobs:
       - name: Publish to npm registry
         run: |
           npm run lerna:publish-dev
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
