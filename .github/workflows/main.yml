@@ -27,8 +27,10 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build
         run: npm run build
-      - name: Git status
-        run: git status
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish to npm registry
         run: |
           npm run lerna:publish-dev
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
