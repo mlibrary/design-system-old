@@ -33,4 +33,5 @@ jobs:
         run: |
           npm run lerna:publish-dev
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
