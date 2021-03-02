@@ -7,7 +7,7 @@
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
     "lerna:publish": "lerna publish",
-    "lerna:publish-dev": "npm_config__auth=AUTH npx lerna publish --no-git-reset --dist-tag prerelease --preid dev --canary --yes",
+    "lerna:publish:ci": "lerna publish -y --canary --no-git-reset --dist-tag prerelease --preid dev",
     "lerna:publish-force": "lerna publish --force-publish",
     "build": "lerna run build --include-dependencies --stream",
     "develop": "lerna run start --stream --parallel",
