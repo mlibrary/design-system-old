@@ -8,7 +8,7 @@ description: Read the latest updates from the Design System team. We will highli
 
 ## March 2021
 
-- Added prerelease package distribution.
+- Added prerelease package distribution!
 
 ## February 2021
 
