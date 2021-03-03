@@ -95,7 +95,7 @@ h1,
 }
 
 h2,
-.section-heading {
+.page-section-heading {
   font-size: var(--text-large);
   font-weight: var(--bold);
 }
