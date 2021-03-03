@@ -7,8 +7,8 @@ on:
       - dev
 
 env:
-  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
+  NPM_TOKEN: ${{ secrets.NPM_SECRET }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
