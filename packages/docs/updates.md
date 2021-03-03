@@ -6,6 +6,10 @@ description: Read the latest updates from the Design System team. We will highli
 
 {{ description }}
 
+## March 2021
+
+- Added prerelease package distribution.
+
 ## February 2021
 
 <img src="/static/images/redesigned-landing-page.png" alt="" />
