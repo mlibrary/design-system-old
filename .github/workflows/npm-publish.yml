@@ -30,4 +30,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: NPM publish
-        run: npm run lerna:publish:ci
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          npm run lerna:publish:ci

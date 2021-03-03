@@ -27,6 +27,7 @@
   box-sizing: inherit;
 }
 
+// Font smoothing
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
