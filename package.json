@@ -6,7 +6,7 @@
   "scripts": {
     "lerna:bootstrap": "lerna bootstrap --hoist",
     "lerna:publish": "lerna publish",
-    "lerna:publish:ci": "lerna publish from-git --canary --yes --preid dev --dist-tag prerelease --no-verify-access",
+    "lerna:publish:ci": "lerna publish --canary --yes --preid dev --dist-tag prerelease --no-verify-access --no-git-reset",
     "lerna:publish-force": "lerna publish --force-publish",
     "build": "lerna run build --include-dependencies --stream",
     "develop": "lerna run start --stream --parallel",
