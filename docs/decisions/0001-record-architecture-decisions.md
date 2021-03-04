@@ -38,10 +38,10 @@ We will write each ADR with the following parts so each document is easy to dige
 
 ## Status
 
-Proposed
+Accepted
 
 ## Consequences
 
-The Design System team adopts this into our workflow and begin the practice of writing ADRs.
+The Design System team adopts this into our workflow and practice of writing ADRs.
 
 People contributing will be able to find decisions over time and understood, and reevaluated with documented details by people contributing.
