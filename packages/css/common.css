@@ -8,7 +8,6 @@
 :root {
   --viewport-margin: var(--space-medium);
   --page-heading-size: var(--space-x-large);
-  --card-min-width: 320px;
 }
 
 @media (min-width: 720px) {
@@ -110,7 +109,7 @@ h2,
 }
 
 /*
- * Viewport Margins
+ * Viewport Container
  *
  * Handles the need for page content to be centered
  * in the visible view port window and manage the
@@ -168,14 +167,6 @@ h2,
 }
 
 /*
- * List
- */
-
-li {
-  margin-bottom: var(--space-small);
-}
-
-/*
  * Record
  */
 
@@ -194,5 +185,62 @@ dl.record {
     border-bottom: 1px solid var(--color-neutral-100);
     margin: 0;
     padding: var(--space-small) 0;
+  }
+}
+
+/*
+ * Website Footer
+ */
+
+.website-footer {
+  background: var(--color-blue-400);
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & a {
+    color: white;
+  }
+}
+
+.website-footer__content {
+  color: var(--color-blue-100);
+  padding: var(--space-xxx-large) 0;
+
+  & h2 {
+    color: var(--color-blue-200);
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+
+    margin-bottom: var(--space-medium);
+  }
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem 1rem;
+}
+
+.website-footer__disclaimer {
+  background: var(--color-blue-500);
+  color: var(--color-blue-200);
+  padding: var(--space-medium) 0;
+
+  & a {
+    color: var(--color-blue-200);
+  }
+
+  @media screen and (min-width: 820px) {
+    & p {
+      display: "inline-block";
+    }
+
+    & p + p {
+      margin-left: var(--space-x-large);
+    }
   }
 }
