@@ -1,7 +1,4 @@
-/* U-M Library Design Tokens */
 @import "@umich-lib/tokens/dist/tokens";
-
-/* U-M Library (local) CSS Partials */
 @import "fonts";
 @import "common";
 @import "a11y";
