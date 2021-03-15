@@ -1,17 +1,13 @@
 # U-M Library Design System
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/46fd3abb-e61c-4a7e-b154-c22e375a3345/deploy-status)](https://app.netlify.com/sites/umich-lib-design-system/deploys) [![Maintained with Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
-| Package                 | Latest release                                                 | Unstable build                                                     |
-| ----------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `@umich-lib/css`        | ![](https://img.shields.io/npm/v/@umich-lib/css/latest)        | ![](https://img.shields.io/npm/v/@umich-lib/css/prerelease)        |
-| `@umich-lib/components` | ![](https://img.shields.io/npm/v/@umich-lib/components/latest) | ![](https://img.shields.io/npm/v/@umich-lib/components/prerelease) |
-
 The design system is an open-source platform for web teams to reuse common solutions and learn from one another to help build accessible, inclusive, and high-quality websites.
 
-## Looking for the documentation?
+Documentation: https://design-system.lib.umich.edu
 
-https://design-system.lib.umich.edu
+| Package                                                                        | Latest release                                                 | Unstable build                                                     |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [`@umich-lib/css`](https://www.npmjs.com/package/@umich-lib/css)               | ![](https://img.shields.io/npm/v/@umich-lib/css/latest)        | ![](https://img.shields.io/npm/v/@umich-lib/css/prerelease)        |
+| [`@umich-lib/components`](https://www.npmjs.com/package/@umich-lib/components) | ![](https://img.shields.io/npm/v/@umich-lib/components/latest) | ![](https://img.shields.io/npm/v/@umich-lib/components/prerelease) |
 
 ## Contribute to repo
 
