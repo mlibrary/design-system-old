@@ -1,7 +1,7 @@
-@import "custom-properties";
+@import "../common";
 
 :host {
-  @include custom-properties;
+  @include common;
 
   font-family: var(--font-base-family);
   line-height: var(--line-height-default);

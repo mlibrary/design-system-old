@@ -6,46 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
-    <title>dev env | @umich-lib/components</title>
-
-    <!-- *.lib.umich.edu stylesheets to make things crowded and closer to real-life. -->
-
-    <!--
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.lib.umich.edu/sites/default/files/css/css_-O3jTbyef3Hg5A5FyKJHOsv_T7fzXN7rgBUliwpXASQ.css"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.lib.umich.edu/sites/default/files/css/css_PwZvSqLs5W6IugufSQPk5ZJ6rHcJOeRzKtSNpfvWtYY.css"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.lib.umich.edu/sites/default/files/css/css_HQHSdh_IshsDAnG1fGy22M9pWdwkko099h6oQqi972o.css"
-    />
-    
-
-    <link
-      rel="stylesheet"
-      media="screen"
-      href="https://deepblue.lib.umich.edu/data/assets/application-334e53994ea3400ce83e5efd1234b33e18af9f31005c126095697c3a8fc5d94c.css"
-    />
-    -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700"
-      rel="stylesheet"
-    />
-
-    <style>
-      body,
-      html {
-        margin: 0;
-      }
-    </style>
-
+    <title>developer | @umich-lib/components</title>
+    <link href="https://unpkg.com/@umich-lib/css@prerelease/dist/umich-lib.css" rel="stylesheet"/>
     <script type="module" src="/build/umich-lib.esm.js"></script>
     <script nomodule src="/build/umich-lib.js"></script>
   </head>
@@ -55,6 +17,72 @@
     <h1>Development Environment for @umich-lib/components</h1>
 
     <m-icon name="search"></m-icon>
+
+    <website-footer></website-footer>
+
+    <m-website-footer></m-website-footer>
+    <script>
+      var footer = document.querySelector('m-website-footer');
+
+      footer.navigation = [
+        {
+          title: "First column list",
+          items: [
+            {
+              href: "#1",
+              text: "Navigation item 1"
+            },
+            {
+              href: "#2",
+              text: "Navigation item 2"
+            },
+            {
+              href: "#3",
+              text: "Navigation item 3"
+            },
+            {
+              href: "#4",
+              text: "Navigation item 4"
+            },
+          ]
+        },
+        {
+          title: "Another column list",
+          items: [
+            {
+              href: "#1",
+              text: "Navigation item 1"
+            },
+            {
+              href: "#2",
+              text: "Navigation item 2"
+            },
+            {
+              href: "#3",
+              text: "Navigation item 3"
+            }
+          ]
+        },
+        {
+          title: "Another column list",
+          items: [
+            {
+              href: "#1",
+              text: "Navigation item 1"
+            },
+            {
+              href: "#2",
+              text: "Navigation item 2"
+            },
+            {
+              href: "#3",
+              text: "Navigation item 3"
+            }
+          ]
+        }
+      ];
+    </script>
+
     <m-chat class="m-chat"></m-chat>
   </body>
 </html>

@@ -1,0 +1,19 @@
+@import "custom-properties";
+
+@mixin common {
+  @include custom-properties;
+
+  --viewport-margin: var(--space-medium);
+  @media (min-width: 720px) {
+    --viewport-margin: var(--space-xx-large);
+  }
+
+  .viewport-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--viewport-margin);
+    padding-right: var(--viewport-margin);
+  }
+}

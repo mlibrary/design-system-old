@@ -1,7 +1,7 @@
-@import "custom-properties";
+@import "../common.scss";
 
 .m-uh {
-  @include custom-properties;
+  @include common;
 
   background: var(--color-blue-100);
   font-family: var(--font-base-family);

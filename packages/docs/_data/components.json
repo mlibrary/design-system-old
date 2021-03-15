@@ -25,6 +25,34 @@
     "isExperimental": false
   },
   {
+    "name": "Website Footer",
+    "description": "TODO",
+    "status": "experimental",
+    "whenToUse": "TODO",
+    "whenNotToUse": "TODO",
+    "example": "<m-website-footer></m-website-footer>\n<script>\n  var footer = document.querySelector()\n</script>",
+    "usedBy": "- TODO",
+    "tag": "m-website-footer",
+    "props": [
+      {
+        "name": "navigation",
+        "type": "object",
+        "mutable": false,
+        "reflectToAttr": false,
+        "docs": "",
+        "docsTags": [],
+        "values": [
+          {
+            "type": "object"
+          }
+        ],
+        "optional": false,
+        "required": false
+      }
+    ],
+    "isExperimental": true
+  },
+  {
     "name": "Website Header",
     "description": "The Website Header displays our logo and shows users what U-M Library website that they are using.",
     "status": "experimental",

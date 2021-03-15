@@ -17,6 +17,9 @@ export namespace Components {
     }
     interface MWebsiteAlerts {
     }
+    interface MWebsiteFooter {
+        "navigation": any;
+    }
     interface MWebsiteHeader {
         /**
           * The user-friendly name of the U-M Library website that uses this Header.
@@ -59,6 +62,12 @@ declare global {
         prototype: HTMLMWebsiteAlertsElement;
         new (): HTMLMWebsiteAlertsElement;
     };
+    interface HTMLMWebsiteFooterElement extends Components.MWebsiteFooter, HTMLStencilElement {
+    }
+    var HTMLMWebsiteFooterElement: {
+        prototype: HTMLMWebsiteFooterElement;
+        new (): HTMLMWebsiteFooterElement;
+    };
     interface HTMLMWebsiteHeaderElement extends Components.MWebsiteHeader, HTMLStencilElement {
     }
     var HTMLMWebsiteHeaderElement: {
@@ -71,6 +80,7 @@ declare global {
         "m-logo": HTMLMLogoElement;
         "m-universal-header": HTMLMUniversalHeaderElement;
         "m-website-alerts": HTMLMWebsiteAlertsElement;
+        "m-website-footer": HTMLMWebsiteFooterElement;
         "m-website-header": HTMLMWebsiteHeaderElement;
     }
 }
@@ -85,6 +95,9 @@ declare namespace LocalJSX {
     interface MUniversalHeader {
     }
     interface MWebsiteAlerts {
+    }
+    interface MWebsiteFooter {
+        "navigation"?: any;
     }
     interface MWebsiteHeader {
         /**
@@ -102,6 +115,7 @@ declare namespace LocalJSX {
         "m-logo": MLogo;
         "m-universal-header": MUniversalHeader;
         "m-website-alerts": MWebsiteAlerts;
+        "m-website-footer": MWebsiteFooter;
         "m-website-header": MWebsiteHeader;
     }
 }
@@ -114,6 +128,7 @@ declare module "@stencil/core" {
             "m-logo": LocalJSX.MLogo & JSXBase.HTMLAttributes<HTMLMLogoElement>;
             "m-universal-header": LocalJSX.MUniversalHeader & JSXBase.HTMLAttributes<HTMLMUniversalHeaderElement>;
             "m-website-alerts": LocalJSX.MWebsiteAlerts & JSXBase.HTMLAttributes<HTMLMWebsiteAlertsElement>;
+            "m-website-footer": LocalJSX.MWebsiteFooter & JSXBase.HTMLAttributes<HTMLMWebsiteFooterElement>;
             "m-website-header": LocalJSX.MWebsiteHeader & JSXBase.HTMLAttributes<HTMLMWebsiteHeaderElement>;
         }
     }
