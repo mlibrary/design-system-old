@@ -1,6 +1,6 @@
-# U-M Library Design System
+# University of Michigan Library Design System
 
-The design system is an open-source platform for web teams to reuse common solutions and learn from one another to help build accessible, inclusive, and high-quality websites.
+We work to build trust in our digital services and create components and standards that are reusable, equitable, informed by research, and available to the public.
 
 Documentation: https://design-system.lib.umich.edu
 
