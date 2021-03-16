@@ -1,15 +1,23 @@
 {
-  "name": "umich-lib-design-system",
-  "devDependencies": {
-    "lerna": "^3.20.2"
+  "name": "@umich-lib/web",
+  "version": "v1.0.0",
+  "dependencies": {
+    "snowpack": "^3.0.13",
+    "@snowpack/plugin-postcss": "^1.1.0",
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@stencil/core": "^2.4.0",
+    "@stencil/postcss": "^2.0.0",
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^12.0.1",
+    "postcss-nesting": "^7.0.1",
+    "theo": "^8.1.5"
   },
   "scripts": {
-    "lerna:bootstrap": "lerna bootstrap --hoist",
-    "lerna:publish": "lerna publish",
-    "lerna:publish:ci": "lerna publish --canary --yes --dist-tag prerelease --no-git-reset",
-    "lerna:publish-force": "lerna publish --force-publish",
-    "build": "lerna run build --include-dependencies --stream",
-    "develop": "lerna run start --stream --parallel",
-    "start": "npm run develop"
+    "build": "snowpack build",
+    "start": "snowpack dev"
   }
 }

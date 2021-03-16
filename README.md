@@ -21,10 +21,6 @@ npm install
 
 Install, hoist, and share dependencies between packages:
 
-```
-npm run lerna:bootstrap
-```
-
 Build the packages:
 
 ```
