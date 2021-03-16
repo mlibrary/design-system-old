@@ -36,14 +36,15 @@
     "props": [
       {
         "name": "navigation",
-        "type": "object",
+        "type": "any",
         "mutable": false,
-        "reflectToAttr": false,
+        "attr": "navigation",
+        "reflectToAttr": true,
         "docs": "",
         "docsTags": [],
         "values": [
           {
-            "type": "object"
+            "type": "any"
           }
         ],
         "optional": false,

@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property     | Attribute | Description | Type     | Default     |
-| ------------ | --------- | ----------- | -------- | ----------- |
-| `navigation` | --        |             | `object` | `undefined` |
+| Property     | Attribute    | Description | Type  | Default     |
+| ------------ | ------------ | ----------- | ----- | ----------- |
+| `navigation` | `navigation` |             | `any` | `undefined` |
 
 
 ----------------------------------------------
