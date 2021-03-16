@@ -24,6 +24,8 @@ We offer a single published design system package: `@umich-lib/web` as follows:
 
 We use `web` because that's what we build. Tools for the web platform.
 
+https://www.pika.dev/about
+
 ## Status
 
 Proposed
