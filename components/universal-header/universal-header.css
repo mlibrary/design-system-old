@@ -4,13 +4,13 @@
   line-height: var(--line-height-default);
   font-size: 16px;
 
-  * {
+  & * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased; /* Chrome, Safari */
     -moz-osx-font-smoothing: grayscale; /* Firefox */
   }
 
-  *:focus {
+  & *:focus {
     outline: 0;
     box-shadow: 0 0 0 2px var(--color-maize-400),
       0 0 0 3px var(--color-neutral-400);

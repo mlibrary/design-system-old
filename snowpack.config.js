@@ -1,3 +1,6 @@
 module.exports = {
-  plugins: ["@snowpack/plugin-postcss", "@snowpack/plugin-sass"],
+  plugins: ["@snowpack/plugin-postcss"],
+  mount: {
+    workshop: "/",
+  },
 };

@@ -18,6 +18,7 @@
   },
   "scripts": {
     "build": "snowpack build",
+    "css": "postcss umich-lib.css -o dist/umich-lib.css",
     "start": "snowpack dev"
   }
 }

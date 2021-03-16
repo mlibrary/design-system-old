@@ -1,9 +1,8 @@
 import { Config } from "@stencil/core";
 
 export const config: Config = {
-  srcDir: "web/www",
-  namespace: "umich-lib",
-  buildEs5: 'prod',
+  srcDir: "www/",
+  namespace: "www",
   outputTargets: [
     {
       type: "dist",
