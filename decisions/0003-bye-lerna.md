@@ -2,9 +2,9 @@
 
 ## Context
 
-You were not helpful after all. Using Lerna in practices resulted in way too many difficult to troubleshoot issues. It is difficult to configure with third-party tools, such as CI tools like Github Actions.
+Using Lerna in practices resulted in way too many difficult to troubleshoot issues. It is time intensive to configure with third-party tools, such as CI tools like Github Actions.
 
-We haves spent dozens and dozens of hours trying to overcome a Lerna error to just get back to "the feature."
+We haves spent dozens and dozens of hours trying to overcome a Lerna errors to just get back to "the feature."
 
 ## Decisions
 
@@ -12,7 +12,7 @@ Remove Lerna. Lower dependencies and number of files and complicated folder pack
 
 Adopt a build tool to manage just enough and improve our development and getting started contributing experience.
 
-Snowpack also looks ahead to ESM standards so that the API we develop will be future-proofing. Snowpack is kind of like a fancy polyfill for development? This fits with our web approach.
+Snowpack looks ahead to ESM standards so that the API we develop will be future-proofing. Snowpack is kind of like a fancy polyfill for development. This fits with our web approach.
 
 We offer a single published design system package: `@umich-lib/web` as follows:
 
@@ -23,8 +23,6 @@ We offer a single published design system package: `@umich-lib/web` as follows:
 ```
 
 We use `web` because that's what we build. Tools for the web platform.
-
-https://www.pika.dev/about
 
 ## Status
 

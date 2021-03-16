@@ -19,19 +19,7 @@ cd design-system
 npm install
 ```
 
-Install, hoist, and share dependencies between packages:
-
-Build the packages:
-
-```
-npm run build
-```
-
-Start development with either:
-
-```
-npm run develop
-```
+Start development:
 
 ```
 npm start
