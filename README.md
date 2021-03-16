@@ -40,3 +40,15 @@ npm start
 Once started, a development environment of local packages for `@umich-lib/docs` is available at http://localhost:8080/ and `@umich-lib/components` at http://localhost:3333/.
 
 For changes between packages to appear, stop the packages, rerun `npm build` then `npm start`. For example, for a `@umich-lib/css` change to appearing in `@umich-lib/docs`.
+
+## Dependencies
+
+### Snowpack
+
+### Stencil
+
+### PostCSS
+
+Documentation: https://www.npmjs.com/package/postcss-load-config#user-content-packagejson
+
+### Eleventy

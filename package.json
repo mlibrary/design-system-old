@@ -1,9 +1,9 @@
 {
   "name": "@umich-lib/web",
   "version": "v1.0.0",
+  "repository": "https://github.com/mlibrary/design-system",
   "dependencies": {
     "snowpack": "^3.0.13",
-    "@snowpack/plugin-postcss": "^1.1.0",
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@stencil/core": "^2.4.0",
@@ -11,14 +11,19 @@
     "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
     "postcss": "^8.2.8",
-    "postcss-cli": "^8.3.1",
     "postcss-import": "^12.0.1",
     "postcss-nesting": "^7.0.1",
-    "theo": "^8.1.5"
+    "theo": "^8.1.5",
+    "postcss-load-config": "^3.0.1"
   },
   "scripts": {
     "build": "snowpack build",
-    "css": "postcss umich-lib.css -o dist/umich-lib.css",
+    "css": "postcss",
     "start": "snowpack dev"
-  }
+  },
+  "postcss": {
+    "from": "css/",
+    "to": "dist/"
+  },
+  "license": "ISC"
 }
