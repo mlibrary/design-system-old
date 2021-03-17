@@ -3,22 +3,25 @@
   "version": "v1.0.0",
   "repository": "https://github.com/mlibrary/design-system",
   "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@stencil/core": "^2.4.0",
     "@stencil/postcss": "^2.0.0",
-    "postcss": "^8.2.8",
-    "postcss-cli": "^8.3.1",
-    "postcss-nesting": "^7.0.1",
     "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.14",
     "cssnano": "^4.1.10",
-    "snowpack": "^3.0.13",
-    "@snowpack/plugin-postcss": "^1.1.0",
-    "theo": "^8.1.5",
-    "@11ty/eleventy": "^0.11.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0"
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "postcss": "^8.2.8",
+    "postcss-nesting": "^7.0.1",
+    "theo": "^8.1.5"
   },
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build"
+    "build:tokens": "theo stuff here",
+    "build:css": "postcss src/css/*.css --dir build",
+    "build:components": "stencil ...",
+    "build": "gulp",
+    "start": "watch dev server for developer-workshop.html"
   },
   "license": "ISC"
 }

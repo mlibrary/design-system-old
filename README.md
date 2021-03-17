@@ -31,12 +31,12 @@ For changes between packages to appear, stop the packages, rerun `npm build` the
 
 ## Dependencies
 
-### Snowpack
-
 ### Stencil
 
-### PostCSS
+### PostCSS e
 
 Documentation: https://www.npmjs.com/package/postcss-load-config#user-content-packagejson
 
 ### Eleventy
+
+### Gulp

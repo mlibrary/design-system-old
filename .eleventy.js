@@ -2,13 +2,9 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginSass = require("eleventy-plugin-sass");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
-const stencil = require("@umich-lib/components/hydrate");
+//const stencil = require("@umich-lib/components/hydrate");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({
-    "node_modules/@umich-lib/css/dist/umich-lib.css": "css/umich-lib.css",
-  });
-
   // Copy everything in static to _site
   eleventyConfig.addPassthroughCopy("static");
 
@@ -31,6 +27,7 @@ module.exports = function (eleventyConfig) {
     }).use(markdownItAnchor)
   );
 
+  /*
   // Server side rendering for @umich-lib/components.
   eleventyConfig.addTransform("ssr", async (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
@@ -43,4 +40,5 @@ module.exports = function (eleventyConfig) {
     }
     return content;
   });
+  */
 };
