@@ -1,17 +1,7 @@
-const { src, dest, watch, parallel } = require("gulp");
+const { src, dest, watch, series } = require("gulp");
 const postcss = require("gulp-postcss");
 const theo = require("gulp-theo");
-
-const bs = require("browser-sync").create();
-function update() {
-  bs.reload();
-}
-bs.watch("src/css/*.css").on("change", update);
-bs.watch("developer-workshop.html").on("change", update);
-bs.init({
-  server: "./",
-  startPath: "developer-workshop.html",
-});
+const browsersync = require("browser-sync").create();
 
 function css() {
   return src("src/css/*.css")
@@ -23,6 +13,29 @@ function css() {
     .pipe(dest("build"));
 }
 
+function browser(cb) {
+  browsersync.init({
+    server: {
+      baseDir: "./",
+      startPath: "developer-workshop.html",
+    },
+  });
+  cb();
+}
+
+function reload(cb) {
+  browsersync.reload();
+  cb();
+}
+
+function changes() {
+  watch("src/css/*.css", series(css, reload));
+  watch("developer-workshop.html", reload);
+}
+
+exports.default = series(css, browser, reload, changes);
+
+/*
 function tokens() {
   return src("design-tokens.json")
     .pipe(
@@ -32,15 +45,4 @@ function tokens() {
     )
     .pipe(dest("build"));
 }
-
-function build() {
-  return parallel(css, tokens);
-}
-
-watch(
-  ["src/css/*.css", "developer-workshop.html", "design-tokens.json"],
-  build
-);
-
-exports.build = build;
-exports.default = build;
+*/

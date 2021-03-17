@@ -90,7 +90,7 @@ a:hover {
 
 h1,
 .page-heading {
-  font-size: var(--page-heading-size);
+  font-size: 12px;
   font-family: var(--font-second-family);
   line-height: var(--line-height-page-heading);
 }
