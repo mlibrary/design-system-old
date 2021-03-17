@@ -1,5 +1,6 @@
-const { src, dest, watch } = require("gulp");
+const { src, dest, watch, parallel } = require("gulp");
 const postcss = require("gulp-postcss");
+const theo = require("gulp-theo");
 
 const bs = require("browser-sync").create();
 function update() {
@@ -22,10 +23,24 @@ function css() {
     .pipe(dest("build"));
 }
 
-function build() {
-  return css();
+function tokens() {
+  return src("design-tokens.json")
+    .pipe(
+      theo({
+        transform: { type: "web" },
+      })
+    )
+    .pipe(dest("build"));
 }
 
-watch(["src/css/*.css", "developer-workshop.html"], build);
+function build() {
+  return parallel(css, tokens);
+}
 
+watch(
+  ["src/css/*.css", "developer-workshop.html", "design-tokens.json"],
+  build
+);
+
+exports.build = build;
 exports.default = build;

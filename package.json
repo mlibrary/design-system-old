@@ -12,6 +12,7 @@
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
+    "gulp-theo": "^2.0.1",
     "postcss": "^8.2.8",
     "postcss-nesting": "^7.0.1",
     "theo": "^8.1.5"
