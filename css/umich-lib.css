@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700");
 
 @import "design-tokens.custom-properties.css";
+
 /*
  * Variables
  *
@@ -32,13 +33,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/*
- * Variables
- *
- * All the CSS values that can be changed based
- * on developer configuration or via media query.
- */
 
 html,
 body {
