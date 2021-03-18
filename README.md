@@ -14,7 +14,7 @@ To be able to contribute to the design system as a developer, it's important to 
 
 - [**Stencil**](https://stenciljs.com/docs/introduction) is a compiler that generates Web Components (more specifically, Custom Elements). We use this to create ready-to-go solutions like with our [Universal Header Web Component](https://design-system.lib.umich.edu/universal-header/).
 
-- [**PostCSS**](https://postcss.org/) for optimizing authoring CSS and transforming the CSS to be easily consumed by our websites.
+- [**PostCSS**](https://postcss.org/) for improving the developer experience when writing styles with plugins like [postcss-nesting](https://recordit.co/71o05ZKvNf) and optimizing and transforming CSS for distribution.
 
 - [**Eleventy**](https://www.11ty.dev/) is a static site generator that is fairly simple, but powerful enough to use for our [design system website](design-system.lib.umich.edu).
 
