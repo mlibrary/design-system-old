@@ -50,8 +50,6 @@ export class Chat {
   }
 
   render() {
-    const 
-
     return (
       <div
         class={`m-chat${this.open ? " m-chat--open" : ''}`}

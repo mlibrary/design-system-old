@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700");
 
-@import "../../../build/design-tokens.custom-properties.css";
+@import "../dist/design-tokens.custom-properties.css";
 /*
  * Variables
  *
