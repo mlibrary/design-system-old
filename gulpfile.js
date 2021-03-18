@@ -25,7 +25,7 @@ tokens.description =
 function css() {
   // The PostCSS configuration is loaded
   // automatically from postcss.config.js
-  return src("css/*.css").pipe(postcss()).pipe(dest("dist"));
+  return src("css/umich-lib.css").pipe(postcss()).pipe(dest("dist"));
 }
 css.description = "Build umich-lib.css with PostCSS.";
 

@@ -2,9 +2,7 @@
 
 The design system exists to build trust in our digital services and create components and standards that are reusable, equitable, informed by research, and available to the public.
 
-**Are you looking for documentation?**
-
-https://design-system.lib.umich.edu
+**Are you looking for documentation?** View: https://design-system.lib.umich.edu
 
 ## What tools are used and why?
 
@@ -18,7 +16,7 @@ To be able to contribute to the design system as a developer, it's important to 
 
 - [**Eleventy**](https://www.11ty.dev/) is a static site generator that is fairly simple, but powerful enough to use for our [design system website](design-system.lib.umich.edu).
 
-- [**Gulp**](https://gulpjs.com/) has been a dependable build tool for automating our development workflow and build pipelines.
+- [**Gulp**](https://gulpjs.com/) for automating our development workflows and build pipelines.
 
 ### How do I get started?
 
