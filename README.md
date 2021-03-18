@@ -20,8 +20,8 @@ To be able to contribute to the design system as a developer, it's important to 
 
 ### How do I get started?
 
-```
-npm start
+```sh
+$ npm start
 ```
 
 [this section is to be written]
