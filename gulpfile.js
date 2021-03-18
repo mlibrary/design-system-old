@@ -17,24 +17,15 @@ function tokens() {
         format: { type: "custom-properties.css" },
       })
     )
-    .pipe(dest("dist"));
+    .pipe(dest("css"));
 }
 tokens.description =
   "Build CSS custom properties from design-tokens.json with Theo.";
 
 function css() {
-  return src("css/*.css")
-    .pipe(
-      postcss({
-        plugins: [
-          require("postcss-import"),
-          require("postcss-nesting"),
-          require("autoprefixer"),
-          require("cssnano"),
-        ],
-      })
-    )
-    .pipe(dest("dist"));
+  // The PostCSS configuration is loaded
+  // automatically from postcss.config.js
+  return src("css/*.css").pipe(postcss()).pipe(dest("dist"));
 }
 css.description = "Build umich-lib.css with PostCSS.";
 
@@ -56,9 +47,9 @@ function reload(cb) {
 reload.description = "Reload the developer workshop webpage.";
 
 function watcher() {
-  watch("css/*.css", series(clean, tokens, css, reload));
+  watch("css/*.css", series(css, reload));
   watch("developer-workshop.html", reload);
-  watch("design-tokens.json", series(clean, tokens, css, reload));
+  watch("design-tokens.json", series(tokens, reload));
 }
 
 exports.default = series(clean, tokens, css, browser, watcher);
