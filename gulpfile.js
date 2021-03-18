@@ -3,11 +3,26 @@ const postcss = require("gulp-postcss");
 const theo = require("gulp-theo");
 const browsersync = require("browser-sync").create();
 
+function tokens() {
+  return src("design-tokens.json")
+    .pipe(
+      theo({
+        transform: { type: "web" },
+        format: { type: "custom-properties.css" },
+      })
+    )
+    .pipe(dest("build"));
+}
+
 function css() {
   return src("src/css/*.css")
     .pipe(
       postcss({
-        plugins: [require("postcss-nesting"), require("autoprefixer")],
+        plugins: [
+          require("postcss-import"),
+          require("postcss-nesting"),
+          require("autoprefixer"),
+        ],
       })
     )
     .pipe(dest("build"));
@@ -17,7 +32,7 @@ function browser(cb) {
   browsersync.init({
     server: {
       baseDir: "./",
-      startPath: "developer-workshop.html",
+      index: "developer-workshop.html",
     },
   });
   cb();
@@ -28,21 +43,10 @@ function reload(cb) {
   cb();
 }
 
-function changes() {
+function watcher() {
   watch("src/css/*.css", series(css, reload));
   watch("developer-workshop.html", reload);
+  watch("design-tokens.json", series(tokens, css, reload));
 }
 
-exports.default = series(css, browser, reload, changes);
-
-/*
-function tokens() {
-  return src("design-tokens.json")
-    .pipe(
-      theo({
-        transform: { type: "web" },
-      })
-    )
-    .pipe(dest("build"));
-}
-*/
+exports.default = series(tokens, css, browser, reload, watcher);
