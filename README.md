@@ -2,7 +2,7 @@
 
 The design system exists to build trust in our digital services and create components and standards that are reusable, equitable, informed by research, and available to the public.
 
-Are you looking for [design system documentation](https://design-system.lib.umich.edu)?
+Are you trying to find the [design system documentation](https://design-system.lib.umich.edu)?
 
 ## What tools are used and why?
 
