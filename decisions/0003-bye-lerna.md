@@ -12,8 +12,6 @@ Remove Lerna. Lower dependencies and number of files and complicated folder pack
 
 Adopt a build tool to manage just enough and improve our development and getting started contributing experience.
 
-Snowpack looks ahead to ESM standards so that the API we develop will be future-proofing. Snowpack is kind of like a fancy polyfill for development. This fits with our web approach.
-
 We offer a single published design system package: `@umich-lib/web` as follows:
 
 ```
