@@ -59,9 +59,11 @@ a {
   color: var(--color-teal-400);
   text-decoration: underline;
 
+  /*
   &:visited {
     color: var(--color-indigo-500);
   }
+  */
 }
 
 a:hover {

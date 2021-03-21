@@ -15,28 +15,28 @@
     <m-universal-header></m-universal-header>
     <m-website-header name="Developer Workshop" to="/"></m-website-header>
 
-    <div class="viewport-container">
-      <h1>Hello, developer friend.</h1>
+    <style>
+      <!-- CSS has cascading variables now! They named them custom properties, for some reason.</p>
       
-      <style>
-        <!-- CSS has cascading variables now! They named them custom properties, for some reason.</p>
-       
-       :root {
-         --line-length: 75ch;
-       }
-       
-       .easy-reading > * {
-         max-width: var(--line-length, 60ch);
-       }
-      </style>
+      :root {
+        --line-length: 75ch;
+      }
+      
+      .easy-reading > p {
+        max-width: var(--line-length, 60ch);
+      }
+    </style>
 
-      <section class="easy-reading">
-        <p class="ez-read">This page serves as a design system workshop to develop web components and styles.</p>
+    <div class="viewport-container easy-reading">
+      <h1>Hello, developer comrade.</h1>
 
-        <p class="ez-read">This page will refresh with your code changes when you edit files like <code>developer-workshop.html</code> and <code>/css/umich-lib.css</code>. Consider editing those files by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR with your suggestions and ideas</a>.</p>
-        
-        <p>The rest of this page has sections, each has a heading, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a>  examples, and followed by HTML examples.</p>
-      </section>
+      <p>We work to build trust in our digital services and create components and standards that are reusable, equitable, informed by research, and available to the public.</p>
+
+      <p>This page serves as the <a href="https://design-system.lib.umich.edu/">design system</a> workshop to develop web components and styles.</p>
+
+      <p>This page will refresh when you make code changes in <code>developer-workshop.html</code> and <code>/css/umich-lib.css</code> files. <strong><a href="https://github.com/mlibrary/design-system/blob/main/README.md">Start with the GitHub repository README</a></strong>, then consider suggesting your ideas by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR</a>.</p>
+      
+      <p>The rest of this page has sections, each has a heading, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a>  examples, and followed by HTML examples.</p>
 
       <h2>Links</h2>
 
