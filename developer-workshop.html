@@ -17,39 +17,42 @@
 
     <div class="viewport-container">
       <h1>Hello, developer friend.</h1>
-
-      <p>This page serves as a design system workshop to develop web components and styles.</p>
       
-      <h2>Proposed HTML and CSS solutions</h2>
-
-      <h3>.button .button--loud</h3>
-
-      <button>has no class</button>
-
-      <button class="button">has .button</button>
-
-      <button class="button button--loud">has .button--loud</button>
-
-      <h3><code>.action-panel</code></h3>
-
       <style>
-        .action-panel {
-          border: 1px solid var(--color-neutral-100);
-          padding: var(--space-x-large);
-          width: 20vw;
-        }
+        <!-- CSS has cascading variables now! They named them custom properties, for some reason.</p>
+       
+       :root {
+         --line-length: 75ch;
+       }
+       
+       .easy-reading > * {
+         max-width: var(--line-length, 60ch);
+       }
       </style>
 
-      <section class="action-panel">
-        <button class="button button--loud">Download</button>
-        <ul>
-          <li>Save to Favorites</li>
-          <li>Copy Link</li>
-        </ul>
+      <section class="easy-reading">
+        <p class="ez-read">This page serves as a design system workshop to develop web components and styles.</p>
+
+        <p class="ez-read">This page will refresh with your code changes when you edit files like <code>developer-workshop.html</code> and <code>/css/umich-lib.css</code>. Consider editing those files by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR with your suggestions and ideas</a>.</p>
+        
+        <p>The rest of this page has sections, each has a heading, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a>  examples, and followed by HTML examples.</p>
       </section>
 
-      <h3><code>dl.record</code></h3>
+      <h2>Links</h2>
 
+      <p><code>[a]</code></p>
+
+      <p>What are the <a href="https://design-system.lib.umich.edu/updates/">latest updates</a> from the Design System team?</p>
+
+      <h2>Buttons</h2>
+
+      <p><code>[.button] [.button-loud]</code></p>
+      <button class="button">.button</button>
+      <button class="button-loud">.button-loud</button>
+
+      <h2>Record</h2>
+
+      <code>[dl.record]</code>
       <dl class="record">
         <dt>Street and No.</dt>
         <dd>409 N. Ann Arbor St.</dd>
@@ -89,7 +92,6 @@
         <dt>Card No.</dt>
         <dd>105</dd>
       </dl>
-
     </div>
 
     <m-website-footer></m-website-footer>

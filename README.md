@@ -18,10 +18,14 @@ To be able to contribute to the design system as a developer, it's important to 
 
 - [**Gulp**](https://gulpjs.com/) for automating our development workflows and build pipelines.
 
-### How do I get started?
+### How do I get started developing?
+
+We expect that you have basic working understanding of [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML), [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript), [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), and [Github](https://docs.github.com/en/github).
+
+To start development after typical cloning and installing, run this script:
 
 ```sh
 $ npm start
 ```
 
-[this section is to be written]
+The Developer Workshop will then be available at start by going to [http://localhost:3000/](http://localhost:3000/). This page serves as a design system workshop to develop web components and styles.

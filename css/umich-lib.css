@@ -127,13 +127,12 @@ h2,
  * We need some buttons. 
  */
 
-.button {
+.button,
+.button-loud {
   border: none;
   outline: none;
   display: inline-block;
   padding: var(--space-small) var(--space-large);
-  background: var(--color-blue-100);
-  color: var(--color-teal-400);
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 700;
@@ -157,7 +156,12 @@ h2,
   }
 }
 
-.button--loud {
+.button {
+  background: var(--color-blue-100);
+  color: var(--color-teal-400);
+}
+
+.button-loud {
   background: var(--color-teal-400);
   color: white;
 }
@@ -195,4 +199,8 @@ dl.record {
   clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
+}
+
+.line-length {
+  max-width: var(--line-length);
 }

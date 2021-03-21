@@ -718,6 +718,13 @@
       "type": "number",
       "category": "border-radius",
       "value": "4px"
+    },
+    {
+      "theme": "maize",
+      "name": "line-length",
+      "type": "number",
+      "category": "spacing",
+      "value": "60ch"
     }
   ]
 }
