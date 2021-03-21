@@ -14,7 +14,7 @@ To start development after typical cloning and installing, run this script:
 $ npm start
 ```
 
-The Developer Workshop will then be available at start by going to [http://localhost:3000/](http://localhost:3000/). This page serves as a design system workshop to develop web components and styles.
+The Developer Workshop will then be available at [http://localhost:3000/](http://localhost:3000/). This web page serves as a design system workshop to develop web components and styles and learn how to use the system.
 
 ## Reference, A to Z
 
