@@ -112,71 +112,71 @@
       <p><code>[strong]</code></p>
 
       <p>The design system exists to build trust in our <strong>digital services</strong> and create components and standards that are reusable, equitable, informed by research, and available to the public.</p>
+    
+      <h2>Table</h2>
+
+      <p><code>[table]</code></p>
+
+      <h2>Webpage footer</h2>
+
+      <p>Use <code>[footer.webpage-footer]</code> then inspect element for child classes.</p>
+      <p><strong>Options</strong></p>
+
+      <table>
+        <tr>
+          <th>custom property</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td><code>--column-width</code></td>
+          <td><code>280px</code></td>
+        </tr>
+      </table>
     </div>
 
-    <m-website-footer></m-website-footer>
-    <script>
-      var footer = document.querySelector('m-website-footer');
+    <footer class="webpage-footer">
+      <div class="viewport-container">
+        <div class="webpage-footer__content">
+          <section>
+            <h2>University of Michigan Library</h2>
+            <p>913 S. University Avenue<br/>Ann Arbor, MI 48109</p>
+          </section>
 
-      footer.navigation = [
-        {
-          title: "First column list",
-          items: [
-            {
-              href: "#1",
-              text: "Navigation item 1"
-            },
-            {
-              href: "#2",
-              text: "Navigation item 2"
-            },
-            {
-              href: "#3",
-              text: "Navigation item 3"
-            },
-            {
-              href: "#4",
-              text: "Navigation item 4"
-            },
-          ]
-        },
-        {
-          title: "Another column list",
-          items: [
-            {
-              href: "#1",
-              text: "Navigation item 1"
-            },
-            {
-              href: "#2",
-              text: "Navigation item 2"
-            },
-            {
-              href: "#3",
-              text: "Navigation item 3"
-            }
-          ]
-        },
-        {
-          title: "Another column list",
-          items: [
-            {
-              href: "#1",
-              text: "Navigation item 1"
-            },
-            {
-              href: "#2",
-              text: "Navigation item 2"
-            },
-            {
-              href: "#3",
-              text: "Navigation item 3"
-            }
-          ]
-        }
-      ];
-    </script>
+          <section>
+            <h2>First column list</h2>
+            <ul>
+              <li><a href="#">Navigation item 1</a></li>
+              <li><a href="#">Navigation item 2</a></li>
+              <li><a href="#">Navigation item 3</a></li>
+              <li><a href="#">Navigation item 4</a></li>
+            </ul>
+          </section>
 
-    <m-chat class="m-chat"></m-chat>
+          <section>
+            <h2>Second column list</h2>
+            <ul>
+              <li><a href="#">Navigation item 1</a></li>
+              <li><a href="#">Navigation item 2</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Third column list</h2>
+            <ul>
+              <li><a href="#">Navigation item 1</a></li>
+              <li><a href="#">Navigation item 2</a></li>
+              <li><a href="#">Navigation item 3</a></li>
+              <li><a href="#">Navigation item 4</a></li>
+              <li><a href="#">Navigation item 5</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="webpage-footer__disclaimer">
+        <div class="viewport-container">
+          <p>© 2021, Regents of the University of Michigan</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
