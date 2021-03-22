@@ -16,15 +16,33 @@
     <m-website-header name="Developer Workshop" to="/"></m-website-header>
 
     <style>
-      <!-- CSS has cascading variables now! They named them custom properties, for some reason.</p>
+      <!--
+      
+      CSS has cascading variables now! They named them custom properties, for some reason.
+      
+      -->
       
       :root {
-        --line-length: 75ch;
+        --line-length: 60ch;
+
+        @media (min-width: 960px) {
+          --line-length: 75ch;
+        }
       }
       
       .easy-reading > p {
         max-width: var(--line-length, 60ch);
       }
+
+      <!--
+      
+      Learn more about custom properties:
+      https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+      The design system offers colors and spacings as custom properties:
+      https://design-system.lib.umich.edu/design-tokens/
+
+      -->
     </style>
 
     <div class="viewport-container easy-reading">
@@ -34,17 +52,17 @@
       
       <p>The rest of this page has sections of workshop design system concepts with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a> (eg, <code>[a]</code>) and HTML examples.</p>
 
-      <h2>Links</h2>
-
-      <p><code>[a]</code></p>
-
-      <p>What are the <a href="https://design-system.lib.umich.edu/updates/">latest updates</a> from the Design System team?</p>
-
       <h2>Buttons</h2>
 
       <p><code>[.button] [.button-loud]</code></p>
       <button class="button">.button</button>
       <button class="button-loud">.button-loud</button>
+
+      <h2>Links</h2>
+
+      <p><code>[a]</code></p>
+
+      <p>What are the <a href="https://design-system.lib.umich.edu/updates/">latest updates</a> from the Design System team?</p>
 
       <h2>Record</h2>
 
@@ -88,6 +106,12 @@
         <dt>Card No.</dt>
         <dd>105</dd>
       </dl>
+
+      <h2>Strong</h2>
+
+      <p><code>[strong]</code></p>
+
+      <p>The design system exists to build trust in our <strong>digital services</strong> and create components and standards that are reusable, equitable, informed by research, and available to the public.</p>
     </div>
 
     <m-website-footer></m-website-footer>
