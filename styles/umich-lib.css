@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700");
 
-@import "design-tokens.custom-properties.css";
+@import "./../build/tokens/design-tokens.custom-properties.css";
 
 /*
  * Variables
@@ -130,7 +130,7 @@ h2,
  */
 
 .button,
-.button-loud {
+.button-strong {
   border: none;
   outline: none;
   display: inline-block;
@@ -163,7 +163,7 @@ h2,
   color: var(--color-teal-400);
 }
 
-.button-loud {
+.button-strong {
   background: var(--color-teal-400);
   color: white;
 }
@@ -213,7 +213,6 @@ dl.record {
 
 footer.webpage-footer {
   /* options */
-  --footer-column-width: 280px;
 
   background: var(--color-blue-400);
 
@@ -251,10 +250,8 @@ footer.webpage-footer {
   }
 
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(var(--footer-column-width, 280px), 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+  grid-auto-flow: column;
   gap: var(--space-large);
 }
 

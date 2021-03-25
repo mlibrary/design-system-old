@@ -2,7 +2,7 @@ import { Config } from "@stencil/core";
 
 export const config: Config = {
   namespace: "umich-lib",
-  srcDir: "src/components",
+  srcDir: "components",
   outputTargets: [
     {
       type: 'dist',

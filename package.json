@@ -13,6 +13,8 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-run-command": "0.0.10",
     "gulp-theo": "^2.0.1",
     "postcss": "^8.2.8",
     "postcss-import": "^14.0.0",
@@ -20,8 +22,9 @@
     "theo": "^8.1.5"
   },
   "scripts": {
-    "build": "gulp",
-    "start": "npm run build"
+    "build:components": "stencil build --watch",
+    "start": "npm run build",
+    "build": "gulp"
   },
   "license": "ISC"
 }
