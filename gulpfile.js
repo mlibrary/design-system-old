@@ -6,9 +6,7 @@ const del = require("del");
 
 function clean(cb) {
   (async () => {
-    const deletedDirectoryPaths = await del(["temp", "public"]);
-
-    console.log("Deleted directories:\n", deletedDirectoryPaths.join("\n"));
+    await del(["dist", "build"]);
   })();
 
   cb();
