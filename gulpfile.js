@@ -4,12 +4,8 @@ const theo = require("gulp-theo");
 const browsersync = require("browser-sync").create();
 const del = require("del");
 
-function clean(cb) {
-  (async () => {
-    await del(["dist", "build"]);
-  })();
-
-  cb();
+function clean() {
+  return del(["dist", "build"]);
 }
 
 function tokens() {
