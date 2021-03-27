@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
+/>
     <title>Developer Workshop — Design System — University of Michigan Library</title>
     <link href="/build/umich-lib.css" rel="stylesheet"/>
     <script type="module" src="https://unpkg.com/@umich-lib/components@v1/dist/umich-lib/umich-lib.esm.js"></script>
@@ -17,174 +17,310 @@
 
     <style>
       <!--
-      
-      CSS has cascading variables now! They named them custom properties, for some reason.
-      
-      -->
-      
-      :root {
+      CSS has cascading variables now! They named them custom properties,
+      for some reason. -- > :root {
         --line-length: 60ch;
 
         @media (min-width: 960px) {
           --line-length: 75ch;
         }
       }
-      
+
       .easy-reading > p {
         max-width: var(--line-length, 60ch);
       }
 
-      <!--
+      .working-concept {
+        border-top: ridge var(--space-large) var(--color-maize-400);
+        padding: var(--space-large) 0;
+        margin: var(--space-large) 0;
+      }
+    </style>
+
+    <!--
       
+      Hey, what is "var(--space-large)"?
+
       Learn more about custom properties:
       https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
       The design system offers colors and spacings as custom properties:
       https://design-system.lib.umich.edu/design-tokens/
 
-      -->
-    </style>
+    -->
 
     <div class="viewport-container easy-reading">
       <h1>Hello, developer!</h1>
 
-      <p>This page serves as the <a href="https://design-system.lib.umich.edu/">design system</a> workshop to develop web components and styles. It will auto-refresh if you make code changes in <code>developer-workshop.html</code> or <code>/css/umich-lib.css</code> files. <strong><a href="https://github.com/mlibrary/design-system/blob/main/README.md">Start with the GitHub repository README</a></strong>, then consider suggesting your ideas by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR</a>.</p>
-      
+      <p>This page serves as the <a href="https://design-system.lib.umich.edu/">design system</a> workshop to develop web components and styles. It will auto-refresh if you make code changes in <code>developer-workshop.html</code> or <code>/css/umich-lib.css</code> files. <strong>
+          <a href="https://github.com/mlibrary/design-system/blob/main/README.md">Start with the GitHub repository README</a>
+        </strong>, then consider suggesting your ideas by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR</a>.</p>
+
       <p>The rest of this page has sections of workshop design system concepts with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a> (eg, <code>[a]</code>) and HTML examples.</p>
-
-      <h2>Buttons</h2>
-
-      <p><code>[.button] [.button-strong]</code></p>
-      <button class="button">.button</button>
-      <button class="button-strong">.button-strong</button>
-
-      <h2>Links</h2>
-
-      <p><code>[a]</code></p>
-
-      <p>What are the <a href="https://design-system.lib.umich.edu/updates/">latest updates</a> from the Design System team?</p>
-
-      <h2>List</h2>
-
-      <p><code>[ul]</code></p>
-
-      <ul>
-        <li><a href="https://www.erikkroes.nl/blog/semantics-what-does-it-mean/">Semantics, what does it mean?</a></li>
-      </ul>
-
-      <h2>Record</h2>
-
-      <code>[dl.record]</code>
-      <dl class="record">
-        <dt>Street and No.</dt>
-        <dd>409 N. Ann Arbor St.</dd>
-        <dt>Municipal Unit</dt>
-        <dd>Saline</dd>
-        <dt>County</dt>
-        <dd>Washtenaw</dd>
-        <dt>Original Usage</dt>
-        <dd>Residence</dd>
-        <dt>Present Usage</dt>
-        <dd>Residence</dd>
-        <dt>Ownership</dt>
-        <dd>Wiegand, James H. II</dd>
-        <dt>Photo Negative No.</dt>
-        <dd>17:17</dd>
-        <dt>Photo Date</dt>
-        <dd>January, 1994</dd>
-        <dt>Photo View</dt>
-        <dd>South and east facades taken facing northwest</dd>
-        <dt>Description</dt>
-        <dd>One and a half story, side gabled, Craftsman style house. Gabled dormer on center front facade. Full width porch with massive shingled support piers resting on a solid balustrade. Rectangular shed roof bay on south facade. Variety of window configurations: paired dormers are five vertical panes over one; bay windows are four over one; soe on over one; and center front has one large pane with two small rectangular lights above. Barn red wood shingles on exterior facade. Brick chimney on north facade. One and a half car, gable front garage at rear.</dd>
-        <dt>Date of Construction</dt>
-        <dd>1914</dd>
-        <dt>Context</dt>
-        <dd>The house was probably build by Orrin Briggs around 1914. The 1912 Sanborn map shows that Orrin Briggs had a planning mill on the property to the south (Orrin Parsons owned the planning before that, as early as 1988). Mr. Briggs lived in the house until his death in 1935, then his wife, Francis, lived in it until 1947. Mr. Briggs also owned the property to the north. Other owners: Charles Burkhardt in 1960; DAvid Harwood and Susan McDonald; and James H. Wiegand II 1994.</dd>
-        <dt>Bibliographic Reference</dt>
-        <dd>City Directories: 1878, 1894, 1899, 1912, 1916, 1920, 1926, 1941, 1945. Assessor's files: 1947 and current; U.S. Census:
-        1910, 1920. Sanborn Maps: 1888, 1893, 1899, 1912, 1921, 1929; Tax Rolls: 1931 and 1935.</dd>
-        <dt>From Source</dt>
-        <dd>MICHIGAN DEPARTMENT OF STATE KG 105</dd>
-        <dt>Survey Date</dt>
-        <dd>May, 1994</dd>
-        <dt>Surveyor</dt>
-        <dd>K. Glynn & S. Kosky</dd>
-        <dt>Recorder Date</dt>
-        <dd>April, 1994</dd>
-        <dt>Card No.</dt>
-        <dd>105</dd>
-      </dl>
-
-      <h2>Strong</h2>
-
-      <p><code>[strong]</code></p>
-
-      <p>The design system exists to build trust in our <strong>digital services</strong> and create components and standards that are reusable, equitable, informed by research, and available to the public.</p>
-    
-      <h2>Table</h2>
-
-      <p><code>[table]</code></p>
-
-      <h2>Webpage footer</h2>
-
-      <p>Use <code>[footer.webpage-footer]</code> then inspect element for child classes.</p>
-      <p><strong>Options</strong></p>
-
-      <table>
-        <tr>
-          <th>custom property</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td><code>--column-width</code></td>
-          <td><code>280px</code></td>
-        </tr>
-      </table>
     </div>
 
-    <footer class="webpage-footer">
+    <section class="working-concept">
       <div class="viewport-container">
-        <div class="webpage-footer__content">
-          <section>
-            <h2>University of Michigan Library</h2>
-            <p>913 S. University Avenue<br/>Ann Arbor, MI 48109</p>
-          </section>
+        <h2>Buttons</h2>
 
-          <section>
-            <h2>First column list</h2>
-            <ul>
-              <li><a href="#">Navigation item 1</a></li>
-              <li><a href="#">Navigation item 2</a></li>
-              <li><a href="#">Navigation item 3</a></li>
-              <li><a href="#">Navigation item 4</a></li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Second column list</h2>
-            <ul>
-              <li><a href="#">Navigation item 1</a></li>
-              <li><a href="#">Navigation item 2</a></li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Third column list</h2>
-            <ul>
-              <li><a href="#">Navigation item 1</a></li>
-              <li><a href="#">Navigation item 2</a></li>
-              <li><a href="#">Navigation item 3</a></li>
-              <li><a href="#">Navigation item 4</a></li>
-              <li><a href="#">Navigation item 5</a></li>
-            </ul>
-          </section>
-        </div>
+        <p>
+          <code>[.button] [.button-strong]</code>
+        </p>
+        <button class="button">.button</button>
+        <button class="button-strong">.button-strong</button>
       </div>
-      <div class="webpage-footer__disclaimer">
+      <div class="viewport-container">
+
+        <h2>Links</h2>
+
+        <p>
+          <code>[a]</code>
+        </p>
+
+        <p>What are the <a href="https://design-system.lib.umich.edu/updates/">latest updates</a> from the Design System team?</p>
+
+        <h2>List</h2>
+
+        <p>
+          <code>[ul]</code>
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://www.erikkroes.nl/blog/semantics-what-does-it-mean/">Semantics, what does it mean?</a>
+          </li>
+        </ul>
+
+        <h2>Record</h2>
+
+        <code>[dl.record]</code>
+        <dl class="record">
+          <dt>Street and No.</dt>
+          <dd>409 N. Ann Arbor St.</dd>
+          <dt>Municipal Unit</dt>
+          <dd>Saline</dd>
+          <dt>County</dt>
+          <dd>Washtenaw</dd>
+          <dt>Original Usage</dt>
+          <dd>Residence</dd>
+          <dt>Present Usage</dt>
+          <dd>Residence</dd>
+          <dt>Ownership</dt>
+          <dd>Wiegand, James H. II</dd>
+          <dt>Photo Negative No.</dt>
+          <dd>17:17</dd>
+          <dt>Photo Date</dt>
+          <dd>January, 1994</dd>
+          <dt>Photo View</dt>
+          <dd>South and east facades taken facing northwest</dd>
+          <dt>Description</dt>
+          <dd>One and a half story, side gabled, Craftsman style house. Gabled dormer on center front facade. Full width porch with massive shingled support piers resting on a solid balustrade. Rectangular shed roof bay on south facade. Variety of window configurations: paired dormers are five vertical panes over one; bay windows are four over one; soe on over one; and center front has one large pane with two small rectangular lights above. Barn red wood shingles on exterior facade. Brick chimney on north facade. One and a half car, gable front garage at rear.</dd>
+          <dt>Date of Construction</dt>
+          <dd>1914</dd>
+          <dt>Context</dt>
+          <dd>The house was probably build by Orrin Briggs around 1914. The 1912 Sanborn map shows that Orrin Briggs had a planning mill on the property to the south (Orrin Parsons owned the planning before that, as early as 1988). Mr. Briggs lived in the house until his death in 1935, then his wife, Francis, lived in it until 1947. Mr. Briggs also owned the property to the north. Other owners: Charles Burkhardt in 1960; DAvid Harwood and Susan McDonald; and James H. Wiegand II 1994.</dd>
+          <dt>Bibliographic Reference</dt>
+          <dd>City Directories: 1878, 1894, 1899, 1912, 1916, 1920, 1926, 1941, 1945. Assessor's files: 1947 and current; U.S. Census:
+        1910, 1920. Sanborn Maps: 1888, 1893, 1899, 1912, 1921, 1929; Tax Rolls: 1931 and 1935.</dd>
+          <dt>From Source</dt>
+          <dd>MICHIGAN DEPARTMENT OF STATE KG 105</dd>
+          <dt>Survey Date</dt>
+          <dd>May, 1994</dd>
+          <dt>Surveyor</dt>
+          <dd>K. Glynn & S. Kosky</dd>
+          <dt>Recorder Date</dt>
+          <dd>April, 1994</dd>
+          <dt>Card No.</dt>
+          <dd>105</dd>
+        </dl>
+
+        <h2>Strong</h2>
+
+        <p>
+          <code>[strong]</code>
+        </p>
+
+        <p>The design system exists to build trust in our <strong>digital services</strong> and create components and standards that are reusable, equitable, informed by research, and available to the public.</p>
+
+        <h2>Table</h2>
+
+        <p>
+          <code>[table]</code>
+        </p>
+
+      </section>
+
+      <section class="working-concept">
         <div class="viewport-container">
-          <p>© 2021, Regents of the University of Michigan</p>
+
+          <h2>Webpage footer</h2>
+
+          <p>Use <code>[footer.webpage-footer]</code> then inspect element for child classes.</p>
+          <p>
+            <strong>Options</strong>
+          </p>
+
+          <table>
+            <tr>
+              <th>custom property</th>
+              <th>default</th>
+            </tr>
+            <tr>
+              <td>
+                <code>--column-width</code>
+              </td>
+              <td>
+                <code>280px</code>
+              </td>
+            </tr>
+          </table>
         </div>
+
+        <footer class="webpage-footer">
+          <div class="viewport-container">
+            <div class="webpage-footer__content">
+              <section>
+                <h2>University of Michigan Library</h2>
+                <p>913 S. University Avenue<br/>Ann Arbor, MI 48109</p>
+              </section>
+
+              <section>
+                <h2>First column list</h2>
+                <ul>
+                  <li>
+                    <a href="#">Navigation item 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 2</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 3</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 4</a>
+                  </li>
+                </ul>
+              </section>
+
+              <section>
+                <h2>Second column list</h2>
+                <ul>
+                  <li>
+                    <a href="#">Navigation item 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 2</a>
+                  </li>
+                </ul>
+              </section>
+
+              <section>
+                <h2>Third column list</h2>
+                <ul>
+                  <li>
+                    <a href="#">Navigation item 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 2</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 3</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 4</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 5</a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <div class="webpage-footer__disclaimer">
+            <div class="viewport-container">
+              <p>© 2021, Regents of the University of Michigan</p>
+            </div>
+          </div>
+        </footer>
       </div>
-    </footer>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="viewport-container">
+      <h2>Webpage Navigation</h2>
+
+      <p>Inspect for full class list: <code>[.page-navigation-*]</code>
+      </p>
+
+      <div class="page-navigation-container">
+        <nav aria-label="breadcrumb" class="page-navigation-breadcrumb">
+          <ol>
+            <li>
+              <a href="https://www.lib.umich.edu/">Home</a>
+            </li>
+            <li>
+              <a href="#">Account</a>
+            </li>
+            <li>
+              <a href="#">Current Checkouts</a>
+            </li>
+            <!-- Keep this for easy right click and copy linking for the user in browser? -->
+          </ol>
+        </nav>
+
+        <main>
+          <header>
+            <!-- page content -->
+            <h1>Heading for a group of web pages</h1>
+            <nav aria="secondary" class="page-navigation-closely-related">
+              <ol>
+                <li>
+                  <a href="#" aria-current="true">Page in grouping 1</a>
+                </li>
+                <li>
+                  <a href="#">Page in grouping 1</a>
+                </li>
+                <li>
+                  <a href="#">Page in grouping 2</a>
+                </li>
+                <li>
+                  <a href="#">Page in grouping 3</a>
+                </li>
+                <li>
+                  <a href="#">Page in grouping 4</a>
+                </li>
+                <li>
+                  <a href="#">Page in grouping 5</a>
+                </li>
+              </ol>
+            </nav>
+          </header>
+        </main>
+
+        <nav aria="primary">
+          <ol>
+            <li>
+              <a href="#">Sibling page 1</a>
+            </li>
+            <li>
+              <a href="#">Sibling page 2</a>
+            </li>
+            <li>
+              <a href="#">Sibling page 3</a>
+            </li>
+            <li>
+              <a href="#">Sibling page 4</a>
+            </li>
+            <li>
+              <a href="#">Sibling page 5</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
   </body>
 </html>

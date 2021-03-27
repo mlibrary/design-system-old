@@ -41,7 +41,7 @@ function reload(cb) {
 
 function watcher() {
   watch("styles/*.css", series(styles, reload));
-  watch("developer-workshop.html", reload);
+  watch("developer-workshop.html", series(reload));
   watch("design-tokens.json", series(tokens, reload));
 }
 
