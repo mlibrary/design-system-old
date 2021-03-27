@@ -172,7 +172,6 @@
               <li>
                 <a href="#">Sub sub page</a>
               </li>
-
               <li>
                 <a href="#">3x sub page</a>
               </li>
@@ -186,7 +185,7 @@
                 <a href="#">Neighbor page 1</a>
               </li>
               <li>
-                <a href="#">Neighbor page 2</a>
+                <a href="#" aria-current="page">Neighbor page 2</a>
               </li>
               <li>
                 <a href="#">Neighbor page 3</a>
@@ -203,7 +202,7 @@
             <h3>Page navigation grouping</h3>
             <ol>
               <li>
-                <a href="#" aria-current="true">Page in grouping 1</a>
+                <a href="#" aria-current="page">Page in grouping 1</a>
               </li>
               <li>
                 <a href="#">Page in grouping 1</a>
@@ -229,7 +228,7 @@
         <div class="viewport-container">
           <h2>Page</h2>
 
-          <p>Use <code>.page</code> and inspect for details.</p>
+          <p>Use <code>[.page]</code> and inspect for details. You'll see how <code>.page-navigation-*</code> elements are composed into a page.</p>
 
           <div class="page">
             <nav aria-label="breadcrumb" class="page-navigation-breadcrumb">
@@ -254,10 +253,7 @@
                   <a href="#">Our Organization</a>
                 </li>
                 <li>
-                  <a href="#" aria-current="true">Mission and Values</a>
-                </li>
-                <li>
-                  <a href="#">Strategic Directions and Objectives</a>
+                  <a href="#" aria-current="page">Mission and Values</a>
                 </li>
                 <li>
                   <a href="#">Assessment</a>
@@ -273,8 +269,6 @@
             <div class="page-content prose">
 
               <p>We are a culture and place of sustained and supported innovation. We are indispensable partners in the world-changing work of the university, as we continually reinvent the library as the platform that enables discovery, teaching, learning, health, invention, and creative expression.</p>
-
-              <img src="static/umich-1907.jpg"/>
 
               <h2>Mission</h2>
 
@@ -296,6 +290,26 @@
 
               <p>
                 <strong>Humanity.</strong>  Embody integrity, compassion, empathy, equity, and ethical behavior. </p>
+
+              <img src="static/umich-1907.jpg"/>
+
+              <h2>Strategic directions</h2>
+
+              <p>Over the next five to seven years, we will:</p>
+
+              <ul>
+                <li>Explore new ways to support the whole lifecycle of scholarship.</li>
+                <li>Continuously evolve and reimagine user-centered services.</li>
+                <li>Continuously improve our physical and digital spaces.</li>
+                <li>Affirm our commitment to and rethink our definition of collections.</li>
+                <li>Cultivate a positive workplace climate and a diverse and inclusive community.</li>
+                <li>Practice intentional and strategic planning.</li>
+              </ul>
+
+              <p>
+                <a href="https://lib.umich.edu/about-us/about-library/strategic-directions-and-objectives">Strategic Directions and Objectives</a>
+              </p>
+
             </div>
 
             <nav aria-label="Primary" class="page-navigation-neighbors">
@@ -304,7 +318,7 @@
                   <a href="#">Our Organization</a>
                 </li>
                 <li>
-                  <a href="#" aria-current="true">Mission and Values</a>
+                  <a href="#" aria-current="page">Mission and Values</a>
                 </li>
                 <li>
                   <a href="#">Strategic Directions and Objectives</a>
@@ -335,7 +349,22 @@
 
       <section class="working-concept">
         <div class="viewport-container">
+          <h2>Card</h2>
 
+          <p>TODO</p>
+        </div>
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
+          <h2>Message</h2>
+
+          <p>TODO</p>
+        </div>
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
           <h2>Page footer</h2>
 
           <p>Use <code>[footer.page-footer]</code> then inspect element for child classes.</p>
