@@ -56,7 +56,7 @@
           <a href="https://github.com/mlibrary/design-system/blob/main/README.md">Start with the GitHub repository README</a>
         </strong>, then consider suggesting your ideas by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR</a>.</p>
 
-      <p>The rest of this page has sections of workshop design system concepts with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a> (eg, <code>[a]</code>) and HTML examples.</p>
+      <p>The rest of this page has sections of workshop design system concepts with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a> (eg, <code>[a]</code>) and HTML examples where you can use your browser to <a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Open_the_Inspector">inspect</a>  to learn more.</p>
     </div>
 
     <section class="working-concept">
@@ -150,47 +150,57 @@
 
       <section class="working-concept">
         <div class="viewport-container">
-          <h2>Webpage Navigation</h2>
+          <h2>Page Navigation</h2>
 
           <p>Inspect for full class list: <code>[.page-navigation-*]</code>
           </p>
         </div>
 
-        <div class="page-navigation">
+        <div class="viewport-container">
           <nav aria-label="breadcrumb" class="page-navigation-breadcrumb">
+            <h3>Page navigation breadcrumbs</h3>
             <ol>
               <li>
                 <a href="https://www.lib.umich.edu/">Home</a>
               </li>
               <li>
-                <a href="#">Account</a>
+                <a href="#">Page</a>
               </li>
               <li>
-                <a href="#">Current Checkouts</a>
+                <a href="#">Sub page</a>
+              </li>
+              <li>
+                <a href="#">Sub sub page</a>
+              </li>
+
+              <li>
+                <a href="#">3x sub page</a>
               </li>
               <!-- Keep this for easy right click and copy linking for the user in browser? -->
             </ol>
           </nav>
-          <nav aria-label="Primary" class="page-navigation-primary">
+          <nav aria-label="Primary" class="page-navigation-neighbors">
+            <h3>Page navigation neighbors</h3>
             <ol>
               <li>
-                <a href="#">Sibling page 1</a>
+                <a href="#">Neighbor page 1</a>
               </li>
               <li>
-                <a href="#">Sibling page 2</a>
+                <a href="#">Neighbor page 2</a>
               </li>
               <li>
-                <a href="#">Sibling page 3</a>
+                <a href="#">Neighbor page 3</a>
               </li>
               <li>
-                <a href="#">Sibling page 4</a>
+                <a href="#">Neighbor page 4</a>
               </li>
               <li>
-                <a href="#">Sibling page 5</a>
+                <a href="#">Neighbor page 5</a>
               </li>
             </ol>
           </nav>
-          <nav aria="secondary" class="page-navigation-secondary">
+          <nav aria="secondary" class="page-navigation-grouping">
+            <h3>Page navigation grouping</h3>
             <ol>
               <li>
                 <a href="#" aria-current="true">Page in grouping 1</a>
@@ -212,20 +222,15 @@
               </li>
             </ol>
           </nav>
-          <h1>Heading for a group of web pages</h1>
-
-          <div class="page-navigation-content">
-            <p>We are a culture and place of sustained and supported innovation. We are indispensable partners in the world-changing work of the university, as we continually reinvent the library as the platform that enables discovery, teaching, learning, health, invention, and creative expression.</p>
-          </div>
         </div>
       </section>
 
       <section class="working-concept">
         <div class="viewport-container">
 
-          <h2>Webpage footer</h2>
+          <h2>Page footer</h2>
 
-          <p>Use <code>[footer.webpage-footer]</code> then inspect element for child classes.</p>
+          <p>Use <code>[footer.page-footer]</code> then inspect element for child classes.</p>
           <p>
             <strong>Options</strong>
           </p>
@@ -246,9 +251,9 @@
           </table>
         </div>
 
-        <footer class="webpage-footer">
+        <footer class="page-footer">
           <div class="viewport-container">
-            <div class="webpage-footer__content">
+            <div class="page-footer__content">
               <section>
                 <h2>University of Michigan Library</h2>
                 <p>913 S. University Avenue<br/>Ann Arbor, MI 48109</p>
@@ -306,7 +311,7 @@
               </section>
             </div>
           </div>
-          <div class="webpage-footer__disclaimer">
+          <div class="page-footer__disclaimer">
             <div class="viewport-container">
               <p>© 2021, Regents of the University of Michigan</p>
             </div>
