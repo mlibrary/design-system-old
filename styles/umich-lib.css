@@ -92,8 +92,14 @@ h1,
 }
 
 h2,
-.page-section-heading {
-  font-size: var(--text-large);
+.page-sub-heading {
+  font-size: var(--text-medium);
+  font-weight: var(--bold);
+}
+
+h3,
+.page-sub-sub-heading {
+  font-size: var(--text-small);
   font-weight: var(--bold);
 }
 
