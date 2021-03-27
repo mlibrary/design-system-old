@@ -160,74 +160,89 @@
 
       <section class="working-concept">
         <div class="viewport-container">
-          <h2>Page Navigation</h2>
+          <h2>Navigation</h2>
 
-          <p>Inspect for full class list: <code>[.page-navigation-*]</code>
-          </p>
-        </div>
+          <nav aria-label="breadcrumbs" class="breadcrumbs">
+            <h3>Breadcrumbs</h3>
 
-        <div class="viewport-container">
-          <nav aria-label="breadcrumb" class="page-navigation-breadcrumb">
-            <h3>Page navigation breadcrumbs</h3>
+            <p>
+              <code>
+                ol.breadcrumbs, a[aria-current="page"]
+              </code>
+            </p>
+
             <ol>
               <li>
                 <a href="https://www.lib.umich.edu/">Home</a>
               </li>
               <li>
-                <a href="#">Page</a>
+                <a href="#">Top level page</a>
               </li>
               <li>
-                <a href="#">Sub page</a>
+                <a href="#">Second level page</a>
               </li>
               <li>
-                <a href="#">Sub sub page</a>
-              </li>
-              <li>
-                <a href="#">3x sub page</a>
+                <a href="#" aria-current="page"> Third level page</a>
               </li>
               <!-- Keep this for easy right click and copy linking for the user in browser? -->
             </ol>
           </nav>
-          <nav aria-label="Primary" class="page-navigation-neighbors">
-            <h3>Page navigation neighbors</h3>
+          <nav aria-label="aside" class="aside-nav">
+            <h3>Aside Nav</h3>
+
+            <p>
+              <code>
+                ol.aside-nav, a[aria-current="page"]
+              </code>
+            </p>
+
             <ol>
               <li>
-                <a href="#">Neighbor page 1</a>
+                <a href="#">Aside page 1</a>
               </li>
               <li>
-                <a href="#" aria-current="page">Neighbor page 2</a>
+                <a href="#" aria-current="page">Aside page 2</a>
               </li>
               <li>
-                <a href="#">Neighbor page 3</a>
+                <a href="#">Aside page 3</a>
               </li>
               <li>
-                <a href="#">Neighbor page 4</a>
+                <a href="#">Aside page 4</a>
               </li>
               <li>
-                <a href="#">Neighbor page 5</a>
+                <a href="#">Aside page 5</a>
               </li>
             </ol>
           </nav>
-          <nav aria="secondary" class="page-navigation-grouping">
-            <h3>Page navigation grouping</h3>
+
+          <nav aria-label="menu" class="menu-nav">
+            <h3>Menu Nav</h3>
+
+            <code>There is more to be worked on here, but the general idea is the menu is scrollable on the Y axis, but when that happens a menu button opens up on the left that pops out a list of all menu options. Kind of how the explore menu has a dropdown. This will allow for a lot of flexibility for responsive options. Use IntersectionObserver to trigger that MENU button on intersection of scrolling. Should be fairly straight forward, just use the browser features.
+            </code>
+
+            <p>
+              <code>.menu-nav, a[aria-current="page"]</code>
+            </p>
+
             <ol>
               <li>
-                <a href="#" aria-current="page">Page in grouping 1</a>
+                <a href="#" aria-current="page">Menu Option 1</a>
               </li>
               <li>
-                <a href="#">Page in grouping 1</a>
+                <a href="#">Menu Option 1</a>
               </li>
               <li>
-                <a href="#">Page in grouping 2</a>
+                <a href="#">Menu Option 2</a>
               </li>
               <li>
-                <a href="#">Page in grouping 3</a>
+                <a href="#">Menu Option 3</a>
               </li>
               <li>
-                <a href="#">Page in grouping 4</a>
+                <a href="#">Menu Option 4</a>
               </li>
               <li>
-                <a href="#">Page in grouping 5</a>
+                <a href="#">Menu Option 5</a>
               </li>
             </ol>
           </nav>
@@ -238,10 +253,10 @@
         <div class="viewport-container">
           <h2>Page</h2>
 
-          <p>Use <code>[.page]</code> and inspect for details. You'll see how <code>.page-navigation-*</code> elements are composed into a page. TODO: More representative samples could be added here. Or a toggle for different placeholder content to illustrate layout flexibility.</p>
+          <p>Use <code>[.page]</code> and inspect for details. You'll see how <code>nav</code> elements are composed into a page and layout is handled with <code>grid</code> CSS code.</p>
 
           <div class="page">
-            <nav aria-label="breadcrumb" class="page-navigation-breadcrumb">
+            <nav aria-label="breadcrumb" class="breadcrumbs">
               <ol>
                 <li>
                   <a href="https://www.lib.umich.edu/">Home</a>
@@ -253,11 +268,11 @@
                   <a href="">About the Library</a>
                 </li>
                 <li>
-                  <a href="">Mission and Values</a>
+                  <a href="" aria-current="page">Mission and Values</a>
                 </li>
               </ol>
             </nav>
-            <nav aria="secondary" class="page-navigation-grouping">
+            <nav aria="secondary" class="menu-nav">
               <ol>
                 <li>
                   <a href="#">Our Organization</a>
@@ -322,7 +337,7 @@
               <p>In support of our strategic directions, over the next few years we will advance our digital service ability through strategic cross-divisional collaboration to develop infrastructure, policies, and best practices that work towards just, equitable, and inclusive outcomes.</p>
             </div>
 
-            <nav aria-labelled-by="neighbors-heading" class="page-navigation-neighbors">
+            <nav aria-labelled-by="neighbors-heading" class="aside-nav">
               <h2 class="page-sub-sub-heading" id="neighbors-heading">About the Library</h2>
 
               <ol>
@@ -361,15 +376,17 @@
 
       <section class="working-concept">
         <div class="viewport-container">
-          <h2>Card links</h2>
+          <h2>Page previews</h2>
+
+          <p>Page previews typically use the link text that matches the page heading and it should be the only <code>h1</code> heading on the page. This is a great way to help people understand where they will and feel well oriented and comfortable when they arrive to that webpage. You could also consider matching the description of can match the metadata description of the page too.</p>
 
           <p>
-            <code>.link-cards</code>
+            <code>[ul.page-previews]</code>
           </p>
 
           <p></p>
 
-          <ul class="link-cards">
+          <ul class="page-previews">
             <li>
               <a href="">
                 <h3>Astronomy</h3>

@@ -359,9 +359,9 @@ td {
   grid-column: 3
 }
 
-.page-navigation-breadcrumb,
-.page-navigation-neighbors,
-.page-navigation-grouping {
+.breadcrumbs,
+.aside-nav,
+.menu-nav {
   & ol {
     display: flex;
     margin: 0;
@@ -370,8 +370,8 @@ td {
   }
 }
 
-.page-navigation-breadcrumb,
-.page-navigation-grouping {
+.breadcrumbs,
+.menu-nav {
   & li {
     &:first-child a {
       padding-left: 0;
@@ -389,13 +389,23 @@ td {
   to remove `whitespace` spacings between
   inline elements.
 */
-.page-navigation-breadcrumb {
+.breadcrumbs {
   & li {
     font-size: 0;
   }
 
   & a {
     font-size: 1rem;
+
+    &[aria-current="page"] {
+      color: var(--color-neutral-400);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+      }
+    }
   }
 
   & li:not(:first-child):before {
@@ -404,7 +414,7 @@ td {
   }
 }
 
-.page-navigation-neighbors {
+.aside-nav {
   & ol {
     flex-direction: column;
     margin: 0;
@@ -436,7 +446,7 @@ td {
   }
 }
 
-.page-navigation-grouping {
+.menu-nav {
   & ol {
     border-bottom: solid 1px var(--color-neutral-100);
     padding-bottom: calc(var(--space-medium) + 1px);
@@ -472,18 +482,18 @@ td {
 
   grid-gap: 0 var(--space-xxx-large);
 
-  & .page-navigation-breadcrumb {
+  & .breadcrumbs {
     margin: var(--space-x-large) 0;
     grid-area: breadcrumb;
   }
 
-  & .page-navigation-grouping {
+  & .menu-nav {
     grid-area: grouping;
     margin-top: var(--space-x-large);
     margin-bottom: var(--space-large);
   }
 
-  & .page-navigation-neighbors {
+  & .aside-nav {
     grid-area: neighbors;
   }
 
@@ -510,7 +520,7 @@ td {
   }
 }
 
-.link-cards {
+.page-previews {
   --gap: var(--space-large)
   --gap-x: var(--gap);
   --gap-y: var(--gap);
