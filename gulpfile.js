@@ -28,7 +28,7 @@ function browser(cb) {
   browsersync.init({
     server: {
       baseDir: "./",
-      index: "developer-workshop.html",
+      index: "workshop.html",
     },
   });
   cb();
@@ -41,7 +41,7 @@ function reload(cb) {
 
 function watcher() {
   watch("styles/*.css", series(styles, reload));
-  watch("developer-workshop.html", series(reload));
+  watch("workshop.html", series(reload));
   watch("design-tokens.json", series(tokens, reload));
 }
 
