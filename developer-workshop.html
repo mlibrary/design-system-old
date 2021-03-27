@@ -19,7 +19,7 @@
       <!--
       CSS has cascading variables now! They named them custom properties,
       for some reason. -- > :root {
-        --line-length: 60ch;
+        --line-length: 65ch;
 
         @media (min-width: 960px) {
           --line-length: 75ch;
@@ -31,15 +31,21 @@
       }
 
       .working-concept {
-        border-top: ridge var(--space-large) var(--color-maize-400);
-        padding: var(--space-large) 0;
-        margin: var(--space-large) 0;
+        border-top: solid var(--space-xx-small) var(--color-maize-400);
+        border-bottom: solid 1px var(--color-blue-400);
+        padding: var(--space-xxx-large) 0;
+      }
+
+      .workshop-header-container {
+        border-bottom: solid 1px var(--color-blue-400);
+        padding: var(--space-xxx-large) 0;
       }
     </style>
 
     <!--
       
-      Hey, what is "var(--space-large)"?
+      Q: Hey, what is "var(--space-large)"?
+      A: A CSS custom property
 
       Learn more about custom properties:
       https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
@@ -49,14 +55,18 @@
 
     -->
 
-    <div class="viewport-container easy-reading">
-      <h1>Hello, developer!</h1>
+    <div class="workshop-header-container">
+      <header class="viewport-container easy-reading" aria-labelled-by="page-heading">
+        <h1 id="page-heading">Hello, developer!</h1>
 
-      <p>This page serves as the <a href="https://design-system.lib.umich.edu/">design system</a> workshop to develop web components and styles. It will auto-refresh if you make code changes in <code>developer-workshop.html</code> or <code>/css/umich-lib.css</code> files. <strong>
-          <a href="https://github.com/mlibrary/design-system/blob/main/README.md">Start with the GitHub repository README</a>
-        </strong>, then consider suggesting your ideas by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR</a>.</p>
+        <p>This page serves as the <a href="https://design-system.lib.umich.edu/">design system</a> workshop to develop web components and styles. It will auto-refresh if you make code changes in <code>developer-workshop.html</code> or <code>/css/umich-lib.css</code> files. <strong>
+            <a href="https://github.com/mlibrary/design-system/blob/main/README.md">Start with the GitHub repository README</a>
+          </strong>, then consider suggesting your ideas by <a href="https://github.com/mlibrary/design-system/edit/dev-bye-lerna/developer-workshop.html">opening a PR</a>.</p>
 
-      <p>The rest of this page has sections of workshop design system concepts with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a> (eg, <code>[a]</code>) and HTML examples where you can use your browser to <a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Open_the_Inspector">inspect</a>  to learn more.</p>
+        <p>The rest of this page has sections of workshop design system concepts with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a> (eg, <code>[a]</code>) and HTML examples where you can use your browser to <a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Open_the_Inspector">inspect</a>  to learn more.</p>
+
+        <p>What do you want to learn today?</p>
+      </header>
     </div>
 
     <section class="working-concept">
