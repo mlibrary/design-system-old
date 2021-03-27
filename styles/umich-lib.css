@@ -500,7 +500,12 @@ td {
 }
 
 .prose {
+  --max-prose-width: 65ch;
   & > p {
-    max-width: 65ch;
+    max-width: var(--max-prose-width);
+  }
+
+  & > img {
+    max-width: var(--max-prose-width);
   }
 }
