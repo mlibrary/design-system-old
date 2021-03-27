@@ -509,3 +509,65 @@ td {
     max-width: var(--max-prose-width);
   }
 }
+
+.link-cards {
+  --gap: var(--space-large)
+  --gap-x: var(--gap);
+  --gap-y: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-x-large) var(--space-medium);
+  align-items: stretch;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  
+    & > a {
+      text-decoration: none;
+      border: solid 1px var(--color-neutral-100);
+      border-radius: var(--radius-default);
+      padding: var(--space-medium);
+      font-size: var(--space-small);
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      &:hover {
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+        
+        & > h3 {
+          text-decoration-thickness: 2px;
+        }
+      }
+
+      & > h3 {
+        margin: 0;
+        color: var(--color-neutral-400);
+        text-decoration: underline;
+        text-decoration-color: var(--color-teal-400);
+        text-decoration-thickness: 1px;
+        font-weight: 700;
+      }
+
+      & > p {
+        order: 1;
+        color: var(--color-neutral-300);
+        margin: 0;
+        font-size: var(--space-medium);
+      }
+    }
+  }
+}
