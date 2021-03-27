@@ -211,7 +211,7 @@ dl.record {
  * Record
  */
 
-footer.webpage-footer {
+footer.page-footer {
   /* options */
 
   background: var(--color-blue-400);
@@ -236,7 +236,7 @@ footer.webpage-footer {
   }
 }
 
-.webpage-footer__content {
+.page-footer__content {
   color: var(--color-blue-100);
   padding: var(--space-xxx-large) 0;
 
@@ -255,7 +255,7 @@ footer.webpage-footer {
   gap: var(--space-large);
 }
 
-.webpage-footer__disclaimer {
+.page-footer__disclaimer {
   background: var(--color-blue-500);
   color: var(--color-blue-200);
   padding: var(--space-medium) 0;
@@ -323,8 +323,8 @@ td {
 }
 
 .page-navigation-breadcrumb,
-.page-navigation-primary,
-.page-navigation-secondary {
+.page-navigation-neighbors,
+.page-navigation-grouping {
   & ol {
     display: flex;
     margin: 0;
@@ -334,7 +334,7 @@ td {
 }
 
 .page-navigation-breadcrumb,
-.page-navigation-secondary {
+.page-navigation-grouping {
   & li {
     &:first-child a {
       padding-left: 0;
@@ -353,10 +353,10 @@ td {
   }
 }
 
-.page-navigation-primary {
+.page-navigation-neighbors {
   & ol {
     flex-direction: column;
-    margin: var(--space-medium) 0;
+    margin: 0;
   }
 
   & li {
@@ -380,7 +380,7 @@ td {
   }
 }
 
-.page-navigation-secondary {
+.page-navigation-grouping {
   & ol {
     border-bottom: solid 1px var(--color-neutral-100);
     padding-bottom: calc(var(--space-medium) + 1px);
