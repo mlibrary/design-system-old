@@ -136,7 +136,7 @@ h3,
  */
 
 .button,
-.button-strong {
+.button-most-important {
   border: none;
   outline: none;
   display: inline-block;
@@ -169,7 +169,7 @@ h3,
   color: var(--color-teal-400);
 }
 
-.button-strong {
+.button-most-important {
   background: var(--color-teal-400);
   color: white;
 }
