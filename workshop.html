@@ -13,7 +13,7 @@
   </head>
   <body>
     <m-universal-header></m-universal-header>
-    <m-website-header name="HTML & CSS Workshop" to="/"></m-website-header>
+    <m-website-header name="Workshop" to="/"></m-website-header>
 
     <style>
       <!--
@@ -40,6 +40,10 @@
         border-bottom: solid 1px var(--color-blue-400);
         padding: var(--space-large) 0;
       }
+
+      #page-heading {
+        margin-top: 0;
+      }
     </style>
 
     <!--
@@ -55,25 +59,9 @@
 
     -->
 
-    <header class="page"></header>
-
     <div class="workshop-header-container">
       <header class="viewport-container easy-reading" 
       aria-labelled-by="page-heading">
-        <nav aria-label="breadcrumb" class="breadcrumbs">
-          <ol>
-            <li>
-              <a href="https://www.lib.umich.edu/">Home</a>
-            </li>
-            <li>
-              <a href="https://design-system.lib.umich.edu/">Design System</a>
-            </li>
-            <li>
-              <a href="" aria-current="page">HTML & CSS Workshop</a>
-            </li>
-          </ol>
-        </nav>
-
         <h1 id="page-heading">
           <span class="subtle-heading">Design System</span><br>HTML & CSS Workshop</h1>
 
