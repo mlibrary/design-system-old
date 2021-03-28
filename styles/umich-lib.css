@@ -521,13 +521,9 @@ td {
 }
 
 .page-previews {
-  --gap: var(--space-large)
-  --gap-x: var(--gap);
-  --gap-y: var(--gap);
-
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(36ch, 1fr));
-  gap: var(--space-x-large) var(--space-medium);
+  grid-gap: var(--space-medium);
   align-items: stretch;
 
   margin: 0;
@@ -545,6 +541,7 @@ td {
       border-radius: var(--radius-default);
       padding: var(--space-medium);
       font-size: var(--space-small);
+      height: 100%;
 
       &:after {
         content: "";
