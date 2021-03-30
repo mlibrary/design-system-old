@@ -1,29 +1,43 @@
 {
   "name": "@umich-lib/web",
-  "version": "v1.0.0",
-  "repository": "https://github.com/mlibrary/design-system",
+  "version": "1.0.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/custom-elements/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/custom-elements/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/web-components/web-components.esm.js",
+  "files": [
+    "dist/",
+    "loader/",
+    "css/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "components": "stencil build --dev --watch --serve",
+    "css": "gulp"
+  },
   "dependencies": {
+    "@stencil/core": "^2.4.1",
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-    "@stencil/core": "^2.4.0",
-    "@stencil/postcss": "^2.0.0",
     "autoprefixer": "^9.8.6",
-    "browser-sync": "^2.26.14",
     "cssnano": "^4.1.10",
-    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
-    "gulp-run": "^1.7.1",
-    "gulp-run-command": "0.0.10",
     "gulp-theo": "^2.0.1",
     "postcss": "^8.2.8",
     "postcss-import": "^14.0.0",
     "postcss-nesting": "^7.0.1",
     "theo": "^8.1.5"
   },
-  "scripts": {
-    "start": "npm run build",
-    "build": "gulp"
-  },
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "@stencil/postcss": "^2.0.0"
+  }
 }
