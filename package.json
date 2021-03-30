@@ -22,7 +22,6 @@
     "theo": "^8.1.5"
   },
   "scripts": {
-    "build:components": "stencil build --watch",
     "start": "npm run build",
     "build": "gulp"
   },

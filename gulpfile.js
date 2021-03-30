@@ -18,10 +18,10 @@ function tokens() {
     )
     .pipe(dest("build/tokens"));
 }
-function styles() {
+function stylesheets() {
   // The PostCSS configuration is loaded
   // automatically from postcss.config.js
-  return src("styles/umich-lib.css").pipe(postcss()).pipe(dest("build"));
+  return src("stylesheets/umich-lib.css").pipe(postcss()).pipe(dest("build"));
 }
 
 function browser(cb) {
@@ -40,9 +40,9 @@ function reload(cb) {
 }
 
 function watcher() {
-  watch("styles/*.css", series(styles, reload));
+  watch("stylesheets/*.css", series(stylesheets, reload));
   watch("workshop.html", series(reload));
   watch("design-tokens.json", series(tokens, reload));
 }
 
-exports.default = series(clean, tokens, styles, browser, watcher);
+exports.default = series(clean, tokens, stylesheets, browser, watcher);
