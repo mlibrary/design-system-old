@@ -3,6 +3,14 @@
   font-family: var(--font-base-family);
   line-height: var(--line-height-default);
   font-size: 16px;
+}
+
+.m-uh__content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-medium);
 
   & * {
     box-sizing: border-box;
@@ -16,14 +24,6 @@
       0 0 0 3px var(--color-neutral-400);
     border-radius: 2px !important;
   }
-}
-
-.m-uh__content {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 var(--space-medium);
 
   @media screen and (min-width: 721px) {
     padding: 0 var(--space-xx-large);
