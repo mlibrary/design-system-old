@@ -20,7 +20,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "components": "stencil build --dev --watch --serve",
-    "css": "gulp"
+    "css": "gulp",
+    "develop": "npx @11ty/eleventy --serve"
   },
   "dependencies": {
     "@stencil/core": "^2.4.1",

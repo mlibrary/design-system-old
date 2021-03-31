@@ -10,7 +10,7 @@ We expect that you have basic working understanding of [HTML](https://developer.
 
 To start development after typical cloning and installing, run this script:
 
-```sh
+```
 $ npm start
 ```
 

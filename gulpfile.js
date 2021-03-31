@@ -20,7 +20,7 @@ function stylesheets() {
 
 function watcher() {
   watch("design-tokens.json", series(tokens));
-  watch("src/stylesheets/*.css", series(stylesheets));
+  watch("src/css/*.css", series(stylesheets));
 }
 
 exports.default = series(tokens, stylesheets, watcher);
