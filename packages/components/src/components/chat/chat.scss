@@ -20,6 +20,7 @@
     100% - 8vw
   ); /* Even left and right spacing of 4vw on small screens */
   background: white;
+  z-index: 10000;
 }
 
 .m-chat.m-chat--open {
