@@ -31,7 +31,7 @@ export namespace Components {
          */
         "to": string;
         /**
-          * Select the Website Header variant.  Options:   - light   - dark
+          * Optionally set to `dark` for a blue background.
          */
         "variant": string;
     }
@@ -108,7 +108,7 @@ declare namespace LocalJSX {
          */
         "to"?: string;
         /**
-          * Select the Website Header variant.  Options:   - light   - dark
+          * Optionally set to `dark` for a blue background.
          */
         "variant"?: string;
     }

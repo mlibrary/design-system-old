@@ -8,9 +8,11 @@ import { Component, Prop, h } from "@stencil/core";
  * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
  * @slot Children
  * @example
- * <m-website-header name="Example">
+ * <m-website-header name="Account">
  *   <a href="/">Log in</a>
  * </m-website-header>
+ * 
+ * <m-website-header name="Deep Blue Documents" variant="dark"></m-website-header>
  * @usedBy
  * - [Design System](https://design-system.lib.umich.edu/)
  */
@@ -31,11 +33,7 @@ export class WebsiteHeader {
   @Prop({ reflect: true }) to: string = "/";
 
   /**
-   * Select the Website Header variant.
-   * 
-   * Options:
-   *   - light
-   *   - dark
+   * Optionally set to `dark` for a blue background.
    */
   @Prop() variant: string;
 
