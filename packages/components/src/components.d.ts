@@ -12,6 +12,10 @@ export namespace Components {
         "name": string;
     }
     interface MLogo {
+        /**
+          * Select the Website Header variant.  Options:   - light   - dark
+         */
+        "variant": string;
     }
     interface MUniversalHeader {
     }
@@ -26,6 +30,10 @@ export namespace Components {
           * The URL linked to when you click the website name.
          */
         "to": string;
+        /**
+          * Select the Website Header variant.  Options:   - light   - dark
+         */
+        "variant": string;
     }
 }
 declare global {
@@ -81,6 +89,10 @@ declare namespace LocalJSX {
         "name"?: string;
     }
     interface MLogo {
+        /**
+          * Select the Website Header variant.  Options:   - light   - dark
+         */
+        "variant"?: string;
     }
     interface MUniversalHeader {
     }
@@ -95,6 +107,10 @@ declare namespace LocalJSX {
           * The URL linked to when you click the website name.
          */
         "to"?: string;
+        /**
+          * Select the Website Header variant.  Options:   - light   - dark
+         */
+        "variant"?: string;
     }
     interface IntrinsicElements {
         "m-chat": MChat;

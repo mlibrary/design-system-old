@@ -30,18 +30,34 @@ export class WebsiteHeader {
    */
   @Prop({ reflect: true }) to: string = "/";
 
+  /**
+   * Select the Website Header variant.
+   * 
+   * Options:
+   *   - light
+   *   - dark
+   */
+  @Prop() variant: string;
+
   render() {
+    const variant = this.variant === 'dark' ? ' website-header--dark' : '';
+    const logoVariant = this.variant === 'dark' ? 'dark' : ''
+
     return (
-      <header class="website-header">
+      <header class={"website-header" + variant}>
         <div class="website-header__container">
           <div class="website-header__inner-container">
-            <a href={this.to} class="website-header__website-home-link">
-              <m-logo></m-logo>
+            <div class="website-header__logo-container">
+              <a href="https://www.lib.umich.edu/" class="website-header__lib-link">
+                <m-logo variant={logoVariant}></m-logo>
+              </a>
 
-              {this.name && (
-                <span class="website-header__website-name">{this.name}</span>
-              )}
-            </a>
+              <a href={this.to} class="website-header__website-home-link">
+                {this.name && (
+                  <span class="website-header__website-name">{this.name}</span>
+                )}
+              </a>
+            </div>
 
             <slot />
           </div>
