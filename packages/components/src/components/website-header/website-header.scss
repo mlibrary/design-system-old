@@ -45,22 +45,24 @@
 
 .website-header__logo-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-    align-items: baseline;
+  @media screen and (min-width: 721px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-    svg {
-      margin-bottom: var(--space-x-small);
+    .website-header__lib-link {
+      margin-bottom: 0;
     }
   }
 }
 
 .website-header__lib-link {
   margin-right: var(--space-medium);
+  display: inline-block;
   line-height: 0;
+  margin-bottom: var(--space-x-small);
 }
 
 .website-header__website-home-link {
@@ -79,4 +81,6 @@
   display: block;
   font-size: var(--text-large);
   text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
 }
