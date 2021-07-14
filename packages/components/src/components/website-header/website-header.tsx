@@ -50,6 +50,7 @@ export class WebsiteHeader {
           <div class="website-header__inner-container">
             <div class="website-header__logo-container">
               <a href="https://www.lib.umich.edu/" class="website-header__lib-link">
+                <span class="visually-hidden">University of Michigan Library</span>
                 <m-logo variant={logoVariant}></m-logo>
               </a>
 

@@ -40,7 +40,7 @@ fs.readdir(sourcePath, function(error, files) {
     const file = fs.readFileSync(filePath, "utf8");
     const processedFile = file.replace(
       `width="24" height="24"`,
-      `role="presentation" width="16" height="16" fill="currentColor" focusable="false"`
+      `role="presentation" focusable="false" aria-hidden="false" width="16" height="16" fill="currentColor"`
     );
 
     const distName = fileName
