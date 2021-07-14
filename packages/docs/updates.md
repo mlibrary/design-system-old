@@ -6,6 +6,12 @@ description: Read the latest updates from the Design System team. We will highli
 
 {{ description }}
 
+## July 2021
+
+- Website Header: Added a dark variant to support a refresh to Deep Blue Documents.
+- Website Header: Removed the divider between the logo and the website name and condensed the text for a better use of space.
+- Added `aria-hidden="true"` to SVGs since they are purely presentational.
+
 ## February 2021
 
 <img src="/static/images/redesigned-landing-page.png" alt="" />
