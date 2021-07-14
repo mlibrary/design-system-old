@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/docs",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Documentation website for the U-M Library Design System.",
   "main": "index.js",
   "private": true,
@@ -15,7 +15,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@umich-lib/components": "^1.0.9",
+    "@umich-lib/components": "^1.1.0",
     "@umich-lib/css": "^1.0.9",
     "@umich-lib/tokens": "^1.0.7",
     "eleventy-plugin-sass": "^1.0.0",
