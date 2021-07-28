@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700");
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700');
 
-@import "design-tokens.custom-properties.css";
+@import '../../design-tokens.custom-properties.css';
 
 /*
  * Variables
@@ -235,8 +235,7 @@ dl.record {
 
 *:focus {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--color-maize-400),
-    0 0 0 3px var(--color-neutral-400);
+  box-shadow: 0 0 0 2px var(--color-maize-400), 0 0 0 3px var(--color-neutral-400);
   border-radius: 2px !important;
 }
 
@@ -307,7 +306,7 @@ footer.page-footer {
 
   @media screen and (min-width: 820px) {
     & p {
-      display: "inline-block";
+      display: 'inline-block';
     }
 
     & p + p {
@@ -356,7 +355,7 @@ td {
 }
 
 .page-navigation-main {
-  grid-column: 3
+  grid-column: 3;
 }
 
 .breadcrumbs,
@@ -397,7 +396,7 @@ td {
   & a {
     font-size: 1rem;
 
-    &[aria-current="page"] {
+    &[aria-current='page'] {
       color: var(--color-neutral-400);
       text-decoration: none;
 
@@ -409,7 +408,7 @@ td {
   }
 
   & li:not(:first-child):before {
-    content: "\2215";
+    content: '\2215';
     font-size: 1rem;
   }
 }
@@ -439,7 +438,7 @@ td {
       text-decoration: underline;
     }
 
-    &[aria-current="page"] {
+    &[aria-current='page'] {
       font-weight: 700;
       color: var(--color-teal-400);
     }
@@ -456,11 +455,11 @@ td {
     text-decoration: none;
     color: var(--color-neutral-400);
 
-    &:not([aria-current="page"]):hover {
+    &:not([aria-current='page']):hover {
       text-decoration: underline;
     }
 
-    &[aria-current="page"] {
+    &[aria-current='page'] {
       color: var(--color-teal-400);
       font-weight: 700;
       border-bottom: 4px solid var(--color-teal-400);
@@ -469,44 +468,42 @@ td {
 }
 
 @media (min-width: 920px) {
+  .page {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'breadcrumb breadcrumb'
+      'neighbors heading'
+      'neighbors grouping'
+      'neighbors content';
 
-.page {
-  display: grid;
-  grid-template-columns: 14rem 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-  "breadcrumb breadcrumb"
-  "neighbors heading"
-  "neighbors grouping"
-  "neighbors content";
+    grid-gap: 0 var(--space-xxx-large);
 
-  grid-gap: 0 var(--space-xxx-large);
+    & .breadcrumbs {
+      margin: var(--space-x-large) 0;
+      grid-area: breadcrumb;
+    }
 
-  & .breadcrumbs {
-    margin: var(--space-x-large) 0;
-    grid-area: breadcrumb;
+    & .menu-nav {
+      grid-area: grouping;
+      margin-top: var(--space-x-large);
+      margin-bottom: var(--space-large);
+    }
+
+    & .aside-nav {
+      grid-area: neighbors;
+    }
+
+    & .page-heading {
+      margin: 0;
+      grid-area: heading;
+    }
+
+    & .page-content {
+      grid-area: content;
+    }
   }
-
-  & .menu-nav {
-    grid-area: grouping;
-    margin-top: var(--space-x-large);
-    margin-bottom: var(--space-large);
-  }
-
-  & .aside-nav {
-    grid-area: neighbors;
-  }
-
-  & .page-heading {
-    margin: 0;
-    grid-area: heading;
-  }
-
-  & .page-content {
-    grid-area: content;
-  }
-}
-
 }
 
 .prose {
@@ -534,7 +531,7 @@ td {
     position: relative;
     display: flex;
     flex-direction: column;
-  
+
     & > a {
       text-decoration: none;
       border: solid 1px var(--color-neutral-100);
@@ -544,7 +541,7 @@ td {
       height: 100%;
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         top: 0;
@@ -554,7 +551,7 @@ td {
 
       &:hover {
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
-        
+
         & > h3 {
           text-decoration-thickness: 2px;
         }

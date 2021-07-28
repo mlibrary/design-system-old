@@ -3,11 +3,13 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
   
-  // Copy everything in static to _site
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("static");
+  // Pass styles
+  eleventyConfig.addPassthroughCopy("umich-lib.css");
+  eleventyConfig.addWatchTarget("umich-lib.css");
 
-  // To handle the service worker.
-  eleventyConfig.addPassthroughCopy("sw.js");
-  eleventyConfig.addWatchTarget("css");
+  // Pass components
+  eleventyConfig.addPassthroughCopy("loader");
+  eleventyConfig.addPassthroughCopy("dist");
+  eleventyConfig.addWatchTarget("loader");
+  eleventyConfig.addWatchTarget("dist");
 };

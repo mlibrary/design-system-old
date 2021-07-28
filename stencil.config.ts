@@ -22,8 +22,8 @@ export const config: Config = {
   plugins: [
     postcss({
       injectGlobalPaths: [
-        'src/css/design-tokens.custom-properties.css',
+        'design-tokens.custom-properties.css',
       ]
-    })
+    }),
   ]
 };

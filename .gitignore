@@ -1,3 +1,6 @@
+umich-lib.css
+design-tokens.custom-properties.css
+
 dist/
 www/
 loader/
