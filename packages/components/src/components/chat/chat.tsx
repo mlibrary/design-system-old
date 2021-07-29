@@ -116,7 +116,7 @@ export class Chat {
 
 function ChatIcon() {
   return (
-    <svg height="24" viewBox="0 0 24 24" width="24" class="m-chat__svg" aria-hidden="false" focusable="false">
+    <svg height="24" viewBox="0 0 24 24" width="24" class="m-chat__svg" aria-hidden="true" focusable="false">
       <path
         d="m15.65 15.92v1.88a1.44 1.44 0 0 1 -.43 1 1.37 1.37 0 0 1 -1 .44h-10.3l-2.92 2.96v-13.2a1.39 1.39 0 0 1 .42-1 1.36 1.36 0 0 1 1-.43h5.93v6.9a1.4 1.4 0 0 0 .43 1 1.33 1.33 0 0 0 1 .44z"
         fill="#ffcc06"
