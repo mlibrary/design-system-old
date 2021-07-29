@@ -8,13 +8,31 @@ Are you trying to find [design system documentation](https://design-system.lib.u
 
 We expect that you have basic working understanding of [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML), [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript), [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), and [Github](https://docs.github.com/en/github).
 
-To start development after typical cloning and installing, run this script:
-
 ```
-$ npm start
+git clone https://github.com/mlibrary/design-system.git
+cd design-system
+```
+Build the images
+```
+docker-compose build
 ```
 
-The Developer Workshop will then be available at [http://localhost:3000/](http://localhost:3000/). This web page serves as a design system workshop to develop web components and styles and learn how to use the system.
+Install the npm packages on your host machine
+```
+docker-compose run --rm web npm install
+```
+
+Build everything locally
+```
+docker-compose run --rm web npm run build
+```
+
+Start everything
+``
+docker-compose up
+```
+
+The Developer Workshop will then be available at [http://localhost:8080/](http://localhost:8080/). This web page serves as a design system workshop to develop web components and styles and learn how to use the system.
 
 ## Reference, A to Z
 
