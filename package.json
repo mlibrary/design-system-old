@@ -11,17 +11,20 @@
   "files": [
     "dist/",
     "loader/",
-    "build/",
     "umich-lib.css"
   ],
   "scripts": {
-    "build": "stencil build --docs",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "components": "stencil build --watch",
-    "css": "gulp",
-    "develop": "npx @11ty/eleventy --serve"
+    "build-tokens": "theo design-tokens.json --transform web --format custom-properties.css --dest .",
+    "build-css": "postcss ./src/css/umich-lib.css -d .",
+    "build-components": "stencil build --docs",
+    "watch-tokens": "chokidar \"design-tokens.json\" -c \"npm run build-tokens\"",
+    "watch-css": "chokidar \"design-tokens.custom-properties.css\" \"./src/css/umich-lib.css\" -c \"npm run build-css\"",
+    "watch-components": "stencil build --watch",
+    "build": "npm run build-tokens && npm run build-css && npm run build-components",
+    "start": "npx @11ty/eleventy --serve"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
@@ -32,14 +35,17 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
     "gulp-theo": "^2.0.1",
-    "postcss": "^8.2.8",
     "postcss-import": "^14.0.0",
     "postcss-nesting": "^7.0.1",
-    "theo": "^8.1.5"
+    "theo": "salesforce-ux/theo"
   },
   "license": "MIT",
   "devDependencies": {
     "@stencil/postcss": "^2.0.0",
-    "@stencil/sass": "^1.4.1"
+    "@stencil/sass": "^1.4.1",
+    "chokidar-cli": "^2.1.0",
+    "classnames": "^2.3.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1"
   }
 }

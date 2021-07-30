@@ -23,7 +23,8 @@ import { Component, State, h, Listen } from "@stencil/core";
  */
 @Component({
   tag: "m-universal-header",
-  styleUrl: "universal-header.css"
+  styleUrl: "universal-header.scss",
+  shadow: true
 })
 export class UniversalHeader {
   @State() open = false;

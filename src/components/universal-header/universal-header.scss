@@ -1,8 +1,20 @@
-:host {
+.m-uh {
   background: var(--color-blue-100);
   font-family: var(--font-base-family);
   line-height: var(--line-height-default);
   font-size: 16px;
+
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale; /* Firefox */
+  }
+
+  *:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--color-maize-400), 0 0 0 3px var(--color-neutral-400);
+    border-radius: 2px !important;
+  }
 }
 
 .m-uh__content {
@@ -11,19 +23,6 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--space-medium);
-
-  & * {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased; /* Chrome, Safari */
-    -moz-osx-font-smoothing: grayscale; /* Firefox */
-  }
-
-  & *:focus {
-    outline: 0;
-    box-shadow: 0 0 0 2px var(--color-maize-400),
-      0 0 0 3px var(--color-neutral-400);
-    border-radius: 2px !important;
-  }
 
   @media screen and (min-width: 721px) {
     padding: 0 var(--space-xx-large);
@@ -123,7 +122,7 @@
 
   @media screen and (min-width: 721px) {
     display: grid;
-    grid-template: "heading heading" "primary secondary" / 1fr 280px;
+    grid-template: 'heading heading' 'primary secondary' / 1fr 280px;
     padding: var(--space-medium);
     width: 862px;
     right: 0;
@@ -223,11 +222,11 @@
 .m-uh__dropdown-error {
   padding: 0 var(--space-medium);
 
-  & strong {
+  strong {
     font-weight: var(--bold);
   }
 
-  & a {
+  a {
     color: var(--color-teal-400);
   }
 }
