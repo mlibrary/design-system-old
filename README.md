@@ -12,23 +12,28 @@ We expect that you have basic working understanding of [HTML](https://developer.
 git clone https://github.com/mlibrary/design-system.git
 cd design-system
 ```
+
 Build the images
+
 ```
 docker-compose build
 ```
 
 Install the npm packages on your host machine
+
 ```
 docker-compose run --rm web npm install
 ```
 
 Build everything locally
+
 ```
 docker-compose run --rm web npm run build
 ```
 
 Start everything
-``
+
+```
 docker-compose up
 ```
 

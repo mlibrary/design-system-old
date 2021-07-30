@@ -5,13 +5,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property  | Attribute | Description                                                     | Type     | Default     |
-| --------- | --------- | --------------------------------------------------------------- | -------- | ----------- |
-| `variant` | `variant` | Select the Website Header variant.  Options:   - light   - dark | `string` | `undefined` |
-
-
 ## Dependencies
 
 ### Used by
