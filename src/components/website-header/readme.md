@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                              | Type     | Default     |
-| -------- | --------- | ------------------------------------------------------------------------ | -------- | ----------- |
-| `name`   | `name`    | The user-friendly name of the U-M Library website that uses this Header. | `string` | `undefined` |
-| `to`     | `to`      | The URL linked to when you click the website name.                       | `string` | `"/"`       |
+| Property  | Attribute | Description                                                              | Type     | Default     |
+| --------- | --------- | ------------------------------------------------------------------------ | -------- | ----------- |
+| `name`    | `name`    | The user-friendly name of the U-M Library website that uses this Header. | `string` | `undefined` |
+| `to`      | `to`      | The URL linked to when you click the website name.                       | `string` | `"/"`       |
+| `variant` | `variant` | Optionally set to `dark` for a blue background.                          | `string` | `undefined` |
 
 
 ## Slots
