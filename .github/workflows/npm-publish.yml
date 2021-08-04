@@ -29,9 +29,13 @@ jobs:
         run: npm install
       - name: build package
         run: npm run build
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - name: bump up version
         run: |
-          npm version prerelease --preid rc
+          npm version prerelease --preid ${{ steps.extract_branch.outputs.branch }} 
           git push
       #- name: publish
         #run: docker run design-system --env NODE_AUTH_TOKEN npm publish
