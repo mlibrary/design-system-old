@@ -37,7 +37,5 @@ jobs:
         run: |
           npm version prerelease --preid ${{ steps.extract_branch.outputs.branch }} 
           git push
-      #- name: publish
-        #run: docker run design-system --env NODE_AUTH_TOKEN npm publish
-        #env:
-          #NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: publish
+        run: npm publish --access public
