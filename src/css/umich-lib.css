@@ -269,10 +269,10 @@ footer.page-footer a {
     margin-left: var(--space-x-large);
   }
 }
-table {
+table.table {
   width: 100%;
 }
-th {
+.table th {
   text-align: left;
   border-bottom: solid 2px var(--color-maize-400);
   font-size: 0.875rem;
@@ -280,18 +280,18 @@ th {
   letter-spacing: 1.25px;
   text-transform: uppercase;
 }
-th,
-td {
+.table th,
+.table td {
   padding: var(--space-medium);
   padding-left: 0;
   padding-right: 0;
   vertical-align: top;
 }
-th:not(:last-of-type),
-td:not(:last-of-type) {
+.table th:not(:last-of-type),
+.table td:not(:last-of-type) {
   padding-right: var(--space-x-large);
 }
-td {
+.table td {
   border-bottom: solid 1px var(--color-neutral-100);
 }
 .page-navigation-container {
