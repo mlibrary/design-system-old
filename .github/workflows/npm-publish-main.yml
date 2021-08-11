@@ -1,0 +1,83 @@
+name: Build and Publish Main
+on: 
+  workflow_dispatch:
+    inputs:
+      commit_hash:
+        description: Commit Hash to be Deployed
+        required: true
+      version_type:
+        description: major | minor | patch
+        required: true
+        default: minor
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  npm_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Check that version_type has the correct string
+        run: |
+          if [[ "${{ github.event.inputs.version_type }}" == 'major' ]]; then
+            true
+          elif [[ "${{ github.event.inputs.version_type }}" == 'minor' ]]; then
+            true
+          elif [[ "${{ github.event.inputs.version_type }}" == 'patch' ]]; then
+            true
+          else
+            echo "Version Type must match one of 'major' or 'minor' or 'patch'"
+            echo "Aborting deployment."
+            false
+          fi
+      - name: Check that commit hash exists
+        run: |
+          if git rev-parse '${{ github.event.inputs.commit_hash }}' &> /dev/null; then
+            true
+          else
+            echo "Couldn't find matching commit hash from input: ${{ github.event.inputs.commit_hash }}"
+            echo "Aborting deployment."
+            false
+          fi
+      - name: Check that commit is in the main branch
+        run: |
+          if git branch -a --contains '${{ github.event.inputs.commit_hash }}' | grep main &> /dev/null; then
+            true
+          else
+            echo "commit hash ${{ github.event.inputs.commit_hash }} is not in main branch"
+            echo "Aborting deployment."
+            false
+          fi
+      - name: Check that commit hash matches commit of this action
+        run: |
+          if git rev-parse HEAD | grep '${{ github.event.inputs.commit_hash }}' &> /dev/null; then
+            true
+          else
+            echo "Commit of this run is:"
+            git rev-parse HEAD
+            echo "Commit hash ${{ github.event.inputs.commit_hash }} is not the commit in this action"
+            echo "Aborting deployment."
+            false
+          fi
+      - name: config git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: install dependencies
+        run: npm install
+      - name: build package
+        run: npm run build
+      - name: bump up version
+        run: |
+          npm version ${{ github.event.inputs.version_type }}  
+          git push
+      - name: publish
+        run: npm publish --access public
