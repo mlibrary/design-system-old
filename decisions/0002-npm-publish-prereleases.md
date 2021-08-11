@@ -4,18 +4,16 @@ March 15, 2021
 
 ## Context
 
-We wanted a structured way to collaborate on prereleases over a CDN, to enable development of new components and styles across our projects.
+We want an automated way to collaborate on prereleases over a CDN to enable sharing and collaboration of pre released new components and styles across our projects.
 
 ## Decisions
 
-We will through a Github Action, we are watching changes to the `dev` branch and will deploy those automatically.
-
-To use these development prereleases then use the `@prerelease` tag:
+With a Github Action build a `prerelease` tagged by the name of the branch for each Pull Request.
 
 ```
-<link href="https://unpkg.com/@umich-lib/css@prerelease/dist/umich-lib.css" rel="stylesheet"/>
-<script type="module" src="https://unpkg.com/@umich-lib/components@prerelease/dist/umich-lib/umich-lib.esm.js"></script>
-<script nomodule src="https://unpkg.com/@umich-lib/components@prerelease/dist/umich-lib/umich-lib.js"></script>
+<link href="https://unpkg.com/@umich-lib/web@prerelease/umich-lib.css" rel="stylesheet"/>
+<script type="module" src="https://unpkg.com/@umich-lib/web#@prerelease/dist/umich-lib/umich-lib.esm.js"></script>
+<script nomodule src="https://unpkg.com/@umich-lib/web@prerelease/dist/umich-lib/umich-lib.js"></script>
 ```
 
 ## Status
