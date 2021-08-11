@@ -1,7 +1,8 @@
-name: Build and Publish Pull Request
+name: Build and Publish on Push to Dev
 on: 
-  pull_request:
-    types: [ opened, edited, reopened ]
+  push:
+    branches:
+        - dev
 
 env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
