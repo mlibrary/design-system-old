@@ -1,6 +1,7 @@
 name: Build and Publish Pull Request
 on: 
-  push:
+  pull_request:
+    types: [ opened, edited, reopened ]
 
 env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
