@@ -1,7 +1,8 @@
-name: Build and Publish Pull Request
-on:                                                                                                                                                                                                          
-  pull_request:                                                                                                                                                                                              
-    types: [ opened, edited, reopened ] 
+name: Build and Publish on Push to Dev
+on: 
+  push:
+    branches:
+        - dev
 
 env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
@@ -33,7 +34,11 @@ jobs:
       - name: bump up version
         run: |
           npm version prerelease --no-git-tag-version --preid ${{ steps.extract_branch.outputs.branch }} 
+<<<<<<< HEAD
           git commit -am "prerelease tag"
+=======
+          git commit -am "update prerelease version"
+>>>>>>> dev
           git push
       - name: publish
         run: npm publish --access public

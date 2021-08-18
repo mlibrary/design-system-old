@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+/>
+    <title>Workshop — Design System — University of Michigan Library</title>
+    <link href="umich-lib.css" rel="stylesheet"/>
+    <script type="module" src="dist/umich-lib/umich-lib.esm.js"></script>
+    <script nomodule src="dist/umich-lib/umich-lib.js"></script>
+  </head>
+  <body>
+    <m-universal-header></m-universal-header>
+    <m-website-header></m-website-header>
+
+    <style>
+      :root {
+        --line-length: 65ch;
+
+        @media (min-width: 960px) {
+          --line-length: 75ch;
+        }
+      }
+
+      .easy-reading > p {
+        max-width: var(--line-length, 60ch);
+      }
+
+      .working-concept {
+        border-top: solid var(--space-xx-small) var(--color-maize-400);
+        border-bottom: solid 1px var(--color-blue-400);
+        padding: var(--space-xxx-large) 0;
+      }
+
+      .workshop-header-container {
+        border-bottom: solid 1px var(--color-blue-400);
+        padding: var(--space-large) 0;
+      }
+
+      #page-heading {
+        margin-top: 0;
+      }
+    </style>
+
+    <!--
+      
+      Q: Hey, what is "var(--space-large)"?
+      A: A CSS custom property
+
+      Learn more about custom properties:
+      https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+      The design system offers colors and spacings as custom properties:
+      https://design-system.lib.umich.edu/design-tokens/
+
+    -->
+
+    <div class="workshop-header-container">
+      <header class="viewport-container easy-reading" 
+      aria-labelled-by="page-heading">
+        <h1 id="page-heading">
+          <span class="subtle-heading">Design System</span><br>HTML & CSS Workshop</h1>
+
+        <p>This page is maintained by the <a href="https://design-system.lib.umich.edu/">design system team</a> to design and prepare changes for our next release.</p>
+
+        <p>Do you have an idea for the workshop to be designed and included in next release? Then make your changes to <code>index.html</code> and <code>src/css/umich-lib.css</code> files and submit pull request on Github to start the conversation.</p>
+
+        <p>
+          <a href="https://github.com/mlibrary/design-system/blob/main/README.md">To get started with development read the GitHub repository README.</a>
+        </p>
+
+        <p>The rest of this page has sections of workshop design system concepts with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">css selector</a> (eg, <code>[a]</code>) and HTML examples where you can <a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Open_the_Inspector">use your browser to inspect the HTML on this page</a>.</p>
+
+        <p>
+          <strong>The remaining content on this page is working concepts</strong>
+      that will be considered for the next design system release and reviewed by those responsible or interested.</p>
+      </header>
+    </div>
+
+    <section class="working-concept">
+      <div class="viewport-container">
+        <h2>Buttons</h2>
+
+        <p>
+          <code>[.button] [.button-most-important]</code>
+        </p>
+        <button class="button">.button</button>
+        <button class="button-most-important">.button-most-important</button>
+
+        <h2>Links</h2>
+
+        <p>
+          <code>[a]</code>
+        </p>
+
+        <p>What are the <a href="https://design-system.lib.umich.edu/updates/">latest updates</a> from the Design System team?</p>
+
+        <h2>List</h2>
+
+        <p>
+          <code>[ul]</code>
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://www.erikkroes.nl/blog/semantics-what-does-it-mean/">Semantics, what does it mean?</a>
+          </li>
+        </ul>
+
+        <h2>Record</h2>
+
+        <code>[dl.record]</code>
+        <dl class="record">
+          <dt>Street and No.</dt>
+          <dd>409 N. Ann Arbor St.</dd>
+          <dt>Municipal Unit</dt>
+          <dd>Saline</dd>
+          <dt>County</dt>
+          <dd>Washtenaw</dd>
+          <dt>Original Usage</dt>
+          <dd>Residence</dd>
+          <dt>Present Usage</dt>
+          <dd>Residence</dd>
+          <dt>Ownership</dt>
+          <dd>Wiegand, James H. II</dd>
+          <dt>Photo Negative No.</dt>
+          <dd>17:17</dd>
+          <dt>Photo Date</dt>
+          <dd>January, 1994</dd>
+          <dt>Photo View</dt>
+          <dd>South and east facades taken facing northwest</dd>
+          <dt>Description</dt>
+          <dd>One and a half story, side gabled, Craftsman style house. Gabled dormer on center front facade. Full width porch with massive shingled support piers resting on a solid balustrade. Rectangular shed roof bay on south facade. Variety of window configurations: paired dormers are five vertical panes over one; bay windows are four over one; soe on over one; and center front has one large pane with two small rectangular lights above. Barn red wood shingles on exterior facade. Brick chimney on north facade. One and a half car, gable front garage at rear.</dd>
+          <dt>Date of Construction</dt>
+          <dd>1914</dd>
+          <dt>Context</dt>
+          <dd>The house was probably build by Orrin Briggs around 1914. The 1912 Sanborn map shows that Orrin Briggs had a planning mill on the property to the south (Orrin Parsons owned the planning before that, as early as 1988). Mr. Briggs lived in the house until his death in 1935, then his wife, Francis, lived in it until 1947. Mr. Briggs also owned the property to the north. Other owners: Charles Burkhardt in 1960; DAvid Harwood and Susan McDonald; and James H. Wiegand II 1994.</dd>
+          <dt>Bibliographic Reference</dt>
+          <dd>City Directories: 1878, 1894, 1899, 1912, 1916, 1920, 1926, 1941, 1945. Assessor's files: 1947 and current; U.S. Census:
+        1910, 1920. Sanborn Maps: 1888, 1893, 1899, 1912, 1921, 1929; Tax Rolls: 1931 and 1935.</dd>
+          <dt>From Source</dt>
+          <dd>MICHIGAN DEPARTMENT OF STATE KG 105</dd>
+          <dt>Survey Date</dt>
+          <dd>May, 1994</dd>
+          <dt>Surveyor</dt>
+          <dd>K. Glynn & S. Kosky</dd>
+          <dt>Recorder Date</dt>
+          <dd>April, 1994</dd>
+          <dt>Card No.</dt>
+          <dd>105</dd>
+        </dl>
+
+        <h2>Strong</h2>
+
+        <p>
+          <code>[strong]</code>
+        </p>
+
+        <p>The design system exists to build trust in our <strong>digital services</strong> and create components and standards that are reusable, equitable, informed by research, and available to the public.</p>
+
+        <h2>Table</h2>
+
+        <p>
+          <code>[table]</code>
+        </p>
+
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
+          <h2>Keyboard controls</h2>
+
+          <p>
+            <code>[kbd]</code>
+          </p>
+
+          <p>
+            Press <kbd>CMD</kbd> and <kbd>/</kbd> to open your A to Z service finder.
+          </p>
+        </div>
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
+          <h2>Navigation</h2>
+
+          <nav aria-label="breadcrumbs" class="breadcrumbs">
+            <h3>Breadcrumbs</h3>
+
+            <p>
+              <code>
+                ol.breadcrumbs, a[aria-current="page"]
+              </code>
+            </p>
+
+            <ol>
+              <li>
+                <a href="https://www.lib.umich.edu/">Home</a>
+              </li>
+              <li>
+                <a href="#">Top level page</a>
+              </li>
+              <li>
+                <a href="#">Second level page</a>
+              </li>
+              <li>
+                <a href="#" aria-current="page"> Third level page</a>
+              </li>
+              <!-- Keep this for easy right click and copy linking for the user in browser? -->
+            </ol>
+          </nav>
+          <nav aria-label="aside" class="aside-nav">
+            <h3>Aside Nav</h3>
+
+            <p>
+              <code>
+                ol.aside-nav, a[aria-current="page"]
+              </code>
+            </p>
+
+            <ol>
+              <li>
+                <a href="#">Aside page 1</a>
+              </li>
+              <li>
+                <a href="#" aria-current="page">Aside page 2</a>
+              </li>
+              <li>
+                <a href="#">Aside page 3</a>
+              </li>
+              <li>
+                <a href="#">Aside page 4</a>
+              </li>
+              <li>
+                <a href="#">Aside page 5</a>
+              </li>
+            </ol>
+          </nav>
+
+          <nav aria-label="menu" class="menu-nav">
+            <h3>Menu Nav</h3>
+
+            <code>There is more to be worked on here, but the general idea is the menu is scrollable on the Y axis, but when that happens a menu button opens up on the left that pops out a list of all menu options. Kind of how the explore menu has a dropdown. This will allow for a lot of flexibility for responsive options. Use IntersectionObserver to trigger that MENU button on intersection of scrolling. Should be fairly straight forward, just use the browser features.
+            </code>
+
+            <p>
+              <code>.menu-nav, a[aria-current="page"]</code>
+            </p>
+
+            <ol>
+              <li>
+                <a href="#" aria-current="page">Menu Option 1</a>
+              </li>
+              <li>
+                <a href="#">Menu Option 1</a>
+              </li>
+              <li>
+                <a href="#">Menu Option 2</a>
+              </li>
+              <li>
+                <a href="#">Menu Option 3</a>
+              </li>
+              <li>
+                <a href="#">Menu Option 4</a>
+              </li>
+              <li>
+                <a href="#">Menu Option 5</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
+          <h2>Page</h2>
+
+          <p>Use <code>[.page]</code> and inspect for details. You'll see how <code>nav</code> elements are composed into a page and layout is handled with <code>grid</code> CSS code.</p>
+
+          <div class="page">
+            <nav aria-label="breadcrumb" class="breadcrumbs">
+              <ol>
+                <li>
+                  <a href="https://www.lib.umich.edu/">Home</a>
+                </li>
+                <li>
+                  <a href="">About Us</a>
+                </li>
+                <li>
+                  <a href="">About the Library</a>
+                </li>
+                <li>
+                  <a href="" aria-current="page">Mission and Values</a>
+                </li>
+              </ol>
+            </nav>
+            <nav aria="secondary" class="menu-nav">
+              <ol>
+                <li>
+                  <a href="#">Our Organization</a>
+                </li>
+                <li>
+                  <a href="#" aria-current="page">Mission and Values</a>
+                </li>
+                <li>
+                  <a href="#">Assessment</a>
+                </li>
+                <li>
+                  <a href="#">Library Council</a>
+                </li>
+              </ol>
+            </nav>
+
+            <h1 class="page-heading">Mission and Values</h1>
+
+            <div class="page-content prose">
+              <p>We are a culture and place of sustained and supported innovation. We are indispensable partners in the world-changing work of the university, as we continually reinvent the library as the platform that enables discovery, teaching, learning, health, invention, and creative expression.</p>
+
+              <h2>Mission</h2>
+
+              <p>Our mission is to support, enhance, and collaborate in the instructional, research, and service activities of faculty, students, and staff, and contribute to the common good by collecting, organizing, preserving, communicating, sharing, and creating the record of human knowledge.</p>
+
+              <h2>Values</h2>
+
+              <p>
+                <strong>Excellence.</strong> Stay at the leading edge of redefining and reimagining the great research library in the context of an increasingly networked and digital world, while holding true to our broad and enduring mission.</p>
+
+              <p>
+                <strong>Engagement.</strong>  Deepen our engagement with the core campus missions: discovery, learning, health care, and public service.</p>
+
+              <p>
+                <strong>Diversity.</strong>  Develop deep skills, individually and collectively, in being a place and community that is inclusive, diverse, and embraces difference.</p>
+
+              <p>
+                <strong>Interdependence.</strong>  Embrace interdependence and cultivate opportunities to collaborate internally with each other as "One Library," locally with campus partners, and with our peers nationally and internationally.</p>
+
+              <p>
+                <strong>Humanity.</strong>  Embody integrity, compassion, empathy, equity, and ethical behavior.</p>
+
+              <img src="/static/umich-1907.jpg"/>
+
+              <h2>Strategic directions</h2>
+
+              <p>Over the next five to seven years, we will:</p>
+
+              <ul>
+                <li>Explore new ways to support the whole lifecycle of scholarship.</li>
+                <li>Continuously evolve and reimagine user-centered services.</li>
+                <li>Continuously improve our physical and digital spaces.</li>
+                <li>Affirm our commitment to and rethink our definition of collections.</li>
+                <li>Cultivate a positive workplace climate and a diverse and inclusive community.</li>
+                <li>Practice intentional and strategic planning.</li>
+              </ul>
+
+              <p>
+                <a href="https://lib.umich.edu/about-us/about-library/strategic-directions-and-objectives">Strategic Directions and Objectives</a>
+              </p>
+
+              <p>In support of our strategic directions, over the next few years we will advance our digital service ability through strategic cross-divisional collaboration to develop infrastructure, policies, and best practices that work towards just, equitable, and inclusive outcomes.</p>
+            </div>
+
+            <nav aria-labelled-by="neighbors-heading" class="aside-nav">
+              <h2 class="page-sub-sub-heading" id="neighbors-heading">About the Library</h2>
+
+              <ol>
+                <li>
+                  <a href="#">Our Organization</a>
+                </li>
+                <li>
+                  <a href="#" aria-current="page">Mission and Values</a>
+                </li>
+                <li>
+                  <a href="#">Strategic Directions and Objectives</a>
+                </li>
+                <li>
+                  <a href="#">Diversity, Equity, Inclusion, and Accessiblity</a>
+                </li>
+                <li>
+                  <a href="#">Library Technology System Changes</a>
+                </li>
+                <li>
+                  <a href="#">Advocacy for Employees</a>
+                </li>
+                <li>
+                  <a href="#">Assessment</a>
+                </li>
+                <li>
+                  <a href="#">Library Council</a>
+                </li>
+                <li>
+                  <a href="#">Library Blogs</a>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
+          <h2>Page previews</h2>
+
+          <p>Page previews typically use the link text that matches the page heading and it should be the only <code>h1</code> heading on the page. This is a great way to help people understand where they will and feel well oriented and comfortable when they arrive to that webpage. You could also consider matching the description of can match the metadata description of the page too.</p>
+
+          <p>
+            <code>[ul.page-previews]</code>
+          </p>
+
+          <p></p>
+
+          <ul class="page-previews">
+            <li>
+              <a href="">
+                <h3>Astronomy</h3>
+                <p>Theoretical and descriptive works on astronomy that reflect the university’s research needs.</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <h3>Biology and Natural History</h3>
+                <p>Materials in the biological sciences at all levels of inquiry.</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <h3>Chemistry</h3>
+                <p>Providing chemistry information, literature, and research across all aspects of the discipline.</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <h3>Earth and Environmental Sciences</h3>
+                <p>Physical sciences literature regarding the origin, evolution, and future of the Earth.</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <h3>Environment and Sustainability</h3>
+                <p>Collections supporting a wide range of environmental science and environmental policy specialties.</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <h3>Mathematics and Statistics</h3>
+                <p>A comprehensive collection of mathematics and statistics materials, from historical books to modern electronic content.</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
+          <h2>Message</h2>
+
+          <p>TODO</p>
+        </div>
+      </section>
+
+      <section class="working-concept">
+        <div class="viewport-container">
+          <h2>Page footer</h2>
+
+          <p>Use <code>[footer.page-footer]</code> then inspect element for child classes.</p>
+          <p>
+            <strong>Options</strong>
+          </p>
+
+          <table>
+            <tr>
+              <th>custom property</th>
+              <th>default</th>
+            </tr>
+            <tr>
+              <td>
+                <code>--column-width</code>
+              </td>
+              <td>
+                <code>280px</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <footer class="page-footer">
+          <div class="viewport-container">
+            <div class="page-footer__content">
+              <section>
+                <h2>University of Michigan Library</h2>
+                <p>913 S. University Avenue<br/>Ann Arbor, MI 48109</p>
+              </section>
+
+              <section>
+                <h2>First column list</h2>
+                <ul>
+                  <li>
+                    <a href="#">Navigation item 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 2</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 3</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 4</a>
+                  </li>
+                </ul>
+              </section>
+
+              <section>
+                <h2>Second column list</h2>
+                <ul>
+                  <li>
+                    <a href="#">Navigation item 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 2</a>
+                  </li>
+                </ul>
+              </section>
+
+              <section>
+                <h2>Third column list</h2>
+                <ul>
+                  <li>
+                    <a href="#">Navigation item 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 2</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 3</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 4</a>
+                  </li>
+                  <li>
+                    <a href="#">Navigation item 5</a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <div class="page-footer__disclaimer">
+            <div class="viewport-container">
+              <p>© 2021, Regents of the University of Michigan</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </section>
+  <m-chat></m-chat>
+</body>
+</html>
