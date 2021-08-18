@@ -77,7 +77,8 @@ jobs:
         run: npm run build
       - name: bump up version
         run: |
-          npm version ${{ github.event.inputs.version_type }}  
+          npm version ${{ github.event.inputs.version_type }} --no-git-tag-version 
+          git commit -am "update version"
           git push
       - name: publish
         run: npm publish --access public
