@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Check that version_type has the correct string
         run: |
           if [[ "${{ github.event.inputs.version_type }}" == 'major' ]]; then
@@ -77,7 +77,8 @@ jobs:
         run: npm run build
       - name: bump up version
         run: |
-          npm version ${{ github.event.inputs.version_type }}  
+          npm version ${{ github.event.inputs.version_type }} --no-git-tag-version 
+          git commit -am "update version"
           git push
       - name: publish
         run: npm publish --access public

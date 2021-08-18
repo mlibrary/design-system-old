@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/web",
-  "version": "1.0.1-dev.4",
+  "version": "1.1.0",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
@@ -9,9 +9,11 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/web-components/web-components.esm.js",
   "files": [
-    "dist/",
-    "loader/",
-    "umich-lib.css"
+    "dist",
+    "loader",
+    "umich-lib.css",
+    "svgs",
+    "icons.js"
   ],
   "scripts": {
     "test": "stencil test --spec --e2e",
@@ -19,33 +21,28 @@
     "generate": "stencil generate",
     "build-tokens": "theo ./src/tokens/design-tokens.json --transform web --format custom-properties.css --dest .",
     "build-css": "postcss ./src/css/umich-lib.css -d .",
+    "build-icons": "node ./src/icons/scripts/process-src-svgs.js && node ./src/icons/scripts/create-icons-file.js",
     "build-components": "stencil build --docs",
     "watch-tokens": "chokidar \"./src/tokens/design-tokens.json\" -c \"npm run build-tokens\"",
     "watch-css": "chokidar \"design-tokens.custom-properties.css\" \"./src/css/umich-lib.css\" -c \"npm run build-css\"",
     "watch-components": "stencil build --watch",
-    "build": "npm run build-tokens && npm run build-css && npm run build-components",
+    "build": "npm run build-tokens && npm run build-css && npm run build-icons && npm run build-components",
     "start": "npx @11ty/eleventy --serve"
   },
-  "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-    "@stencil/core": "^2.4.1",
-    "autoprefixer": "^9.8.6",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.0",
-    "gulp-theo": "^2.0.1",
-    "postcss-import": "^14.0.0",
-    "postcss-nesting": "^7.0.1",
-    "theo": "salesforce-ux/theo"
-  },
-  "license": "MIT",
   "devDependencies": {
     "@stencil/postcss": "^2.0.0",
     "@stencil/sass": "^1.4.1",
     "chokidar-cli": "^2.1.0",
     "classnames": "^2.3.1",
     "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1"
-  }
+    "postcss-cli": "^8.3.1",
+    "@11ty/eleventy": "^0.11.0",
+    "@stencil/core": "^2.4.1",
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
+    "postcss-import": "^14.0.0",
+    "postcss-nesting": "^7.0.1",
+    "theo": "salesforce-ux/theo"
+  },
+  "license": "MIT"
 }
