@@ -22,6 +22,7 @@
     "generate": "stencil generate",
     "build-tokens": "theo ./src/tokens/design-tokens.json --transform web --format custom-properties.css --dest .",
     "build-css": "postcss ./src/css/umich-lib.css -d .",
+    "build-icons": "node ./src/icons/scripts/process-src-svgs.js && node ./src/icons/scripts/create-icons-file.js",
     "build-components": "stencil build --docs",
     "build-svgs": "node ./src/svgs/scripts/process-src-svgs.js && node ./src/svgs/scripts/create-icons-file.js",
     "watch-tokens": "chokidar \"./src/tokens/design-tokens.json\" -c \"npm run build-tokens\"",
