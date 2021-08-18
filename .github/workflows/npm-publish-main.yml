@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Check that version_type has the correct string
         run: |
           if [[ "${{ github.event.inputs.version_type }}" == 'major' ]]; then
