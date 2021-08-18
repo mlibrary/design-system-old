@@ -1,11 +1,14 @@
 umich-lib.css
 design-tokens.custom-properties.css
 
+# Built directories and files
 dist/
 www/
 loader/
 css/
 _site/
+icons.js
+svgs/
 
 *~
 *.sw[mnpcod]
