@@ -114,7 +114,7 @@ export class UniversalHeader {
 
   render() {
     return [
-      <header class="m-uh">
+      <header class="m-uh" aria-label="library">
         <div class="m-uh__content">
           <a class="m-uh__link" href="https://www.lib.umich.edu/">
             <span class="m-uh__link-text">University of Michigan Library</span>
