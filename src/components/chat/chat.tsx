@@ -56,6 +56,7 @@ export class Chat {
         class={cn("m-chat", {
           "m-chat--open": this.open
         })}
+        role="log"
       >
         <button
           class="m-chat__button"
