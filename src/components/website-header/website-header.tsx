@@ -45,7 +45,7 @@ export class WebsiteHeader {
     const logoVariant = this.variant === 'dark' ? 'dark' : ''
 
     return (
-      <header class={"website-header" + variant} role={this.name || "website"}>
+      <header class={"website-header" + variant} aria-label={this.name || "website"}>
         <div class="website-header__container">
           <div class="website-header__inner-container">
             <div class="website-header__logo-container">
