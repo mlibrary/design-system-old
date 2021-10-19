@@ -20,6 +20,7 @@
     "build-tokens": "theo ./src/tokens/design-tokens.json --transform web --format custom-properties.css --dest .",
     "build-css": "postcss ./src/css/umich-lib.css -d .",
     "build-components": "stencil build --docs",
+    "build-svgs": "node ./src/svgs/scripts/process-src-svgs.js",
     "watch-tokens": "chokidar \"./src/tokens/design-tokens.json\" -c \"npm run build-tokens\"",
     "watch-css": "chokidar \"design-tokens.custom-properties.css\" \"./src/css/umich-lib.css\" -c \"npm run build-css\"",
     "watch-components": "stencil build --watch",
