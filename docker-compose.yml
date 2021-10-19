@@ -30,3 +30,11 @@ services:
     volumes:
       - .:/app
     command: "npm run watch-components"
+
+  svgs:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - SHELL=/bin/bash
+    command: "npm run watch-svgs"

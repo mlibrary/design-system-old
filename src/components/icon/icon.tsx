@@ -1,5 +1,5 @@
 import { Component, Prop, Host, h } from "@stencil/core";
-import icons from "./icons.js";
+import icons from "../../../icons.js";
 
 /**
  * @name Icon

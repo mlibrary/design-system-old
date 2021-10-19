@@ -11,7 +11,9 @@
   "files": [
     "dist/",
     "loader/",
-    "umich-lib.css"
+    "umich-lib.css",
+    "svgs/",
+    "icons.js"
   ],
   "scripts": {
     "test": "stencil test --spec --e2e",
@@ -20,10 +22,11 @@
     "build-tokens": "theo ./src/tokens/design-tokens.json --transform web --format custom-properties.css --dest .",
     "build-css": "postcss ./src/css/umich-lib.css -d .",
     "build-components": "stencil build --docs",
-    "build-svgs": "node ./src/svgs/scripts/process-src-svgs.js",
+    "build-svgs": "node ./src/svgs/scripts/process-src-svgs.js && node ./src/svgs/scripts/create-icons-file.js",
     "watch-tokens": "chokidar \"./src/tokens/design-tokens.json\" -c \"npm run build-tokens\"",
     "watch-css": "chokidar \"design-tokens.custom-properties.css\" \"./src/css/umich-lib.css\" -c \"npm run build-css\"",
     "watch-components": "stencil build --watch",
+    "watch-svgs": "chokidar \"./src/svgs/originals/\" -c npm run build-svgs",
     "build": "npm run build-tokens && npm run build-css && npm run build-components",
     "start": "npx @11ty/eleventy --serve"
   },
