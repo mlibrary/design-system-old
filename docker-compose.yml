@@ -1,14 +1,6 @@
 version: '3'
 
 services:
-  web:
-    build: .
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-    command: "npm start"
-
   tokens:
     build: .
     volumes:
@@ -16,6 +8,14 @@ services:
     environment:
       - SHELL=/bin/bash
     command: "npm run watch-tokens"
+  
+  svgs:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - SHELL=/bin/bash
+    command: "npm run watch-svgs"
 
   css:
     build: .
@@ -30,3 +30,11 @@ services:
     volumes:
       - .:/app
     command: "npm run watch-components"
+
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    command: "npm start"

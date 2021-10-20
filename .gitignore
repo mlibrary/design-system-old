@@ -1,7 +1,9 @@
 umich-lib.css
 design-tokens.custom-properties.css
 
-# Built directories and files
+icons.js
+./svgs/
+
 dist/
 www/
 loader/
