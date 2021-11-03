@@ -1,16 +1,49 @@
+m-callout {
+  display: block;
+  margin-bottom: var(--space-large);
+}
+
 .m-callout {
   border: solid 1px var(--color-neutral-100);
-  padding: var(--space-medium);
+  padding: var(--space-large);
   border-radius: 4px;
-  border-left: solid 4px var(--color-teal-400);
+  border-left: solid 6px var(--color-teal-400);
+
+  svg {
+    color: var(--color-teal-400);
+  }
+}
+
+.m-callout--with-icon {
+  display: grid;
+  grid-gap: var(--space-medium);
+  grid-template-columns: auto 1fr;
 }
 
 .m-callout--success {
   border-left-color: var(--color-green-500);
-  color: var(--color-green-500);
+
+  svg {
+    color: var(--color-green-500);
+  }
+}
+
+.m-callout--warning {
+  border-left-color: var(--color-maize-400);
+
+  svg {
+    color: var(--color-maize-400);
+  }
 }
 
 .m-callout--error {
-  border-left-color: var(--color-pink-400);
-  color: var(--color-pink-500);
+  border-left-color: var(--color-pink-500);
+
+  svg {
+    color: var(--color-pink-500);
+  }
+}
+
+.y-spacing > * + * {
+  margin-top: var(--spacing-large);
 }

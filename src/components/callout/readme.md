@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `state`  | `state`   |             | `string` | `'default'` |
+| Property      | Attribute     | Description | Type      | Default  |
+| ------------- | ------------- | ----------- | --------- | -------- |
+| `dismissable` | `dismissable` |             | `boolean` | `false`  |
+| `icon`        | `icon`        |             | `boolean` | `true`   |
+| `variant`     | `variant`     |             | `string`  | `'info'` |
 
 
 ## Dependencies

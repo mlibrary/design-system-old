@@ -7,12 +7,15 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MCallout {
-        "state": string;
+        "dismissable": boolean;
+        "icon": boolean;
+        "variant": string;
     }
     interface MChat {
     }
     interface MIcon {
         "name": string;
+        "size": string;
     }
     interface MLogo {
         /**
@@ -94,12 +97,15 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MCallout {
-        "state"?: string;
+        "dismissable"?: boolean;
+        "icon"?: boolean;
+        "variant"?: string;
     }
     interface MChat {
     }
     interface MIcon {
         "name"?: string;
+        "size"?: string;
     }
     interface MLogo {
         /**
