@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MCallout {
+        "state": string;
+    }
     interface MChat {
     }
     interface MIcon {
@@ -37,6 +40,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMCalloutElement extends Components.MCallout, HTMLStencilElement {
+    }
+    var HTMLMCalloutElement: {
+        prototype: HTMLMCalloutElement;
+        new (): HTMLMCalloutElement;
+    };
     interface HTMLMChatElement extends Components.MChat, HTMLStencilElement {
     }
     var HTMLMChatElement: {
@@ -74,6 +83,7 @@ declare global {
         new (): HTMLMWebsiteHeaderElement;
     };
     interface HTMLElementTagNameMap {
+        "m-callout": HTMLMCalloutElement;
         "m-chat": HTMLMChatElement;
         "m-icon": HTMLMIconElement;
         "m-logo": HTMLMLogoElement;
@@ -83,6 +93,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface MCallout {
+        "state"?: string;
+    }
     interface MChat {
     }
     interface MIcon {
@@ -113,6 +126,7 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface IntrinsicElements {
+        "m-callout": MCallout;
         "m-chat": MChat;
         "m-icon": MIcon;
         "m-logo": MLogo;
@@ -125,6 +139,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "m-callout": LocalJSX.MCallout & JSXBase.HTMLAttributes<HTMLMCalloutElement>;
             "m-chat": LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
             "m-icon": LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
             "m-logo": LocalJSX.MLogo & JSXBase.HTMLAttributes<HTMLMLogoElement>;
