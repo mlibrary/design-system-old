@@ -1,4 +1,4 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h, State } from "@stencil/core";
 
 /**
  * Related Design System Figma file:
@@ -24,6 +24,7 @@ export class Callout {
   @Prop({
     reflect: true
   }) icon: boolean = true;
+  @State() dismissed: boolean = false
 
   getIconName() {
     switch (this.variant) {
@@ -38,16 +39,34 @@ export class Callout {
     }
   }
 
+  dismiss(e) {
+    e.preventDefault()
+
+    this.dismissed = true;
+  }
+
   render() {
     const stateClassName = this.variant === 'info' ?
       '' : `m-callout--${this.variant}`
 
     const iconName = this.getIconName()
 
+    if (this.dismissed) {
+      return null
+    }
+
     return (
       <div class={`m-callout ${stateClassName} ${this.icon && 'm-callout--with-icon'}`} role="presentation">
         {this.icon && (<m-icon name={iconName} size="24"></m-icon>)}
-        <slot />
+        <div role="presentation" class="m-callout__inner-container"><slot /></div>
+        {this.dismissable &&
+          <button
+            onClick={(e) => this.dismiss(e)}
+            class="m-callout__dismiss"
+          >
+            Dismiss
+          </button>
+        }
       </div>
     )
   }

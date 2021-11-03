@@ -3,21 +3,45 @@ m-callout {
   margin-bottom: var(--space-large);
 }
 
+/*
+  For ensuring that the children (sort of like innerHTML)
+  does not add additional unnecessary padding.
+*/
+.m-callout__inner-container {
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .m-callout {
   border: solid 1px var(--color-neutral-100);
   padding: var(--space-large);
   border-radius: 4px;
-  border-left: solid 6px var(--color-teal-400);
+  border-left: solid 4px var(--color-teal-400);
+  display: grid;
+  grid-gap: var(--space-medium);
+  grid-template-columns: 1fr auto;
+
+  // This positoning is handled by grid and doesn't
+  // require any height.
+  > m-icon {
+    height: 0;
+  }
 
   svg {
     color: var(--color-teal-400);
+    line-height: 0;
   }
 }
 
 .m-callout--with-icon {
   display: grid;
   grid-gap: var(--space-medium);
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
 }
 
 .m-callout--success {
@@ -44,6 +68,15 @@ m-callout {
   }
 }
 
-.y-spacing > * + * {
-  margin-top: var(--spacing-large);
+.m-callout__dismiss {
+  all: unset;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  padding: var(--space-medium);
+  margin: calc(-1 * var(--space-medium));
+
+  &:hover {
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+  }
 }
