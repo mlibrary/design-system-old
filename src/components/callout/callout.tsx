@@ -9,16 +9,24 @@ import { Component, Prop, h, State } from "@stencil/core";
   styleUrl: "callout.scss",
 })
 export class Callout {
-  /* Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style. */
+  /**
+   * Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style.
+   * */
   @Prop() variant: 'info' | 'success' | 'error' | 'warning' = 'info';
 
-  /* Makes the element dismissable by the user with a button control. */
+  /**
+   * Makes the element dismissable by the user with a button control.
+   */
   @Prop() dismissable: boolean = false;
 
-  /* Set to `false` to remove the icon. */
+  /**
+   * Set to `false` to remove the icon.
+   */
   @Prop() icon: boolean = true;
 
-  /* Makes the element visually less strong by removing the background color. */
+  /**
+   * Makes the element visually less strong by removing the background color.
+   */
   @Prop() subtle: boolean = false;
   
   @State() dismissed: boolean = false

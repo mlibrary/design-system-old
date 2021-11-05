@@ -7,9 +7,21 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MCallout {
+        /**
+          * Makes the element dismissable by the user with a button control.
+         */
         "dismissable": boolean;
+        /**
+          * Set to `false` to remove the icon.
+         */
         "icon": boolean;
+        /**
+          * Makes the element visually less strong by removing the background color.
+         */
         "subtle": boolean;
+        /**
+          * Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style.
+         */
         "variant": 'info' | 'success' | 'error' | 'warning';
     }
     interface MChat {
@@ -98,9 +110,21 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MCallout {
+        /**
+          * Makes the element dismissable by the user with a button control.
+         */
         "dismissable"?: boolean;
+        /**
+          * Set to `false` to remove the icon.
+         */
         "icon"?: boolean;
+        /**
+          * Makes the element visually less strong by removing the background color.
+         */
         "subtle"?: boolean;
+        /**
+          * Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style.
+         */
         "variant"?: 'info' | 'success' | 'error' | 'warning';
     }
     interface MChat {
