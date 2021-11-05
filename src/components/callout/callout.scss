@@ -8,7 +8,7 @@ m-callout {
   does not add additional unnecessary padding.
 */
 .m-callout__inner-container {
-  & > *:first-child {
+  .m-callout__label + * {
     margin-top: 0;
   }
 
@@ -18,10 +18,11 @@ m-callout {
 }
 
 .m-callout {
-  border: solid 1px var(--color-neutral-100);
-  padding: var(--space-large);
+  background: var(--color-teal-100);
+  border-left: solid 1px var(--color-teal-400);
+  padding: var(--space-medium) var(--space-large);
   border-radius: 4px;
-  border-left: solid 4px var(--color-teal-400);
+  border-left-width: 4px;
   display: grid;
   grid-gap: var(--space-medium);
   grid-template-columns: 1fr auto;
@@ -29,7 +30,8 @@ m-callout {
   // This positoning is handled by grid and doesn't
   // require any height.
   > m-icon {
-    height: 0;
+    line-height: 1;
+    align-self: center;
   }
 
   svg {
@@ -45,7 +47,8 @@ m-callout {
 }
 
 .m-callout--success {
-  border-left-color: var(--color-green-500);
+  background: var(--color-green-100);
+  border-color: var(--color-green-400);
 
   svg {
     color: var(--color-green-500);
@@ -53,7 +56,8 @@ m-callout {
 }
 
 .m-callout--warning {
-  border-left-color: var(--color-maize-400);
+  background: var(--color-maize-100);
+  border-color: var(--color-maize-400);
 
   svg {
     color: var(--color-maize-400);
@@ -61,7 +65,8 @@ m-callout {
 }
 
 .m-callout--error {
-  border-left-color: var(--color-pink-500);
+  background: var(--color-pink-100);
+  border-color: var(--color-pink-400);
 
   svg {
     color: var(--color-pink-500);
@@ -72,11 +77,19 @@ m-callout {
   all: unset;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  padding: var(--space-medium);
-  margin: calc(-1 * var(--space-medium));
+  padding: var(--space-medium) var(--space-large);
+  margin: calc(-1 * var(--space-medium)) calc(-1 * var(--space-large));
+  margin-left: 0;
 
   &:hover {
     text-decoration-thickness: 2px;
     cursor: pointer;
   }
+}
+
+.m-callout--subtle {
+  background: none !important;
+  border-top: solid 1px var(--color-neutral-100);
+  border-right: solid 1px var(--color-neutral-100);
+  border-bottom: solid 1px var(--color-neutral-100);
 }

@@ -9,7 +9,8 @@ export namespace Components {
     interface MCallout {
         "dismissable": boolean;
         "icon": boolean;
-        "variant": string;
+        "subtle": boolean;
+        "variant": 'info' | 'success' | 'error' | 'warning';
     }
     interface MChat {
     }
@@ -99,7 +100,8 @@ declare namespace LocalJSX {
     interface MCallout {
         "dismissable"?: boolean;
         "icon"?: boolean;
-        "variant"?: string;
+        "subtle"?: boolean;
+        "variant"?: 'info' | 'success' | 'error' | 'warning';
     }
     interface MChat {
     }

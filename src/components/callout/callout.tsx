@@ -1,12 +1,6 @@
 import { Component, Prop, h, State } from "@stencil/core";
 
 /**
- * Related Design System Figma file:
- * 
- * https://www.figma.com/file/dxzvdBeoQTcBpSyMoLVQfY/Design-System-Design-Library?node-id=536%3A144
- */
-
-/**
  * @name Callout
  * @description For communicating important messages in a user's workflow.
  */
@@ -15,27 +9,42 @@ import { Component, Prop, h, State } from "@stencil/core";
   styleUrl: "callout.scss",
 })
 export class Callout {
-  @Prop({
-    reflect: true
-  }) variant: string = 'info'
-  @Prop({
-    reflect: true
-  }) dismissable: boolean = false;
-  @Prop({
-    reflect: true
-  }) icon: boolean = true;
+  /* Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style. */
+  @Prop() variant: 'info' | 'success' | 'error' | 'warning' = 'info';
+
+  /* Makes the element dismissable by the user with a button control. */
+  @Prop() dismissable: boolean = false;
+
+  /* Set to `false` to remove the icon. */
+  @Prop() icon: boolean = true;
+
+  /* Makes the element visually less strong by removing the background color. */
+  @Prop() subtle: boolean = false;
+  
   @State() dismissed: boolean = false
 
-  getIconName() {
+  getVariant() {
     switch (this.variant) {
       case 'success':
-        return 'check'
+        return {
+          iconName: 'check',
+          label: 'Success: '
+        }
       case 'error':
-        return 'warning'
+        return {
+          iconName: 'error',
+          label: 'Error: '
+        }
       case 'warning':
-        return 'info'
+        return {
+          iconName: 'warning',
+          label: 'Warning: '
+        }
       default:
-        return this.variant
+        return {
+          iconName: 'info',
+          label: 'Important information: '
+        }
     }
   }
 
@@ -49,16 +58,27 @@ export class Callout {
     const stateClassName = this.variant === 'info' ?
       '' : `m-callout--${this.variant}`
 
-    const iconName = this.getIconName()
+    const variant = this.getVariant()
 
     if (this.dismissed) {
       return null
     }
 
     return (
-      <div class={`m-callout ${stateClassName} ${this.icon && 'm-callout--with-icon'}`} role="presentation">
-        {this.icon && (<m-icon name={iconName} size="24"></m-icon>)}
-        <div role="presentation" class="m-callout__inner-container"><slot /></div>
+      <div
+        class={
+          `m-callout ${stateClassName}
+          ${this.icon && 'm-callout--with-icon'}
+          ${this.subtle && 'm-callout--subtle'}
+          `
+        }
+        role="presentation">
+        {this.icon && (
+          <m-icon name={variant.iconName} size="24"></m-icon>
+        )}
+        <div role="presentation" class="m-callout__inner-container">
+          <strong class="visually-hidden m-callout__label">{variant.label}</strong><slot />
+        </div>
         {this.dismissable &&
           <button
             onClick={(e) => this.dismiss(e)}

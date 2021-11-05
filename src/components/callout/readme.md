@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type      | Default  |
-| ------------- | ------------- | ----------- | --------- | -------- |
-| `dismissable` | `dismissable` |             | `boolean` | `false`  |
-| `icon`        | `icon`        |             | `boolean` | `true`   |
-| `variant`     | `variant`     |             | `string`  | `'info'` |
+| Property      | Attribute     | Description | Type                                          | Default  |
+| ------------- | ------------- | ----------- | --------------------------------------------- | -------- |
+| `dismissable` | `dismissable` |             | `boolean`                                     | `false`  |
+| `icon`        | `icon`        |             | `boolean`                                     | `true`   |
+| `subtle`      | `subtle`      |             | `boolean`                                     | `false`  |
+| `variant`     | `variant`     |             | `"error" \| "info" \| "success" \| "warning"` | `'info'` |
 
 
 ## Dependencies
