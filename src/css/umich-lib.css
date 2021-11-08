@@ -298,7 +298,7 @@ table.table {
   text-transform: uppercase;
   vertical-align: middle;
 }
-.table th:not([scope='row']) {
+.table th:not([scope^='row']) {
   border-bottom: solid var(--space-xxx-small) var(--color-maize-400);
 }
 .page-navigation-container {
