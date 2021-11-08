@@ -477,6 +477,13 @@
     },
     {
       "theme": "maize",
+      "name": "extrabold",
+      "category": "typography",
+      "value": "800",
+      "type": "font"
+    },
+    {
+      "theme": "maize",
       "name": "line-height-default",
       "category": "typography",
       "value": "1.5",
