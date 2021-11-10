@@ -288,7 +288,6 @@ table.m-table {
 }
 .m-table caption {
   color: var(--color-neutral-300);
-  margin-top: var(--space-medium);
 }
 .m-table tr > * {
   border-bottom: solid 1px var(--color-neutral-100);
@@ -308,8 +307,15 @@ table.m-table {
 .m-table th:not([scope^='row']) {
   border-bottom: solid var(--space-xxx-small) var(--color-maize-400);
 }
-@media only screen and (max-width: 640px) {
-  .m-table thead {
+.m-table tr > *[data-th]:before {
+  content: attr(data-th) ':\00a0';
+  display: none;
+}
+.m-table tr > td[data-th]:before {
+  font-weight: var(--semibold);
+}
+@media only screen and (max-width: 1200px) {
+  .m-table--responsive-large thead {
     position: absolute !important;
     height: 1px;
     width: 1px;
@@ -317,22 +323,67 @@ table.m-table {
     clip: rect(1px 1px 1px 1px);
     clip: rect(1px, 1px, 1px, 1px);
   }
-  .m-table tr > * {
+  .m-table--responsive-large tr > * {
     display: block;
   }
-  .m-table tr > *:not(:last-child) {
+  .m-table--responsive-large tr > *:not(:last-child) {
     border-bottom: 0;
     padding-bottom: 0;
     padding-right: 0;
   }
-  .m-table tr > *[data-th]:not(th) + *[data-th] {
+  .m-table--responsive-large tr > *[data-th]:not(th) + *[data-th] {
     padding-top: 0;
   }
-  .m-table tr > *[data-th]:before {
-    content: attr(data-th) ':\00a0';
+  .m-table--responsive-large tr > *[data-th]:before {
+    display: inline;
   }
-  .m-table tr > td[data-th]:before {
-    font-weight: 600;
+}
+@media only screen and (max-width: 920px) {
+  .m-table--responsive-medium thead {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .m-table--responsive-medium tr > * {
+    display: block;
+  }
+  .m-table--responsive-medium tr > *:not(:last-child) {
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+  .m-table--responsive-medium tr > *[data-th]:not(th) + *[data-th] {
+    padding-top: 0;
+  }
+  .m-table--responsive-medium tr > *[data-th]:before {
+    display: inline;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .m-table--responsive-small thead {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .m-table--responsive-small tr > * {
+    display: block;
+  }
+  .m-table--responsive-small tr > *:not(:last-child) {
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+  .m-table--responsive-small tr > *[data-th]:not(th) + *[data-th] {
+    padding-top: 0;
+  }
+  .m-table--responsive-small tr > *[data-th]:before {
+    display: inline;
   }
 }
 .m-table--responsive thead {
@@ -359,7 +410,7 @@ table.m-table {
   content: attr(data-header) ':\00a0';
 }
 .m-table--responsive tr > td[data-header]:before {
-  font-weight: 600;
+  font-weight: var(--semibold);
 }
 .page-navigation-container {
   display: grid;
