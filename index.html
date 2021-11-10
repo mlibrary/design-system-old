@@ -179,7 +179,7 @@
 - [x] Table captions
         </pre>
 
-        <table class="table">
+        <table class="m-table">
           <caption>This is a placeholder caption to show where it is displayed.</caption>
           <thead>
             <tr>
@@ -190,27 +190,60 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Search only</th>
-              <td>v.1-2 1966-69</td>
-              <td>Cornell University</td>
+              <th data-th="Link" scope="row">Search only</th>
+              <td data-th="Description">v.1-2 1966-69</td>
+              <td data-th="Source">Cornell University This is a placeholder caption to show where it is displayed.</td>
             </tr>
             <tr>
               <th scope="row">Search only</th>
-              <td>v.1-2 1966-69</td>
-              <td>Cornell University</td>
+              <td data-th="Description">v.1-2 1966-69</td>
+              <td data-th="Source">Cornell University This is a placeholder caption to show where it is displayed.</td>
             </tr>
             <tr>
               <th scope="row">Search only</th>
-              <td>v.1-2 1966-69</td>
-              <td>Cornell University</td>
+              <td data-th="Description">v.1-2 1966-69</td>
+              <td data-th="Source">Cornell University This is a placeholder caption to show where it is displayed.</td>
             </tr>
             <tr>
               <th scope="row">Search only</th>
-              <td>v.1-2 1966-69</td>
-              <td>Cornell University</td>
+              <td data-th="Description">v.1-2 1966-69</td>
+              <td data-th="Source">Cornell University This is a placeholder caption to show where it is displayed.</td>
             </tr>
           </tbody>
         </table>
+        <script>
+          // Make sure everything is loaded before continuing
+          window.addEventListener('load', () => {
+            // Responsive table class
+            const responsiveClass = 'm-table--responsive';
+            // Find and loop through each table
+            const getTables = document.querySelectorAll('table.m-table');
+            getTables.forEach((table) => {
+              // Get parent element
+              const parent = table.parentElement;
+              // Get smallest possible width of table
+              table.setAttribute('style', 'width: min-content;');
+              const tableWidth = table.scrollWidth;
+              table.removeAttribute('style');
+              // Add responsive table class if table width is greater than parent width
+              window.addEventListener('resize', (event) => {
+                // Get left and right padding of parent
+                let parentHorizontalPadding = 0;
+                ['left', 'right'].forEach((side) => parentHorizontalPadding += parseInt(getComputedStyle(parent).getPropertyValue(`padding-${side}`)));
+                // Get parent width, minus padding
+                const parentWidth = parent.clientWidth - parentHorizontalPadding;
+                // Compare widths and check if class exists
+                if (tableWidth > parentWidth) {
+                  table.classList.add(responsiveClass);
+                } else {
+                  table.classList.remove(responsiveClass);
+                }
+              });
+            });
+            // Trigger resize event
+            window.dispatchEvent(new Event('resize'));
+          });
+        </script>
       </section>
 
       <section class="working-concept">

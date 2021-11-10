@@ -113,6 +113,14 @@ h3,
   padding-right: var(--viewport-margin);
 }
 /*
+ * Preformatted text
+ *
+ * Presents text exactly as written in the HTML file
+ */
+pre {
+  overflow-x: auto;
+}
+/*
  * Buttons
  * We need some buttons. 
  */
@@ -269,37 +277,89 @@ footer.page-footer a {
     margin-left: var(--space-x-large);
   }
 }
-table.table {
+table.m-table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
 }
-.table caption,
-.table th {
+.m-table caption,
+.m-table th {
   text-align: left;
 }
-.table caption {
-  caption-side: bottom;
+.m-table caption {
   color: var(--color-neutral-300);
   margin-top: var(--space-medium);
 }
-.table tr > * {
+.m-table tr > * {
   border-bottom: solid 1px var(--color-neutral-100);
   padding: var(--space-medium) 0;
   vertical-align: top;
 }
-.table tr > *:not(:last-child) {
+.m-table tr > *:not(:last-child) {
   padding-right: var(--space-x-large);
 }
-.table th {
+.m-table th {
   font-size: var(--text-xxx-small);
   font-weight: var(--extrabold);
   letter-spacing: 1.25px;
   text-transform: uppercase;
   vertical-align: middle;
 }
-.table th:not([scope^='row']) {
+.m-table th:not([scope^='row']) {
   border-bottom: solid var(--space-xxx-small) var(--color-maize-400);
+}
+@media only screen and (max-width: 640px) {
+  .m-table thead {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .m-table tr > * {
+    display: block;
+  }
+  .m-table tr > *:not(:last-child) {
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+  .m-table tr > *[data-th]:not(th) + *[data-th] {
+    padding-top: 0;
+  }
+  .m-table tr > *[data-th]:before {
+    content: attr(data-th) ':\00a0';
+  }
+  .m-table tr > td[data-th]:before {
+    font-weight: 600;
+  }
+}
+.m-table--responsive thead {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.m-table--responsive tr > * {
+  display: block;
+}
+.m-table--responsive tr > *:not(:last-child) {
+  border-bottom: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+.m-table--responsive tr > *[data-header]:not(th) + *[data-header] {
+  padding-top: 0;
+}
+.m-table--responsive tr > *[data-header]:before {
+  content: attr(data-header) ':\00a0';
+}
+.m-table--responsive tr > td[data-header]:before {
+  font-weight: 600;
 }
 .page-navigation-container {
   display: grid;
