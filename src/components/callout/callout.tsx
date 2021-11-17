@@ -10,19 +10,24 @@ import { Component, Prop, h, State } from "@stencil/core";
 })
 export class Callout {
   /**
-   * Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style.
+   * Sets the overall callout visual style, such as colors.
    * */
-  @Prop() variant: 'info' | 'success' | 'error' | 'warning' = 'info';
+  @Prop() variant: 'info' | 'success' | 'warning' | 'critical' = 'info';
 
   /**
-   * Makes the element dismissable by the user with a button control.
+   * Makes this dismissable by the user with a button.
    */
   @Prop() dismissable: boolean = false;
 
   /**
-   * Set to `false` to remove the icon.
+   * Add attribute to show the default icon, or icon name to display one. Consider using `check`, `error`, `warning` or `info`.
    */
-  @Prop() icon: boolean = true;
+  @Prop() icon: string | false
+
+  /**
+   * Adds an attention grabbing text alternative to the visual style.
+   */
+   @Prop() title: string
 
   /**
    * Makes the element visually less strong by removing the background color.
@@ -31,61 +36,61 @@ export class Callout {
   
   @State() dismissed: boolean = false
 
-  getVariant() {
-    switch (this.variant) {
-      case 'success':
-        return {
-          iconName: 'check',
-          label: 'Success: '
-        }
-      case 'error':
-        return {
-          iconName: 'error',
-          label: 'Error: '
-        }
-      case 'warning':
-        return {
-          iconName: 'warning',
-          label: 'Warning: '
-        }
-      default:
-        return {
-          iconName: 'info',
-          label: 'Important information: '
-        }
-    }
-  }
-
   dismiss(e) {
     e.preventDefault()
 
     this.dismissed = true;
   }
 
+  getIcon() {
+    if (this.icon && this.icon.length > 0 && this.icon !== 'default') {
+      return this.icon
+    }
+
+    if (
+      typeof this.icon === 'string' &&
+      (this.icon.length === 0 || this.icon === 'default')
+    ) {
+      switch (this.variant) {
+        case 'success':
+          return 'check'
+        case 'critical':
+          return 'error'
+        case 'warning':
+          return 'warning'
+        default:
+          return 'info'
+      }
+    }
+
+    return false
+  }
+
   render() {
     const stateClassName = this.variant === 'info' ?
       '' : `m-callout--${this.variant}`
-
-    const variant = this.getVariant()
 
     if (this.dismissed) {
       return null
     }
 
+    const icon = this.getIcon()
+
     return (
       <div
         class={
           `m-callout ${stateClassName}
-          ${this.icon && 'm-callout--with-icon'}
+          ${icon && 'm-callout--with-icon'}
           ${this.subtle && 'm-callout--subtle'}
           `
         }
         role="presentation">
-        {this.icon && (
-          <m-icon name={variant.iconName} size="24"></m-icon>
+        {icon && (
+          <m-icon name={icon} size="24"></m-icon>
         )}
         <div role="presentation" class="m-callout__inner-container">
-          <strong class="visually-hidden m-callout__label">{variant.label}</strong><slot />
+          {this.title && (<strong class="m-callout__title">Important</strong>)}
+          <slot />
         </div>
         {this.dismissable &&
           <button

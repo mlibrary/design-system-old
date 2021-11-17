@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                                                                                                                  | Type                                          | Default  |
-| ------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | -------- |
-| `dismissable` | `dismissable` | Makes the element dismissable by the user with a button control.                                                             | `boolean`                                     | `false`  |
-| `icon`        | `icon`        | Set to `false` to remove the icon.                                                                                           | `boolean`                                     | `true`   |
-| `subtle`      | `subtle`      | Makes the element visually less strong by removing the background color.                                                     | `boolean`                                     | `false`  |
-| `variant`     | `variant`     | Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style. | `"error" \| "info" \| "success" \| "warning"` | `'info'` |
+| Property      | Attribute     | Description                                                                                                                | Type                                             | Default     |
+| ------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| `dismissable` | `dismissable` | Makes this dismissable by the user with a button.                                                                          | `boolean`                                        | `false`     |
+| `icon`        | `icon`        | Add attribute to show the default icon, or icon name to display one. Consider using `check`, `error`, `warning` or `info`. | `boolean \| string`                              | `undefined` |
+| `subtle`      | `subtle`      | Makes the element visually less strong by removing the background color.                                                   | `boolean`                                        | `false`     |
+| `title`       | `title`       | Adds an attention grabbing text alternative to the visual style.                                                           | `string`                                         | `undefined` |
+| `variant`     | `variant`     | Sets the overall callout visual style, such as colors.                                                                     | `"critical" \| "info" \| "success" \| "warning"` | `'info'`    |
 
 
 ## Dependencies

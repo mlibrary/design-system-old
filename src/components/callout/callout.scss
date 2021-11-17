@@ -8,7 +8,7 @@ m-callout {
   does not add additional unnecessary padding.
 */
 .m-callout__inner-container {
-  .m-callout__label + * {
+  & > *:first-child {
     margin-top: 0;
   }
 
@@ -92,4 +92,18 @@ m-callout {
   border-top: solid 1px var(--color-neutral-100);
   border-right: solid 1px var(--color-neutral-100);
   border-bottom: solid 1px var(--color-neutral-100);
+}
+
+.m-callout__title + * {
+  margin-top: var(--space-x-small);
+}
+
+@media (max-width: 720px) {
+  .m-callout,
+  .m-callout--with-icon {
+    grid-template-columns: 1fr !important;
+  }
+  .m-callout__dismiss {
+    padding: var(--space-medium) 0;
+  }
 }

@@ -8,21 +8,25 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MCallout {
         /**
-          * Makes the element dismissable by the user with a button control.
+          * Makes this dismissable by the user with a button.
          */
         "dismissable": boolean;
         /**
-          * Set to `false` to remove the icon.
+          * Add attribute to show the default icon, or icon name to display one. Consider using `check`, `error`, `warning` or `info`.
          */
-        "icon": boolean;
+        "icon": string | false;
         /**
           * Makes the element visually less strong by removing the background color.
          */
         "subtle": boolean;
         /**
-          * Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style.
+          * Adds an attention grabbing text alternative to the visual style.
          */
-        "variant": 'info' | 'success' | 'error' | 'warning';
+        "title": string;
+        /**
+          * Sets the overall callout visual style, such as colors.
+         */
+        "variant": 'info' | 'success' | 'warning' | 'critical';
     }
     interface MChat {
     }
@@ -111,21 +115,25 @@ declare global {
 declare namespace LocalJSX {
     interface MCallout {
         /**
-          * Makes the element dismissable by the user with a button control.
+          * Makes this dismissable by the user with a button.
          */
         "dismissable"?: boolean;
         /**
-          * Set to `false` to remove the icon.
+          * Add attribute to show the default icon, or icon name to display one. Consider using `check`, `error`, `warning` or `info`.
          */
-        "icon"?: boolean;
+        "icon"?: string | false;
         /**
           * Makes the element visually less strong by removing the background color.
          */
         "subtle"?: boolean;
         /**
-          * Select the overall callout intent, colors, and corresponding hidden label that is the alternative text for the visual style.
+          * Adds an attention grabbing text alternative to the visual style.
          */
-        "variant"?: 'info' | 'success' | 'error' | 'warning';
+        "title"?: string;
+        /**
+          * Sets the overall callout visual style, such as colors.
+         */
+        "variant"?: 'info' | 'success' | 'warning' | 'critical';
     }
     interface MChat {
     }
