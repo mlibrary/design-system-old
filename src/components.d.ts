@@ -16,13 +16,13 @@ export namespace Components {
          */
         "icon": string | false;
         /**
+          * Adds an attention grabbing label alternative to the visual style. It's highly recommended to include this.
+         */
+        "label": string;
+        /**
           * Makes the element visually less strong by removing the background color.
          */
         "subtle": boolean;
-        /**
-          * Adds an attention grabbing text alternative to the visual style.
-         */
-        "title": string;
         /**
           * Sets the overall callout visual style, such as colors.
          */
@@ -123,13 +123,13 @@ declare namespace LocalJSX {
          */
         "icon"?: string | false;
         /**
+          * Adds an attention grabbing label alternative to the visual style. It's highly recommended to include this.
+         */
+        "label"?: string;
+        /**
           * Makes the element visually less strong by removing the background color.
          */
         "subtle"?: boolean;
-        /**
-          * Adds an attention grabbing text alternative to the visual style.
-         */
-        "title"?: string;
         /**
           * Sets the overall callout visual style, such as colors.
          */

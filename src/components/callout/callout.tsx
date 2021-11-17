@@ -25,9 +25,9 @@ export class Callout {
   @Prop() icon: string | false
 
   /**
-   * Adds an attention grabbing text alternative to the visual style.
+   * Adds an attention grabbing label alternative to the visual style. It's highly recommended to include this.
    */
-   @Prop() title: string
+   @Prop() label: string
 
   /**
    * Makes the element visually less strong by removing the background color.
@@ -89,7 +89,7 @@ export class Callout {
           <m-icon name={icon} size="24"></m-icon>
         )}
         <div role="presentation" class="m-callout__inner-container">
-          {this.title && (<strong class="m-callout__title">Important</strong>)}
+          {this.label && (<strong class="m-callout__label">Important</strong>)}
           <slot />
         </div>
         {this.dismissable &&

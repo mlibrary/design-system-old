@@ -1,0 +1,564 @@
+{
+  "timestamp": "2021-11-17T18:50:19",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.6.0",
+    "typescriptVersion": "4.2.3"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/callout/callout.tsx",
+      "encapsulation": "none",
+      "tag": "m-callout",
+      "readme": "# m-callout\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "Callout",
+          "name": "name"
+        },
+        {
+          "text": "For communicating important messages in a user's workflow.",
+          "name": "description"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "dismissable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "dismissable",
+          "reflectToAttr": false,
+          "docs": "Makes this dismissable by the user with a button.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "boolean | string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Add attribute to show the default icon, or icon name to display one. Consider using `check`, `error`, `warning` or `info`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Adds an attention grabbing label alternative to the visual style. It's highly recommended to include this.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "subtle",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "subtle",
+          "reflectToAttr": false,
+          "docs": "Makes the element visually less strong by removing the background color.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "\"critical\" | \"info\" | \"success\" | \"warning\"",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Sets the overall callout visual style, such as colors.",
+          "docsTags": [],
+          "default": "'info'",
+          "values": [
+            {
+              "value": "critical",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "m-icon"
+      ],
+      "dependencyGraph": {
+        "m-callout": [
+          "m-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/chat/chat.tsx",
+      "encapsulation": "shadow",
+      "tag": "m-chat",
+      "readme": "# m-chat\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "Chat",
+          "name": "name"
+        },
+        {
+          "text": "The Chat component provides access to the Ask a Librarian live chat service.",
+          "name": "description"
+        },
+        {
+          "text": "production",
+          "name": "status"
+        },
+        {
+          "text": "Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.",
+          "name": "whenToUse"
+        },
+        {
+          "text": "If your website is not being hosted on lib.umich.edu.",
+          "name": "whenNotToUse"
+        },
+        {
+          "text": "- [Library Website](https://www.lib.umich.edu/)\n- [Library Search](https://search.lib.umich.edu/)",
+          "name": "usedBy"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/icon/icon.tsx",
+      "encapsulation": "none",
+      "tag": "m-icon",
+      "readme": "# m-icon\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "Icon",
+          "name": "name"
+        },
+        {
+          "text": "For SVG icons.",
+          "name": "description"
+        },
+        {
+          "text": "internal",
+          "name": "status"
+        },
+        {
+          "name": "private"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "m-callout",
+        "m-universal-header",
+        "m-website-alerts"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "m-callout": [
+          "m-icon"
+        ],
+        "m-universal-header": [
+          "m-icon"
+        ],
+        "m-website-alerts": [
+          "m-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/logo/logo.tsx",
+      "encapsulation": "none",
+      "tag": "m-logo",
+      "readme": "# m-logo\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "Logo",
+          "name": "name"
+        },
+        {
+          "text": "The University of Michigan Library logo.",
+          "name": "description"
+        },
+        {
+          "text": "internal",
+          "name": "status"
+        },
+        {
+          "name": "private"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Select the Website Header variant.\n\nOptions:\n  - light\n  - dark",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "m-website-header"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "m-website-header": [
+          "m-logo"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/universal-header/universal-header.tsx",
+      "encapsulation": "shadow",
+      "tag": "m-universal-header",
+      "readme": "# m-universal-header\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "Universal Header",
+          "name": "name"
+        },
+        {
+          "text": "The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.",
+          "name": "description"
+        },
+        {
+          "text": "production",
+          "name": "status"
+        },
+        {
+          "text": "You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.",
+          "name": "whenToUse"
+        },
+        {
+          "text": "If your website is not being hosted on lib.umich.edu.",
+          "name": "whenNotToUse"
+        },
+        {
+          "text": "- [Library Website](https://www.lib.umich.edu/)\n- [Library Search](https://search.lib.umich.edu/)\n- [Design System](https://design-system.lib.umich.edu/)\n- [Michigan Publishing](https://www.publishing.umich.edu/)",
+          "name": "usedBy"
+        },
+        {
+          "text": "During Fall 2020 usability testing:\n- 89% of participants noticed the Universal Header without being prompted.\n- The label \"Explore\" matched most expectations and all participants had a positive reaction to the content in the dropdown menu.\n- The header also helped participants recognize they were on a U-M Library website.\n\n[View the research plan (Google Doc)](https://docs.google.com/document/d/1a5NkZEPaNUck3oHngV3cNFNgZ5BVGicCjRVKuDn2YJk/edit?usp=sharing)\n\n[View the research findings (Google Slides)](https://docs.google.com/presentation/d/1G4iga9axTpl9xboJ-ydcbN8ZrDh6A3fo18T-HM7ItvM/edit?usp=sharing)",
+          "name": "research"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "focusout",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "keydown",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "click",
+          "target": "document",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "m-icon",
+        "m-website-alerts"
+      ],
+      "dependencyGraph": {
+        "m-universal-header": [
+          "m-icon",
+          "m-website-alerts"
+        ],
+        "m-website-alerts": [
+          "m-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/website-alerts/website-alerts.tsx",
+      "encapsulation": "shadow",
+      "tag": "m-website-alerts",
+      "readme": "# m-website-alerts\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "Website Alerts",
+          "name": "name"
+        },
+        {
+          "text": "The Website Alerts provide public messages for end-users to be notified about.",
+          "name": "description"
+        },
+        {
+          "text": "internal",
+          "name": "status"
+        },
+        {
+          "name": "private"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "m-universal-header"
+      ],
+      "dependencies": [
+        "m-icon"
+      ],
+      "dependencyGraph": {
+        "m-website-alerts": [
+          "m-icon"
+        ],
+        "m-universal-header": [
+          "m-website-alerts"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/website-header/website-header.tsx",
+      "encapsulation": "shadow",
+      "tag": "m-website-header",
+      "readme": "# m-website-header\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "Website Header",
+          "name": "name"
+        },
+        {
+          "text": "The Website Header displays our logo and shows users what U-M Library website that they are using.",
+          "name": "description"
+        },
+        {
+          "text": "production",
+          "name": "status"
+        },
+        {
+          "text": "If your website is hosted on lib.umich.edu.",
+          "name": "whenToUse"
+        },
+        {
+          "text": "If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.",
+          "name": "whenNotToUse"
+        },
+        {
+          "text": "Children",
+          "name": "slot"
+        },
+        {
+          "text": "<div>\n  <m-website-header name=\"Account\">\n    <a href=\"/\">Log in</a>\n  </m-website-header>\n\n  <m-website-header name=\"Deep Blue Documents\" variant=\"dark\">\n  </m-website-header>\n</div>",
+          "name": "example"
+        },
+        {
+          "text": "- [Design System](https://design-system.lib.umich.edu/)",
+          "name": "usedBy"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": true,
+          "docs": "The user-friendly name of the U-M Library website that uses this Header.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "to",
+          "type": "string",
+          "mutable": false,
+          "attr": "to",
+          "reflectToAttr": true,
+          "docs": "The URL linked to when you click the website name.",
+          "docsTags": [],
+          "default": "\"/\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Optionally set to `dark` for a blue background.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "Children",
+          "docs": ""
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "m-logo"
+      ],
+      "dependencyGraph": {
+        "m-website-header": [
+          "m-logo"
+        ]
+      }
+    }
+  ]
+}

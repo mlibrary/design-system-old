@@ -13,7 +13,8 @@
     "loader/",
     "umich-lib.css",
     "svgs/",
-    "icons.js"
+    "icons.js",
+    "web-component-docs.json"
   ],
   "scripts": {
     "test": "stencil test --spec --e2e",

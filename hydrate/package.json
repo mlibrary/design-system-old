@@ -1,0 +1,6 @@
+{
+  "name": "@umich-lib/web/hydrate",
+  "description": "UmichLib component hydration app.",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

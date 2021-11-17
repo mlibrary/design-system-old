@@ -19,6 +19,11 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+    {
+      type: 'docs-json',
+      file: 'web-component-docs.json'
+    },
+    { type: 'dist-hydrate-script' }
   ],
   plugins: [
     sass({
