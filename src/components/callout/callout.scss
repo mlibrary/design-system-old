@@ -1,0 +1,109 @@
+m-callout {
+  display: block;
+  margin-bottom: var(--space-large);
+}
+
+/*
+  For ensuring that the children (sort of like innerHTML)
+  does not add additional unnecessary padding.
+*/
+.m-callout__inner-container {
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.m-callout {
+  background: var(--color-teal-100);
+  border-left: solid 1px var(--color-teal-400);
+  padding: var(--space-medium) var(--space-large);
+  border-radius: 4px;
+  border-left-width: 4px;
+  display: grid;
+  grid-gap: var(--space-medium);
+  grid-template-columns: 1fr auto;
+
+  // This positoning is handled by grid and doesn't
+  // require any height.
+  > m-icon {
+    line-height: 1;
+    align-self: center;
+  }
+
+  svg {
+    color: var(--color-teal-400);
+    line-height: 0;
+  }
+}
+
+.m-callout--with-icon {
+  display: grid;
+  grid-gap: var(--space-medium);
+  grid-template-columns: auto 1fr auto;
+}
+
+.m-callout--success {
+  background: var(--color-green-100);
+  border-color: var(--color-green-400);
+
+  svg {
+    color: var(--color-green-500);
+  }
+}
+
+.m-callout--warning {
+  background: var(--color-maize-100);
+  border-color: var(--color-maize-400);
+
+  svg {
+    color: var(--color-maize-400);
+  }
+}
+
+.m-callout--error {
+  background: var(--color-pink-100);
+  border-color: var(--color-pink-400);
+
+  svg {
+    color: var(--color-pink-500);
+  }
+}
+
+.m-callout__dismiss {
+  all: unset;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  padding: var(--space-medium) var(--space-large);
+  margin: calc(-1 * var(--space-medium)) calc(-1 * var(--space-large));
+  margin-left: 0;
+
+  &:hover {
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+  }
+}
+
+.m-callout--subtle {
+  background: none !important;
+  border-top: solid 1px var(--color-neutral-100);
+  border-right: solid 1px var(--color-neutral-100);
+  border-bottom: solid 1px var(--color-neutral-100);
+}
+
+.m-callout__title + * {
+  margin-top: var(--space-x-small);
+}
+
+@media (max-width: 720px) {
+  .m-callout,
+  .m-callout--with-icon {
+    grid-template-columns: 1fr !important;
+  }
+  .m-callout__dismiss {
+    padding: var(--space-medium) 0;
+  }
+}
