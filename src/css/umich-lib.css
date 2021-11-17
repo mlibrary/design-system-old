@@ -271,27 +271,36 @@ footer.page-footer a {
 }
 table.table {
   width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table caption {
+  text-align: left;
+  color: var(--color-neutral-300);
+  caption-side: bottom;
+  margin-top: var(--space-medium);
 }
 .table th {
   text-align: left;
-  border-bottom: solid 2px var(--color-maize-400);
   font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 1.25px;
   text-transform: uppercase;
+  border-bottom: solid 2px var(--color-maize-400);
+  vertical-align: center;
 }
 .table th,
 .table td {
   padding: var(--space-medium);
   padding-left: 0;
   padding-right: 0;
-  vertical-align: top;
 }
 .table th:not(:last-of-type),
 .table td:not(:last-of-type) {
   padding-right: var(--space-x-large);
 }
-.table td {
+.table td,
+.table th[scope='row'] {
   border-bottom: solid 1px var(--color-neutral-100);
 }
 .page-navigation-container {
