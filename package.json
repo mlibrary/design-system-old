@@ -27,8 +27,8 @@
     "watch-tokens": "chokidar \"./src/tokens/design-tokens.json\" -c \"npm run build-tokens\"",
     "watch-css": "chokidar \"design-tokens.custom-properties.css\" \"./src/css/umich-lib.css\" -c \"npm run build-css\"",
     "watch-components": "stencil build --watch",
-    "watch-svgs": "npm run build-svgs && chokidar \"./src/svgs/originals/\" -c npm run build-svgs",
-    "build": "npm run build-tokens && npm run build-css && npm run build-components",
+    "watch-svgs": "chokidar \"./src/svgs/originals/\" -c \"npm run build-svgs\"",
+    "build": "npm run build-tokens && npm run build-css && npm run build-components && npm run build-svgs",
     "start": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
