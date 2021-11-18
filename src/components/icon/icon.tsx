@@ -12,15 +12,23 @@ import icons from "../../../icons.js";
 })
 export class Icon {
   @Prop() name: string;
+  @Prop() size: string;
 
   render() {
-    const icon = icons[this.name];
+    let icon = icons[this.name];
 
     if (!icon) {
       console.log("Unable to find Icon with name: " + this.name);
       return null;
     }
 
-    return <Host innerHTML={icon.svg}></Host>;
+    let svg = icon.svg
+
+    const sizedSvg = this.size ? svg
+      .replace('width=\"16\"', `width=\"${this.size}\"`)
+      .replace('height=\"16\"', `height=\"${this.size}\"`)
+    : null
+
+    return <Host innerHTML={sizedSvg || svg}></Host>;
   }
 }

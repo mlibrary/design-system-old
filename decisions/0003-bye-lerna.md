@@ -24,7 +24,7 @@ We use `web` because that's what we build. Tools for the web platform.
 
 ## Status
 
-Proposed
+Accepted and completed.
 
 ## Consequences
 

@@ -6,10 +6,33 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MCallout {
+        /**
+          * Makes this dismissable by the user with a button.
+         */
+        "dismissable": boolean;
+        /**
+          * Add attribute to show the default icon, or icon name to display one. Consider using `check`, `error`, `warning` or `info`.
+         */
+        "icon": string | false;
+        /**
+          * Adds an attention grabbing label alternative to the visual style. It's highly recommended to include this.
+         */
+        "label": string;
+        /**
+          * Makes the element visually less strong by removing the background color.
+         */
+        "subtle": boolean;
+        /**
+          * Sets the overall callout visual style, such as colors.
+         */
+        "variant": 'info' | 'success' | 'warning' | 'critical';
+    }
     interface MChat {
     }
     interface MIcon {
         "name": string;
+        "size": string;
     }
     interface MLogo {
         /**
@@ -37,6 +60,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMCalloutElement extends Components.MCallout, HTMLStencilElement {
+    }
+    var HTMLMCalloutElement: {
+        prototype: HTMLMCalloutElement;
+        new (): HTMLMCalloutElement;
+    };
     interface HTMLMChatElement extends Components.MChat, HTMLStencilElement {
     }
     var HTMLMChatElement: {
@@ -74,6 +103,7 @@ declare global {
         new (): HTMLMWebsiteHeaderElement;
     };
     interface HTMLElementTagNameMap {
+        "m-callout": HTMLMCalloutElement;
         "m-chat": HTMLMChatElement;
         "m-icon": HTMLMIconElement;
         "m-logo": HTMLMLogoElement;
@@ -83,10 +113,33 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface MCallout {
+        /**
+          * Makes this dismissable by the user with a button.
+         */
+        "dismissable"?: boolean;
+        /**
+          * Add attribute to show the default icon, or icon name to display one. Consider using `check`, `error`, `warning` or `info`.
+         */
+        "icon"?: string | false;
+        /**
+          * Adds an attention grabbing label alternative to the visual style. It's highly recommended to include this.
+         */
+        "label"?: string;
+        /**
+          * Makes the element visually less strong by removing the background color.
+         */
+        "subtle"?: boolean;
+        /**
+          * Sets the overall callout visual style, such as colors.
+         */
+        "variant"?: 'info' | 'success' | 'warning' | 'critical';
+    }
     interface MChat {
     }
     interface MIcon {
         "name"?: string;
+        "size"?: string;
     }
     interface MLogo {
         /**
@@ -113,6 +166,7 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface IntrinsicElements {
+        "m-callout": MCallout;
         "m-chat": MChat;
         "m-icon": MIcon;
         "m-logo": MLogo;
@@ -125,6 +179,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "m-callout": LocalJSX.MCallout & JSXBase.HTMLAttributes<HTMLMCalloutElement>;
             "m-chat": LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
             "m-icon": LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
             "m-logo": LocalJSX.MLogo & JSXBase.HTMLAttributes<HTMLMLogoElement>;

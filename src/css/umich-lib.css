@@ -271,27 +271,36 @@ footer.page-footer a {
 }
 table.table {
   width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table caption {
+  text-align: left;
+  color: var(--color-neutral-300);
+  caption-side: bottom;
+  margin-top: var(--space-medium);
 }
 .table th {
   text-align: left;
-  border-bottom: solid 2px var(--color-maize-400);
   font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 1.25px;
   text-transform: uppercase;
+  border-bottom: solid 2px var(--color-maize-400);
+  vertical-align: center;
 }
 .table th,
 .table td {
   padding: var(--space-medium);
   padding-left: 0;
   padding-right: 0;
-  vertical-align: top;
 }
 .table th:not(:last-of-type),
 .table td:not(:last-of-type) {
   padding-right: var(--space-x-large);
 }
-.table td {
+.table td,
+.table th[scope='row'] {
   border-bottom: solid 1px var(--color-neutral-100);
 }
 .page-navigation-container {
@@ -479,68 +488,4 @@ kbd {
   margin: 2px 3px;
   padding: 1px 5px;
   white-space: nowrap;
-}
-.message,
-.message--error,
-.message--success {
-  padding: var(--space-small) var(--space-medium);
-}
-.message {
-  background: var(--color-teal-100);
-  border-bottom: solid 1px var(--color-teal-400);
-  color: var(--color-teal-500);
-}
-.message--error {
-  background: var(--color-pink-100);
-  border-bottom: solid 1px var(--color-pink-400);
-  color: var(--color-pink-500);
-}
-.message--success {
-  background: var(--color-green-100);
-  border-bottom: solid 1px var(--color-green-400);
-  color: var(--color-neutral-400);
-}
-.message-callout {
-  border: solid 1px var(--color-neutral-100);
-  border-left: solid var(--space-xx-small) var(--color-teal-400);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 0.75rem;
-  padding: var(--space-large);
-  padding-right: var(--space-x-large);
-  border-radius: var(--radius-default);
-  position: relative;
-
-  .message-callout-icon {
-    color: var(--color-teal-400);
-    m-icon > svg {
-      height: auto;
-      width: var(--space-large);
-    }
-  }
-}
-.message-callout--success {
-  border-left-color: var(--color-green-400);
-  .message-callout-icon {
-    color: var(--color-green-500);
-  }
-}
-.message-callout--warning {
-  border-left-color: var(--color-maize-400);
-  .message-callout-icon {
-    color: var(--color-maize-500);
-  }
-}
-.message-callout-content {
-  p:not(:last-child) {
-    padding-bottom: var(--space-small);
-  }
-
-  ul {
-    margin-left: var(--space-x-large);
-  }
-
-  li {
-    margin-bottom: 0;
-  }
 }
