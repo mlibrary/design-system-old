@@ -1,7 +1,6 @@
 umich-lib.css
 design-tokens.custom-properties.css
 
-icons.js
 ./svgs/
 
 dist/
