@@ -33,5 +33,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+hydrate/index.js
 
 secret/**/*
