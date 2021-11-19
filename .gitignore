@@ -1,15 +1,15 @@
 umich-lib.css
 design-tokens.custom-properties.css
 
+icons.js
 ./svgs/
 
 dist/
 www/
 loader/
 css/
-_site/
-icons.js
 svgs/
+_site/
 
 *~
 *.sw[mnpcod]
