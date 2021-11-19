@@ -7,7 +7,7 @@ LABEL maintainer="mrio@umich.edu"
 
 ENV NODE_AUTH_TOKEN node_auth_token
 
-#RUN npm install -g npm@7.20.3
+RUN npm install -g npm@8.1.4
 RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
   vim-tiny
 
