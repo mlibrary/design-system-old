@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 /*!
- Stencil Mock Doc v2.10.0 | MIT Licensed | https://stenciljs.com
+ Stencil Mock Doc v2.6.0 | MIT Licensed | https://stenciljs.com
  */
 const CONTENT_REF_ID = 'r';
 const ORG_LOCATION_ID = 'o';
@@ -42,7 +42,7 @@ class MockAttributeMap {
     if (attr != null && attr.value != null) {
       attr.value = String(attr.value);
     }
-    const existingAttr = this.__items.find((a) => a.name === attr.name && a.namespaceURI === attr.namespaceURI);
+    const existingAttr = this.__items.find(a => a.name === attr.name && a.namespaceURI === attr.namespaceURI);
     if (existingAttr != null) {
       existingAttr.value = attr.value;
     }
@@ -58,7 +58,7 @@ class MockAttributeMap {
   }
   getNamedItemNS(namespaceURI, attrName) {
     namespaceURI = getNamespaceURI(namespaceURI);
-    return (this.__items.find((attr) => attr.name === attrName && getNamespaceURI(attr.namespaceURI) === namespaceURI) || null);
+    return (this.__items.find(attr => attr.name === attrName && getNamespaceURI(attr.namespaceURI) === namespaceURI) || null);
   }
   removeNamedItem(attr) {
     this.removeNamedItemNS(attr);
@@ -98,7 +98,7 @@ function cloneAttributes(srcAttrs, sortByName = false) {
         const dstAttr = new MockAttr(srcAttr.name, srcAttr.value, srcAttr.namespaceURI);
         sortedAttrs.push(dstAttr);
       }
-      sortedAttrs.sort(sortAttributes).forEach((attr) => {
+      sortedAttrs.sort(sortAttributes).forEach(attr => {
         dstAttrs.setNamedItemNS(attr);
       });
     }
@@ -172,7 +172,7 @@ class MockCustomElementRegistry {
     if (this.__whenDefined != null) {
       const whenDefinedResolveFns = this.__whenDefined.get(tagName);
       if (whenDefinedResolveFns != null) {
-        whenDefinedResolveFns.forEach((whenDefinedResolveFn) => {
+        whenDefinedResolveFns.forEach(whenDefinedResolveFn => {
           whenDefinedResolveFn();
         });
         whenDefinedResolveFns.length = 0;
@@ -182,7 +182,7 @@ class MockCustomElementRegistry {
     const doc = this.win.document;
     if (doc != null) {
       const hosts = doc.querySelectorAll(tagName);
-      hosts.forEach((host) => {
+      hosts.forEach(host => {
         if (upgradedElements.has(host) === false) {
           tempDisableCallbacks.add(doc);
           const upgradedCmp = createCustomElement(this, doc, tagName);
@@ -225,7 +225,7 @@ class MockCustomElementRegistry {
     if (this.__registry != null && this.__registry.has(tagName) === true) {
       return Promise.resolve();
     }
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       if (this.__whenDefined == null) {
         this.__whenDefined = new Map();
       }
@@ -291,17 +291,17 @@ function connectNode(ownerDocument, node) {
       }
       const shadowRoot = node.shadowRoot;
       if (shadowRoot != null) {
-        shadowRoot.childNodes.forEach((childNode) => {
+        shadowRoot.childNodes.forEach(childNode => {
           connectNode(ownerDocument, childNode);
         });
       }
     }
-    node.childNodes.forEach((childNode) => {
+    node.childNodes.forEach(childNode => {
       connectNode(ownerDocument, childNode);
     });
   }
   else {
-    node.childNodes.forEach((childNode) => {
+    node.childNodes.forEach(childNode => {
       childNode.ownerDocument = ownerDocument;
     });
   }
@@ -336,8 +336,7 @@ function disconnectNode(node) {
 function attributeChanged(node, attrName, oldValue, newValue) {
   attrName = attrName.toLowerCase();
   const observedAttributes = node.constructor.observedAttributes;
-  if (Array.isArray(observedAttributes) === true &&
-    observedAttributes.some((obs) => obs.toLowerCase() === attrName) === true) {
+  if (Array.isArray(observedAttributes) === true && observedAttributes.some(obs => obs.toLowerCase() === attrName) === true) {
     try {
       node.attributeChangedCallback(attrName, oldValue, newValue);
     }
@@ -376,7 +375,7 @@ function dataset(elm) {
 function toDataAttribute(str) {
   return ('data-' +
     String(str)
-      .replace(/([A-Z0-9])/g, (g) => ' ' + g[0])
+      .replace(/([A-Z0-9])/g, g => ' ' + g[0])
       .trim()
       .replace(/ /g, '-')
       .toLowerCase());
@@ -436,7 +435,7 @@ class MockClassList {
   add(...classNames) {
     const clsNames = getItems(this.elm);
     let updated = false;
-    classNames.forEach((className) => {
+    classNames.forEach(className => {
       className = String(className);
       validateClass(className);
       if (clsNames.includes(className) === false) {
@@ -451,7 +450,7 @@ class MockClassList {
   remove(...classNames) {
     const clsNames = getItems(this.elm);
     let updated = false;
-    classNames.forEach((className) => {
+    classNames.forEach(className => {
       className = String(className);
       validateClass(className);
       const index = clsNames.indexOf(className);
@@ -461,7 +460,7 @@ class MockClassList {
       }
     });
     if (updated) {
-      this.elm.setAttributeNS(null, 'class', clsNames.filter((c) => c.length > 0).join(' '));
+      this.elm.setAttributeNS(null, 'class', clsNames.filter(c => c.length > 0).join(' '));
     }
   }
   contains(className) {
@@ -501,7 +500,7 @@ function getItems(elm) {
     return className
       .trim()
       .split(' ')
-      .filter((c) => c.length > 0);
+      .filter(c => c.length > 0);
   }
   return [];
 }
@@ -542,7 +541,7 @@ class MockCSSStyleDeclaration {
       this._styles.clear();
       return;
     }
-    cssText.split(';').forEach((rule) => {
+    cssText.split(';').forEach(rule => {
       rule = rule.trim();
       if (rule.length > 0) {
         const splt = rule.split(':');
@@ -584,7 +583,7 @@ function cssCaseToJsCase(str) {
     str = str
       .toLowerCase()
       .split('-')
-      .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+      .map(segment => segment.charAt(0).toUpperCase() + segment.slice(1))
       .join('');
     str = str.substr(0, 1).toLowerCase() + str.substr(1);
   }
@@ -594,7 +593,7 @@ function jsCaseToCssCase(str) {
   // fontSize to font-size
   if (str.length > 1 && str.includes('-') === false && /[A-Z]/.test(str) === true) {
     str = str
-      .replace(/([A-Z])/g, (g) => ' ' + g[0])
+      .replace(/([A-Z])/g, g => ' ' + g[0])
       .trim()
       .replace(/ /g, '-')
       .toLowerCase();
@@ -691,7 +690,7 @@ function addEventListener(elm, type, handler) {
 function removeEventListener(elm, type, handler) {
   const target = elm;
   if (target != null && Array.isArray(target.__listeners) === true) {
-    const elmListener = target.__listeners.find((e) => e.type === type && e.handler === handler);
+    const elmListener = target.__listeners.find(e => e.type === type && e.handler === handler);
     if (elmListener != null) {
       const index = target.__listeners.indexOf(elmListener);
       target.__listeners.splice(index, 1);
@@ -710,8 +709,8 @@ function triggerEventListener(elm, ev) {
   const target = elm;
   ev.currentTarget = elm;
   if (Array.isArray(target.__listeners) === true) {
-    const listeners = target.__listeners.filter((e) => e.type === ev.type);
-    listeners.forEach((listener) => {
+    const listeners = target.__listeners.filter(e => e.type === ev.type);
+    listeners.forEach(listener => {
       try {
         listener.handler.call(target, ev);
       }
@@ -866,7 +865,7 @@ function serializeToHtml(node, opts, output, isShadowRoot) {
         if (opts.prettyHtml && attrName === 'class') {
           attrValue = attr.value = attrValue
             .split(' ')
-            .filter((t) => t !== '')
+            .filter(t => t !== '')
             .sort()
             .join(' ')
             .trim();
@@ -1295,7 +1294,7 @@ function getParser(ownerDocument) {
       return templateElement.content;
     },
     setDocumentType(doc, name, publicId, systemId) {
-      let doctypeNode = doc.childNodes.find((n) => n.nodeType === 10 /* DOCUMENT_TYPE_NODE */);
+      let doctypeNode = doc.childNodes.find(n => n.nodeType === 10 /* DOCUMENT_TYPE_NODE */);
       if (doctypeNode == null) {
         doctypeNode = ownerDocument.createDocumentTypeNode();
         doc.insertBefore(doctypeNode, doc.firstChild);
@@ -1350,7 +1349,7 @@ function getParser(ownerDocument) {
       return node.parentNode;
     },
     getAttrList(element) {
-      const attrs = element.attributes.__items.map((attr) => {
+      const attrs = element.attributes.__items.map(attr => {
         return {
           name: attr.name,
           value: attr.value,
@@ -1431,14 +1430,14 @@ class MockNode {
     return newNode;
   }
   append(...items) {
-    items.forEach((item) => {
+    items.forEach(item => {
       const isNode = typeof item === 'object' && item !== null && 'nodeType' in item;
       this.appendChild(isNode ? item : this.ownerDocument.createTextNode(String(item)));
     });
   }
   prepend(...items) {
     const firstChild = this.firstChild;
-    items.forEach((item) => {
+    items.forEach(item => {
       const isNode = typeof item === 'object' && item !== null && 'nodeType' in item;
       this.insertBefore(isNode ? item : this.ownerDocument.createTextNode(String(item)), firstChild);
     });
@@ -1602,10 +1601,10 @@ class MockElement extends MockNode {
     this.__attributeMap = attrs;
   }
   get children() {
-    return this.childNodes.filter((n) => n.nodeType === 1 /* ELEMENT_NODE */);
+    return this.childNodes.filter(n => n.nodeType === 1 /* ELEMENT_NODE */);
   }
   get childElementCount() {
-    return this.childNodes.filter((n) => n.nodeType === 1 /* ELEMENT_NODE */).length;
+    return this.childNodes.filter(n => n.nodeType === 1 /* ELEMENT_NODE */).length;
   }
   get className() {
     return this.getAttributeNS(null, 'class') || '';
@@ -1819,9 +1818,7 @@ class MockElement extends MockNode {
   get nextElementSibling() {
     const parentElement = this.parentElement;
     if (parentElement != null &&
-      (parentElement.nodeType === 1 /* ELEMENT_NODE */ ||
-        parentElement.nodeType === 11 /* DOCUMENT_FRAGMENT_NODE */ ||
-        parentElement.nodeType === 9 /* DOCUMENT_NODE */)) {
+      (parentElement.nodeType === 1 /* ELEMENT_NODE */ || parentElement.nodeType === 11 /* DOCUMENT_FRAGMENT_NODE */ || parentElement.nodeType === 9 /* DOCUMENT_NODE */)) {
       const children = parentElement.children;
       const index = children.indexOf(this) + 1;
       return parentElement.children[index] || null;
@@ -1838,9 +1835,7 @@ class MockElement extends MockNode {
   get previousElementSibling() {
     const parentElement = this.parentElement;
     if (parentElement != null &&
-      (parentElement.nodeType === 1 /* ELEMENT_NODE */ ||
-        parentElement.nodeType === 11 /* DOCUMENT_FRAGMENT_NODE */ ||
-        parentElement.nodeType === 9 /* DOCUMENT_NODE */)) {
+      (parentElement.nodeType === 1 /* ELEMENT_NODE */ || parentElement.nodeType === 11 /* DOCUMENT_FRAGMENT_NODE */ || parentElement.nodeType === 9 /* DOCUMENT_NODE */)) {
       const children = parentElement.children;
       const index = children.indexOf(this) - 1;
       return parentElement.children[index] || null;
@@ -1851,7 +1846,7 @@ class MockElement extends MockNode {
     const classes = classNames
       .trim()
       .split(' ')
-      .filter((c) => c.length > 0);
+      .filter(c => c.length > 0);
     const results = [];
     getElementsByClassName(this, classes, results);
     return results;
@@ -2411,9 +2406,7 @@ class MockDocumentFragment extends MockHTMLElement {
     if (deep) {
       for (let i = 0, ii = this.childNodes.length; i < ii; i++) {
         const childNode = this.childNodes[i];
-        if (childNode.nodeType === 1 /* ELEMENT_NODE */ ||
-          childNode.nodeType === 3 /* TEXT_NODE */ ||
-          childNode.nodeType === 8 /* COMMENT_NODE */) {
+        if (childNode.nodeType === 1 /* ELEMENT_NODE */ || childNode.nodeType === 3 /* TEXT_NODE */ || childNode.nodeType === 8 /* COMMENT_NODE */) {
           const clonedChildNode = this.childNodes[i].cloneNode(true);
           cloned.appendChild(clonedChildNode);
         }
@@ -2502,7 +2495,7 @@ function updateStyleTextNode(styleElm) {
     styleElm.appendChild(styleElm.ownerDocument.createTextNode(''));
   }
   const textNode = styleElm.childNodes[0];
-  textNode.nodeValue = styleElm.sheet.cssRules.map((r) => r.cssText).join('\n');
+  textNode.nodeValue = styleElm.sheet.cssRules.map(r => r.cssText).join('\n');
 }
 
 function createElement(ownerDocument, tagName) {
@@ -2566,9 +2559,6 @@ class MockAnchorElement extends MockHTMLElement {
   }
   set href(value) {
     this.setAttribute('href', value);
-  }
-  get pathname() {
-    return new URL(this.href).pathname;
   }
 }
 class MockButtonElement extends MockHTMLElement {
@@ -2861,7 +2851,7 @@ function fullUrl(elm, attrName) {
   return val.replace(/\'|\"/g, '').trim();
 }
 function patchPropAttributes(prototype, attrs, defaults = {}) {
-  Object.keys(attrs).forEach((propName) => {
+  Object.keys(attrs).forEach(propName => {
     const attr = attrs[propName];
     const defaultValue = defaults[propName];
     if (attr === Boolean) {
@@ -3151,12 +3141,12 @@ class MockResponse {
 function setupGlobal(gbl) {
   if (gbl.window == null) {
     const win = (gbl.window = new MockWindow());
-    WINDOW_FUNCTIONS.forEach((fnName) => {
+    WINDOW_FUNCTIONS.forEach(fnName => {
       if (!(fnName in gbl)) {
         gbl[fnName] = win[fnName].bind(win);
       }
     });
-    WINDOW_PROPS.forEach((propName) => {
+    WINDOW_PROPS.forEach(propName => {
       if (!(propName in gbl)) {
         Object.defineProperty(gbl, propName, {
           get() {
@@ -3184,12 +3174,12 @@ function teardownGlobal(gbl) {
 }
 function patchWindow(winToBePatched) {
   const mockWin = new MockWindow(false);
-  WINDOW_FUNCTIONS.forEach((fnName) => {
+  WINDOW_FUNCTIONS.forEach(fnName => {
     if (typeof winToBePatched[fnName] !== 'function') {
       winToBePatched[fnName] = mockWin[fnName].bind(mockWin);
     }
   });
-  WINDOW_PROPS.forEach((propName) => {
+  WINDOW_PROPS.forEach(propName => {
     if (winToBePatched === undefined) {
       Object.defineProperty(winToBePatched, propName, {
         get() {
@@ -3713,7 +3703,7 @@ class MockWindow {
           super(ownerDocument, '');
           const observedAttributes = this.constructor.observedAttributes;
           if (Array.isArray(observedAttributes) && typeof this.attributeChangedCallback === 'function') {
-            observedAttributes.forEach((attrName) => {
+            observedAttributes.forEach(attrName => {
               const attrValue = this.getAttribute(attrName);
               if (attrValue != null) {
                 this.attributeChangedCallback(attrName, null, attrValue);
@@ -4235,7 +4225,7 @@ function constrainTimeouts(win) {
 function resetWindow(win) {
   if (win != null) {
     if (win.__timeouts) {
-      win.__timeouts.forEach((timeoutId) => {
+      win.__timeouts.forEach(timeoutId => {
         nativeClearInterval(timeoutId);
         nativeClearTimeout(timeoutId);
       });
@@ -4311,7 +4301,7 @@ class MockDocument extends MockHTMLElement {
     this.appendChild(this.createDocumentTypeNode());
     if (typeof html === 'string') {
       const parsedDoc = parseDocumentUtil(this, html);
-      const documentElement = parsedDoc.children.find((elm) => elm.nodeName === 'HTML');
+      const documentElement = parsedDoc.children.find(elm => elm.nodeName === 'HTML');
       if (documentElement != null) {
         this.appendChild(documentElement);
         setOwnerDocument(documentElement, this);
@@ -4342,7 +4332,7 @@ class MockDocument extends MockHTMLElement {
     }
   }
   get baseURI() {
-    const baseNode = this.head.childNodes.find((node) => node.nodeName === 'BASE');
+    const baseNode = this.head.childNodes.find(node => node.nodeName === 'BASE');
     if (baseNode) {
       return baseNode.href;
     }
@@ -4478,7 +4468,7 @@ class MockDocument extends MockHTMLElement {
     return getElementsByName(this, elmName.toLowerCase());
   }
   get title() {
-    const title = this.head.childNodes.find((elm) => elm.nodeName === 'TITLE');
+    const title = this.head.childNodes.find(elm => elm.nodeName === 'TITLE');
     if (title != null && typeof title.textContent === 'string') {
       return title.textContent.trim();
     }
@@ -4486,7 +4476,7 @@ class MockDocument extends MockHTMLElement {
   }
   set title(value) {
     const head = this.head;
-    let title = head.childNodes.find((elm) => elm.nodeName === 'TITLE');
+    let title = head.childNodes.find(elm => elm.nodeName === 'TITLE');
     if (title == null) {
       title = this.createElement('title');
       head.appendChild(title);
@@ -5247,7 +5237,6 @@ const callRender = (e, t, o) => {
    s.attributeChangedCallback = function(e, t, n) {
     plt.jmp((() => {
      const t = o.get(e);
-     if (this.hasOwnProperty(t)) n = this[t], delete this[t]; else if (s.hasOwnProperty(t) && "number" == typeof this[t] && this[t] == n) return;
      this[t] = (null !== n || "boolean" != typeof this[t]) && n;
     }));
    }, e.observedAttributes = n.filter((([e, t]) => 15 & t[0])).map((([e, n]) => {
@@ -5458,7 +5447,7 @@ const cmpModules = new Map, getModule = e => {
  e["s-p"] = [], e["s-rc"] = [], addHostEventListeners(e, o, t.$listeners$), hostRefs.set(e, o);
 }, styles = new Map;
 
-const calloutCss = ":root{--color-blue-100:rgb(247, 248, 249);--color-blue-200:rgb(178, 190, 201);--color-blue-300:rgb(76, 103, 129);--color-blue-400:rgb(0, 39, 76);--color-blue-500:rgb(0, 19, 36);--color-maize-100:rgb(255, 249, 230);--color-maize-200:rgb(255, 234, 155);--color-maize-300:rgb(255, 218, 80);--color-maize-400:rgb(255, 203, 5);--color-maize-500:rgb(234, 186, 2);--color-neutral-100:rgb(229, 233, 237);--color-neutral-200:rgb(138, 150, 161);--color-neutral-300:rgb(99, 115, 129);--color-neutral-400:rgb(33, 43, 54);--color-neutral-500:rgb(6, 8, 10);--color-teal-100:rgb(233, 242, 245);--color-teal-200:rgb(167, 205, 219);--color-teal-300:rgb(101, 168, 191);--color-teal-400:rgb(29, 116, 145);--color-teal-500:rgb(16, 102, 132);--color-orange-100:rgb(255, 241, 235);--color-orange-200:rgb(255, 184, 153);--color-orange-300:rgb(255, 138, 88);--color-orange-400:rgb(242, 95, 31);--color-orange-500:rgb(199, 78, 26);--color-pink-100:rgb(252, 235, 235);--color-pink-200:rgb(242, 157, 157);--color-pink-300:rgb(236, 105, 105);--color-pink-400:rgb(217, 56, 56);--color-pink-500:rgb(191, 50, 50);--color-indigo-100:rgb(238, 241, 249);--color-indigo-200:rgb(170, 185, 227);--color-indigo-300:rgb(124, 147, 212);--color-indigo-400:rgb(80, 111, 197);--color-indigo-500:rgb(39, 67, 145);--color-green-100:rgb(234, 248, 238);--color-green-200:rgb(150, 219, 170);--color-green-300:rgb(87, 188, 117);--color-green-400:rgb(32, 168, 72);--color-green-500:rgb(25, 133, 57);--font-base-family:'Muli', sans-serif;--font-second-family:'Crimson Text', serif;--bold:700;--regular:400;--semibold:600;--line-height-default:1.5;--line-height-heading:1.25;--line-height-page-heading:1.125;--text-base-size:16px;--text-xxx-large:3.5rem;--text-xx-large:2.25rem;--text-x-large:2rem;--text-large:1.75rem;--text-medium:1.5rem;--text-small:1.125rem;--text-x-small:1.125rem;--text-xx-small:1rem;--text-xxx-small:0.875rem;--space-xxx-small:2px;--space-xx-small:4px;--space-x-small:8px;--space-small:12px;--space-medium:16px;--space-large:24px;--space-x-large:32px;--space-xx-large:40px;--space-xxx-large:48px;--space-xxxx-large:64px;--space-xxxxx-large:96px;--z-space-small:rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;--z-space-medium:rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;--opacity-75:0.75;--opacity-50:0.50;--opacity-30:0.30;--radius-default:4px;--line-length:60ch}m-callout{display:block;margin-bottom:var(--space-large)}.m-callout__inner-container>*:first-child{margin-top:0}.m-callout__inner-container>*:last-child{margin-bottom:0}.m-callout{background:var(--color-teal-100);border-left:solid 1px var(--color-teal-400);padding:var(--space-medium) var(--space-large);border-radius:4px;border-left-width:4px;display:grid;grid-gap:var(--space-medium);grid-template-columns:1fr auto}.m-callout>m-icon{line-height:1;align-self:center}.m-callout svg{color:var(--color-teal-400);line-height:0}.m-callout--with-icon{display:grid;grid-gap:var(--space-medium);grid-template-columns:auto 1fr auto}.m-callout--success{background:var(--color-green-100);border-color:var(--color-green-400)}.m-callout--success svg{color:var(--color-green-500)}.m-callout--warning{background:var(--color-maize-100);border-color:var(--color-maize-400)}.m-callout--warning svg{color:var(--color-maize-400)}.m-callout--error{background:var(--color-pink-100);border-color:var(--color-pink-400)}.m-callout--error svg{color:var(--color-pink-500)}.m-callout__dismiss{all:unset;text-decoration:underline;text-decoration-thickness:1px;padding:var(--space-medium) var(--space-large);margin:calc(-1 * var(--space-medium)) calc(-1 * var(--space-large));margin-left:0}.m-callout__dismiss:hover{text-decoration-thickness:2px;cursor:pointer}.m-callout--subtle{background:none !important;border-top:solid 1px var(--color-neutral-100);border-right:solid 1px var(--color-neutral-100);border-bottom:solid 1px var(--color-neutral-100)}.m-callout__title+*{margin-top:var(--space-x-small)}@media (max-width: 720px){.m-callout,.m-callout--with-icon{grid-template-columns:1fr !important}.m-callout__dismiss{padding:var(--space-medium) 0}}";
+const calloutCss = ":root{--color-blue-100:rgb(247, 248, 249);--color-blue-200:rgb(178, 190, 201);--color-blue-300:rgb(76, 103, 129);--color-blue-400:rgb(0, 39, 76);--color-blue-500:rgb(0, 19, 36);--color-maize-100:rgb(255, 249, 230);--color-maize-200:rgb(255, 234, 155);--color-maize-300:rgb(255, 218, 80);--color-maize-400:rgb(255, 203, 5);--color-maize-500:rgb(234, 186, 2);--color-neutral-100:rgb(229, 233, 237);--color-neutral-200:rgb(138, 150, 161);--color-neutral-300:rgb(99, 115, 129);--color-neutral-400:rgb(33, 43, 54);--color-neutral-500:rgb(6, 8, 10);--color-teal-100:rgb(233, 242, 245);--color-teal-200:rgb(167, 205, 219);--color-teal-300:rgb(101, 168, 191);--color-teal-400:rgb(29, 116, 145);--color-teal-500:rgb(16, 102, 132);--color-orange-100:rgb(255, 241, 235);--color-orange-200:rgb(255, 184, 153);--color-orange-300:rgb(255, 138, 88);--color-orange-400:rgb(242, 95, 31);--color-orange-500:rgb(199, 78, 26);--color-pink-100:rgb(252, 235, 235);--color-pink-200:rgb(242, 157, 157);--color-pink-300:rgb(236, 105, 105);--color-pink-400:rgb(217, 56, 56);--color-pink-500:rgb(191, 50, 50);--color-indigo-100:rgb(238, 241, 249);--color-indigo-200:rgb(170, 185, 227);--color-indigo-300:rgb(124, 147, 212);--color-indigo-400:rgb(80, 111, 197);--color-indigo-500:rgb(39, 67, 145);--color-green-100:rgb(234, 248, 238);--color-green-200:rgb(150, 219, 170);--color-green-300:rgb(87, 188, 117);--color-green-400:rgb(32, 168, 72);--color-green-500:rgb(25, 133, 57);--font-base-family:'Muli', sans-serif;--font-second-family:'Crimson Text', serif;--bold:700;--regular:400;--semibold:600;--extrabold:800;--line-height-default:1.5;--line-height-heading:1.25;--line-height-page-heading:1.125;--text-base-size:16px;--text-xxx-large:3.5rem;--text-xx-large:2.25rem;--text-x-large:2rem;--text-large:1.75rem;--text-medium:1.5rem;--text-small:1.125rem;--text-x-small:1.125rem;--text-xx-small:1rem;--text-xxx-small:0.875rem;--space-xxx-small:2px;--space-xx-small:4px;--space-x-small:8px;--space-small:12px;--space-medium:16px;--space-large:24px;--space-x-large:32px;--space-xx-large:40px;--space-xxx-large:48px;--space-xxxx-large:64px;--space-xxxxx-large:96px;--z-space-small:rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;--z-space-medium:rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;--opacity-75:0.75;--opacity-50:0.50;--opacity-30:0.30;--radius-default:4px;--line-length:60ch}m-callout{display:block;margin-bottom:var(--space-large)}.m-callout__inner-container>*:first-child{margin-top:0}.m-callout__inner-container>*:last-child{margin-bottom:0}.m-callout{background:var(--color-teal-100);border-left:solid 1px var(--color-teal-400);padding:var(--space-medium) var(--space-large);border-radius:4px;border-left-width:4px;display:grid;grid-gap:var(--space-medium);grid-template-columns:1fr auto}.m-callout>m-icon{line-height:1;align-self:center}.m-callout svg{color:var(--color-teal-400);line-height:0}.m-callout--with-icon{display:grid;grid-gap:var(--space-medium);grid-template-columns:auto 1fr auto}.m-callout--success{background:var(--color-green-100);border-color:var(--color-green-400)}.m-callout--success svg{color:var(--color-green-500)}.m-callout--warning{background:var(--color-maize-100);border-color:var(--color-maize-400)}.m-callout--warning svg{color:var(--color-maize-400)}.m-callout--error{background:var(--color-pink-100);border-color:var(--color-pink-400)}.m-callout--error svg{color:var(--color-pink-500)}.m-callout__dismiss{all:unset;text-decoration:underline;text-decoration-thickness:1px;padding:var(--space-medium) var(--space-large);margin:calc(-1 * var(--space-medium)) calc(-1 * var(--space-large));margin-left:0}.m-callout__dismiss:hover{text-decoration-thickness:2px;cursor:pointer}.m-callout--subtle{background:none !important;border-top:solid 1px var(--color-neutral-100);border-right:solid 1px var(--color-neutral-100);border-bottom:solid 1px var(--color-neutral-100)}.m-callout__title+*{margin-top:var(--space-x-small)}@media (max-width: 720px){.m-callout,.m-callout--with-icon{grid-template-columns:1fr !important}.m-callout__dismiss{padding:var(--space-medium) 0}}";
 
 /**
  * @name Callout
@@ -5604,7 +5593,7 @@ var classnames = createCommonjsModule(function (module) {
 }());
 });
 
-const chatCss = "/*!@:root*/.sc-m-chat:root{--color-blue-100:rgb(247, 248, 249);--color-blue-200:rgb(178, 190, 201);--color-blue-300:rgb(76, 103, 129);--color-blue-400:rgb(0, 39, 76);--color-blue-500:rgb(0, 19, 36);--color-maize-100:rgb(255, 249, 230);--color-maize-200:rgb(255, 234, 155);--color-maize-300:rgb(255, 218, 80);--color-maize-400:rgb(255, 203, 5);--color-maize-500:rgb(234, 186, 2);--color-neutral-100:rgb(229, 233, 237);--color-neutral-200:rgb(138, 150, 161);--color-neutral-300:rgb(99, 115, 129);--color-neutral-400:rgb(33, 43, 54);--color-neutral-500:rgb(6, 8, 10);--color-teal-100:rgb(233, 242, 245);--color-teal-200:rgb(167, 205, 219);--color-teal-300:rgb(101, 168, 191);--color-teal-400:rgb(29, 116, 145);--color-teal-500:rgb(16, 102, 132);--color-orange-100:rgb(255, 241, 235);--color-orange-200:rgb(255, 184, 153);--color-orange-300:rgb(255, 138, 88);--color-orange-400:rgb(242, 95, 31);--color-orange-500:rgb(199, 78, 26);--color-pink-100:rgb(252, 235, 235);--color-pink-200:rgb(242, 157, 157);--color-pink-300:rgb(236, 105, 105);--color-pink-400:rgb(217, 56, 56);--color-pink-500:rgb(191, 50, 50);--color-indigo-100:rgb(238, 241, 249);--color-indigo-200:rgb(170, 185, 227);--color-indigo-300:rgb(124, 147, 212);--color-indigo-400:rgb(80, 111, 197);--color-indigo-500:rgb(39, 67, 145);--color-green-100:rgb(234, 248, 238);--color-green-200:rgb(150, 219, 170);--color-green-300:rgb(87, 188, 117);--color-green-400:rgb(32, 168, 72);--color-green-500:rgb(25, 133, 57);--font-base-family:'Muli', sans-serif;--font-second-family:'Crimson Text', serif;--bold:700;--regular:400;--semibold:600;--line-height-default:1.5;--line-height-heading:1.25;--line-height-page-heading:1.125;--text-base-size:16px;--text-xxx-large:3.5rem;--text-xx-large:2.25rem;--text-x-large:2rem;--text-large:1.75rem;--text-medium:1.5rem;--text-small:1.125rem;--text-x-small:1.125rem;--text-xx-small:1rem;--text-xxx-small:0.875rem;--space-xxx-small:2px;--space-xx-small:4px;--space-x-small:8px;--space-small:12px;--space-medium:16px;--space-large:24px;--space-x-large:32px;--space-xx-large:40px;--space-xxx-large:48px;--space-xxxx-large:64px;--space-xxxxx-large:96px;--z-space-small:rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;--z-space-medium:rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;--opacity-75:0.75;--opacity-50:0.50;--opacity-30:0.30;--radius-default:4px;--line-length:60ch}/*!@:host*/.sc-m-chat-h{--chat-width:calc(var(--space-medium) * 20);font-size:16px}/*!@.m-chat*/.m-chat.sc-m-chat{position:fixed;right:4vw;bottom:0;border-radius:2px 2px 0 0;border-top:solid 2px var(--color-maize-400);box-shadow:var(--z-space-medium);width:calc(var(--space-medium) * 14);transition:width 0.25s;max-width:calc(100% - 8vw);background:white;z-index:10000}/*!@.m-chat.m-chat--open*/.m-chat.m-chat--open.sc-m-chat{width:var(--chat-width)}/*!@.m-chat__button*/.m-chat__button.sc-m-chat{border:none;background:none;outline:0;font-size:var(--font-base-size);color:var(--color-neutral-400);text-align:left;height:39px;width:100%;padding:0 var(--space-medium);display:flex;align-items:center;cursor:pointer;border-radius:2px 2px 0 0;margin-bottom:3px}/*!@.m-chat__svg*/.m-chat__svg.sc-m-chat{width:32px;height:32px;flex-shrink:0}/*!@.m-chat__icons*/.m-chat__icons.sc-m-chat{line-height:0}/*!@.m-chat__button:focus*/.m-chat__button.sc-m-chat:focus{outline:none;box-shadow:0 0 0 2px var(--color-maize-400), 0 0 0 3px var(--color-neutral-400)}/*!@.m-chat__iframe*/.m-chat__iframe.sc-m-chat{width:100%;height:100%;border:none}@media only screen and (min-width: 600px){/*!@.m-chat__iframe*/.m-chat__iframe.sc-m-chat{width:var(--chat-width)}}/*!@.m-chat__label*/.m-chat__label.sc-m-chat{font-family:var(--font-base-family);display:inline-block;width:100%;padding:0 var(--space-small)}/*!@.m-chat__button:hover .m-chat__label*/.m-chat__button.sc-m-chat:hover .m-chat__label.sc-m-chat{text-decoration:underline}/*!@.m-chat__window*/.m-chat__window.sc-m-chat{background:white;max-height:90vh;height:0;opacity:0;overflow:hidden;transition:height 0.25s, opacity 0.25s}/*!@.m-chat--open .m-chat__window*/.m-chat--open.sc-m-chat .m-chat__window.sc-m-chat{opacity:1;height:calc(var(--space-medium) * 24)}/*!@.m-chat__offline*/.m-chat__offline.sc-m-chat{line-height:1.5;font-family:var(--font-base-family);padding:0 var(--space-medium)}/*!@.m-chat__offline strong*/.m-chat__offline.sc-m-chat strong.sc-m-chat{font-weight:700}/*!@.m-chat__offline a,\n.m-chat__offline a:hover*/.m-chat__offline.sc-m-chat a.sc-m-chat,.m-chat__offline.sc-m-chat a.sc-m-chat:hover{color:var(--color-teal-400)}/*!@.m-chat__offline-msg*/.m-chat__offline-msg.sc-m-chat{border-radius:4px;background:var(--color-blue-100);padding:var(--space-medium)}";
+const chatCss = "/*!@:root*/.sc-m-chat:root{--color-blue-100:rgb(247, 248, 249);--color-blue-200:rgb(178, 190, 201);--color-blue-300:rgb(76, 103, 129);--color-blue-400:rgb(0, 39, 76);--color-blue-500:rgb(0, 19, 36);--color-maize-100:rgb(255, 249, 230);--color-maize-200:rgb(255, 234, 155);--color-maize-300:rgb(255, 218, 80);--color-maize-400:rgb(255, 203, 5);--color-maize-500:rgb(234, 186, 2);--color-neutral-100:rgb(229, 233, 237);--color-neutral-200:rgb(138, 150, 161);--color-neutral-300:rgb(99, 115, 129);--color-neutral-400:rgb(33, 43, 54);--color-neutral-500:rgb(6, 8, 10);--color-teal-100:rgb(233, 242, 245);--color-teal-200:rgb(167, 205, 219);--color-teal-300:rgb(101, 168, 191);--color-teal-400:rgb(29, 116, 145);--color-teal-500:rgb(16, 102, 132);--color-orange-100:rgb(255, 241, 235);--color-orange-200:rgb(255, 184, 153);--color-orange-300:rgb(255, 138, 88);--color-orange-400:rgb(242, 95, 31);--color-orange-500:rgb(199, 78, 26);--color-pink-100:rgb(252, 235, 235);--color-pink-200:rgb(242, 157, 157);--color-pink-300:rgb(236, 105, 105);--color-pink-400:rgb(217, 56, 56);--color-pink-500:rgb(191, 50, 50);--color-indigo-100:rgb(238, 241, 249);--color-indigo-200:rgb(170, 185, 227);--color-indigo-300:rgb(124, 147, 212);--color-indigo-400:rgb(80, 111, 197);--color-indigo-500:rgb(39, 67, 145);--color-green-100:rgb(234, 248, 238);--color-green-200:rgb(150, 219, 170);--color-green-300:rgb(87, 188, 117);--color-green-400:rgb(32, 168, 72);--color-green-500:rgb(25, 133, 57);--font-base-family:'Muli', sans-serif;--font-second-family:'Crimson Text', serif;--bold:700;--regular:400;--semibold:600;--extrabold:800;--line-height-default:1.5;--line-height-heading:1.25;--line-height-page-heading:1.125;--text-base-size:16px;--text-xxx-large:3.5rem;--text-xx-large:2.25rem;--text-x-large:2rem;--text-large:1.75rem;--text-medium:1.5rem;--text-small:1.125rem;--text-x-small:1.125rem;--text-xx-small:1rem;--text-xxx-small:0.875rem;--space-xxx-small:2px;--space-xx-small:4px;--space-x-small:8px;--space-small:12px;--space-medium:16px;--space-large:24px;--space-x-large:32px;--space-xx-large:40px;--space-xxx-large:48px;--space-xxxx-large:64px;--space-xxxxx-large:96px;--z-space-small:rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;--z-space-medium:rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;--opacity-75:0.75;--opacity-50:0.50;--opacity-30:0.30;--radius-default:4px;--line-length:60ch}/*!@:host*/.sc-m-chat-h{--chat-width:calc(var(--space-medium) * 20);font-size:16px}/*!@.m-chat*/.m-chat.sc-m-chat{position:fixed;right:4vw;bottom:0;border-radius:2px 2px 0 0;border-top:solid 2px var(--color-maize-400);box-shadow:var(--z-space-medium);width:calc(var(--space-medium) * 14);transition:width 0.25s;max-width:calc(100% - 8vw);background:white;z-index:10000}/*!@.m-chat.m-chat--open*/.m-chat.m-chat--open.sc-m-chat{width:var(--chat-width)}/*!@.m-chat__button*/.m-chat__button.sc-m-chat{border:none;background:none;outline:0;font-size:var(--font-base-size);color:var(--color-neutral-400);text-align:left;height:39px;width:100%;padding:0 var(--space-medium);display:flex;align-items:center;cursor:pointer;border-radius:2px 2px 0 0;margin-bottom:3px}/*!@.m-chat__svg*/.m-chat__svg.sc-m-chat{width:32px;height:32px;flex-shrink:0}/*!@.m-chat__icons*/.m-chat__icons.sc-m-chat{line-height:0}/*!@.m-chat__button:focus*/.m-chat__button.sc-m-chat:focus{outline:none;box-shadow:0 0 0 2px var(--color-maize-400), 0 0 0 3px var(--color-neutral-400)}/*!@.m-chat__iframe*/.m-chat__iframe.sc-m-chat{width:100%;height:100%;border:none}@media only screen and (min-width: 600px){/*!@.m-chat__iframe*/.m-chat__iframe.sc-m-chat{width:var(--chat-width)}}/*!@.m-chat__label*/.m-chat__label.sc-m-chat{font-family:var(--font-base-family);display:inline-block;width:100%;padding:0 var(--space-small)}/*!@.m-chat__button:hover .m-chat__label*/.m-chat__button.sc-m-chat:hover .m-chat__label.sc-m-chat{text-decoration:underline}/*!@.m-chat__window*/.m-chat__window.sc-m-chat{background:white;max-height:90vh;height:0;opacity:0;overflow:hidden;transition:height 0.25s, opacity 0.25s}/*!@.m-chat--open .m-chat__window*/.m-chat--open.sc-m-chat .m-chat__window.sc-m-chat{opacity:1;height:calc(var(--space-medium) * 24)}/*!@.m-chat__offline*/.m-chat__offline.sc-m-chat{line-height:1.5;font-family:var(--font-base-family);padding:0 var(--space-medium)}/*!@.m-chat__offline strong*/.m-chat__offline.sc-m-chat strong.sc-m-chat{font-weight:700}/*!@.m-chat__offline a,\n.m-chat__offline a:hover*/.m-chat__offline.sc-m-chat a.sc-m-chat,.m-chat__offline.sc-m-chat a.sc-m-chat:hover{color:var(--color-teal-400)}/*!@.m-chat__offline-msg*/.m-chat__offline-msg.sc-m-chat{border-radius:4px;background:var(--color-blue-100);padding:var(--space-medium)}";
 
 /**
  * @name Chat
@@ -5732,7 +5721,7 @@ class Logo {
   }; }
 }
 
-const universalHeaderCss = "/*!@:root*/.sc-m-universal-header:root{--color-blue-100:rgb(247, 248, 249);--color-blue-200:rgb(178, 190, 201);--color-blue-300:rgb(76, 103, 129);--color-blue-400:rgb(0, 39, 76);--color-blue-500:rgb(0, 19, 36);--color-maize-100:rgb(255, 249, 230);--color-maize-200:rgb(255, 234, 155);--color-maize-300:rgb(255, 218, 80);--color-maize-400:rgb(255, 203, 5);--color-maize-500:rgb(234, 186, 2);--color-neutral-100:rgb(229, 233, 237);--color-neutral-200:rgb(138, 150, 161);--color-neutral-300:rgb(99, 115, 129);--color-neutral-400:rgb(33, 43, 54);--color-neutral-500:rgb(6, 8, 10);--color-teal-100:rgb(233, 242, 245);--color-teal-200:rgb(167, 205, 219);--color-teal-300:rgb(101, 168, 191);--color-teal-400:rgb(29, 116, 145);--color-teal-500:rgb(16, 102, 132);--color-orange-100:rgb(255, 241, 235);--color-orange-200:rgb(255, 184, 153);--color-orange-300:rgb(255, 138, 88);--color-orange-400:rgb(242, 95, 31);--color-orange-500:rgb(199, 78, 26);--color-pink-100:rgb(252, 235, 235);--color-pink-200:rgb(242, 157, 157);--color-pink-300:rgb(236, 105, 105);--color-pink-400:rgb(217, 56, 56);--color-pink-500:rgb(191, 50, 50);--color-indigo-100:rgb(238, 241, 249);--color-indigo-200:rgb(170, 185, 227);--color-indigo-300:rgb(124, 147, 212);--color-indigo-400:rgb(80, 111, 197);--color-indigo-500:rgb(39, 67, 145);--color-green-100:rgb(234, 248, 238);--color-green-200:rgb(150, 219, 170);--color-green-300:rgb(87, 188, 117);--color-green-400:rgb(32, 168, 72);--color-green-500:rgb(25, 133, 57);--font-base-family:'Muli', sans-serif;--font-second-family:'Crimson Text', serif;--bold:700;--regular:400;--semibold:600;--line-height-default:1.5;--line-height-heading:1.25;--line-height-page-heading:1.125;--text-base-size:16px;--text-xxx-large:3.5rem;--text-xx-large:2.25rem;--text-x-large:2rem;--text-large:1.75rem;--text-medium:1.5rem;--text-small:1.125rem;--text-x-small:1.125rem;--text-xx-small:1rem;--text-xxx-small:0.875rem;--space-xxx-small:2px;--space-xx-small:4px;--space-x-small:8px;--space-small:12px;--space-medium:16px;--space-large:24px;--space-x-large:32px;--space-xx-large:40px;--space-xxx-large:48px;--space-xxxx-large:64px;--space-xxxxx-large:96px;--z-space-small:rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;--z-space-medium:rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;--opacity-75:0.75;--opacity-50:0.50;--opacity-30:0.30;--radius-default:4px;--line-length:60ch}/*!@.m-uh*/.m-uh.sc-m-universal-header{background:var(--color-blue-100);font-family:var(--font-base-family);line-height:var(--line-height-default);font-size:16px}/*!@.m-uh **/.m-uh.sc-m-universal-header *.sc-m-universal-header{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}/*!@.m-uh *:focus*/.m-uh.sc-m-universal-header *.sc-m-universal-header:focus{outline:0;box-shadow:0 0 0 2px var(--color-maize-400), 0 0 0 3px var(--color-neutral-400);border-radius:2px !important}/*!@.m-uh__content*/.m-uh__content.sc-m-universal-header{display:flex;justify-content:space-between;max-width:1280px;margin:0 auto;padding:0 var(--space-medium)}@media screen and (min-width: 721px){/*!@.m-uh__content*/.m-uh__content.sc-m-universal-header{padding:0 var(--space-xx-large)}}/*!@.m-uh__button-container*/.m-uh__button-container.sc-m-universal-header{display:inline-block;position:relative}/*!@.m-uh__button*/.m-uh__button.sc-m-universal-header{border:none;background:none;font-size:var(--font-base-size);color:var(--color-neutral-400);text-align:left;line-height:var(--line-height-default);display:flex;align-items:center;cursor:pointer}/*!@.m-uh__button,\n.m-uh__link*/.m-uh__button.sc-m-universal-header,.m-uh__link.sc-m-universal-header{margin:0;text-transform:uppercase;padding:var(--space-x-small);margin:0 calc(var(--space-x-small) * -1);color:var(--color-neutral-300);letter-spacing:1.25px;text-transform:uppercase;font-size:14px;font-weight:var(--bold);font-family:var(--font-base-family)}/*!@.m-uh__button:hover .m-uh__button-label,\n.m-uh__link:hover .m-uh__button-label*/.m-uh__button.sc-m-universal-header:hover .m-uh__button-label.sc-m-universal-header,.m-uh__link.sc-m-universal-header:hover .m-uh__button-label.sc-m-universal-header{text-decoration:underline;text-decoration-thickness:1px}/*!@.m-uh__button-label*/.m-uh__button-label.sc-m-universal-header{padding-right:var(--space-xx-small)}/*!@.m-uh__link*/.m-uh__link.sc-m-universal-header{text-decoration:none;margin-right:var(--space-x-large)}/*!@.m-uh__link:hover*/.m-uh__link.sc-m-universal-header:hover{text-decoration:underline;text-decoration-thickness:1px}@media screen and (min-width: 721px){/*!@.m-uh__link*/.m-uh__link.sc-m-universal-header{display:block}}/*!@.m-uh__link-text*/.m-uh__link-text.sc-m-universal-header{display:block}@media screen and (max-width: 620px){/*!@.m-uh__link-text*/.m-uh__link-text.sc-m-universal-header{display:none}}/*!@.m-uh__link-text--small*/.m-uh__link-text--small.sc-m-universal-header{display:none}@media screen and (max-width: 620px){/*!@.m-uh__link-text--small*/.m-uh__link-text--small.sc-m-universal-header{display:block}}/*!@.m-uh__icons*/.m-uh__icons.sc-m-universal-header{line-height:0}/*!@.m-uh__dropdown*/.m-uh__dropdown.sc-m-universal-header{position:absolute;right:calc(-1 * var(--space-medium));width:280px;box-shadow:var(--z-space-medium);max-width:calc(100vw - var(--space-xx-large) * 2);background:white;border-radius:2px;z-index:1000000}@media screen and (min-width: 721px){/*!@.m-uh__dropdown*/.m-uh__dropdown.sc-m-universal-header{display:grid;grid-template:\"heading heading\" \"primary secondary\"/1fr 280px;padding:var(--space-medium);width:862px;right:0}}/*!@.m-uh__heading*/.m-uh__heading.sc-m-universal-header{grid-area:heading;margin-top:0;font-size:28px;font-weight:700;margin-bottom:0;padding:var(--space-small) var(--space-medium)}@media screen and (max-width: 720px){/*!@.m-uh__heading*/.m-uh__heading.sc-m-universal-header{display:none}}/*!@.m-uh__list-primary,\n.m-uh__list-secondary*/.m-uh__list-primary.sc-m-universal-header,.m-uh__list-secondary.sc-m-universal-header{margin:0;padding:0;list-style:none;margin-bottom:var(--space-medium)}@media screen and (max-width: 720px){/*!@.m-uh__list-primary,\n.m-uh__list-secondary*/.m-uh__list-primary.sc-m-universal-header,.m-uh__list-secondary.sc-m-universal-header{margin:0}/*!@.m-uh__list-primary li:not(:last-of-type),\n.m-uh__list-secondary li:not(:last-of-type)*/.m-uh__list-primary.sc-m-universal-header li.sc-m-universal-header:not(:last-of-type),.m-uh__list-secondary.sc-m-universal-header li.sc-m-universal-header:not(:last-of-type){border-bottom:solid 1px var(--color-neutral-100)}}/*!@.m-uh__list-primary*/.m-uh__list-primary.sc-m-universal-header{grid-area:primary}@media screen and (min-width: 721px){/*!@.m-uh__list-primary*/.m-uh__list-primary.sc-m-universal-header{border-right:solid 1px var(--color-neutral-100);margin-right:var(--space-medium);padding-right:var(--space-medium)}}/*!@.m-uh__list-secondary*/.m-uh__list-secondary.sc-m-universal-header{grid-area:secondary}@media screen and (max-width: 720px){/*!@.m-uh__list-primary*/.m-uh__list-primary.sc-m-universal-header{border-bottom:solid 1px var(--color-neutral-100)}}/*!@.m-uh__item-link*/.m-uh__item-link.sc-m-universal-header{display:block;color:var(--color-neutral-400);font-weight:var(--semibold);text-decoration:none;padding:var(--space-x-small) var(--space-medium);border-radius:2px}@media screen and (max-width: 720px){/*!@.m-uh__item-link*/.m-uh__item-link.sc-m-universal-header{padding:var(--space-small) var(--space-medium)}}@media screen and (max-width: 720px){/*!@.m-uh__item-link:hover*/.m-uh__item-link.sc-m-universal-header:hover{border-radius:0;background:var(--color-blue-100)}}/*!@.m-uh__item-link:hover .m-uh__item-title, .m-uh__item-link:focus .m-uh__item-title*/.m-uh__item-link.sc-m-universal-header:hover .m-uh__item-title.sc-m-universal-header,.m-uh__item-link.sc-m-universal-header:focus .m-uh__item-title.sc-m-universal-header{text-decoration:underline;text-decoration-color:var(--color-teal-400);text-decoration-thickness:2px}/*!@.m-uh__item-title*/.m-uh__item-title.sc-m-universal-header{display:block}/*!@.m-uh__item-desc*/.m-uh__item-desc.sc-m-universal-header{display:none}@media screen and (min-width: 721px){/*!@.m-uh__item-desc*/.m-uh__item-desc.sc-m-universal-header{display:block;font-weight:400;color:var(--color-neutral-300)}}/*!@.m-uh__dropdown-error*/.m-uh__dropdown-error.sc-m-universal-header{padding:0 var(--space-medium)}/*!@.m-uh__dropdown-error strong*/.m-uh__dropdown-error.sc-m-universal-header strong.sc-m-universal-header{font-weight:var(--bold)}/*!@.m-uh__dropdown-error a*/.m-uh__dropdown-error.sc-m-universal-header a.sc-m-universal-header{color:var(--color-teal-400)}";
+const universalHeaderCss = "/*!@:root*/.sc-m-universal-header:root{--color-blue-100:rgb(247, 248, 249);--color-blue-200:rgb(178, 190, 201);--color-blue-300:rgb(76, 103, 129);--color-blue-400:rgb(0, 39, 76);--color-blue-500:rgb(0, 19, 36);--color-maize-100:rgb(255, 249, 230);--color-maize-200:rgb(255, 234, 155);--color-maize-300:rgb(255, 218, 80);--color-maize-400:rgb(255, 203, 5);--color-maize-500:rgb(234, 186, 2);--color-neutral-100:rgb(229, 233, 237);--color-neutral-200:rgb(138, 150, 161);--color-neutral-300:rgb(99, 115, 129);--color-neutral-400:rgb(33, 43, 54);--color-neutral-500:rgb(6, 8, 10);--color-teal-100:rgb(233, 242, 245);--color-teal-200:rgb(167, 205, 219);--color-teal-300:rgb(101, 168, 191);--color-teal-400:rgb(29, 116, 145);--color-teal-500:rgb(16, 102, 132);--color-orange-100:rgb(255, 241, 235);--color-orange-200:rgb(255, 184, 153);--color-orange-300:rgb(255, 138, 88);--color-orange-400:rgb(242, 95, 31);--color-orange-500:rgb(199, 78, 26);--color-pink-100:rgb(252, 235, 235);--color-pink-200:rgb(242, 157, 157);--color-pink-300:rgb(236, 105, 105);--color-pink-400:rgb(217, 56, 56);--color-pink-500:rgb(191, 50, 50);--color-indigo-100:rgb(238, 241, 249);--color-indigo-200:rgb(170, 185, 227);--color-indigo-300:rgb(124, 147, 212);--color-indigo-400:rgb(80, 111, 197);--color-indigo-500:rgb(39, 67, 145);--color-green-100:rgb(234, 248, 238);--color-green-200:rgb(150, 219, 170);--color-green-300:rgb(87, 188, 117);--color-green-400:rgb(32, 168, 72);--color-green-500:rgb(25, 133, 57);--font-base-family:'Muli', sans-serif;--font-second-family:'Crimson Text', serif;--bold:700;--regular:400;--semibold:600;--extrabold:800;--line-height-default:1.5;--line-height-heading:1.25;--line-height-page-heading:1.125;--text-base-size:16px;--text-xxx-large:3.5rem;--text-xx-large:2.25rem;--text-x-large:2rem;--text-large:1.75rem;--text-medium:1.5rem;--text-small:1.125rem;--text-x-small:1.125rem;--text-xx-small:1rem;--text-xxx-small:0.875rem;--space-xxx-small:2px;--space-xx-small:4px;--space-x-small:8px;--space-small:12px;--space-medium:16px;--space-large:24px;--space-x-large:32px;--space-xx-large:40px;--space-xxx-large:48px;--space-xxxx-large:64px;--space-xxxxx-large:96px;--z-space-small:rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;--z-space-medium:rgba(0, 0, 0, 0.2) 0px 2px 16px 0px;--opacity-75:0.75;--opacity-50:0.50;--opacity-30:0.30;--radius-default:4px;--line-length:60ch}/*!@.m-uh*/.m-uh.sc-m-universal-header{background:var(--color-blue-100);font-family:var(--font-base-family);line-height:var(--line-height-default);font-size:16px}/*!@.m-uh **/.m-uh.sc-m-universal-header *.sc-m-universal-header{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}/*!@.m-uh *:focus*/.m-uh.sc-m-universal-header *.sc-m-universal-header:focus{outline:0;box-shadow:0 0 0 2px var(--color-maize-400), 0 0 0 3px var(--color-neutral-400);border-radius:2px !important}/*!@.m-uh__content*/.m-uh__content.sc-m-universal-header{display:flex;justify-content:space-between;max-width:1280px;margin:0 auto;padding:0 var(--space-medium)}@media screen and (min-width: 721px){/*!@.m-uh__content*/.m-uh__content.sc-m-universal-header{padding:0 var(--space-xx-large)}}/*!@.m-uh__button-container*/.m-uh__button-container.sc-m-universal-header{display:inline-block;position:relative}/*!@.m-uh__button*/.m-uh__button.sc-m-universal-header{border:none;background:none;font-size:var(--font-base-size);color:var(--color-neutral-400);text-align:left;line-height:var(--line-height-default);display:flex;align-items:center;cursor:pointer}/*!@.m-uh__button,\n.m-uh__link*/.m-uh__button.sc-m-universal-header,.m-uh__link.sc-m-universal-header{margin:0;text-transform:uppercase;padding:var(--space-x-small);margin:0 calc(var(--space-x-small) * -1);color:var(--color-neutral-300);letter-spacing:1.25px;text-transform:uppercase;font-size:14px;font-weight:var(--bold);font-family:var(--font-base-family)}/*!@.m-uh__button:hover .m-uh__button-label,\n.m-uh__link:hover .m-uh__button-label*/.m-uh__button.sc-m-universal-header:hover .m-uh__button-label.sc-m-universal-header,.m-uh__link.sc-m-universal-header:hover .m-uh__button-label.sc-m-universal-header{text-decoration:underline;text-decoration-thickness:1px}/*!@.m-uh__button-label*/.m-uh__button-label.sc-m-universal-header{padding-right:var(--space-xx-small)}/*!@.m-uh__link*/.m-uh__link.sc-m-universal-header{text-decoration:none;margin-right:var(--space-x-large)}/*!@.m-uh__link:hover*/.m-uh__link.sc-m-universal-header:hover{text-decoration:underline;text-decoration-thickness:1px}@media screen and (min-width: 721px){/*!@.m-uh__link*/.m-uh__link.sc-m-universal-header{display:block}}/*!@.m-uh__link-text*/.m-uh__link-text.sc-m-universal-header{display:block}@media screen and (max-width: 620px){/*!@.m-uh__link-text*/.m-uh__link-text.sc-m-universal-header{display:none}}/*!@.m-uh__link-text--small*/.m-uh__link-text--small.sc-m-universal-header{display:none}@media screen and (max-width: 620px){/*!@.m-uh__link-text--small*/.m-uh__link-text--small.sc-m-universal-header{display:block}}/*!@.m-uh__icons*/.m-uh__icons.sc-m-universal-header{line-height:0}/*!@.m-uh__dropdown*/.m-uh__dropdown.sc-m-universal-header{position:absolute;right:calc(-1 * var(--space-medium));width:280px;box-shadow:var(--z-space-medium);max-width:calc(100vw - (var(--space-xx-large) * 2));background:white;border-radius:2px;z-index:1000000}@media screen and (min-width: 721px){/*!@.m-uh__dropdown*/.m-uh__dropdown.sc-m-universal-header{display:grid;grid-template:\"heading heading\" \"primary secondary\"/1fr 280px;padding:var(--space-medium);width:862px;right:0}}/*!@.m-uh__heading*/.m-uh__heading.sc-m-universal-header{grid-area:heading;margin-top:0;font-size:28px;font-weight:700;margin-bottom:0;padding:var(--space-small) var(--space-medium)}@media screen and (max-width: 720px){/*!@.m-uh__heading*/.m-uh__heading.sc-m-universal-header{display:none}}/*!@.m-uh__list-primary,\n.m-uh__list-secondary*/.m-uh__list-primary.sc-m-universal-header,.m-uh__list-secondary.sc-m-universal-header{margin:0;padding:0;list-style:none;margin-bottom:var(--space-medium)}@media screen and (max-width: 720px){/*!@.m-uh__list-primary,\n.m-uh__list-secondary*/.m-uh__list-primary.sc-m-universal-header,.m-uh__list-secondary.sc-m-universal-header{margin:0}/*!@.m-uh__list-primary li:not(:last-of-type),\n.m-uh__list-secondary li:not(:last-of-type)*/.m-uh__list-primary.sc-m-universal-header li.sc-m-universal-header:not(:last-of-type),.m-uh__list-secondary.sc-m-universal-header li.sc-m-universal-header:not(:last-of-type){border-bottom:solid 1px var(--color-neutral-100)}}/*!@.m-uh__list-primary*/.m-uh__list-primary.sc-m-universal-header{grid-area:primary}@media screen and (min-width: 721px){/*!@.m-uh__list-primary*/.m-uh__list-primary.sc-m-universal-header{border-right:solid 1px var(--color-neutral-100);margin-right:var(--space-medium);padding-right:var(--space-medium)}}/*!@.m-uh__list-secondary*/.m-uh__list-secondary.sc-m-universal-header{grid-area:secondary}@media screen and (max-width: 720px){/*!@.m-uh__list-primary*/.m-uh__list-primary.sc-m-universal-header{border-bottom:solid 1px var(--color-neutral-100)}}/*!@.m-uh__item-link*/.m-uh__item-link.sc-m-universal-header{display:block;color:var(--color-neutral-400);font-weight:var(--semibold);text-decoration:none;padding:var(--space-x-small) var(--space-medium);border-radius:2px}@media screen and (max-width: 720px){/*!@.m-uh__item-link*/.m-uh__item-link.sc-m-universal-header{padding:var(--space-small) var(--space-medium)}}@media screen and (max-width: 720px){/*!@.m-uh__item-link:hover*/.m-uh__item-link.sc-m-universal-header:hover{border-radius:0;background:var(--color-blue-100)}}/*!@.m-uh__item-link:hover .m-uh__item-title, .m-uh__item-link:focus .m-uh__item-title*/.m-uh__item-link.sc-m-universal-header:hover .m-uh__item-title.sc-m-universal-header,.m-uh__item-link.sc-m-universal-header:focus .m-uh__item-title.sc-m-universal-header{text-decoration:underline;text-decoration-color:var(--color-teal-400);text-decoration-thickness:2px}/*!@.m-uh__item-title*/.m-uh__item-title.sc-m-universal-header{display:block}/*!@.m-uh__item-desc*/.m-uh__item-desc.sc-m-universal-header{display:none}@media screen and (min-width: 721px){/*!@.m-uh__item-desc*/.m-uh__item-desc.sc-m-universal-header{display:block;font-weight:400;color:var(--color-neutral-300)}}/*!@.m-uh__dropdown-error*/.m-uh__dropdown-error.sc-m-universal-header{padding:0 var(--space-medium)}/*!@.m-uh__dropdown-error strong*/.m-uh__dropdown-error.sc-m-universal-header strong.sc-m-universal-header{font-weight:var(--bold)}/*!@.m-uh__dropdown-error a*/.m-uh__dropdown-error.sc-m-universal-header a.sc-m-universal-header{color:var(--color-teal-400)}";
 
 /**
  * @name Universal Header

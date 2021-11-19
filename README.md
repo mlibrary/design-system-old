@@ -13,6 +13,12 @@ git clone https://github.com/mlibrary/design-system.git
 cd design-system
 ```
 
+Copy `.env-example` to `.env`
+
+```
+cp .env-example .env
+```
+
 Build the images
 
 ```
