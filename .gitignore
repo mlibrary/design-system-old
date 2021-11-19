@@ -9,6 +9,7 @@ css/
 _site/
 icons.js
 svgs/
+web-component-docs.json
 
 *~
 *.sw[mnpcod]
