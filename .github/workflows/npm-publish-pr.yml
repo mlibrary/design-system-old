@@ -33,7 +33,7 @@ jobs:
         id: extract_branch
       - name: bump up version
         run: |
-          npm version prerelease --no-git-tag-version --preid ${{ steps.extract_branch.outputs.branch }} 
+          npm version prerelease --no-git-tag-version --preid ${{ steps.extract_branch.outputs.branch }} --tag dev
           git commit -am "update prerelease version"
           git push
       - name: publish
