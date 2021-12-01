@@ -1,6 +1,6 @@
 {
   "name": "@umich-lib/web",
-  "version": "1.2.2-dev.6",
+  "version": "1.2.2-dev.7",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
