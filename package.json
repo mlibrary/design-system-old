@@ -14,7 +14,6 @@
     "svgs/",
     "icons.js",
     "umich-lib.css",
-    "design-tokens.custom-properties.css",
     "web-component-docs.json",
     "design-tokens.json"
   ],
