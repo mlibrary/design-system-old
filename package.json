@@ -11,10 +11,12 @@
   "files": [
     "dist/",
     "loader/",
-    "umich-lib.css",
     "svgs/",
     "icons.js",
-    "web-component-docs.json"
+    "umich-lib.css",
+    "design-tokens.custom-properties.css",
+    "web-component-docs.json",
+    "design-tokens.json"
   ],
   "scripts": {
     "test": "stencil test --spec --e2e",
