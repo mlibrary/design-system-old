@@ -1,13 +1,16 @@
 umich-lib.css
 design-tokens.custom-properties.css
+design-tokens.json
 
-./svgs/
-
+# Built directories and files
 dist/
 www/
 loader/
 css/
 _site/
+icons.js
+svgs/
+web-component-docs.json
 
 *~
 *.sw[mnpcod]
@@ -31,5 +34,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+hydrate/index.js
 
 secret/**/*

@@ -118,7 +118,7 @@
   max-width: calc(100vw - (var(--space-xx-large) * 2));
   background: white;
   border-radius: 2px;
-  z-index: 2;
+  z-index: 1000000;
 
   @media screen and (min-width: 721px) {
     display: grid;
