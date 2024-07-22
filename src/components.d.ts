@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    /**
+     * @name Callout
+     * @description For communicating important messages in a user's workflow.
+     */
     interface MCallout {
         /**
           * Makes this dismissable by the user with a button.
@@ -28,22 +32,81 @@ export namespace Components {
          */
         "variant": 'info' | 'success' | 'warning' | 'critical';
     }
+    /**
+     * @name Chat
+     * @description The Chat component provides access to the Ask a Librarian live chat service.
+     * @status production
+     * @whenToUse Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.
+     * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+     * @usedBy - [Library Website](https://www.lib.umich.edu/)
+     * - [Library Search](https://search.lib.umich.edu/)
+     */
     interface MChat {
     }
+    /**
+     * @name Icon
+     * @description For SVG icons.
+     * @status internal
+     * @private 
+     */
     interface MIcon {
         "name": string;
         "size": string;
     }
+    /**
+     * @name Logo
+     * @description The University of Michigan Library logo.
+     * @status internal
+     * @private 
+     */
     interface MLogo {
         /**
           * Select the Website Header variant.  Options:   - light   - dark
          */
         "variant": string;
     }
+    /**
+     * @name Universal Header
+     * @description The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.
+     * @status production
+     * @whenToUse You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.
+     * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+     * @usedBy - [Library Website](https://www.lib.umich.edu/)
+     * - [Library Search](https://search.lib.umich.edu/)
+     * - [Design System](https://design-system.lib.umich.edu/)
+     * - [Michigan Publishing](https://www.publishing.umich.edu/)
+     * @research During Fall 2020 usability testing:
+     * - 89% of participants noticed the Universal Header without being prompted.
+     * - The label "Explore" matched most expectations and all participants had a positive reaction to the content in the dropdown menu.
+     * - The header also helped participants recognize they were on a U-M Library website.
+     * [View the research plan (Google Doc)](https://docs.google.com/document/d/1a5NkZEPaNUck3oHngV3cNFNgZ5BVGicCjRVKuDn2YJk/edit?usp=sharing)
+     * [View the research findings (Google Slides)](https://docs.google.com/presentation/d/1G4iga9axTpl9xboJ-ydcbN8ZrDh6A3fo18T-HM7ItvM/edit?usp=sharing)
+     */
     interface MUniversalHeader {
     }
+    /**
+     * @name Website Alerts
+     * @description The Website Alerts provide public messages for end-users to be notified about.
+     * @status internal
+     * @private 
+     */
     interface MWebsiteAlerts {
     }
+    /**
+     * @name Website Header
+     * @description The Website Header displays our logo and shows users what U-M Library website that they are using.
+     * @status production
+     * @whenToUse If your website is hosted on lib.umich.edu.
+     * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
+     * @example <div>
+     *   <m-website-header name="Account">
+     *     <a href="/">Log in</a>
+     *   </m-website-header>
+     *   <m-website-header name="Deep Blue Documents" variant="dark">
+     *   </m-website-header>
+     * </div>
+     * @usedBy - [Design System](https://design-system.lib.umich.edu/)
+     */
     interface MWebsiteHeader {
         /**
           * The user-friendly name of the U-M Library website that uses this Header.
@@ -60,42 +123,105 @@ export namespace Components {
     }
 }
 declare global {
+    /**
+     * @name Callout
+     * @description For communicating important messages in a user's workflow.
+     */
     interface HTMLMCalloutElement extends Components.MCallout, HTMLStencilElement {
     }
     var HTMLMCalloutElement: {
         prototype: HTMLMCalloutElement;
         new (): HTMLMCalloutElement;
     };
+    /**
+     * @name Chat
+     * @description The Chat component provides access to the Ask a Librarian live chat service.
+     * @status production
+     * @whenToUse Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.
+     * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+     * @usedBy - [Library Website](https://www.lib.umich.edu/)
+     * - [Library Search](https://search.lib.umich.edu/)
+     */
     interface HTMLMChatElement extends Components.MChat, HTMLStencilElement {
     }
     var HTMLMChatElement: {
         prototype: HTMLMChatElement;
         new (): HTMLMChatElement;
     };
+    /**
+     * @name Icon
+     * @description For SVG icons.
+     * @status internal
+     * @private 
+     */
     interface HTMLMIconElement extends Components.MIcon, HTMLStencilElement {
     }
     var HTMLMIconElement: {
         prototype: HTMLMIconElement;
         new (): HTMLMIconElement;
     };
+    /**
+     * @name Logo
+     * @description The University of Michigan Library logo.
+     * @status internal
+     * @private 
+     */
     interface HTMLMLogoElement extends Components.MLogo, HTMLStencilElement {
     }
     var HTMLMLogoElement: {
         prototype: HTMLMLogoElement;
         new (): HTMLMLogoElement;
     };
+    /**
+     * @name Universal Header
+     * @description The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.
+     * @status production
+     * @whenToUse You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.
+     * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+     * @usedBy - [Library Website](https://www.lib.umich.edu/)
+     * - [Library Search](https://search.lib.umich.edu/)
+     * - [Design System](https://design-system.lib.umich.edu/)
+     * - [Michigan Publishing](https://www.publishing.umich.edu/)
+     * @research During Fall 2020 usability testing:
+     * - 89% of participants noticed the Universal Header without being prompted.
+     * - The label "Explore" matched most expectations and all participants had a positive reaction to the content in the dropdown menu.
+     * - The header also helped participants recognize they were on a U-M Library website.
+     * [View the research plan (Google Doc)](https://docs.google.com/document/d/1a5NkZEPaNUck3oHngV3cNFNgZ5BVGicCjRVKuDn2YJk/edit?usp=sharing)
+     * [View the research findings (Google Slides)](https://docs.google.com/presentation/d/1G4iga9axTpl9xboJ-ydcbN8ZrDh6A3fo18T-HM7ItvM/edit?usp=sharing)
+     */
     interface HTMLMUniversalHeaderElement extends Components.MUniversalHeader, HTMLStencilElement {
     }
     var HTMLMUniversalHeaderElement: {
         prototype: HTMLMUniversalHeaderElement;
         new (): HTMLMUniversalHeaderElement;
     };
+    /**
+     * @name Website Alerts
+     * @description The Website Alerts provide public messages for end-users to be notified about.
+     * @status internal
+     * @private 
+     */
     interface HTMLMWebsiteAlertsElement extends Components.MWebsiteAlerts, HTMLStencilElement {
     }
     var HTMLMWebsiteAlertsElement: {
         prototype: HTMLMWebsiteAlertsElement;
         new (): HTMLMWebsiteAlertsElement;
     };
+    /**
+     * @name Website Header
+     * @description The Website Header displays our logo and shows users what U-M Library website that they are using.
+     * @status production
+     * @whenToUse If your website is hosted on lib.umich.edu.
+     * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
+     * @example <div>
+     *   <m-website-header name="Account">
+     *     <a href="/">Log in</a>
+     *   </m-website-header>
+     *   <m-website-header name="Deep Blue Documents" variant="dark">
+     *   </m-website-header>
+     * </div>
+     * @usedBy - [Design System](https://design-system.lib.umich.edu/)
+     */
     interface HTMLMWebsiteHeaderElement extends Components.MWebsiteHeader, HTMLStencilElement {
     }
     var HTMLMWebsiteHeaderElement: {
@@ -113,6 +239,10 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    /**
+     * @name Callout
+     * @description For communicating important messages in a user's workflow.
+     */
     interface MCallout {
         /**
           * Makes this dismissable by the user with a button.
@@ -135,22 +265,81 @@ declare namespace LocalJSX {
          */
         "variant"?: 'info' | 'success' | 'warning' | 'critical';
     }
+    /**
+     * @name Chat
+     * @description The Chat component provides access to the Ask a Librarian live chat service.
+     * @status production
+     * @whenToUse Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.
+     * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+     * @usedBy - [Library Website](https://www.lib.umich.edu/)
+     * - [Library Search](https://search.lib.umich.edu/)
+     */
     interface MChat {
     }
+    /**
+     * @name Icon
+     * @description For SVG icons.
+     * @status internal
+     * @private 
+     */
     interface MIcon {
         "name"?: string;
         "size"?: string;
     }
+    /**
+     * @name Logo
+     * @description The University of Michigan Library logo.
+     * @status internal
+     * @private 
+     */
     interface MLogo {
         /**
           * Select the Website Header variant.  Options:   - light   - dark
          */
         "variant"?: string;
     }
+    /**
+     * @name Universal Header
+     * @description The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.
+     * @status production
+     * @whenToUse You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.
+     * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+     * @usedBy - [Library Website](https://www.lib.umich.edu/)
+     * - [Library Search](https://search.lib.umich.edu/)
+     * - [Design System](https://design-system.lib.umich.edu/)
+     * - [Michigan Publishing](https://www.publishing.umich.edu/)
+     * @research During Fall 2020 usability testing:
+     * - 89% of participants noticed the Universal Header without being prompted.
+     * - The label "Explore" matched most expectations and all participants had a positive reaction to the content in the dropdown menu.
+     * - The header also helped participants recognize they were on a U-M Library website.
+     * [View the research plan (Google Doc)](https://docs.google.com/document/d/1a5NkZEPaNUck3oHngV3cNFNgZ5BVGicCjRVKuDn2YJk/edit?usp=sharing)
+     * [View the research findings (Google Slides)](https://docs.google.com/presentation/d/1G4iga9axTpl9xboJ-ydcbN8ZrDh6A3fo18T-HM7ItvM/edit?usp=sharing)
+     */
     interface MUniversalHeader {
     }
+    /**
+     * @name Website Alerts
+     * @description The Website Alerts provide public messages for end-users to be notified about.
+     * @status internal
+     * @private 
+     */
     interface MWebsiteAlerts {
     }
+    /**
+     * @name Website Header
+     * @description The Website Header displays our logo and shows users what U-M Library website that they are using.
+     * @status production
+     * @whenToUse If your website is hosted on lib.umich.edu.
+     * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
+     * @example <div>
+     *   <m-website-header name="Account">
+     *     <a href="/">Log in</a>
+     *   </m-website-header>
+     *   <m-website-header name="Deep Blue Documents" variant="dark">
+     *   </m-website-header>
+     * </div>
+     * @usedBy - [Design System](https://design-system.lib.umich.edu/)
+     */
     interface MWebsiteHeader {
         /**
           * The user-friendly name of the U-M Library website that uses this Header.
@@ -179,12 +368,75 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * @name Callout
+             * @description For communicating important messages in a user's workflow.
+             */
             "m-callout": LocalJSX.MCallout & JSXBase.HTMLAttributes<HTMLMCalloutElement>;
+            /**
+             * @name Chat
+             * @description The Chat component provides access to the Ask a Librarian live chat service.
+             * @status production
+             * @whenToUse Contact the Design System team and we will coordinate with Ask a Librarian staff about your use case.
+             * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+             * @usedBy - [Library Website](https://www.lib.umich.edu/)
+             * - [Library Search](https://search.lib.umich.edu/)
+             */
             "m-chat": LocalJSX.MChat & JSXBase.HTMLAttributes<HTMLMChatElement>;
+            /**
+             * @name Icon
+             * @description For SVG icons.
+             * @status internal
+             * @private 
+             */
             "m-icon": LocalJSX.MIcon & JSXBase.HTMLAttributes<HTMLMIconElement>;
+            /**
+             * @name Logo
+             * @description The University of Michigan Library logo.
+             * @status internal
+             * @private 
+             */
             "m-logo": LocalJSX.MLogo & JSXBase.HTMLAttributes<HTMLMLogoElement>;
+            /**
+             * @name Universal Header
+             * @description The Universal Header shows users that they are on a U-M Library website and provides a quick and organized way for users to access other library websites.
+             * @status production
+             * @whenToUse You must use the Universal Header at the top of every page of your website if it hosted with the lib.umich.edu domain.
+             * @whenNotToUse If your website is not being hosted on lib.umich.edu.
+             * @usedBy - [Library Website](https://www.lib.umich.edu/)
+             * - [Library Search](https://search.lib.umich.edu/)
+             * - [Design System](https://design-system.lib.umich.edu/)
+             * - [Michigan Publishing](https://www.publishing.umich.edu/)
+             * @research During Fall 2020 usability testing:
+             * - 89% of participants noticed the Universal Header without being prompted.
+             * - The label "Explore" matched most expectations and all participants had a positive reaction to the content in the dropdown menu.
+             * - The header also helped participants recognize they were on a U-M Library website.
+             * [View the research plan (Google Doc)](https://docs.google.com/document/d/1a5NkZEPaNUck3oHngV3cNFNgZ5BVGicCjRVKuDn2YJk/edit?usp=sharing)
+             * [View the research findings (Google Slides)](https://docs.google.com/presentation/d/1G4iga9axTpl9xboJ-ydcbN8ZrDh6A3fo18T-HM7ItvM/edit?usp=sharing)
+             */
             "m-universal-header": LocalJSX.MUniversalHeader & JSXBase.HTMLAttributes<HTMLMUniversalHeaderElement>;
+            /**
+             * @name Website Alerts
+             * @description The Website Alerts provide public messages for end-users to be notified about.
+             * @status internal
+             * @private 
+             */
             "m-website-alerts": LocalJSX.MWebsiteAlerts & JSXBase.HTMLAttributes<HTMLMWebsiteAlertsElement>;
+            /**
+             * @name Website Header
+             * @description The Website Header displays our logo and shows users what U-M Library website that they are using.
+             * @status production
+             * @whenToUse If your website is hosted on lib.umich.edu.
+             * @whenNotToUse If your website requires a more complicated U-M website header then you may need to work with the Design System team or build your own.
+             * @example <div>
+             *   <m-website-header name="Account">
+             *     <a href="/">Log in</a>
+             *   </m-website-header>
+             *   <m-website-header name="Deep Blue Documents" variant="dark">
+             *   </m-website-header>
+             * </div>
+             * @usedBy - [Design System](https://design-system.lib.umich.edu/)
+             */
             "m-website-header": LocalJSX.MWebsiteHeader & JSXBase.HTMLAttributes<HTMLMWebsiteHeaderElement>;
         }
     }

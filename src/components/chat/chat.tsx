@@ -96,7 +96,7 @@ export class Chat {
             <iframe
               class="m-chat__iframe"
               title="Ask a Librarian"
-              src="https://libraryh3lp.com/chat/umlibraryaskalibrarian@chat.libraryh3lp.com?skin=27279"
+              src="https://libraryh3lp.com/chat/umlibraryaskalibrarian@chat.libraryh3lp.com?skin=36020"
             />
           ) : (
             <div class="m-chat__offline">
